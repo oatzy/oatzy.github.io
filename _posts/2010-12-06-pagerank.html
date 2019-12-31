@@ -1,0 +1,21 @@
+---
+layout: post
+title: PageRank
+date: '2010-12-06T17:21:00.000-08:00'
+author: Oatzy
+tags:
+- graph
+- influence
+- infographic
+- twitter
+- tweets
+- maths
+- network
+- pagerank
+modified_time: '2010-12-06T17:22:38.289-08:00'
+thumbnail: http://2.bp.blogspot.com/_p_IGrzjF6JY/TP2GpCAu_eI/AAAAAAAAAaI/erfyFWxRrL8/s72-c/network-20101206.png
+blogger_id: tag:blogger.com,1999:blog-14769935.post-4423306445570286988
+blogger_orig_url: https://oatzy.blogspot.com/2010/12/pagerank.html
+---
+
+In terms of getting some idea of a person's 'influence' on Twitter, working out (a variation on) <a href="http://en.wikipedia.org/wiki/Pagerank">PageRank</a> is more effective that counting followers and followers of followers, but much less effective than using HP Labs' <a href="http://www.newscientist.com/article/dn19432-new-formula-shows-whos-really-top-of-the-tweeters.html?DCMP=OTC-rss&amp;nsref=physics-math">modified HITS</a> algorithm.<br /><br />But to count followers of followers I'd need to put in more effort than it's worth, and to do <a href="http://en.wikipedia.org/wiki/HITS_algorithm">HITS</a> I'd need to scrape an arse load of tweets to count who retweets who and how often.<br /><br /><br /><b>PageRank</b><br /><br />So PageRank basically measures how many people you're connected, as well as who those people are (connectors and all that). It's most associated with Google who use it as part of their search result ranking algorithm.<br /><br />In this case we replace pages with users, and for links we say Alice following Bob is equivalent to page A linking to another page B.<br /><br /><br /><b>Another Updated Graph</b><br /><br />Working out PageRank was easier than the other two for one simple reason - I already had a lot of the data I needed, from <a href="http://oatzy.blogspot.com/2010/10/twitter-bffs.html">previous</a> network graphs. Obviously I had to update it first, and this is the graph as it stands (without me)<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/_p_IGrzjF6JY/TP2GpCAu_eI/AAAAAAAAAaI/erfyFWxRrL8/s1600/network-20101206.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="267" src="http://2.bp.blogspot.com/_p_IGrzjF6JY/TP2GpCAu_eI/AAAAAAAAAaI/erfyFWxRrL8/s320/network-20101206.png" width="320" /></a></div><br />Which has become almost inexplicable more complex between the <a href="http://1.bp.blogspot.com/_p_IGrzjF6JY/TLzaWF1JE6I/AAAAAAAAAZE/N6DnfBwCd0A/s1600/net-map-wo.png">last one</a> and this one. But there you go.<br /><br /><br /><b>Results</b><br /><br />Anyway, I followed the algebraic approach from the <a href="http://en.wikipedia.org/wiki/Pagerank#Algebraic">wiki article</a> (looking like the easiest for what I had) and the results, in rank order, are as follows:<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/_p_IGrzjF6JY/TP2Gv95SKjI/AAAAAAAAAaM/gBTS3fxPZ88/s1600/PageRank.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="320" src="http://2.bp.blogspot.com/_p_IGrzjF6JY/TP2Gv95SKjI/AAAAAAAAAaM/gBTS3fxPZ88/s320/PageRank.png" width="110" /></a></div>[When looking at the ranks, it might help to make sense of them more if you refer to the graph above.] <br /><br />You have to bare in mind this particular PageRank calculation is only  for my friend network, and assumes it's isolated from the rest of  Twitter for simplicity. To get everyone's proper PageRank you'd have to analyse the whole of Twitter.<br /><br /><br /><b>WTF?</b><br /><br />The only question now is, what do the results actually mean? I'm not entirely clear on that.<br /><br />In the case of websites,<br /><blockquote>PageRank is a probability distribution used to represent the likelihood that a person randomly clicking on links will arrive at any particular page </blockquote>I think in the Twitter case it's more to do with how tweets spread and who in the network is more (or less) likely to see them.<br /><br /><br />If I ever work it out I'll let you know. Otherwise, feel free to offer your own explanation.<br /><br /><br />Oatzy.

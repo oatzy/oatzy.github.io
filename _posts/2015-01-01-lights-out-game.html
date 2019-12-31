@@ -1,0 +1,21 @@
+---
+layout: post
+title: Lights Out (Game)
+date: '2015-01-01T18:54:00.000-08:00'
+author: Oatzy
+tags:
+- christmas
+- programming
+- nerd
+- python
+- games
+- coding
+- puzzles
+- random
+modified_time: '2015-01-01T18:54:46.834-08:00'
+thumbnail: http://1.bp.blogspot.com/-rGY44zTlq-U/VKXdYRbb2BI/AAAAAAAABRQ/4NkpPdThht8/s72-c/lightsout-ex.png
+blogger_id: tag:blogger.com,1999:blog-14769935.post-30923740457024521
+blogger_orig_url: https://oatzy.blogspot.com/2015/01/lights-out-game.html
+---
+
+I was watching this year's <a href="http://www.rigb.org/christmas-lectures">RI Christmas Lectures</a>, and it reminded me of this game I had when I was much younger. It was, I think, a Christmas present from my grandparents, back in '96. It was called <i>Lights Out</i>, and it looked something like <a href="https://www.google.co.uk/search?q=lights+out+game&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ei=cd6lVO_0CovB7AaMjIHYDg&amp;ved=0CAgQ_AUoAQ&amp;biw=1366&amp;bih=696">this</a>.<br /><br />Basically, the console had a 5x5 grid of these rubbery, transluscent buttons with little red lights underneath them. When you press a button, that button and the four adjacent buttons switch state - light on to light off, or off to on. So, in the example below (where blue square are lights), if you press the centre square, the centre square turns off and the four adjacent squares turn on.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-rGY44zTlq-U/VKXdYRbb2BI/AAAAAAAABRQ/4NkpPdThht8/s1600/lightsout-ex.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-rGY44zTlq-U/VKXdYRbb2BI/AAAAAAAABRQ/4NkpPdThht8/s1600/lightsout-ex.png" height="181" width="400" /></a></div><br />In the game, you're given a pattern of lights, such as the one above, and the task is to press buttons until all the lights are out.<br /><br />Interestingly, in the pattern above (on the left), you can clear the board by just pressing the squares that are on at the start (in any order). <br /><br />Anyway, I was reminded of that. Meanwhile, I'd been learning some <a href="http://www.pygame.org/">Pygame</a> for this other thing (that I'll talk about in a later blog). Now, Pygame is a <a href="https://www.python.org/">Python</a> library for making games (amongst other things). So you can probably see where this is going...<br /><br />Coding a 'Lights Out' clone was straightforward enough - the code is short and not too complicated. The above images are actually screenshots. You can look at my code/download it <a href="https://www.dropbox.com/s/pcjmz11a0jncuqf/lightsout.py?dl=0">here</a>. You'll need Python and Pygame to run it.<br /><br />This is a very threadbare version of the game. You can load a level as a text file of five lines of ones and zeros, like <a href="https://www.dropbox.com/s/927jmw3yw43nzc0/level.txt?dl=0">here</a>. Or else you can just play from a blank board - make patterns then try to get rid of them again (not necessarily as easy as it sounds). <br /><br />If you want something more fancy, or if you don't want to install Python and all that, there are probably loads of playable clones online.<br /><br />Now, at this point you're probably thinking "Yeah, that's great. But what about the maths of Lights Out?". And you'd be damn right to ask. If you're interested, there's a good summary, as well as links to articles/papers, on the <a href="https://en.wikipedia.org/wiki/Lights_Out_%28game%29">wikipedia page</a>. I don't want to just repeat what's written there. Basically, it all comes down to <a href="https://en.wikipedia.org/wiki/Linear_algebra">linear algebra</a>.<br /><br /><br />Anyway, have fun with that.<br /><br /><br />Oatzy.<br /><br /><br />[Call this a late Christmas present.] 

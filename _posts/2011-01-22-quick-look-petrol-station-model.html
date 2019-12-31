@@ -1,0 +1,20 @@
+---
+layout: post
+title: 'Quick Look: Petrol Station Model'
+date: '2011-01-22T16:35:00.000-08:00'
+author: Oatzy
+tags:
+- graph
+- programming
+- python
+- everyday maths
+- flowchart
+- maths
+- modelling
+modified_time: '2011-01-22T16:35:32.858-08:00'
+thumbnail: http://3.bp.blogspot.com/_p_IGrzjF6JY/TTt06_-SRhI/AAAAAAAAAdM/NQpPzgYMZYo/s72-c/Petrol-Station-Flow.png
+blogger_id: tag:blogger.com,1999:blog-14769935.post-860686026254167010
+blogger_orig_url: https://oatzy.blogspot.com/2011/01/quick-look-petrol-station-model.html
+---
+
+So a model of a petrol station is effectively the same as <a href="http://oatzy.blogspot.com/2011/01/model-cafe.html">the café</a> (albeit with different variables), EXCEPT that for the petrol station you queue to pay just before you leave (rather than as soon as you arrive).<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/_p_IGrzjF6JY/TTt06_-SRhI/AAAAAAAAAdM/NQpPzgYMZYo/s1600/Petrol-Station-Flow.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="147" src="http://3.bp.blogspot.com/_p_IGrzjF6JY/TTt06_-SRhI/AAAAAAAAAdM/NQpPzgYMZYo/s400/Petrol-Station-Flow.png" width="400" /></a></div><br />And what this specifically means is that a pump is occupied for the time it takes to fill the car, PLUS the time it takes to queue to pay. But at the same time, the queue has a maximum size - i.e. if all the pumps are occupied and all the owners are in line to pay.<br /><br />Interestingly, a barriered car park is around about the intersection of the café and the petrol station (in modeling terms). But that's a whole other story.<br /><br />For simplicity, we can assume that all pumps have both diesel and petrol, and that there's an equal chance that any given car's petrol tank is on either the left or the right side of the car. That's not to say you couldn't factor in these things, if you were so inclined, but their effects would average out over multiple simulations.<br /><br /><br />Of course, it doesn't take a mathematical model to tell you that the control of flow comes down, primarily, to how quickly people are able to pay for their petrol. Which is why "pay at the pump" is so useful - it removes the queuing part of the model.<br /><br />But what the model can tell you is how quickly the staff need to work to limit backlogs; basically, they have to serve quicker than the average arrival rate.<br /><br />Like with the café model you could probably adapt this model to <a href="http://oatzy.blogspot.com/2011/01/follow-up-will-i-get-table.html">predict</a> how long you can expect to wait as well. And as a final, intellectual, exercise, you could factor in pay at the pump (assuming not everyone who can, does), and look at to what degree that allows the staff to relax their pace.<br /><br />Here's an example output graph,<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/_p_IGrzjF6JY/TTt1K3DtlFI/AAAAAAAAAdQ/dGgGSg1qdJc/s1600/pump-graph.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="156" src="http://1.bp.blogspot.com/_p_IGrzjF6JY/TTt1K3DtlFI/AAAAAAAAAdQ/dGgGSg1qdJc/s320/pump-graph.jpg" width="320" /></a></div>Blue is pumps in use, yellow is number of people queuing to pay and orange is waiting for a pump.<br /><br />You can find the code <a href="http://dl.dropbox.com/u/4635169/petrol-station-model.py">here</a> if you're interested.<br /><br /><br />Oatzy.
