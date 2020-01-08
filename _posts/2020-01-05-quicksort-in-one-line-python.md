@@ -2,7 +2,7 @@
 layout: post
 title: Quicksort in One Line of Python
 date: '2020-01-05T00:00:00.000-00:00'
-author: Oatzy
+author: Chris Oates
 tags:
 - python
 - algorithm
