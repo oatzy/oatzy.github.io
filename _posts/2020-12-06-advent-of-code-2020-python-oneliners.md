@@ -208,10 +208,10 @@ print(sum(len(set(group.replace('\n', ''))) for group in open('day06.txt').read(
 The logic in part two is a little more laboured, but essentially, count how many of the first member's characters are in all the other members' characters.
 
 ```python
-ref = group[0]
+ref = members[0]
 in_all = 0
 for c in ref:
-    if all(c in g for g in groups):
+    if all(c in m for m in members):
     in_all += 1
 ```
 
