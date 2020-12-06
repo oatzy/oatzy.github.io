@@ -7,7 +7,7 @@ tags:
 - coding
 - python
 - advent of code
-modified_time: '2020-12-06T00:19:03.000-00:00'
+modified_time: '2020-12-06T19:03:00.000-00:00'
 ---
 This is my third year doing [Advent of Code](https://adventofcode.com/2020). As with last year, I'm primarily solving the puzzles with rust. But in this first week, there were a couple of puzzle where I could think of python one-liner solutions. And then I wanted to try and come up with one-liners for the other days.
 
@@ -25,9 +25,9 @@ We want to find two numbers in a list which add to 2020. The obvious way to do t
 
 ```python
 for x in input:
-	for y in input:
-		if x + y == 2020:
-			return x * y
+    for y in input:
+        if x + y == 2020:
+            return x * y
 ```
 
 But we can actually do this as a single loop - if we keep track of the values we've already seen, we can just check if we've already seen `2020 - x`
@@ -36,10 +36,10 @@ But we can actually do this as a single loop - if we keep track of the values we
 seen = set()
 
 for x in input:
-	if (2020 - x) in seen:
-		return x * (2020 - x)
-	else:
-		seen.add(x)
+    if (2020 - x) in seen:
+        return x * (2020 - x)
+    else:
+        seen.add(x)
 ```
 
 Now, the `seen.add` call returns `None`, so if we do this as a list comprehension, we'll get a load of `None`s, and our solution somewhere in the middle. So if we filter out the `None`s, we can easily grab the solution.
@@ -99,9 +99,9 @@ So we have something like
 
 ```python
 for y in range(height):
-	x = 3 * y % width
-	if map[x][y] == '#':
-		total += 1
+    x = 3 * y % width
+    if map[x][y] == '#':
+        total += 1
 ```
 
 In the above, we're assuming that we've parsed the map into a nested array. (In rust I used a `HashSet` of tree positions, but the logic is more or less the same).
@@ -114,8 +114,8 @@ Or, turning it the other way, if we iterate over the input string, we know if we
 
 ```python
 for i, c in enumerate(input):
-	if i == y * (width+1) + (3 * y % 3) and c == '#':
-		total += 1
+    if i == y * (width+1) + (3 * y % 3) and c == '#':
+        total += 1
 ```
 
 But what's `y`? And how do we know the width of the map without iterating over it (and storing it as a variable)?
@@ -128,11 +128,11 @@ In other words
 y = 0
 width = None
 for i, c in enumerate(input):
-	if c == '\n':
-		y += 1
+    if c == '\n':
+        y += 1
 
-		if width is None:
-			width = i
+        if width is None:
+            width = i
 ```
 
 We increment the current line (`y`) when we encounter a newline character. And when we encounter our **first** newline character, we set the `width` (otherwise the width would increase at every linebreak)
@@ -141,7 +141,7 @@ This does leave us with an unknown width until we hit the first newline, but for
 
 ```python
 if i == 0 # first line
-	or (width is not None and i == y * (width+1) + (3 * y % 3)) ...
+    or (width is not None and i == y * (width+1) + (3 * y % 3)) ...
 ```
 
 The final piece is how we update all three of our variables (`y`, `width`, and `total`) in a single loop. For this we use `reduce` - starting with `(0,0,0)` and updating on each iteration as appropriate. And at the end, we pick out our total from the triple `[2]`
@@ -181,8 +181,8 @@ If we have a binary string where the the digits are left-to-right smallest-to-la
 ```python
 value = 0
 for i, c in enumerate(string):
-	if c == '1':
-		value += 1 << i
+    if c == '1':
+        value += 1 << i
 ```
 
 where `1 << i` is a bit-shift, equivalent to `2 ** i` (2 to the power of `i`)
@@ -211,8 +211,8 @@ The logic in part two is a little more laboured, but essentially, count how many
 ref = group[0]
 in_all = 0
 for c in ref:
-	if all(c in g for g in groups):
-	in_all += 1
+    if all(c in g for g in groups):
+    in_all += 1
 ```
 
 We also use the sum-over-bool from day 4, and the inner loop from day 2 to pre-split the groups into members
