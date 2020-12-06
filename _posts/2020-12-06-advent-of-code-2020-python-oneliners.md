@@ -7,7 +7,7 @@ tags:
 - coding
 - python
 - advent of code
-modified_time: '2020-12-06T19:03:00.000-00:00'
+modified_time: '2020-12-06T22:25:00.000-00:00'
 ---
 This is my third year doing [Advent of Code](https://adventofcode.com/2020). As with last year, I'm primarily solving the puzzles with rust. But in this first week, there were a couple of puzzle where I could think of python one-liner solutions. And then I wanted to try and come up with one-liners for the other days.
 
@@ -223,7 +223,7 @@ print(sum(sum(all(c in m for m in members) for c in members[0]) for members in (
 
 # Update - lambda-wrapping
 
-I remembered where I got the idea for lambda wrapping, as used in day 1 above - http://www.onelinerizer.com/
+I remembered where I got the idea for lambda wrapping, as used in day 1 above - [onelinerizer](http://www.onelinerizer.com/)
 
 Here's an alternative, maybe clearer, way of doing day 3 using lambdas
 
