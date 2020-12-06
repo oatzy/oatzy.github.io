@@ -79,7 +79,7 @@ Here we have a nested iterator - the inner reads the file and performs the regex
 In this case, parts 1 and 2 are pretty similar, and we can solve both in almost the same way.
 
 ```python
-import re; print(sum((s[int(l)-1] == c) ^ (s[int(h)-1] == c) for (l, h, c, s) in (re.match(r"(\d+)\-(\d+) (\w): (\w+)", line) for line in open("day02.txt"))))
+import re; print(sum((s[int(l)-1] == c) ^ (s[int(h)-1] == c) for (l, h, c, s) in (re.match(r"(\d+)\-(\d+) (\w): (\w+)", line).groups() for line in open("day02.txt"))))
 ```
 
 (-1 because the numbers are 1-indexed)
