@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Advent of Code 2020 (Week 1) - Python One-Liners
-date: '2020-15-06T15:39:00.000-00:00'
+date: '2020-12-06T15:39:00.000-00:00'
 author: Chris Oates
 tags:
 - coding
