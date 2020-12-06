@@ -52,7 +52,7 @@ seen=set();print(next(i for i in (x * (2020 - x) if (2020 - x) in seen else seen
 
 with a cheeky semi-colon to make two lines look like 1.
 
-The tricky bit here is that we need to initialise a set, and then update it in the loop. Eventually, I came up with a way of doing this as a legit one-liner
+The tricky bit here is that we need to initialise a set, and then update it in the loop. Eventually, I thought of a way of doing this as a legit one-liner
 
 ```python
 print((lambda seen: next(i for i in (x * (2020 - x) if (2020 - x) in seen else seen.add(x) for x in map(int, open("day01.txt"))) if i is not None))(set()))
@@ -220,6 +220,18 @@ We also use the sum-over-bool from day 4, and the inner loop from day 2 to pre-s
 ```python
 print(sum(sum(all(c in m for m in members) for c in members[0]) for members in (group.split() for group in open('day06.txt').read().split('\n\n'))))
 ```
+
+# Update - lambda-wrapping
+
+I remembered where I got the idea for lambda wrapping, as used in day 1 above - http://www.onelinerizer.com/
+
+Here's an alternative, maybe clearer, way of doing day 3 using lambdas
+
+```python
+print((lambda map: (lambda map, h, w: sum(map[y][3*y%w] == '#' for y in range(h)))(map, len(map), len(map[0])))(open("day03.txt").read().splitlines()))
+```
+
+We load the input and pass it to the outer lambda, which calculates the width and height and pass them (and the map) to the inner lambda, which does the tree counting.
 
 # To Be Continued..?
 
