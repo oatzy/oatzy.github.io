@@ -7,7 +7,7 @@ tags:
 - coding
 - python
 - advent of code
-modified_time: '2020-12-06T22:25:00.000-00:00'
+modified_time: '2020-12-10T20:00:00.000-00:00'
 ---
 This is my third year doing [Advent of Code](https://adventofcode.com/2020). As with last year, I'm primarily solving the puzzles with rust. But in this first week, there were a couple of puzzle where I could think of python one-liner solutions. And then I wanted to try and come up with one-liners for the other days.
 
@@ -232,6 +232,21 @@ print((lambda map: (lambda map, h, w: sum(map[y][3*y%w] == '#' for y in range(h)
 ```
 
 We load the input and pass it to the outer lambda, which calculates the width and height and pass them (and the map) to the inner lambda, which does the tree counting.
+
+# Day 10
+
+By this point, you've seen all these tricks before
+
+```python
+print((lambda x: x[1] * x[3])(reduce(lambda a, x: (x, a[1] + (x - a[0] == 1), a[2] + (x - a[0] == 2), a[3] + (x - a[0] == 3)), sorted(map(int, open('../inputs/day10.txt'))), (0, 0, 0, 1))))
+```
+
+In the main section, we're using a `reduce` to count the number of differences of size 1, 2, 3. The first value of the tuple is the previous value in the list. We can do this, because we start at the 'outlet' (0), which isn't included in the puzzle input. Similarly, our input doesn't include the 'device', which is 3 greater than the largest value in the input. This means we can just start our 3 count at 1.
+
+We also have another instance of boolean arithmetic - `int + bool` == `x + (1 if True else 0)`
+
+Finally, we pass that to a function which multiplies the 1 and 3 counts - the puzzle output.
+
 
 # To Be Continued..?
 
