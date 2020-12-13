@@ -41,7 +41,7 @@ In the inner loop we're parsing lines two (the list of integers). Then we're ite
 
 The only really new thing here is that we're using the 'splat' (unpacking) operator `*` to pass the input lines a separate valiables. This saves us a few characters, and makes things a bit more readable (to the extent any of this can be considered readable ;) )
 
-Also, a handly thing to know - the `int` function will ignore trailing newlines, i.e. `int("1\n") == 1`
+Also, a handy thing to know - the `int` function will ignore leading and trailing whitespace, i.e. `int("1\n") == 1`
 
 
 # Watch this space...
