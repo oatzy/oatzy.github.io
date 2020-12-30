@@ -44,9 +44,9 @@ The only really new thing here is that we're using the 'splat' (unpacking) opera
 Also, a handy thing to know - the `int` function will ignore leading and trailing whitespace, i.e. `int("1\n") == 1`
 
 
-# Watch this space...
+# Game Over
 
-This post will cover any one-liners I come up with from week 2 onwards. I'll update it if/when I have new ones, so keep checking back.
+I couldn't think up any one-liners for the remaining puzzles. Thanks for reading...
 
 
 Chris.
