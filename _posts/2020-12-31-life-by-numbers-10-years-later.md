@@ -6,7 +6,7 @@ author: Chris Oates
 tags:
 - personal
 - statistics
-modified_time: '2020-12-31T15:59:00.000-00:00'
+modified_time: '2021-01-10T19:15:00.000-00:00'
 ---
 
 ## Are you ten years ago
@@ -203,7 +203,6 @@ I listen to podcasts while I work. I listen at 2.5x speed, which may seem like i
 
 *Some favourites*:
 - [Alex Meyers](https://www.youtube.com/channel/UCY6Ij8zOds0WJEeqCLOnqOQ)
-- [Big Joel](https://www.youtube.com/channel/UCaN8DZdc8EHo5y1LsQWMiig)
 - [Curio](https://www.youtube.com/channel/UCJmlCcnfMlyPA2oSbb072QA)
 - [Folding Ideas](https://www.youtube.com/channel/UCyNtlmLB73-7gtlBz00XOQQ)
 - [Lindsey Ellis](https://www.youtube.com/user/chezapoctube)
@@ -211,6 +210,7 @@ I listen to podcasts while I work. I listen at 2.5x speed, which may seem like i
 - [Patrick H Willems](https://www.youtube.com/user/patrickhwillems)
 - [Quinton Reviews](https://www.youtube.com/channel/UCM0V8r4kuIWIl6Sy-NHj2lg)
 - [Renegade Cut](https://www.youtube.com/channel/UC9infsKo33_2LUoiqXGgQWg)
+- [Sideways](https://www.youtube.com/channel/UCi7l9chXMljpUft67vw78qw)
 - [Trash Theory](https://www.youtube.com/channel/UCxHcoI9ndIdAihEB7ODTOfQ)
 
 YouTube doesn't provide usage statistics. Also, I disabled watch history.
