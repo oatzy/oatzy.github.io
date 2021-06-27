@@ -74,7 +74,7 @@ Here's (roughly) what I did [^2]
 int new[length+1];
 
 for (i=0; i<length; i++) {
-	new[i] = old[i];
+    new[i] = old[i];
 }
 
 new[length] = value
