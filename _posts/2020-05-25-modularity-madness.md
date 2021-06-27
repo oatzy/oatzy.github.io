@@ -278,7 +278,7 @@ And we could write even more wrappers:
 
 So hopefully I’ve convinced you of the power of interfaces, modularity, and composition.
 
-**[update]** - follow up: [Modularity vs Inheritance](https://oatzy.github.io/2021/06/27/modularity-vs-inheritance.html)
+{% include callout.html type="info" content="Follow up: [Modularity vs Inheritance](https://oatzy.github.io/2021/06/27/modularity-vs-inheritance.html)"  %}
 
 Chris
 

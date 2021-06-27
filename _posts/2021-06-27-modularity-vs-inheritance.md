@@ -10,7 +10,7 @@ tags:
 modified_time: '2021-06-27T18:02:00.000-00:00'
 ---
 
-{% include callout.html type="primary" content="This is a direct follow on to the [Modularity Madness](https://oatzy.github.io/2020/05/25/modularity-madness.html) blog. I actually drafted it shortly after writing that post, but for whatever reason never got around to finishing it at the time."  %}
+{% include callout.html type="info" content="This is a direct follow on to the [Modularity Madness](https://oatzy.github.io/2020/05/25/modularity-madness.html) blog. I actually drafted it shortly after writing that post, but for whatever reason never got around to finishing it at the time."  %}
 
 Further to my previous post, I wanted to talk a bit more about how the `DownloadFn` is used, and why it's defined as a stand-alone function.
 
