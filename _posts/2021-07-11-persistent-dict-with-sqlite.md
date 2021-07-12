@@ -163,9 +163,9 @@ with LastRunSQL.open('example.db') as db:
 
 Finally, I should mention that, along similar lines there is the builtin [shelve](https://docs.python.org/3/library/shelve.html) module. Similar to what we've been discussing, it's a persistent dict-like object, but in this case backed by pickling the data. Because of this, shelves support more datatypes than sqlite. It also has the benefit (or limitation, depending on your perspective) that it doesn't have a fixed schema.
 
-On the other hand, the resulting database can't be used outside of python. If that's something you care about.
+On the other hand, the resulting database can't be used outside of python (if that's something you care about). And SQLite3 supports concurrent access.
 
-The nice thing about the protocol we defined is, we can switch SQLite out for anything else that satisfies the interface - including `shelve`. Or if we needed to scale up, we could use redis after all.
+In any case, the nice thing about the protocol we defined is, we can switch SQLite out for anything else that satisfies the interface - including `shelve`. Or if we needed to scale up, we could use redis after all.
 
 Chris.
 
