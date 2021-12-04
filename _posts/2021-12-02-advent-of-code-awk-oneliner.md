@@ -242,6 +242,20 @@ The trick here is using a regex match - `/pattern/` - on a single character whic
 
 In terms of solving both parts, we note that the x distance is calculated the same in both parts, and the a(im) in part 2 is calculated the same as the y direction was in part one.
 
+# Bonus: Day 3
+
+I only managed the first part for this one, and it clocks in at a chunky 92 characters
+
+```python
+BEGIN{FS=""}{for(i=1;i<=NF;i++)a[NF-i]+=$i}END{for(k in a)2*a[k]>NR?g+=2^k:e+=2^k;print g*e}
+```
+
+Setting 'field separator' (`FS`) to empty allows us to treat individual characters as columns. `NF` is another of the builtin variables - in this case the number of columns (fields). We use an array to sum the bits down each column; as with variables, the array is initialised on demand.
+
+Then, in the END block, we compare each column sum to the the number of lines - `1` is most common if it appears in more than half the lines. We use that to convert the sums array to a decimal number (gamma) and its compliment (epsilon).
+
+Part 2 requires multiple passes over the puzzle input, so even if I came up with a solution, it would probably exceed 100 chars. I certainly couldn't combine it with the solution to part 1.
+
 # Summary
 
 I want to be clear that I'm no awk expert; I only dabble by way of using bash for work. Maybe someone else can golf these down even further.
