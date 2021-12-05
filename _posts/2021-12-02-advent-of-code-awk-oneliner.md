@@ -256,6 +256,15 @@ Then, in the END block, we compare each column sum to the the number of lines - 
 
 Part 2 requires multiple passes over the puzzle input, so even if I came up with a solution, it would probably exceed 100 chars. I certainly couldn't combine it with the solution to part 1.
 
+# Bonus: Day 5
+
+This one's a bit of a monster - 184 characters
+
+```python
+BEGIN{FS=" -> |,"}{x=$1<$3?1:$1>$3?-1:0;y=$2<$4?1:$2>$4?-1:0;while($1!=$3+x||$2!=$4+y){a[$1,$2]+=$1==$3||$2==$4;b[$1,$2]+=1;$1+=x;$2+=y}}END{for(k in b){t+=a[k]>1;u+=b[k]>1};print t,u}
+```
+
+
 # Summary
 
 I want to be clear that I'm no awk expert; I only dabble by way of using bash for work. Maybe someone else can golf these down even further.
