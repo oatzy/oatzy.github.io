@@ -258,11 +258,13 @@ Part 2 requires multiple passes over the puzzle input, so even if I came up with
 
 # Bonus: Day 5
 
-This one's a bit of a monster - 184 characters
+This one's a bit of a monster - 183 characters
 
 ```python
-BEGIN{FS=" -> |,"}{x=$1<$3?1:$1>$3?-1:0;y=$2<$4?1:$2>$4?-1:0;while($1!=$3+x||$2!=$4+y){a[$1,$2]+=$1==$3||$2==$4;b[$1,$2]+=1;$1+=x;$2+=y}}END{for(k in b){t+=a[k]>1;u+=b[k]>1};print t,u}
+BEGIN{FS=" -> |,"}{x=$1<$3?1:$1>$3?-1:0;y=$2<$4?1:$2>$4?-1:0;while($1!=$3+x||$2!=$4+y){a[$1,$2]+=$1==$3||$2==$4;b[$1,$2]++;$1+=x;$2+=y}}END{for(k in b){t+=a[k]>1;u+=b[k]>1};print t,u}
 ```
+
+I think this would take a post all of its own to explain...
 
 
 # Summary
