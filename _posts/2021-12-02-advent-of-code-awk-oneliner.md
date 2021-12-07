@@ -266,6 +266,33 @@ BEGIN{FS=" -> |,"}{x=$1<$3?1:$1>$3?-1:0;y=$2<$4?1:$2>$4?-1:0;while($1!=$3+x||$2!
 
 I think this would take a post all of its own to explain...
 
+# Bonus: Day 6
+
+170 characters
+
+```python
+BEGIN{RS=","}{a[$1]++;t++}END{while(i<256){u=i++==80?t:u;for(k in a){n=a[k];if(k!=0)b[k-1]+=n;else{t+=n;b[6]+=n;b[8]+=n}}delete a;for(k in b)a[k]=b[k];delete b}print u,t}
+```
+
+This one felt like I was really fighting awk. Annoyingly, it doesn't let you assign arrays to other variables.
+
+Here, we're using `RS` (record separator) to split the comma-separated inputs into lines. If we used `FS`, we'd have to do a for-loop.
+
+Note, deleting an array with `delete a` is not supported in all awk implementation. Also the part 2 answer is so large, it needs to be run with `-vOFMT="%.0f"` to get it in non-scientific format.
+
+# Bonus: Day 7
+
+152 characters
+
+```python
+BEGIN{RS=","}{a[NR]=$1;m=$1>m?$1:m}END{t=NR*m;u=t*m;for(;x<m;x++){y=z=0;for(k in a){d=x-a[k];d=d<0?-d:d;y+=d;z+=d*(d+1)/2}t=y<t?y:t;u=z<u?z:u}print t,u}
+```
+
+At this point I'm putting more effort into coming up with contrived ways to drop characters, more than actually solving the day's problem.
+
+Of note, awk lets you do chained assignment - e.g. `y = z = 0` being equivalent to `y = 0; z = 0`. Notice also we can drop the initialisation from the for-loop - `for(;x<m;x++)` - since an undefined variable is initialised to `0`
+
+Part 2 mostly the same as part 1, but using [triangular numbers](https://en.wikipedia.org/wiki/Triangular_number)
 
 # Summary
 
