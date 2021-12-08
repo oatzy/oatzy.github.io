@@ -304,7 +304,7 @@ This one is only part 1, but much simpler than the previous few days - 49 charac
 
 Pretty straightforward.
 
-What's interesting is using modulo to squash a bunch of case checks. In essence, the task is to count the number of string on length 2, 3, 7, or 8. From the puzzle description, we note that the only possible lengths are 5 and 6. This is a little awkward, given 5 and 6 are in the middle of the possible values. But if we take the length modulo 5, 5 and 6 become 0 and 1, and 2, 3, 7, 8 become 2, 3, 2, 3, respectively. Hence, `length % 5 > 1`
+What's interesting is using modulo to squash a bunch of case checks. In essence, the task is to count the number of strings of length 2, 3, 4, or 7. From the puzzle description, we note that the only other possible lengths are 5 and 6. So, if we take the length modulo 5 -- 5 and 6 become 0 and 1, and 2, 3, 4, 7 become 2, 3, 4, 3, respectively. Hence, `length % 5 > 1`
 
 # Summary
 
