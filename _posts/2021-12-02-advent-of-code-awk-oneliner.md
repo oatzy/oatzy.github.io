@@ -306,6 +306,18 @@ Pretty straightforward.
 
 What's interesting is using modulo to squash a bunch of case checks. In essence, the task is to count the number of strings of length 2, 3, 4, or 7. From the puzzle description, we note that the only other possible lengths are 5 and 6. So, if we take the length modulo 5 -- 5 and 6 become 0 and 1, and 2, 3, 4, 7 become 2, 3, 4, 3, respectively. Hence, `length % 5 > 1`
 
+# Bonus: Day 10
+
+By far the longest, it doesn't even fit in a tweet - 305 characters
+
+```python
+BEGIN{FS="";p=" ()[]{}<>";c[")"]=3;c["]"]=57;c["}"]=1197;c[">"]=25137}{o=0;for(i=1;i<=NF;i++){if($i in c){if(substr(p,index(p,s[o])+1,1)==$i)o--;else{a+=c[$i];o=0;break}}else s[++o]=$i}t=0;while(o)t=5*t+index(p,s[o--])/2;if(t){for(j=0;j<n;j++)if(t<b[j]){x=b[j];b[j]=t;t=x};b[n++]=t}}END{print a,b[n/2-.5]}
+```
+
+The problem involves bracket matching. Initially, I thought this would not be possible in awk with its 'so-called' arrays (acutally mappings), which lack 'push' and 'pop' operations. But I had a moment of inspiration, and realised one can store items by an incremental index and use a 'pointer' to track the head of the 'stack' and simulate popping.
+
+Also buried in there somewhere is a little insertion sort, since part two requires finding the _middle_ value in a list (never easy).
+
 # Summary
 
 I want to be clear that I'm no awk expert; I only dabble by way of using bash for work. Maybe someone else can golf these down even further.
