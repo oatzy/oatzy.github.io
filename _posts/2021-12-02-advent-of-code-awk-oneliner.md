@@ -308,10 +308,10 @@ What's interesting is using modulo to squash a bunch of case checks. In essence,
 
 # Bonus: Day 10
 
-By far the longest, it doesn't even fit in a tweet - 305 characters
+By far the longest, but still fits in a tweet - 257 characters
 
 ```python
-BEGIN{FS="";p=" ()[]{}<>";c[")"]=3;c["]"]=57;c["}"]=1197;c[">"]=25137}{o=0;for(i=1;i<=NF;i++){if($i in c){if(substr(p,index(p,s[o])+1,1)==$i)o--;else{a+=c[$i];o=0;break}}else s[++o]=$i}t=0;while(o)t=5*t+index(p,s[o--])/2;if(t){for(j=0;j<n;j++)if(t<b[j]){x=b[j];b[j]=t;t=x};b[n++]=t}}END{print a,b[n/2-.5]}
+BEGIN{FS=""}{o=0;for(i=1;i<=NF;i++){w=index("([{<)]}>",$i);if(w>4){if(s[o]==w-4)o--;else{a+=w==5?3:w==6?57:w==7?1197:25137;o=0;break}}else s[++o]=w}t=0;while(o)t=5*t+s[o--];if(t){for(j=0;j<n;j++)if(t<b[j]){x=b[j];b[j]=t;t=x};b[n++]=t}}END{print a,b[n/2-.5]}
 ```
 
 The problem involves bracket matching. Initially, I thought this would not be possible in awk with its 'so-called' arrays (acutally mappings), which lack 'push' and 'pop' operations. But I had a moment of inspiration, and realised one can store items by an incremental index and use a 'pointer' to track the head of the 'stack' and simulate popping.
