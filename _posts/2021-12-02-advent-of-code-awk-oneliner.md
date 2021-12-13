@@ -318,6 +318,18 @@ The problem involves bracket matching. Initially, I thought this would not be po
 
 Also buried in there somewhere is a little insertion sort, since part two requires finding the _middle_ value in a list (never easy).
 
+# Bonus: Day 13
+
+I got a solution for part 1 using 89 chars of awk, by using a cheeky `tac` (110 chars total)
+
+```bash
+tac "$@" | awk -F, '/=/{split($1,a,"=");d=a[2];i=$0~/x/?1:2}NF>1{d<$i?$i=2*d-$i:0;t+=!s[$1,$2]++}END{print t}'
+```
+
+I have a pure awk solution to both parts, but it's 247 chars (you can see it in my GitHub)
+
+For the above, I'd especially like to highlight `t+=!s[$1,$2]++`, just for the fact it's doing, like, 3 things at once.
+
 # Summary
 
 I want to be clear that I'm no awk expert; I only dabble by way of using bash for work. Maybe someone else can golf these down even further.
