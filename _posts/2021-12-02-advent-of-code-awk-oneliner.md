@@ -330,6 +330,14 @@ I have a pure awk solution to both parts, but it's 247 chars (you can see it in 
 
 For the above, I'd especially like to highlight `t+=!s[$1,$2]++`, just for the fact it's doing, like, 3 things at once.
 
+# Bonus: Day 17
+
+Finally, my physics degree pays off! (part 1 only, 36 chars)
+
+```python
+BEGIN{FS="=|\\."}{print $5*($5+1)/2}
+```
+
 # Summary
 
 I want to be clear that I'm no awk expert; I only dabble by way of using bash for work. Maybe someone else can golf these down even further.
