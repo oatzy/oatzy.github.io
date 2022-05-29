@@ -9,7 +9,7 @@ tags:
 - biographical
 - data structures
 - apgorithms
-modified_time: '2022-05-29T00:20:00.000+01:00'
+modified_time: '2022-05-29T13:05:00.000+01:00'
 ---
 
 # Spring cleaning
@@ -105,6 +105,26 @@ This, again, is more aesthetically pleasing than a mostly empty page.
 What’s the average moves per insert? Answers on the back of a postcard.
 
 Of course, the main drawback is that the album is, on average, 50% full. Which isn’t very efficient.
+
+# Placement
+
+Up to this point, I've assumed that if there are multiple free slots that I card could go in, I would choose the first.
+
+For example, if we have `1, E, E, E, 5` and want to insert 3, we would probably put it in the first available slot - `1, 3, E, E, 5`
+
+But if we later want to add 2, now we have to move the 3 we already placed.
+
+![Grouped insert](/assets/pokemon/grouped-insert.png)
+
+So an improvement to this would be to instead place the 3 in the second empty slot - `1, E, 3, E, 5` - then when we come to insert 2, we don't have to move anything.
+
+![Spaced insert](/assets/pokemon/spaced-insert.png)
+
+In real life, the cards aren't likely to be so evenly spaced out, but we can at least place the card at a relative position, i.e. 3 goes roughly half way between 1 and 5.
+
+Possible downside to this approach is it will tend to scatter the cards, which may look messy. On the other hand, it may look better to have them more evenly spaced.
+
+It's also possible that it would require more moves when compacting.
 
 # Algorithm, I choose you!
 
