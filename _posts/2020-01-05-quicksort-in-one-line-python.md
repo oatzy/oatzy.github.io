@@ -124,7 +124,7 @@ def qs(l): l and ...
 
 Tho, that doesn't 'feel' quite right. And linters would probably tell you to insert a line break anyway.
 
-Really, lambdas should only be used for defining a function that you're directly passing to another function e.g.
+Really, lambdas should only be [used](https://www.scaler.com/topics/python/lambda-and-anonymous-function-in-python/) for defining a function that you're directly passing to another function e.g.
 
 ```python
 sorted(lst, key=lambda x: x.lower())
