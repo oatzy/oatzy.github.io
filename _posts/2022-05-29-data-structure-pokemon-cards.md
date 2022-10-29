@@ -8,7 +8,7 @@ tags:
 - pokemon
 - biographical
 - data structures
-- apgorithms
+- algorithms
 modified_time: '2022-05-29T13:05:00.000+01:00'
 ---
 
