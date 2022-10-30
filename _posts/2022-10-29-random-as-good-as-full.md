@@ -94,6 +94,8 @@ This feels wrong. And yet, a simulation shows it to be true.
 
 ![Simulated random sampling vs refresh all](/assets/refresh-plot.png)
 
+The above graph shows the number of tasks in unknown state `U` over time. Initial population `N=100,000`, job run rate `n=40`, and random sample size `k=1,000`
+
 Sure, the random sampling is slower to update progress at the start. But as the number of tasks waiting to be update (in state `R`) accumulates, the hit rate for random sampling increases, ultimately converging on the same completion time as refreshing all.
 
 And going back to the original problem, refreshing 1,000 tasks is significantly faster than refreshing +100K, which gives us more frequent updates. So in a practical sense, the random sampling may actually report progress faster than refreshing all!
