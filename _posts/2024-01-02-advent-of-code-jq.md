@@ -341,6 +341,8 @@ For this we have the handy [explode](https://jqlang.github.io/jq/manual/#explode
 
 Finding where (and when) the paths collide can be [found algebraically](https://github.com/oatzy/advent_of_code_2023/blob/main/day24-part1.png).
 
+Having said that, translating said algebraic solution into jq was horrendous. Seriously, that script should come with a content warning :p
+
 jq-wise, we have the convenient [combinations](https://jqlang.github.io/jq/manual/#combinations) function to generate all the pairs of hailstones. You just need to remove self-pairs and reverse pairs
 
 ```jsx
