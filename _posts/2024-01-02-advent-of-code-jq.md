@@ -8,7 +8,7 @@ tags:
 - advent of code
 - jq
 - maths
-modified_time: '2024-01-02T19:30:00.000+00:00'
+modified_time: '2024-01-03T13:02:00.000+00:00'
 ---
 
 Advent of Code [2022](https://github.com/oatzy/advent_of_code_2022) was a bit of a miss for me. After getting all the stars in [2021](https://github.com/oatzy/advent_of_code_2021), I didn't have quite the same drive, and gave up after day 10. Besides which, I had something more compelling to do - making [crochet Christmas ornaments](https://www.ravelry.com/projects/oatzy/snowman-baubles).
@@ -93,7 +93,22 @@ My experience with functional programming is all that passes for FP in python, a
 
 The thing that took some adjusting to is not having a for-loop, but rather having to think in terms of recursion.
 
-Also assignment and mutation is not so straightforward.
+Also mutation is not so straightforward. I only used it once.
+
+## Assignment
+
+Variables can be assigned in the middle of a pipeline, for example
+
+```jsx
+$ echo '[1,2,3,4,5]' | jq '(length | debug) as $l | debug | add / $l'
+["DEBUG:",5]
+["DEBUG:",[1,2,3,4,5]]
+3
+```
+
+It's not needed in that example, but you get the idea. It allows you to perform some calculation on the current value and capture that into a variable. It then passes along the original current value unchanged.
+
+This is convenient if a value needs to be reused, or just to make the code more readable
 
 ## Debugging
 
