@@ -100,6 +100,8 @@ Anyway. Quite time consuming, but not a bad way to pass the time while watching 
 
 If you have a ravelry account, you can follow my progress [here](https://www.ravelry.com/projects/oatzy/temperature-blanket).
 
+**UPDATE**: [the completed blanket](https://oatzy.github.io/2024/01/10/2024-01-10-temperature-blanket-completed.html)
+
 Chris.
 
 [spot the heatwave]

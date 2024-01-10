@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Temperature Blanket: Completed
+title: Temperature Blanket - Completed
 date: '2024-01-10T18:14:00.000+00:00'
 author: Chris Oates
 tags:
