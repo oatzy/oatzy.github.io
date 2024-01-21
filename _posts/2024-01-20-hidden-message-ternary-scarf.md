@@ -349,11 +349,11 @@ I didn't do an example for the squares because that would have required cutting 
 
 # Footnotes
 
-[^1] For the common-ness of letters I [copied Morse code](https://en.wikipedia.org/wiki/Morse_code#Alternative_display_of_common_characters_in_International_Morse_code), which isn't strictly accurate to the English language. Tho it should be said that any frequency mapping is not going to be universally correct. It depends on the text it's calculated from. Tho they do tend to align at the extremes.
+[^1]: For the common-ness of letters I [copied Morse code](https://en.wikipedia.org/wiki/Morse_code#Alternative_display_of_common_characters_in_International_Morse_code), which isn't strictly accurate to the English language. Tho it should be said that any frequency mapping is not going to be universally correct. It depends on the text it's calculated from. Tho they do tend to align at the extremes.
 
-[^2] Naturally we can extend this to groups of 3 letters, groups of N letters, or whole words. But let's not get carried away ;)
+[^2]: Naturally we can extend this to groups of 3 letters, groups of N letters, or whole words. But let's not get carried away ;)
 
-[^3] Fun fact, even tho there are `27 * 27 = 729` possible pairs of 3 digit codes, if we ignore permutations, there are only 7 unique partitions of 6 digits into 3 types, and therefore only 7 entropies to calculate
+[^3]: Fun fact, even tho there are `27 * 27 = 729` possible pairs of 3 digit codes, if we ignore permutations, there are only 7 unique partitions of 6 digits into 3 types, and therefore only 7 entropies to calculate
 
 ```jsx
 600 -> 0
@@ -365,11 +365,11 @@ I didn't do an example for the squares because that would have required cutting 
 222 -> 1
 ```
 
-[^4] there are at least two optimal solutions; for any given solution, we can swap the 1s with the 2s and get another mapping with the exact same score. We can't do the same with 0s since we pinned the white space character as `000`, otherwise there would be 6 equivalents for each solution.
+[^4]: there are at least two optimal solutions; for any given solution, we can swap the 1s with the 2s and get another mapping with the exact same score. We can't do the same with 0s since we pinned the white space character as `000`, otherwise there would be 6 equivalents for each solution.
 
-[^5] as mentioned in footnote 1, the frequency encoding in this blog is based on Morse code. An encoding based on measured letter frequencies scores `0.62144`; better than Morse, but still less than 'optimal'
+[^5]: as mentioned in footnote 1, the frequency encoding in this blog is based on Morse code. An encoding based on measured letter frequencies scores `0.62144`; better than Morse, but still less than 'optimal'
 
-[^6] This mapping was a close second
+[^6]: This mapping was a close second
 
 ```bash
 a -> 120   b -> 211   c -> 011
@@ -385,4 +385,4 @@ y -> 221   z -> 222
 
 Its score is `4 x 10^-16` less than the 'optimal'. But notice, if you swap all the 1s for 2s and vice versa in the optimal mapping you get this mapping! This is actually expected, per footnote 4. The difference in scores is probably a floating point rounding quirk.
 
-[^7] I think you would call that.. little-endian? I could never remember which is which
+[^7]: I think you would call that.. little-endian? I could never remember which is which
