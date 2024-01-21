@@ -165,19 +165,19 @@ For 'balance' we can use [entropy](https://en.wikipedia.org/wiki/Entropy_(inform
 
 where `n0` is the number of `0` digits, etc. [^3]
 
-For example, in worst case scenario, all digits the same, we get
+For example, in the worst case scenario, where all the digits are the same, we get
 
 ```jsx
 6/6 * log3(6/6) + 0 + 0 = log3(1) = 0
 ```
 
-and in the best case, two of each digit, we get
+and in the best case, with two of each digit, we get
 
 ```jsx
 3 * ( -2/6 * log3(2/6) ) = (3 * -1/3) * log3(1/3) = -1 * -1 = 1
 ```
 
-So now we can smash (multiple) the balance score together with the spread score to get a combined score for a given pair of codes, e.g.
+So now we can smash (multiply) the balance score together with the spread score to get a combined score for a given pair of codes, e.g.
 
 ```jsx
 s(121, 102) = (4/5) * (log3(6)/6 + log3(2)/2 + log3(3)/3)
@@ -189,9 +189,9 @@ Now we have to take into account how those codes are assigned to actual letter p
 
 Similar to how we can calculate the frequency of individual letters in the English language - by counting occurences in a text - we can also calculate the frequency of letter pairs in English.
 
-We can use these frequencies as a weighting, by multipling the letter pair frequency by the score of the assigned codes.
+We can then use these frequencies as a weighting, by multipling the letter pair frequency by the score of the assigned codes.
 
-So if we come up with a possible mapping, calculate the score for each possible letter pair and take the sum, we can calculate the total score for that mapping
+So if we come up with a possible mapping, we can calculate the score for each possible letter pair and take the sum, giving us the total score for that mapping
 
 ```jsx
 total score = sum [ f(c_i, c_j) * s(c_i, c_j) ]
@@ -202,6 +202,8 @@ For example, in the `A=1` encoding, we would calculate
 ```jsx
 total score = f(a, a) * s(001, 001) + f(a, b) * s(001, 002) + ... + f(z, z) * s(222, 222)
 ```
+
+This is our metric for comparing and finding the best encoding.
 
 # The best enough
 
