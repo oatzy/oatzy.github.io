@@ -355,15 +355,15 @@ I didn't do an example for the squares because that would have required cutting 
 
 [^3]: Fun fact, even tho there are `27 * 27 = 729` possible pairs of 3 digit codes, if we ignore permutations, there are only 7 unique partitions of 6 digits into 3 types, and therefore only 7 entropies to calculate
 
-```jsx
-600 -> 0
-510 -> 0.410
-420 -> 0.579
-411 -> 0.790
-330 -> 0.631
-321 -> 0.921
-222 -> 1
-```
+    ```jsx
+    600 -> 0
+    510 -> 0.410
+    420 -> 0.579
+    411 -> 0.790
+    330 -> 0.631
+    321 -> 0.921
+    222 -> 1
+    ```
 
 [^4]: there are at least two optimal solutions; for any given solution, we can swap the 1s with the 2s and get another mapping with the exact same score. We can't do the same with 0s since we pinned the white space character as `000`, otherwise there would be 6 equivalents for each solution.
 
@@ -371,18 +371,18 @@ I didn't do an example for the squares because that would have required cutting 
 
 [^6]: This mapping was a close second
 
-```bash
-a -> 120   b -> 211   c -> 011
-d -> 212   e -> 012   f -> 112
-g -> 022   h -> 021   i -> 202
-j -> 200   k -> 002   l -> 010
-m -> 110   n -> 101   o -> 210
-p -> 220   q -> 111   r -> 102
-s -> 121   t -> 201   u -> 020
-v -> 001   w -> 122   x -> 100
-y -> 221   z -> 222
-```
+    ```bash
+    a -> 120   b -> 211   c -> 011
+    d -> 212   e -> 012   f -> 112
+    g -> 022   h -> 021   i -> 202
+    j -> 200   k -> 002   l -> 010
+    m -> 110   n -> 101   o -> 210
+    p -> 220   q -> 111   r -> 102
+    s -> 121   t -> 201   u -> 020
+    v -> 001   w -> 122   x -> 100
+    y -> 221   z -> 222
+    ```
 
-Its score is `4 x 10^-16` less than the 'optimal'. But notice, if you swap all the 1s for 2s and vice versa in the optimal mapping you get this mapping! This is actually expected, per footnote 4. The difference in scores is probably a floating point rounding quirk.
+    Its score is `4 x 10^-16` less than the 'optimal'. But notice, if you swap all the 1s for 2s and vice versa in the optimal mapping you get this mapping! This is actually expected, per footnote 4. The difference in scores is probably a floating point rounding quirk.
 
 [^7]: I think you would call that.. little-endian? I could never remember which is which
