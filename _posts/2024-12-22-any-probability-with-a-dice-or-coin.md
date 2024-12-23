@@ -202,7 +202,7 @@ Okay, now we've covered everything. Right?
 
 _"But wait..."_, you say, _"what about irrational probabilities?"_
 
-_"Oh..."_, I say, _"right..."_ :|
+_"Oh..."_, I say, _"right..."_ :/
 
 An irrational probability would be something like `1/pi` or `1/e`. Can we roll that with a six-sided dice?
 
