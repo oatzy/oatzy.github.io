@@ -8,7 +8,7 @@ tags:
 - probability
 - pokemon
 - pokemon tcg pocket
-modified_time: '2025-04-08T23:20:00.000+00:00'
+modified_time: '2025-08-03T14:18:00.000+00:00'
 ---
 
 When Pokemon first took the world by storm, I was 8 years old. Which is to say, I was the perfect age for it. And I was WAY into it.
@@ -61,6 +61,9 @@ For that reason, this method is too unreliable to take into account.
 ## Trade
 
 The trade feature is trash, and we won’t dignify it with further discussion.
+
+_[edit]_: In August 2025, the trade feature was significantly improved with the introduction of wishlists.
+This potentially helps with obtaining the one star cards, tho it's still not possible to trade two star cards.
 
 ## Pack Points
 
