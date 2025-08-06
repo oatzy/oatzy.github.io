@@ -8,7 +8,7 @@ tags:
 - probability
 - pokemon
 - pokemon tcg pocket
-modified_time: '2025-08-06T19:00:00.000+00:00'
+modified_time: '2025-08-06T20:00:00.000+00:00'
 ---
 
 # Champion

@@ -184,7 +184,7 @@ But, if I do pull a one star card, I won’t need to buy it with pack points, so
 
 How many boosters should I expect to open before I either pull all the cards, or else have enough points to buy the cards I haven’t pulled yet?
 
-This is more difficult to calculate from pure probability, so I used a [simulation](https://en.wikipedia.org/wiki/Monte_Carlo_method) instead — [source code here](https://github.com/oatzy/pokemon-tcg-pocket-sim).
+This is more difficult to calculate from pure probability, so I used a [simulation](https://en.wikipedia.org/wiki/Monte_Carlo_method) instead — [source code here](https://github.com/oatzy/pokemon-tcg-pocket-sim/tree/main/scripts).
 
 The results looks like this
 
