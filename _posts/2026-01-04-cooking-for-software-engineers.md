@@ -111,7 +111,9 @@ Once you have your timeline, you can rewrite the recipe in this new ordering, or
 
 The process I described is 'fairly' mechanical, so it seems natural to try and code it up.
 
-You can see my attempt here - https://github.com/oatzy/recipe-optimiser
+You can see my attempt here - [https://github.com/oatzy/recipe-optimiser](https://github.com/oatzy/recipe-optimiser/tree/pre-claude)
+
+*[edit]* - I've since made some changes to the code using AI (see the follow-up post). The above link is to a tag of the repo as it existed when I wrote this post.
 
 It... kind of works. It could be better. (Remember when I said it's not an exact science)
 
