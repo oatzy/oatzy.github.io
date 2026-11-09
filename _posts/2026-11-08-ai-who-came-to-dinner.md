@@ -28,7 +28,7 @@ I rarely write code outside of work.
 
 And when I do, it's rarely for coding's own sake ([Advent](https://oatzy.github.io/2020/12/06/advent-of-code-2020-python-oneliners.html) [of](https://oatzy.github.io/2021/12/02/advent-of-code-awk-oneliner.html) [Code](https://oatzy.github.io/2024/01/02/advent-of-code-jq.html) notwithstanding). Rather, I'll have some idea, a 'Question Nobody Asked' if you will, and code is just a means to an end.
 
-When I thought about what I might do with a personal AI account, I thought back to past blogs - all the times I left something open-ended because I was too lazy to finish it off. I thought about the [gravity game](https://oatzy.github.io/2015/02/23/designing-general-relativity-based.html) that I designed but never built, in particular.
+When I thought about what I might do with a personal AI account, I thought back to past blogs - all the times I left something as 'an exercise for the reader' because I was too lazy to finish it off myself. I thought about the [gravity game](https://oatzy.github.io/2015/02/23/designing-general-relativity-based.html) that I designed but never built, in particular.
 
 I also thought about the very last post here, and when I tried to have a local AI parse a recipe into json. And failed miserably.
 
@@ -69,7 +69,7 @@ Times from the recipe: softening the onion (5), the garlic (1) and the simmer (1
 
 Then my professional developer brain kicked in, and said that I (Claude) should do the tidy-up it suggested (Tests! Docs! In this economy?) 
 
-Actually, that made a good basis for the next step - trying the brute-force idea I floated in the post. The unit tests encode the 'rules' of the optimiser, so that the brute-force approach can be tested for correctness and consistency.
+Actually, that made a good basis for the next step - trying the brute-force idea I floated in the post. The unit tests encode the 'rules' of the optimiser, so that the brute-force approach can be tested for correctness against the existing method.
 
 **> let's try the brute force approach and see how it compares**
 
@@ -101,7 +101,7 @@ This is an approach I wouldn't have tried without AI, because I'm too lazy to le
 
 The key thing about a [SAT-solver](https://en.wikipedia.org/wiki/SAT_solver) is it can find a 'provably' most optimal solution (if one exists), and it does it a lot faster than brute-force.
 
-As it turns out, when using the SAT-solver, the *total* cooking time for the sample recipes still comes out at about the same as my heuristic method; but the SAT is able to arrange steps so that there's less waiting around.
+As it turns out, when using the SAT-solver, the *total* cooking time for the sample recipes still comes out at about the same as my heuristic method; but SAT is able to arrange steps so that there's less waiting around.
 
 In the repo, the SAT-solver replaced the brute-force code, but the brute-force is still viewable at this [commit](https://github.com/oatzy/recipe-optimiser/commit/82217816e70236429a38070ae8c13b4895b69faa)
 
