@@ -30,6 +30,7 @@ This folder is underscore-prefixed so Jekyll doesn't publish it; Hugo ignores it
    - blogspot post links → github.io URLs via `blogger_orig_url`
    - Dropbox `/s/`, `/sh/`: download, commit to `question-nobody-asked/<post-slug>/`, rewrite links; flag failures
    - Dropbox `/u/`: list filenames for Chris to supply from Dropbox, then copy + rewrite
+   - **Update 2026-11-14:** Chris shared his Dropbox folder (link not stored here, it's in his Dropbox / ask him). All 82 links matched: see `_migration/dropbox-map.tsv` (post, old URL, file path in that folder). The 3 `/sh/` folder shares map to `android-wear/`, `gravity/`, `zooper-templates/autumn-theme/`. `time/index1.htm` is a page that needs its sibling js/css copied with it. 60 files in the folder aren't linked from any post (mostly old pirate-game APKs, Unity Centre site), so ask before copying those.
    - external links: lychee dead-link report; suggest Wayback snapshots, apply only approved ones
 5. **Theme**: small custom theme, one CSS file, orange accent/link colour via CSS vars, no sidebar. Header logo + title inside home link; nav: Home, About, Archive, Tags, Search, RSS. Home = cards for latest N posts (title, date, summary, thumbnail), archive for the rest. Pagefind search page.
 6. **Maths**: MathJax 3 only on pages with maths, via Hugo math passthrough. Verify existing maths posts.
