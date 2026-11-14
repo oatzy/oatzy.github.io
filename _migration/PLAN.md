@@ -38,7 +38,7 @@ This folder is underscore-prefixed so Jekyll doesn't publish it; Hugo ignores it
 ## Status
 
 - [x] 0 Baseline (see `baseline/README.md`)
-- [ ] 1 Images
+- [x] 1 Images: 524 unique images (34 MB, all original size) in `static/images/`, 913 post URLs mapped in `image-map.tsv`. 1 lost: `christmas-eve-graph.png` (2011-12-24-christmas-eve), 404 on Blogger and the live blogspot post, no Wayback copy. 16 non-Blogger images listed in `other-images.tsv` for phase 4. Script: `scripts/fetch_blogger_images.py` (re-runnable).
 - [ ] 2 Hugo swap
 - [ ] 3 HTML → md
 - [ ] 4 Links
