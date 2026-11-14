@@ -43,7 +43,3 @@ disableKinds = ["taxonomy", "term", "section", "rss", "sitemap"]
 
 [outputs]
   home = ["html", "atom", "feed"]
-
-[security]
-  # Blogger posts are .html content files until phase 3 converts them to markdown.
-  allowContent = ['^text/(html|markdown)$']

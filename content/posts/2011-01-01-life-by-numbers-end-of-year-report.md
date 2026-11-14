@@ -13,9 +13,199 @@ tags:
 - twitter
 - tweets
 modified_time: '2011-01-01T16:18:34.966-08:00'
-thumbnail: http://1.bp.blogspot.com/_p_IGrzjF6JY/TR-P7HXZAUI/AAAAAAAAAb0/27fu5Hy2gp0/s72-c/4mapper.jpg
+thumbnail: /images/life-by-numbers-end-of-year-report/4mapper.jpg
 blogger_id: tag:blogger.com,1999:blog-14769935.post-83601688692204970
 blogger_orig_url: https://oatzy.blogspot.com/2011/01/life-by-numbers-end-of-year-report.html
 ---
 
-<b>General</b><br /><br />Age: <i>21</i><br />DOB: <i>18/01/89</i><br />Height: <i>6ft 2.5</i><br />Weight: <i>11st 10</i><br /><a href="http://www.wolframalpha.com/input/?i=male+21yo+6ft+2.5in+11st+10lb">BMI</a>: <i>20.8</i><br /><br /><b><br />Lifestyle &amp; Money</b><br /><br />Average night's sleep: <i>8hrs 34</i><br />Typically asleep between <i>2:30am</i> and <i>11am </i><br />Minimum sleep duration: <i>5.5hrs</i><br />Maximum: <i>11hrs</i><br /><br />Job interviews: <i>1</i><br />Jobs: <i>0</i><br />Job Seeker's Allowance received: <i>£1,660.88</i><br /><br />Major expenditures:<br />Acer Aspire 5542 - <i>£430</i><br />HTC Desire - <i>£150</i> up front (+ £20/month)<br />Two nights at <a href="http://www.hotel53.com/">Hotel 53</a> (Valentines weekend) - <i>£264</i><br /><br />Monthly subscriptions, Jan 2010: <i>£49.99</i><br />Current monthly subscriptions: <i>£33.98 </i><br /><br />Total spend on Amazon.co.uk - <i>£231.77</i><br /><br />Overdrawn: <i>3 times</i><br />Maximum: <i>-£17.52</i><br /><br />Net change in bank balance*: <i>-£59.24</i><br />Net worth as of 31/12/10: £715.<i>87</i><br /><br />Dog walks: <i>1</i><br />Visits to the gym: <i>2</i><br />1 new pair of Adidas trainers; Used twice.<br />1 new pair of Converse, black.<br /><br /><br /><b>Entertainment</b><br /><br />Most listened to artist: <i>Pink Floyd</i><br />Most listened to song: <i><a href="http://open.spotify.com/track/2zQiaIAa5fEtSZZegoaEMO">Change</a> by Karnivool</i><br />Most listened to album: <i><a href="http://open.spotify.com/album/5eGiOj9BPyPAxxg4phpMz4">Sound Awake</a> by Karnivool</i><br /><br />Books read cover to cover: <i>4</i><br />* Chuck Palahniuk - <a href="http://www.amazon.co.uk/Survivor-Chuck-Palahniuk/dp/009928264X/ref=sr_1_1?ie=UTF8&amp;qid=1293919845&amp;sr=8-1">Survivor</a><br />* Chuck Palahniuk - <a href="http://www.amazon.co.uk/Snuff-Chuck-Palahniuk/dp/0099499371/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1293920059&amp;sr=1-1">Snuff</a><br />* Richard Bach - <a href="http://www.amazon.co.uk/Illusions-Adventures-Reluctant-Richard-Bach/dp/0099427869/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1293920087&amp;sr=1-1">Illusions</a><br />* Neil F. Johnson - <a href="http://www.amazon.co.uk/Simply-Complexity-Clear-Guide-Theory/dp/1851686304/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1293920128&amp;sr=1-1">Simple Complexity</a><br /><br />Books started but not finished: <i>7</i><br />Graphic novels read: <i>~12</i><br /><br />Films seen at the cinema: <i>3</i><br />* The Lovely Bones<br />* <a href="http://oatzy.blogspot.com/2010/08/inception-review.html">Inception</a><br />* Scott Pilgrim vs The World<br /><br />2010 released films seen: <i>6</i><br /><br />Films rented (<a href="http://www.lovefilm.com/">LoveFilm</a>): <i>10</i><br /><br />Words written for <a href="http://www.nanowrimo.org/eng/user/665862">NaNoWriMo</a>: <i>28,369</i><br />Percent to target: <i>56.7%</i><br /><br />Games bought: <i>2</i><br />* Pokémon SoulSilver<br />* Professor Layton and the Lost Future<br /><br /><br /><b>Food and Drink</b><br /><br />Average cups of tea per day: <i>3.35</i><br />Percent of all drinks that are tea: <i>53.5%</i><br /><br />Percent of all drinks that are alcoholic: <i>19.7%</i><br />Approximate average units per week: <i>13*</i><br /><br />Favourite alcoholic drink: <i>Whiskey (bourbon)</i><br />As percent of all alcoholic drinks: <i>52%</i><br /><i></i><br />Second most drank: <i>Wine (21%)</i><br /><br />Most frequently eaten animals*:<br />1 - Cow<br />2 - Chicken<br />3 - Pig<br /><br />Favourite meals:<br />1 - Ham and Cheese Sandwich (<i>4.25 a week</i>)<br />2 - Bolognese (<i>1 every 8 days</i>)<br />3 - Mixed Kebab &amp; Chips (<i>1 every ~9 days</i>)<br /><br />Favourite Snack: <i>Ice Cream</i><br />Average bowls per week: <i>2.65</i><br /><br />Beer festivals: <i>1</i><br />Visits to Cadbury Land:<i> 1</i><br /><br /><br /><b>Travel &amp; FourSquare</b><br /><br />Current Mayorships: <i>16</i><br />Badges: <i>15</i><br /><br />Percent of days checked-in on: <i>58.7%</i><br />Average number of 'days out' per week: <i>4</i><br />Average check-ins per 'day out' - <i>3.68</i><br /><br />Most frequently visited venue: <a href="http://foursquare.com/venue/2258481"><i>Costa Coffee (Parkgate)</i></a><br />Check-ins per week: <i>1.6</i><br /><br />Most frequently visited franchise: <i>Costa Coffee</i><br />Days out that include visiting a Costa: <i>~67%</i><br /><br />Check-in locations (via <a href="http://4mapper.appspot.com/?uid=446094">4mapper</a>):<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/_p_IGrzjF6JY/TR-P7HXZAUI/AAAAAAAAAb0/27fu5Hy2gp0/s1600/4mapper.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="150" src="http://1.bp.blogspot.com/_p_IGrzjF6JY/TR-P7HXZAUI/AAAAAAAAAb0/27fu5Hy2gp0/s320/4mapper.jpg" width="320" /></a></div>Local (red spot=home)<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/_p_IGrzjF6JY/TR-QFZfwcFI/AAAAAAAAAb4/ZfOkrsgxjPQ/s1600/4sq-local.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="195" src="http://4.bp.blogspot.com/_p_IGrzjF6JY/TR-QFZfwcFI/AAAAAAAAAb4/ZfOkrsgxjPQ/s320/4sq-local.png" width="320" /></a></div><br /><br />Long distance train journeys: <i>7</i><br /><i>4 x</i> Birmingham<br /><i>2 x</i> York<br /><i>1 x</i> Loughborough<br />Total cost: <i>£127.25</i><br /><br />Vintage train events visited: <i>2</i><br />Vintage train magazines appeared in*: <i>several</i>, unwittingly<br /><br /><br /><b>Twitter</b><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/_p_IGrzjF6JY/TR-QpjwJ5xI/AAAAAAAAAcE/GtUouGkTiU0/s1600/Total-tweets.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="118" src="http://4.bp.blogspot.com/_p_IGrzjF6JY/TR-QpjwJ5xI/AAAAAAAAAcE/GtUouGkTiU0/s400/Total-tweets.png" width="400" /></a></div><br />Total tweets (as of 31/12/10): <i>9091</i><br />Days online: <i>608</i><br />Average life-time tweet rate: <i>15 tweets/day</i><br />Average tweet rate over 2010: <i>30.5 tweets/day</i><br />Most tweets in a single day: <i>93 (on 08/09/10)</i><br /><br />Composition of tweets:<br /><i>34.3%</i> Replies<br /><i>5.46%</i> RTs<br /><i>0.35%</i> #FF<br /><br />Average tweet distribution over 1 day:<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/_p_IGrzjF6JY/TR-QbuAbXfI/AAAAAAAAAb8/CTouSAA1w8o/s1600/dist-hours.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="176" src="http://2.bp.blogspot.com/_p_IGrzjF6JY/TR-QbuAbXfI/AAAAAAAAAb8/CTouSAA1w8o/s320/dist-hours.jpg" width="320" /></a></div>New friends*: <i>28</i><br />Total foll/followers (as of 31/12/10): <i>57/120</i><br /><br />Most talked to <a href="http://oatzy.blogspot.com/2010/11/follow-up-twitter-bffs.html">friends</a>:<br />@<a href="http://twitter.com/#%21/aaangst">aaangst</a> (<i>3.69</i>)<br />@<a href="http://twitter.com/#%21/PkmnTrainerJ">PkmnTrainerJ</a> (<i>3.04</i>)<br />@<a href="http://twitter.com/#%21/SallyBembridge">SallyBembridge</a> (<i>3.01</i>)<br />@<a href="http://twitter.com/#%21/shinelikestars_">Shinelikestars_</a> (<i>2.26</i>)<br />@<a href="http://twitter.com/#%21/Aerliss">Aerliss</a> (<i>1</i>)<br /><br />Replies to the above 5 made up <i>27%</i> of all my tweets; <i>79%</i> of all replies.<br /><br />Tweets retweeted: <i>~1 in 26</i><br />Equivalent RTs per day: <i>1.17</i><br /><br /><br /><br /><b>Notes</b><br /><br />* Net change doesn't take into account cash and savings. Net worth does.<br />* based on an assumed average of 1.5 units per serving. <a href="http://en.wikipedia.org/wiki/Recommended_maximum_intake_of_alcoholic_beverages#Daily.2Fweekly_maximum_drinks">Recomended maximum intake</a>: 21 units/week.<br />* based on which animal the main meat constituent (of a meal) came from.<br />* no, I don't know which publications precisely.<br />* 'friends' here defined as a mutual follow. Though I would consider most of them friends, to varying degrees.<br /><br /><br />You can compare these numbers with those from August 31st <a href="http://oatzy.blogspot.com/2010/08/life-by-numbers.html">here</a>.<br /><br />Further stats on individual websites below. Due to various reasons there are limits on what data I actually have. So it's worth pointing out that following websites only cover the last -% of the year,<br /><br /><a href="http://daytum.com/oatzy">Daytum</a> - <i>80%</i><br /><a href="http://foursquare.com/oatz">FourSquare</a> - <i>74%</i><br /><a href="http://twitter.com/#%21/oatz">Twitter</a> (<a href="http://twoolr.com/twitter/statistics/Oatz">Twoolr</a>) - <i>66%</i><br /><br />Though the interesting thing about Twitter is that while the data I've got only covers <i>40%</i> of my total time on Twitter, it covers <i>81%</i> of my total tweets!<br /><br />Secondly, some of the details (datum in particular) is loose estimates - things are measured in 'serving' and imprecisely at that. FourSquare only logs places where I can and have checked-in - people's houses, or places not on FourSquare aren't logged.<br /><br />There are also things I didn't/couldn't track, which I might consider in future. For example local trains and buses I don't get tickets for because I travel for free. DVDs, I can remember which I've bought this year, and films I can't remember precisely what I've seen. Cash transactions I didn't track. And so on.<br /><br />The question is ultimately whether I care enough about having the record to bother to put in the extra effort. That remains to be seen. It's a very fine balance between detail and sanity.<br /><br /><br />Oatzy.
+**General**
+
+Age: *21*\
+DOB: *18/01/89*\
+Height: *6ft 2.5*\
+Weight: *11st 10*\
+[BMI](http://www.wolframalpha.com/input/?i=male+21yo+6ft+2.5in+11st+10lb): *20.8*
+
+**Lifestyle & Money**
+
+Average night's sleep: *8hrs 34*\
+Typically asleep between *2:30am* and *11am*\
+Minimum sleep duration: *5.5hrs*\
+Maximum: *11hrs*
+
+Job interviews: *1*\
+Jobs: *0*\
+Job Seeker's Allowance received: *£1,660.88*
+
+Major expenditures:\
+Acer Aspire 5542 - *£430*\
+HTC Desire - *£150* up front (+ £20/month)\
+Two nights at [Hotel 53](http://www.hotel53.com/) (Valentines weekend) - *£264*
+
+Monthly subscriptions, Jan 2010: *£49.99*\
+Current monthly subscriptions: *£33.98*
+
+Total spend on Amazon.co.uk - *£231.77*
+
+Overdrawn: *3 times*\
+Maximum: *-£17.52*
+
+Net change in bank balance\*: *-£59.24*\
+Net worth as of 31/12/10: £715.*87*
+
+Dog walks: *1*\
+Visits to the gym: *2*\
+1 new pair of Adidas trainers; Used twice.\
+1 new pair of Converse, black.
+
+**Entertainment**
+
+Most listened to artist: *Pink Floyd*\
+Most listened to song: *[Change](http://open.spotify.com/track/2zQiaIAa5fEtSZZegoaEMO) by Karnivool*\
+Most listened to album: *[Sound Awake](http://open.spotify.com/album/5eGiOj9BPyPAxxg4phpMz4) by Karnivool*
+
+Books read cover to cover: *4*\
+\* Chuck Palahniuk - [Survivor](http://www.amazon.co.uk/Survivor-Chuck-Palahniuk/dp/009928264X/ref=sr_1_1?ie=UTF8&qid=1293919845&sr=8-1)\
+\* Chuck Palahniuk - [Snuff](http://www.amazon.co.uk/Snuff-Chuck-Palahniuk/dp/0099499371/ref=sr_1_1?s=books&ie=UTF8&qid=1293920059&sr=1-1)\
+\* Richard Bach - [Illusions](http://www.amazon.co.uk/Illusions-Adventures-Reluctant-Richard-Bach/dp/0099427869/ref=sr_1_1?s=books&ie=UTF8&qid=1293920087&sr=1-1)\
+\* Neil F. Johnson - [Simple Complexity](http://www.amazon.co.uk/Simply-Complexity-Clear-Guide-Theory/dp/1851686304/ref=sr_1_1?s=books&ie=UTF8&qid=1293920128&sr=1-1)
+
+Books started but not finished: *7*\
+Graphic novels read: *~12*
+
+Films seen at the cinema: *3*\
+\* The Lovely Bones\
+\* [Inception](http://oatzy.blogspot.com/2010/08/inception-review.html)\
+\* Scott Pilgrim vs The World
+
+2010 released films seen: *6*
+
+Films rented ([LoveFilm](http://www.lovefilm.com/)): *10*
+
+Words written for [NaNoWriMo](http://www.nanowrimo.org/eng/user/665862): *28,369*\
+Percent to target: *56.7%*
+
+Games bought: *2*\
+\* Pokémon SoulSilver\
+\* Professor Layton and the Lost Future
+
+**Food and Drink**
+
+Average cups of tea per day: *3.35*\
+Percent of all drinks that are tea: *53.5%*
+
+Percent of all drinks that are alcoholic: *19.7%*\
+Approximate average units per week: *13\**
+
+Favourite alcoholic drink: *Whiskey (bourbon)*\
+As percent of all alcoholic drinks: *52%*\
+\
+Second most drank: *Wine (21%)*
+
+Most frequently eaten animals\*:\
+1 - Cow\
+2 - Chicken\
+3 - Pig
+
+Favourite meals:\
+1 - Ham and Cheese Sandwich (*4.25 a week*)\
+2 - Bolognese (*1 every 8 days*)\
+3 - Mixed Kebab & Chips (*1 every ~9 days*)
+
+Favourite Snack: *Ice Cream*\
+Average bowls per week: *2.65*
+
+Beer festivals: *1*\
+Visits to Cadbury Land: *1*
+
+**Travel & FourSquare**
+
+Current Mayorships: *16*\
+Badges: *15*
+
+Percent of days checked-in on: *58.7%*\
+Average number of 'days out' per week: *4*\
+Average check-ins per 'day out' - *3.68*
+
+Most frequently visited venue: [*Costa Coffee (Parkgate)*](http://foursquare.com/venue/2258481)\
+Check-ins per week: *1.6*
+
+Most frequently visited franchise: *Costa Coffee*\
+Days out that include visiting a Costa: *~67%*
+
+Check-in locations (via [4mapper](http://4mapper.appspot.com/?uid=446094)):
+
+[![](/images/life-by-numbers-end-of-year-report/4mapper.jpg)](/images/life-by-numbers-end-of-year-report/4mapper.jpg)
+
+Local (red spot=home)
+
+[![](/images/life-by-numbers-end-of-year-report/4sq-local.png)](/images/life-by-numbers-end-of-year-report/4sq-local.png)
+
+Long distance train journeys: *7*\
+*4 x* Birmingham\
+*2 x* York\
+*1 x* Loughborough\
+Total cost: *£127.25*
+
+Vintage train events visited: *2*\
+Vintage train magazines appeared in\*: *several*, unwittingly
+
+**Twitter**
+
+[![](/images/life-by-numbers-end-of-year-report/Total-tweets.png)](/images/life-by-numbers-end-of-year-report/Total-tweets.png)
+
+Total tweets (as of 31/12/10): *9091*\
+Days online: *608*\
+Average life-time tweet rate: *15 tweets/day*\
+Average tweet rate over 2010: *30.5 tweets/day*\
+Most tweets in a single day: *93 (on 08/09/10)*
+
+Composition of tweets:\
+*34.3%* Replies\
+*5.46%* RTs\
+*0.35%* \#FF
+
+Average tweet distribution over 1 day:
+
+[![](/images/life-by-numbers-end-of-year-report/dist-hours.jpg)](/images/life-by-numbers-end-of-year-report/dist-hours.jpg)
+
+New friends\*: *28*\
+Total foll/followers (as of 31/12/10): *57/120*
+
+Most talked to [friends](http://oatzy.blogspot.com/2010/11/follow-up-twitter-bffs.html):\
+@[aaangst](http://twitter.com/#%21/aaangst) (*3.69*)\
+@[PkmnTrainerJ](http://twitter.com/#%21/PkmnTrainerJ) (*3.04*)\
+@[SallyBembridge](http://twitter.com/#%21/SallyBembridge) (*3.01*)\
+@[Shinelikestars\_](http://twitter.com/#%21/shinelikestars_) (*2.26*)\
+@[Aerliss](http://twitter.com/#%21/Aerliss) (*1*)
+
+Replies to the above 5 made up *27%* of all my tweets; *79%* of all replies.
+
+Tweets retweeted: *~1 in 26*\
+Equivalent RTs per day: *1.17*
+
+**Notes**
+
+\* Net change doesn't take into account cash and savings. Net worth does.\
+\* based on an assumed average of 1.5 units per serving. [Recomended maximum intake](http://en.wikipedia.org/wiki/Recommended_maximum_intake_of_alcoholic_beverages#Daily.2Fweekly_maximum_drinks): 21 units/week.\
+\* based on which animal the main meat constituent (of a meal) came from.\
+\* no, I don't know which publications precisely.\
+\* 'friends' here defined as a mutual follow. Though I would consider most of them friends, to varying degrees.
+
+You can compare these numbers with those from August 31st [here](http://oatzy.blogspot.com/2010/08/life-by-numbers.html).
+
+Further stats on individual websites below. Due to various reasons there are limits on what data I actually have. So it's worth pointing out that following websites only cover the last -% of the year,
+
+[Daytum](http://daytum.com/oatzy) - *80%*\
+[FourSquare](http://foursquare.com/oatz) - *74%*\
+[Twitter](http://twitter.com/#%21/oatz) ([Twoolr](http://twoolr.com/twitter/statistics/Oatz)) - *66%*
+
+Though the interesting thing about Twitter is that while the data I've got only covers *40%* of my total time on Twitter, it covers *81%* of my total tweets!
+
+Secondly, some of the details (datum in particular) is loose estimates - things are measured in 'serving' and imprecisely at that. FourSquare only logs places where I can and have checked-in - people's houses, or places not on FourSquare aren't logged.
+
+There are also things I didn't/couldn't track, which I might consider in future. For example local trains and buses I don't get tickets for because I travel for free. DVDs, I can remember which I've bought this year, and films I can't remember precisely what I've seen. Cash transactions I didn't track. And so on.
+
+The question is ultimately whether I care enough about having the record to bother to put in the extra effort. That remains to be seen. It's a very fine balance between detail and sanity.
+
+Oatzy.

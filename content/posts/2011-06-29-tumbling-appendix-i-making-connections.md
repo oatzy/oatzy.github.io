@@ -15,9 +15,74 @@ tags:
 - network
 - tumblr
 modified_time: '2011-06-29T13:31:06.124-07:00'
-thumbnail: http://4.bp.blogspot.com/-MGQncfztrhw/TguF3stIdvI/AAAAAAAAAiI/v9WqPcql1jQ/s72-c/updated-model-flow1.png
+thumbnail: /images/tumbling-appendix-i-making-connections/updated-model-flow1.png
 blogger_id: tag:blogger.com,1999:blog-14769935.post-8970070352313300423
 blogger_orig_url: https://oatzy.blogspot.com/2011/06/tumbling-appendix-i-making-connections.html
 ---
 
-<b>Where Things Get Interesting</b><br /><br />Recall in <a href="http://oatzy.blogspot.com/2011/06/tumbling-part-three-stochastic-spread.html">Part 3</a> (under '<i>Notes and Improvements</i>'), I mentioned the possibility of creating graphs of <i>how</i> a post spreads - ie who reblogged who.<br /><br />As it turns out it was possible. And in fact, not that difficult.<br /><br />You can find the modified code <a href="http://dl.dropbox.com/u/4635169/tumblr.model.2.py">here</a>.<br /><br />In addition to the outputs the previous iteration generated, this updated version also creates a '<i>graph.csv</i>' file, which contains all the links between reblogging users. This file can then be imported into, for example, <a href="http://gephi.org/">Gephi</a>, to create a visualisation of the graph.<br /><br /><br /><b>Modified Model</b><br /><br />The updated model works thing like this<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-MGQncfztrhw/TguF3stIdvI/AAAAAAAAAiI/v9WqPcql1jQ/s1600/updated-model-flow1.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="320" src="http://4.bp.blogspot.com/-MGQncfztrhw/TguF3stIdvI/AAAAAAAAAiI/v9WqPcql1jQ/s320/updated-model-flow1.png" width="312" /></a></div>We have the set, <i>F</i>, of people who reblogged in the previous generation. For each of these users we iterate over their followers, with the reaction code as before.<br /><br />But we now have the addition that, if the follower reblogs, a new  property - <i>user.reblogged</i> - is set to the person they reblogged from. That (reblogging) user is then added to the temporary group <i>f_i</i> to be used in the next iteration.<br /><br />The simulation ends when <i>f_i</i> is empty - ie, no-one reblogs.<br /><br /><br /><b>Pretty as a Picture</b><br /><br />So, keeping the initial conditions the same as for <a href="http://oatzy.blogspot.com/2011/06/tumbling-part-three-stochastic-spread.html">Part 3</a>, here is an example output<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-XDkiDhDOsHQ/TgtlZ2L1-NI/AAAAAAAAAh0/NX-XJ6WK86E/s1600/sample-graph.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="241" src="http://1.bp.blogspot.com/-XDkiDhDOsHQ/TgtlZ2L1-NI/AAAAAAAAAh0/NX-XJ6WK86E/s320/sample-graph.png" width="320" /></a></div>And here if the accompanying '<i>spread over eccentricity</i>' graph.<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-F5gby81ODc8/TgtlhZgsPhI/AAAAAAAAAh4/0PyyyZ2rWds/s1600/sample-flow.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="207" src="http://4.bp.blogspot.com/-F5gby81ODc8/TgtlhZgsPhI/AAAAAAAAAh4/0PyyyZ2rWds/s400/sample-flow.png" width="400" /></a></div>Compare for those visualisations in <a href="http://oatzy.blogspot.com/2011/06/tumbling-part-one-some-background.html">Part 1</a><br /><br />I have to say, I am extremely pleased with this. I mean, just look at it! It's amazing.<br /><br />Here's another example<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-S8VX72k_0qQ/TgtlvC7olrI/AAAAAAAAAh8/6RkVjv8mpSs/s1600/sample-graph3.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="166" src="http://2.bp.blogspot.com/-S8VX72k_0qQ/TgtlvC7olrI/AAAAAAAAAh8/6RkVjv8mpSs/s320/sample-graph3.png" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-_PVhPr-wwLM/Tgtl1xTZPGI/AAAAAAAAAiA/eCfu3wbhRnY/s1600/sample-flow3.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="183" src="http://4.bp.blogspot.com/-_PVhPr-wwLM/Tgtl1xTZPGI/AAAAAAAAAiA/eCfu3wbhRnY/s400/sample-flow3.png" width="400" /></a></div>And finally, here's a graph for a population size, <i>N </i>= <i>20,000 &amp; f0 = 1,000</i><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-EYbBXh47AVA/TguLPDqR2BI/AAAAAAAAAiU/eb60p72wUmI/s1600/sample-graph5-1.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="309" src="http://3.bp.blogspot.com/-EYbBXh47AVA/TguLPDqR2BI/AAAAAAAAAiU/eb60p72wUmI/s320/sample-graph5-1.png" width="320" /></a></div>More reblogs overall, and lots more clustering in this case. Pretty awesome, right?<br /><br /><br /><b>Little Niggles</b><br /><br />The only things that really bother me now: <br /><br />1) The Like count seems a little high<br />This is probably a result of the distribution/variables chosen in creating approval thresholds.<br /><br />2) There's only a small number of reblogs coming from OP. <br />This relates to the '<i>reblogs from tags</i>' thing discussed in <a href="http://oatzy.blogspot.com/2011/06/tumbling-part-three-stochastic-spread.html">Part 3</a>.<br /><br />3) Small population<br />At some point, when I've got the time to run the simulation, I'd like to try it with larger populations/larger <i>f0</i><br /><br />But none of these things bother me too much, and I'm pleased with what I've got.<br /><br /><br />So that's basically that. <br /><br /><br />Oatzy.
+**Where Things Get Interesting**
+
+Recall in [Part 3](http://oatzy.blogspot.com/2011/06/tumbling-part-three-stochastic-spread.html) (under '*Notes and Improvements*'), I mentioned the possibility of creating graphs of *how* a post spreads - ie who reblogged who.
+
+As it turns out it was possible. And in fact, not that difficult.
+
+You can find the modified code [here](http://dl.dropbox.com/u/4635169/tumblr.model.2.py).
+
+In addition to the outputs the previous iteration generated, this updated version also creates a '*graph.csv*' file, which contains all the links between reblogging users. This file can then be imported into, for example, [Gephi](http://gephi.org/), to create a visualisation of the graph.
+
+**Modified Model**
+
+The updated model works thing like this
+
+[![](/images/tumbling-appendix-i-making-connections/updated-model-flow1.png)](/images/tumbling-appendix-i-making-connections/updated-model-flow1.png)
+
+We have the set, *F*, of people who reblogged in the previous generation. For each of these users we iterate over their followers, with the reaction code as before.
+
+But we now have the addition that, if the follower reblogs, a new property - *user.reblogged* - is set to the person they reblogged from. That (reblogging) user is then added to the temporary group *f_i* to be used in the next iteration.
+
+The simulation ends when *f_i* is empty - ie, no-one reblogs.
+
+**Pretty as a Picture**
+
+So, keeping the initial conditions the same as for [Part 3](http://oatzy.blogspot.com/2011/06/tumbling-part-three-stochastic-spread.html), here is an example output
+
+[![](/images/tumbling-appendix-i-making-connections/sample-graph.png)](/images/tumbling-appendix-i-making-connections/sample-graph.png)
+
+And here if the accompanying '*spread over eccentricity*' graph.
+
+[![](/images/tumbling-appendix-i-making-connections/sample-flow.png)](/images/tumbling-appendix-i-making-connections/sample-flow.png)
+
+Compare for those visualisations in [Part 1](http://oatzy.blogspot.com/2011/06/tumbling-part-one-some-background.html)
+
+I have to say, I am extremely pleased with this. I mean, just look at it! It's amazing.
+
+Here's another example
+
+[![](/images/tumbling-appendix-i-making-connections/sample-graph3.png)](/images/tumbling-appendix-i-making-connections/sample-graph3.png)
+
+[![](/images/tumbling-appendix-i-making-connections/sample-flow3.png)](/images/tumbling-appendix-i-making-connections/sample-flow3.png)
+
+And finally, here's a graph for a population size, *N* = *20,000 & f0 = 1,000*
+
+[![](/images/tumbling-appendix-i-making-connections/sample-graph5-1.png)](/images/tumbling-appendix-i-making-connections/sample-graph5-1.png)
+
+More reblogs overall, and lots more clustering in this case. Pretty awesome, right?
+
+**Little Niggles**
+
+The only things that really bother me now:
+
+1\) The Like count seems a little high\
+This is probably a result of the distribution/variables chosen in creating approval thresholds.
+
+2\) There's only a small number of reblogs coming from OP.\
+This relates to the '*reblogs from tags*' thing discussed in [Part 3](http://oatzy.blogspot.com/2011/06/tumbling-part-three-stochastic-spread.html).
+
+3\) Small population\
+At some point, when I've got the time to run the simulation, I'd like to try it with larger populations/larger *f0*
+
+But none of these things bother me too much, and I'm pleased with what I've got.
+
+So that's basically that.
+
+Oatzy.

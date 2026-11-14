@@ -41,7 +41,7 @@ This folder is underscore-prefixed so Jekyll doesn't publish it; Hugo ignores it
 - [x] 0 Baseline (see `baseline/README.md`)
 - [x] 1 Images: 524 unique images (34 MB, all original size) in `static/images/`, 913 post URLs mapped in `image-map.tsv`. 1 lost: `christmas-eve-graph.png` (2011-12-24-christmas-eve), 404 on Blogger and the live blogspot post, no Wayback copy. 16 non-Blogger images listed in `other-images.tsv` for phase 4. Script: `scripts/fetch_blogger_images.py` (re-runnable).
 - [x] 2 Hugo swap: Hugo 0.169.0 builds all baseline URLs except dead `/assets/main.css`, feeds match (entry ids kept), 138/140 posts text-identical (2 expected diffs). Not yet live: see `phase2-notes.md` cut-over steps (switch Pages source to GitHub Actions first).
-- [ ] 3 HTML → md
+- [x] 3 HTML → md: all 108 Blogger posts converted (pandoc 3.12.1, `scripts/blogger_to_md.py`). Rendered text identical apart from `...`→`…` (typographer); embeds, coloured/monospace text kept as raw HTML; images now local and full-size. See `phase3-notes.md` (spot-check list). Commit staged renames separately from the content.
 - [ ] 4 Links
 - [ ] 5 Theme / home / search
 - [ ] 6 MathJax

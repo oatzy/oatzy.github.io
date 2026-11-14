@@ -9,9 +9,17 @@ tags:
 - facebook
 - network
 modified_time: '2010-12-14T08:53:18.812-08:00'
-thumbnail: http://1.bp.blogspot.com/_p_IGrzjF6JY/TQegeJhAFlI/AAAAAAAAAa4/IE7xbwR_Nxc/s72-c/fb-preview.jpg
+thumbnail: /images/follow-up-facebook-friends/fb-preview.jpg
 blogger_id: tag:blogger.com,1999:blog-14769935.post-1679415112653213243
 blogger_orig_url: https://oatzy.blogspot.com/2010/12/follow-up-facebook-friends.html
 ---
 
-Every freaking time! I do something, like graph my <a href="http://oatzy.blogspot.com/2010/12/facebook-friends.html">Facebook friends</a>, and I'm one-up'd by Facebook going and doing this,<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/_p_IGrzjF6JY/TQegeJhAFlI/AAAAAAAAAa4/IE7xbwR_Nxc/s1600/fb-preview.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="274" src="http://1.bp.blogspot.com/_p_IGrzjF6JY/TQegeJhAFlI/AAAAAAAAAa4/IE7xbwR_Nxc/s320/fb-preview.jpg" width="320" /></a></div><br />Hardly seems fair, since FB has the data to plot everyone. And geographically. But there you go.<br /><br />Their explanation, and a hi-res version of the full image <a href="http://www.facebook.com/note.php?note_id=469716398919">here</a>.<br /><br /><br />Oatzy.
+Every freaking time! I do something, like graph my [Facebook friends](http://oatzy.blogspot.com/2010/12/facebook-friends.html), and I'm one-up'd by Facebook going and doing this,
+
+[![](/images/follow-up-facebook-friends/fb-preview.jpg)](/images/follow-up-facebook-friends/fb-preview.jpg)
+
+Hardly seems fair, since FB has the data to plot everyone. And geographically. But there you go.
+
+Their explanation, and a hi-res version of the full image [here](http://www.facebook.com/note.php?note_id=469716398919).
+
+Oatzy.
