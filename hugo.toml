@@ -1,0 +1,49 @@
+baseURL = "https://oatzy.github.io/"
+locale = "en-us"
+title = "Questions Nobody Asked.."
+# Tags/sections/sitemap come with the new theme in phase 5.
+disableKinds = ["taxonomy", "term", "section", "rss", "sitemap"]
+
+[params]
+  description = "Answering questions that nobody asked"
+
+[permalinks]
+  # Jekyll's /:year/:month/:day/:title.html (ugly URL adds .html); dates are stored in UTC to match.
+  posts = "/:year/:month/:day/:slug"
+
+[uglyURLs]
+  posts = true
+
+[frontmatter]
+  # URL date comes from front-matter `date`. Using ':filename' here only so Hugo
+  # takes the slug from the filename minus its date prefix, as Jekyll did.
+  publishDate = [":filename", ":default"]
+
+[markup.goldmark.renderer]
+  unsafe = true # posts contain raw HTML
+[markup.goldmark.extensions.passthrough]
+  enable = true
+  [markup.goldmark.extensions.passthrough.delimiters]
+    block = [["$$", "$$"], ["\\[", "\\]"]]
+    inline = [["\\(", "\\)"]]
+[markup.highlight]
+  noClasses = false # use the existing syntax.css
+
+[mediaTypes."application/atom+xml"]
+  suffixes = ["xml"]
+
+[outputFormats.atom]
+  mediaType = "application/atom+xml"
+  baseName = "atom"
+  rel = "alternate"
+[outputFormats.feed]
+  mediaType = "application/atom+xml"
+  baseName = "feed"
+  rel = "alternate"
+
+[outputs]
+  home = ["html", "atom", "feed"]
+
+[security]
+  # Blogger posts are .html content files until phase 3 converts them to markdown.
+  allowContent = ['^text/(html|markdown)$']

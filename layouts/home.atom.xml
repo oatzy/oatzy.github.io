@@ -1,0 +1,18 @@
+{{- /* All posts, full content. Entry ids are kept exactly as Jekyll wrote them (relative) so feed readers don't see every post as new. */ -}}
+{{ printf "<?xml version=\"1.0\" encoding=\"utf-8\"?>" | safeHTML }}
+<feed xmlns="http://www.w3.org/2005/Atom">
+ <title>{{ site.Title }}</title>
+ <link href="{{ "atom.xml" | absURL }}" rel="self"/>
+ <link href="{{ site.BaseURL }}"/>
+ <updated>{{ now.UTC.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
+ <id>{{ site.BaseURL }}</id>
+ {{ range where site.RegularPages "Section" "posts" }}
+ <entry>
+   <title>{{ .Title }}</title>
+   <link href="{{ .Permalink }}"/>
+   <updated>{{ .Date.UTC.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
+   <id>{{ strings.TrimSuffix ".html" .RelPermalink }}</id>
+   <content type="html">{{ .Content | transform.XMLEscape | safeHTML }}</content>
+ </entry>
+ {{ end }}
+</feed>

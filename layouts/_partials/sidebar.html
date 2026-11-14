@@ -1,0 +1,13 @@
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>{{ site.Params.description }}</p>
+  </div>
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item{{ if .IsHome }} active{{ end }}" href="/">Home</a>
+    <a class="sidebar-nav-item{{ if eq .RelPermalink "/about/" }} active{{ end }}" href="/about/">About</a>
+  </nav>
+  <div class="sidebar-item">
+    <p>&copy; {{ now.Year }}. All rights reserved.</p>
+  </div>
+</div>

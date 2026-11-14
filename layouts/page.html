@@ -1,0 +1,25 @@
+{{ define "main" }}
+{{ if eq .Section "posts" }}
+<div class="post">
+  <h1 class="post-title">{{ .Title }}</h1>
+  <span class="post-date">{{ .Date.UTC.Format "02 Jan 2006" }}</span>
+  {{ .Content }}
+</div>
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    {{/* Jekyll's related_posts without LSI = the latest 3 other posts */}}
+    {{ range first 3 (where (where site.RegularPages "Section" "posts") "Permalink" "ne" .Permalink) }}
+    <li>
+      <h3><a href="{{ .RelPermalink }}">{{ .Title }} <small>{{ .Date.UTC.Format "02 Jan 2006" }}</small></a></h3>
+    </li>
+    {{ end }}
+  </ul>
+</div>
+{{ else }}
+<div class="page">
+  <h1 class="page-title">{{ .Title }}</h1>
+  {{ .Content }}
+</div>
+{{ end }}
+{{ end }}

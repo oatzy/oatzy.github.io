@@ -1,5 +1,4 @@
-_site
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
-vendor
+# Hugo build output (static files live in static/)
+/public/
+/resources/
+.hugo_build.lock
