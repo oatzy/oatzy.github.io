@@ -1,0 +1,1972 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2026-11-13T16:50:26+00:00</updated><id>/feed.xml</id><title type="html">Questions Nobody Asked..</title><subtitle>Answering questions that nobody asked</subtitle><entry><title type="html">The AI That Came To Dinner</title><link href="/2026/11/09/ai-who-came-to-dinner.html" rel="alternate" type="text/html" title="The AI That Came To Dinner" /><published>2026-11-09T00:00:00+00:00</published><updated>2026-11-09T00:00:00+00:00</updated><id>/2026/11/09/ai-who-came-to-dinner</id><content type="html" xml:base="/2026/11/09/ai-who-came-to-dinner.html"><![CDATA[<p>My job has indoctrinated me into the cult of AI.</p>
+
+<p>All staff at our company are ‘expected’ to embrace AI, and use it as much as possible. Truthfully, this doesn’t bother me - I’m lazy by nature, so if the computer wants to write code for me, I’m not going to fight it.</p>
+
+<p>The effect is that I spend most of my work day in a Claude Code terminal, or else reviewing other people’s code (mostly written by Claude). But actually, prior to the adoption of AI, most of my work days were writing specs/tickets for juniors and reviewing the PRs they came back with. So not that different, really.</p>
+
+<p>Anyway, after about 4 months, I’ve relented and spent my own money on a Claude subscription.</p>
+
+<p>For what purpose?</p>
+
+<h1 id="a-cure-for-laziness">A Cure For Laziness</h1>
+
+<p>I rarely write code outside of work.</p>
+
+<p>And when I do, it’s rarely for coding’s own sake (<a href="https://oatzy.github.io/2020/12/06/advent-of-code-2020-python-oneliners.html">Advent</a> <a href="https://oatzy.github.io/2021/12/02/advent-of-code-awk-oneliner.html">of</a> <a href="https://oatzy.github.io/2024/01/02/advent-of-code-jq.html">Code</a> notwithstanding). Rather, I’ll have some idea, a ‘Question Nobody Asked’ if you will, and code is just a means to an end.</p>
+
+<p>When I thought about what I might do with a personal AI account, I thought back to past blogs - all the times I left something as ‘an exercise for the reader’ because I was too lazy to finish it off myself. I thought about the <a href="https://oatzy.github.io/2015/02/23/designing-general-relativity-based.html">gravity game</a> that I designed but never built, in particular.</p>
+
+<p>I also thought about the very last post here, and when I tried to have a local AI parse a recipe into json. And failed miserably.</p>
+
+<h1 id="fix-it">fix it</h1>
+
+<p>Here’s how it went: I opened up Claude Code (Opus 5.5) in the <code class="language-plaintext highlighter-rouge">recipe_optimiser</code> <a href="https://github.com/oatzy/recipe-optimiser">repo</a> and pointed it at the markdown version of that <a href="https://oatzy.github.io/2026/01/04/cooking-for-software-engineers.html">last blog post</a>, which explained the purpose of the repo.</p>
+
+<p>Claude has a read and comes back with the following:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>What would you like to do? Some ideas the post itself suggests:
+- Better scheduling: improve how clashing hands-on steps get resolved ("it could be better").
+- Brute force: recipes don't have many steps, so it could try every ordering and pick the best one.
+- Parser: try the JSON conversion with a bigger model.
+- Tidy-up: add a README, tests or a proper command-line interface.
+</code></pre></div></div>
+
+<p><strong>&gt; create a claude skill to replace the parser</strong></p>
+
+<p>The first thing to do was replace the recipe parser. Originally it was intended to use a local model, but due to my low spec laptop it was entirely useless. So I got Claude to generate its own <a href="https://github.com/oatzy/recipe-optimiser/blob/main/.claude/skills/parse-recipe/SKILL.md">‘skill’</a> (set of instructions), which works embarrassingly well with Opus 5.5</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Steps I added (the recipe implies them but doesn't list them):
+- 3a, bringing the water to the boil: 10 min
+
+Times I guessed:
+- 1, chop the onion: 5 min
+- 2, mince the garlic: 2 min
+- 3b, cook the spaghetti: 10 min (the recipe says "according to package instructions")
+- 4a, heat the oil: 2 min
+- 6a, add the tomatoes and oregano and season: 1 min
+- 7, drain and combine: 1 min
+- 8, add the basil and serve: 1 min
+
+Times from the recipe: softening the onion (5), the garlic (1) and the simmer (10). I treated softening the onion as hands-on.
+</code></pre></div></div>
+
+<p>Then my professional developer brain kicked in, and said that I (Claude) should do the tidy-up it suggested (Tests! Docs! In this economy?)</p>
+
+<p>Actually, that made a good basis for the next step - trying the brute-force idea I floated in the post. The unit tests encode the ‘rules’ of the optimiser, so that the brute-force approach can be tested for correctness against the existing method.</p>
+
+<p><strong>&gt; let’s try the brute force approach and see how it compares</strong></p>
+
+<p>As it turns out, at least for the sample recipes I had, brute force is only marginally better than the heuristic-based algorithm I hand-rolled, and at the cost of the script taking longer to run.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>┌───────────┬─────────────┬────────────┬──────────┬──────────────────┬──────────┐
+│  Recipe   │  Approach   │ Total time │ Waiting* │ Hands-on clashes │ Run time │
+├───────────┼─────────────┼────────────┼──────────┼──────────────────┼──────────┤
+│ Meatballs │ current     │ 46 min     │ 7 min    │ 0                │ 6 ms     │
+├───────────┼─────────────┼────────────┼──────────┼──────────────────┼──────────┤
+│ Meatballs │ brute force │ 46 min     │ 6 min    │ 0                │ 8.6 s    │
+├───────────┼─────────────┼────────────┼──────────┼──────────────────┼──────────┤
+│ Spaghetti │ current     │ 28 min     │ 0 min    │ 0                │ 1 ms     │
+├───────────┼─────────────┼────────────┼──────────┼──────────────────┼──────────┤
+│ Spaghetti │ brute force │ 28 min     │ 0 min    │ 0                │ 1 ms     │
+└───────────┴─────────────┴────────────┴──────────┴──────────────────┴──────────┘
+
+*Waiting is the minutes a not-prepable step (like hot oil) sits before the next step uses it. Some waiting can't be avoided. For example, the oven finishes preheating before the meatballs go in, and both plans have that.
+</code></pre></div></div>
+
+<p>Not that I’m smug about it ;)</p>
+
+<p>Then Claude had a suggestion of its own:</p>
+
+<p><strong>&gt; try the OR-Tools solver and compare</strong></p>
+
+<p>This is an approach I wouldn’t have tried without AI, because I’m too lazy to learn how to use a <a href="https://developers.google.com/optimization/introduction/python">SAT-solver</a>.</p>
+
+<p>The key thing about a <a href="https://en.wikipedia.org/wiki/SAT_solver">SAT-solver</a> is it can find a ‘provably’ most optimal solution (if one exists), and it does it a lot faster than brute-force.</p>
+
+<p>As it turns out, when using the SAT-solver, the <em>total</em> cooking time for the sample recipes still comes out at about the same as my heuristic method; but SAT is able to arrange steps so that there’s less waiting around.</p>
+
+<p>In the repo, the SAT-solver replaced the brute-force code, but the brute-force is still viewable at this <a href="https://github.com/oatzy/recipe-optimiser/commit/82217816e70236429a38070ae8c13b4895b69faa">commit</a></p>
+
+<p>So far, my algorithm is performing a lot better than I expected. But maybe that’s a quirk of the sample recipes?</p>
+
+<p><strong>&gt; search the web for some fair use recipes for a bigger test set</strong></p>
+
+<p>Most online recipes are copyrighted to the author, so Claude ended up pulling recipes from <a href="https://en.wikibooks.org/wiki/Cookbook:Table_of_Contents">Wikibooks Cookbook</a> (creative commons licensed).</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>What this shows:
+- Current method: it always matched the shortest total time of the waiting-first solver, but it left 1–4 minutes more waiting on three recipes (meatballs, fish and chips, shepherd's pie).
+- Pad Thai shows the trade-off most clearly: the waiting-first plans take 44 minutes to avoid a single minute of waiting, where total and both finish in 39.
+- Fish and Chips has a lot of waiting that can't be avoided. There's only one fryer, so the chips are kept warm while the fish fries.
+- Speed: the solver takes under 0.2 s on all the new recipes. The meatballs are the slowest at 1.6 s with the waiting goal.
+</code></pre></div></div>
+
+<p>And this is the problem with AI - it’s very easy to fall down a rabbit hole.</p>
+
+<p>The <a href="https://github.com/oatzy/recipe-optimiser">same repo</a> has all of the updated code if you’re curious.</p>
+
+<h1 id="cooking-for-lazy-engineers">Cooking For Lazy Engineers</h1>
+
+<p>I stopped doing the hand-optimisation shortly after writing the last post. And I never used the script in practice.</p>
+
+<p>It just took too much time and effort. And I found that I started to care less about being so precise. Cooking, it turns out, is very forgiving. If something is ready too soon, you can turn the heat down low, or just pop a lid on it. It always works out in the end.</p>
+
+<p>It started out a couple of times when I forgot to set my timer going and had to guess at when things were ‘ready’. Eventually, I didn’t bother with the timer at all. After a while, after enough practice, you learn to trust your eyes (and a thermometer) more than a clock.</p>
+
+<h1 id="a-why">A-Why?</h1>
+
+<p>First and foremost, I want to reassure you that I will never let an AI anywhere near my (prose) writing. That much should be apparent from this post - despite the occasional emdash, I think my style is too erratic to ever be mistaken for AI.</p>
+
+<p>In fact, one of the first things I put in my personal CLAUDE.md was <em>“I do not want [Claude] to write blog posts for me”</em>. I’ve been writing this blog for <a href="https://oatzy.github.io/2025/07/28/questions-nobody-asked.html">over 15 years</a>, and the writing is ‘the point’.</p>
+
+<p>But as alluded to, you may see more posts like this one, where I re-visit past posts to finish off the bits I was too lazy to do with my own ten fingers.</p>
+
+<p>Future posts may also use AI to some degree. And as is my way, I will go into specific detail about <em>how</em> I used it. I see too many posts and demos of people saying “look what I did with AI” without them really talking about how they did it. Personally, I think that’s the most interesting part.</p>
+
+<p>I lied earlier. Yes, using Claude at work showed me what it was capable of. But I held out for the longest time because I didn’t want to pay out of pocket for something I didn’t have a <em>good</em> use for. Revisiting old blogs is a fine idea, but it’s not worth the cost of a subscription.</p>
+
+<p>What actually got me to pay up was a future project I have in mind - something involving crochet.</p>
+
+<p>Watch this space…</p>
+
+<p>Chris.</p>
+
+<p>[Maybe I could get Claude to fix the blog’s MathJax rendering.]</p>]]></content><author><name>Chris Oates</name></author><category term="coding" /><category term="cooking" /><category term="hobby" /><category term="AI" /><summary type="html"><![CDATA[My job has indoctrinated me into the cult of AI.]]></summary></entry><entry><title type="html">Cooking for Software Engineers</title><link href="/2026/01/04/cooking-for-software-engineers.html" rel="alternate" type="text/html" title="Cooking for Software Engineers" /><published>2026-01-04T19:00:00+00:00</published><updated>2026-01-04T19:00:00+00:00</updated><id>/2026/01/04/cooking-for-software-engineers</id><content type="html" xml:base="/2026/01/04/cooking-for-software-engineers.html"><![CDATA[<p>The title is a reference to “Cooking for Engineers”, originally a <a href="https://stevebennett.me/2010/11/26/introducing-cooking-for-engineers/">blog post</a> which spun off into a <a href="https://www.cookingforengineers.com/">whole site</a>. It re-imagines recipes as flowchart-like diagrams.</p>
+
+<p>The writer of the original blog post jokes that actual engineers would probably hate the approach due to how imprecise it is - using estimated measurements, and timings based on senses (what it looks like, smells like, etc).</p>
+
+<p>Well allow me to share an alternative, precise and (over)engineered approach to recipes</p>
+
+<h1 id="the-secret-to-comedy">The Secret to Comedy*</h1>
+
+<p>I’d say I’m a ‘capable’ cook; I’m not skilled, but I can follow instructions.</p>
+
+<p>Except, sometimes the instructions say things like “boil the rice… meanwhile”, and I’m not sure if I’m supposed to start the ‘meanwhile’ right away? Or, if I do that, will the sauce be ready too early? Or should I have already started?!</p>
+
+<p>One solution to this is to plot everything out:</p>
+
+<ol>
+  <li>How long will each step take?</li>
+  <li>When does each step need to be completed (‘ready’)?</li>
+  <li>Start at the end, and work backwards</li>
+</ol>
+
+<p>Example:</p>
+
+<ul>
+  <li>rice takes 20 mins</li>
+  <li>stir fry takes 15 mins</li>
+  <li>we want them ready at the same time</li>
+</ul>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0   5  10  15  20
+|---+---+---+---| rice
+    |---+---+---| stir fry
+</code></pre></div></div>
+
+<p>So, start the stir-fry 5 minutes after the rice. Easy.</p>
+
+<p>This works for simple recipes with only a couple of things going on at once, where most of the things are ‘hands-off’ (like boiling rice), and where everything is combined at the end.</p>
+
+<p>When that isn’t the case, we need a more complicated process. It breaks down into two stages:</p>
+
+<ol>
+  <li>Dependency graph</li>
+  <li>Timeline</li>
+</ol>
+
+<h1 id="hot-dags">Hot DAGs</h1>
+
+<p>First, we have to break down the recipe into discrete steps, and arrange them into a dependency graph.</p>
+
+<p>This means drawing a ‘node’ for each step, with an arrow between the step and any steps that depend on it - you have to break an egg before you can fry your omelette.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[crack egg] -&gt; [whisk egg] -&gt; [fry]
+</code></pre></div></div>
+
+<p>What we end up with is something like a flowchart; in technical terms it’s a ‘<a href="https://en.wikipedia.org/wiki/Directed_acyclic_graph">directed acyclic graph</a>’ (DAG)</p>
+
+<p><img src="/assets/cooking/dag.png" alt="Recipe DAG" /></p>
+
+<p>Here I’ve labelled nodes with step numbers; you can also use words. I didn’t draw arrows on the lines because I’m lazy (it’s read top-down).</p>
+
+<p>The point of the graph is, it makes it easier to keep things in the right order when we come to do the timeline.</p>
+
+<p>At this point, I also</p>
+
+<ul>
+  <li>assign approximate times to each step</li>
+  <li>identify whether the step is ‘hands on’ (square) or ‘hands off’ (round)</li>
+  <li>draw a squiggly line for steps that can be prepared in advance</li>
+</ul>
+
+<p>It’s important to account for the time that <em>every</em> step will take, whether that’s time roasting in the oven, time to chop an onion, or time to heat a drizzle of oil in a pan.</p>
+
+<p>The mistake (one of the mistakes) I made in the past was not accounting for steps that aren’t explicitly timed; the recipe says to add the rice to boiling water and cook for 20 mins, but it doesn’t say how long it takes to bring a pan of water to the boil (it takes a while).</p>
+
+<p>Some of the timing are likely to be different for different people. For example, it takes me a good 5 mins to thinly slice an onion (badly), while I imagine a skilled chef could do it in less than a minute.</p>
+
+<h1 id="sliding-timeline">Sliding Timeline</h1>
+
+<p>This starts out the same as the original, basic approach</p>
+
+<ul>
+  <li>start at the last step(s) and work backwards</li>
+  <li>draw a block for each step
+    <ul>
+      <li>the block length represents how long the step takes</li>
+      <li>blocks have to be placed behind any steps they depend on (per the DAG)</li>
+      <li>indicate hands-off steps, e.g. with shading/colour</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/assets/cooking/timeline-initial.png" alt="Initial timeline" /></p>
+
+<p>This first pass is likely to be ‘wrong’. In the above, we have multiple (independent) hands-on steps happening at the same time, such as 5c and 6a.</p>
+
+<p>This is where the sliding comes in, and where it helps to use a tablet (or pencil and eraser)</p>
+
+<p>For steps that can be prepared ahead of time, we can slide them as far away from their dependants as we want; an onion can be chopped the night before if need be. Steps which can’t (reasonably) be prepared ahead of time need to slide together with their dependants, e.g. heating oil and frying an egg in that oil.</p>
+
+<p>Honestly, the sliding is not an exact science. To some extend, you just have to feel it out; play around with it until you get something that works/feels right</p>
+
+<p>Here’s what I settled on for the above example</p>
+
+<p><img src="/assets/cooking/timeline-optimised.png" alt="Optimised timeline" /></p>
+
+<p>Once you have your timeline, you can rewrite the recipe in this new ordering, or timestamp the steps, or just work off the timeline diagram</p>
+
+<p>(Note, since we start at the last step and work backwards, the timeline is <em>read</em> right-to-left.)</p>
+
+<h1 id="for-software-developers">For Software Developers</h1>
+
+<p>The process I described is ‘fairly’ mechanical, so it seems natural to try and code it up.</p>
+
+<p>You can see my attempt here - <a href="https://github.com/oatzy/recipe-optimiser/tree/pre-claude">https://github.com/oatzy/recipe-optimiser</a></p>
+
+<p><em>[edit]</em> - I’ve since made some changes to the code using AI (see the follow-up post). The above link is to a tag of the repo as it existed when I wrote this post.</p>
+
+<p>It… kind of works. It could be better. (Remember when I said it’s not an exact science)</p>
+
+<p>For the input, we have to re-structure the recipe into json, with steps defined like</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2b"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hands_off"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"parents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"1a"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"2a"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"instruction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Put meatballs in oven"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>Here’s an example of what the script then generates</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ 0 -  3]  ###                                             (1d) Grate the apple
+[ 3 -  6]     ###                                          (1f) Chop potatoes into chunks
+[ 6 -  8]        ##                                        (1c) Peel and grate the garlic
+[ 8 - 11]          ###                                     (1g) Combine ingredients for meatballs
+[11 - 16]             #####                                (2a) Roll mince into evenly-sized balls
+[11 - 16]             XXXXX                                (1a) Pre-heat oven to 200
+[14 - 19]                XXXXX                             (1b) Bring a large saucepan of water to the boil
+[16 - 31]                  XXXXXXXXXXXXXXX                 (2b) Put meatballs in oven
+[18 - 22]                    ####                          (1e) Slice the red onion
+[19 - 39]                     XXXXXXXXXXXXXXXXXXXX         (2d) Boil the Potatoes
+[22 - 24]                        ##                        (3a) Heat oil in a large frying pan
+[24 - 34]                          XXXXXXXXXX              (3b) Add onions to pan, fry until golden
+[31 - 32]                                 #                (2c) Remove from oven
+[32 - 34]                                  ##              (5c) Heat oil in medium sauce pan
+[34 - 36]                                    ##            (3c) Add balsamic vinegar and sugar, caramelise
+[36 - 37]                                      #           (4a) Add wine stock, etc. to onions
+[37 - 43]                                       XXXXXX     (4b) Bring to boil and simmer
+[37 - 39]                                       ##         (5d) Add cabbage and stir fry
+[39 - 40]                                         #        (5a) Drain potatoes
+[40 - 43]                                          ###     (5b) Mash potatoes
+[41 - 45]                                           XXXX   (5e) Cover, cook until tender
+[43 - 45]                                             ##   (6a) Stir meatballs into gravy
+[45 - 46]                                               #  (6b) Serve
+</code></pre></div></div>
+
+<p>(<code class="language-plaintext highlighter-rouge">X</code> are hands-off, <code class="language-plaintext highlighter-rouge">#</code> are hands-on)</p>
+
+<p>Since recipes generally don’t have that many steps, an alternative approach might be to brute-force the ‘optimal’ recipe.</p>
+
+<h2 id="ai-interlude">AI Interlude</h2>
+
+<p>As mentioned, the script requires converting the recipe into a particular JSON format. This can be a tedious process.</p>
+
+<p>Then, it occurred to me that parsing prose into json is something an LLM might be good at.</p>
+
+<p>To try this out, I wanted to use a local model. Problem is, my laptop doesn’t have a lot of RAM, so the only model I can run locally is a really small one.</p>
+
+<p>Turns out a really small LLM takes a long time to do a bad job of parsing.</p>
+
+<p>So I asked Gemini to help me <a href="https://github.com/oatzy/recipe-optimiser/blob/main/system_prompt.txt">improve the prompt</a>, specifically for use with a small model - effectively asking an AI to dumb down the prompt for another, less intelligent AI.</p>
+
+<p>It didn’t help.</p>
+
+<p>And I don’t care enough to spend money on finding out if it works on a larger model, so… moving on.</p>
+
+<h1 id="when-a-plan-comes-together">When a Plan Comes Together</h1>
+
+<p>So having gone through all this planning, the whole cooking process runs smoothly now. Right?</p>
+
+<p>The honest answer is: sometimes.</p>
+
+<p>I actually used this approach when cooking Christmas dinner this year</p>
+
+<p><img src="/assets/cooking/christmas.jpg" alt="Christmas planning" /></p>
+
+<p>And I have to say, it was pleasing to set a timer going and be able to say “at minute 5 do X, at minute 10 do Y”. A lot less stressful too.</p>
+
+<p>It’s also good for identifying what you need to prepare ahead of time, and what you have time to do while other stuff is cooking.</p>
+
+<p>But the “Cooking for Engineers” guy was on to something - with cooking, you can rarely be so precise.</p>
+
+<p>For example, when a recipe says to fry on “medium high” heat, that’s not an exact setting. Besides which, there are natural variations in people’s equipment, some ovens run hotter than others. Plus, the ingredients may vary in size or shape in a way that subtly affects cooking time.</p>
+
+<p>So sometime you do just have to rely on your senses, make adjustments on the fly, and not get so hung up on following the plan.</p>
+
+<p>Even if you spent more time working out the plan than it took to cook the damn meal…</p>
+
+<p>Chris</p>
+
+<p>[the latest instalment in the “I started a new hobby and tried to solve it with maths” series]</p>
+
+<p>*Timing</p>]]></content><author><name>Chris Oates</name></author><category term="coding" /><category term="cooking" /><category term="hobby" /><summary type="html"><![CDATA[The title is a reference to “Cooking for Engineers”, originally a blog post which spun off into a whole site. It re-imagines recipes as flowchart-like diagrams.]]></summary></entry><entry><title type="html">Pokemon TCG Pocket, Part 2 - How long it takes</title><link href="/2025/08/06/pokemon-part2-how-long.html" rel="alternate" type="text/html" title="Pokemon TCG Pocket, Part 2 - How long it takes" /><published>2025-08-06T19:00:00+00:00</published><updated>2025-08-06T19:00:00+00:00</updated><id>/2025/08/06/pokemon-part2-how-long</id><content type="html" xml:base="/2025/08/06/pokemon-part2-how-long.html"><![CDATA[<h1 id="champion">Champion</h1>
+
+<p>In a <a href="https://oatzy.github.io/2025/04/08/how-log-to-pull-pokemon.html">previous post</a>, I used a simulation to predict how long it would take to complete the <em>Champion of the Sinnoh Region</em> secret mission. It said that I should expect to open around 250 booster packs.</p>
+
+<p>I have now completed that mission! And I finally have the Garchomp emblem I was after</p>
+
+<p><img src="/assets/pokemon-tcg-champion.jpg" alt="Garchomp emblem" /></p>
+
+<p>So how long did it <em>actually</em> take?</p>
+
+<p>On my <strong>253rd booster</strong> (1265 pack points), I finally pulled the one-star <em>Gastrodon</em> - the last one-star card I needed. I also had enough pack points to buy the missing two-star <em>Cynthia</em> (1250 pp), completing the mission.</p>
+
+<p>I wish I could say I felt more excited when that happened, but mostly I was just relieved that it was done with.</p>
+
+<h2 id="statistics">Statistics</h2>
+
+<p>So, having opened 253 <em>Space-Time Smackdown</em> booster packs - of which about 200 were the <em>Palkia</em> variants - what did I end up with?</p>
+
+<ul>
+  <li><strong>152/155</strong> one- to four- diamond cards; 99/99 from <em>Palkia</em></li>
+  <li><strong>20/24</strong> one star cards; 12/12 from <em>Palkia</em></li>
+  <li><strong>4/24</strong> two-star cards (not counting <em>Cynthia</em>); 3 from <em>Palkia</em></li>
+  <li><strong>0</strong> three-star (immersive) cards</li>
+  <li><strong>1</strong> crown (gold) card</li>
+</ul>
+
+<p>Counting duplicates, I pulled 43 one-star cards, 5 two-star cards, and 1,265 cards all together.</p>
+
+<p>Oh, and I also pulled a rare booster. Which was quite a shock! But it didn’t have any of the cards I needed, which made me feel very ungrateful.</p>
+
+<h1 id="how-long-would-it-take-to-complete-the-set">How long would it take to complete the set?</h1>
+
+<p>Given the above, a natural next question is how long would it take to complete the set?</p>
+
+<p>I’m currently missing <strong>27</strong> of the 207 cards from <em>Space-Time Smackdown</em>.</p>
+
+<p>That doesn’t sound like a lot, but they’re mostly two-star and higher.</p>
+
+<p>The simulation I wrote for the previous post is not suited to answering this question. So I wrote a <em>brand new</em> simulation - <a href="https://github.com/oatzy/pokemon-tcg-pocket-sim">source code here</a></p>
+
+<p>According to that simulation, I should expect to open about <strong>1400</strong> more booster packs to complete the set, which is more than 5 times the number I’ve already opened!</p>
+
+<p>I think you’ll all agree with me when I say: “nah…”</p>
+
+<p>For just the one- to four- diamond cards, I should expect to open about <strong>200</strong> more packs.</p>
+
+<h1 id="sanity-check">Sanity check</h1>
+
+<p>But wait a second, I’m only missing <em>3</em> of the one- to four- diamond cards. Would it really take that many more packs?</p>
+
+<p>This feels a little off. But how can we check?</p>
+
+<p>An easy set to validate the simulation against in Mythic Island, since it doesn’t have any booster variants.</p>
+
+<p>The new simulation gives us a breakdown of expected packs opened by rarity:</p>
+
+<ul>
+  <li><strong>Crown</strong>: <em>309.2062</em></li>
+  <li><strong>Three Star</strong>: <em>89.547</em></li>
+  <li><strong>Two Star</strong>: <em>656.0182</em></li>
+  <li><strong>One Star</strong>: <em>113.0376</em></li>
+  <li><strong>Four Diamond</strong>: <em>136.5308</em></li>
+  <li><strong>Three Diamond</strong>: <em>87.1258</em></li>
+  <li><strong>Two Diamond</strong>: <em>57.6122</em></li>
+  <li><strong>One Diamond</strong>: <em>43.8046</em></li>
+</ul>
+
+<h2 id="immersive">Immersive</h2>
+
+<p>Any easy rarity to validate is the three star ‘immersive’, since there’s only one of them.</p>
+
+<p>In the <a href="https://oatzy.github.io/2025/04/08/how-log-to-pull-pokemon.html">previous post</a>, I showed how to calculate the probability of pulling a specific card from each booster. For the three star, this comes out to <code class="language-plaintext highlighter-rouge">1.12%</code></p>
+
+<p>And since pulling the card is a <a href="https://en.wikipedia.org/wiki/Bernoulli_trial">Bernoulli trial</a>, the expected number of boosters is <code class="language-plaintext highlighter-rouge">1/p = 89</code>, which is roughly equal to the simulated number.</p>
+
+<h2 id="diamond">Diamond</h2>
+
+<p>There’s a 100% chance of pulling 3 one-diamond cards per booster. But for now, it’s easier pretend we pull one at a time.</p>
+
+<p>If we pick one card from a set of 35 with equal probability, how long do we expect until we collect them all?</p>
+
+<p>It seemed likely this was a well know problem with an exact solution, but I wasn’t sure how to identify it. This is the sort of thing AI is actually useful for</p>
+
+<blockquote>
+  <p>“Ah, a classic problem with a rather elegant solution! You’re asking about the <strong>Coupon Collector’s Problem”</strong></p>
+</blockquote>
+
+<p>When it comes to AI, it’s best to check their work. Wikipedia confirms this is indeed <a href="https://en.wikipedia.org/wiki/Coupon_collector's_problem">the problem I was looking for</a></p>
+
+<p>The solution is <code class="language-plaintext highlighter-rouge">E[t] = n * Hn</code> where <code class="language-plaintext highlighter-rouge">Hn</code> is the <a href="https://en.wikipedia.org/wiki/Harmonic_number">harmonic number</a> <code class="language-plaintext highlighter-rouge">Hn = 1/1 + 1/2 + 1/3 + ... + 1/n</code></p>
+
+<p>So, for the 35 common cards that comes to <code class="language-plaintext highlighter-rouge">145</code></p>
+
+<p>And since we pull 3 per booster, that’s <code class="language-plaintext highlighter-rouge">48</code> boosters.</p>
+
+<p>Again. this agrees quite well with the simulation results.</p>
+
+<h2 id="star">Star</h2>
+
+<p>The probability of pulling any one star is <code class="language-plaintext highlighter-rouge">12.595%</code>, so we expect to pull one on average <strong>every 8 packs</strong>.</p>
+
+<p>The expected number of pulls to get all <strong>6</strong> one-star cards is <code class="language-plaintext highlighter-rouge">14.7</code>, so the expected number of packs is <code class="language-plaintext highlighter-rouge">8 * 14.7 = 117</code>. Another close match.</p>
+
+<h2 id="and-so">And so</h2>
+
+<p>You can follow similar logic for the other rarities.</p>
+
+<p>At this point you might be wondering, did I waste my time writing a simulation, when there’s an exact solution?</p>
+
+<p>Maybe.</p>
+
+<p>To be fair, things get more complicated when you take into account variants and the ability to buy cards.</p>
+
+<p>Anyway, the simulation results seem sound. I guess I was just lucky with my pulls. I did also get some of the cards from wonder picks, which probably throws off the numbers too.</p>
+
+<h1 id="free-to-play">Free to play</h1>
+
+<p>Now we have the ability to simulate opening boosters, we can start to ask other questions.</p>
+
+<p>For example, <strong>if I’m a free-to-play user</strong> opening 2 booster packs a day for a month (until the new expansion is released), <strong>what cards do I expect to pull?</strong> How many rare cards? How close do I get to completion?</p>
+
+<p>Let’s take a more recent expansion: <em>Eevee Grove</em></p>
+
+<p>If I open 2 * 30 = 60 boosters, I would expect</p>
+
+<ul>
+  <li><strong>64</strong> of the 69 diamond cards</li>
+  <li><strong>10</strong> one-star or rarer cards (not counting duplicates).</li>
+  <li><strong>1/2</strong> chance of pulling the three-star immersive card</li>
+  <li><strong>1/8</strong> chance of pulling the gold crown card</li>
+</ul>
+
+<p>By comparison, if I go premium and open 3 packs a day, 90 per month, I would expect</p>
+
+<ul>
+  <li><strong>67</strong>  out of 69 diamond cards</li>
+  <li><strong>13</strong> one-star or rarer cards</li>
+  <li><strong>2/3</strong> chance of pulling the immersive card</li>
+  <li><strong>1/6</strong> chance of pulling the crown</li>
+</ul>
+
+<p>As for myself, I did manager to collect all the <em>Eevee Grove</em> diamond cards after <strong>75 packs</strong>, which is much less than the expected <strong>185 packs</strong>.</p>
+
+<p>But then, a couple of the rare and ex cards I got off wonder picks. Actually, after about 50 packs I was down to 3 cards missing, and just opening pack after pack with nothing new. I wouldn’t be surprised if it had taken another 100+ packs to get those last 3 if I hadn’t wonder picked them.</p>
+
+<h1 id="feature-creep">Feature creep</h1>
+
+<p>With a solid base simulation, it’s very easy to keep adding features.</p>
+
+<p>For one, I re-implemented the original mission simulation. Reassuringly, the results agree with the old one.</p>
+
+<p>In fact, I wrote it so that you can define any mission you like in json format. You can also give it an ‘initial state’, what cards you’ve already pulled, to see how much longer it’ll take.</p>
+
+<p>I may have gotten carried away.</p>
+
+<p>I won’t go into the details here, you can have a look for yourself in <a href="https://github.com/oatzy/pokemon-tcg-pocket-sim">the repo</a>.</p>
+
+<h1 id="impossible-dream">Impossible dream</h1>
+
+<p>I’ve been drafting this blog for a while. I was planning to post it in line with the release of the latest set <em>“Wisdom of Sea and Sky”</em>, only to discover that the set introduces a new type of booster: <em>“regular plus one card”</em>.</p>
+
+<p>Naturally, I couldn’t post the blog until I’d updated the simulation to account for these new boosters. It turned out to be a little fiddly.</p>
+
+<p>But now, finally, to wrap up - below are the number of packs you should expect to open to complete each of the expansions that have been released at time of writing:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Expansion</th>
+      <th>Diamonds</th>
+      <th>Everything</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Genetic Apex</td>
+      <td>790</td>
+      <td>2052</td>
+    </tr>
+    <tr>
+      <td>Mythical Island</td>
+      <td>149</td>
+      <td>659</td>
+    </tr>
+    <tr>
+      <td>Space-Time Smackdown</td>
+      <td>460</td>
+      <td>1660</td>
+    </tr>
+    <tr>
+      <td>Triumphant Light</td>
+      <td>190</td>
+      <td>832</td>
+    </tr>
+    <tr>
+      <td>Shining Revelry</td>
+      <td>307</td>
+      <td>1137</td>
+    </tr>
+    <tr>
+      <td>Celestial Guardians</td>
+      <td>485</td>
+      <td>2048</td>
+    </tr>
+    <tr>
+      <td>Extradimensional Crisis</td>
+      <td>148</td>
+      <td>859</td>
+    </tr>
+    <tr>
+      <td>Eevee Grove</td>
+      <td>182</td>
+      <td>906</td>
+    </tr>
+    <tr>
+      <td>Wisdom of Sea and Sky</td>
+      <td>521</td>
+      <td>1820</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Considering the (current) release cadence of a new expansion every month, it is practically impossible to complete every set. It’d take a good while to complete just one set! (Unless you’re willing to spend A LOT of money).</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>In the previous post, I suggested that always opening the same booster would suck the joy out of the game. I definitely felt that, and wouldn’t recommend it.</p>
+
+<p>But then, there’s a two-star full art <em>Garchomp</em> in the <em>Triumphant Light</em> expansion. Two two-star <em>Garchomps</em> in fact!</p>
+
+<p>And because I don’t learn my lessons, I’m at it again. Based on the simulation, I won’t have them any time soon…</p>
+
+<p>Chris.</p>
+
+<p>[I wonder if I can simulate wonder picks]</p>]]></content><author><name>Chris Oates</name></author><category term="maths" /><category term="probability" /><category term="pokemon" /><category term="pokemon tcg pocket" /><summary type="html"><![CDATA[Champion]]></summary></entry><entry><title type="html">Questions Nobody Asked</title><link href="/2025/07/28/questions-nobody-asked.html" rel="alternate" type="text/html" title="Questions Nobody Asked" /><published>2025-07-28T18:00:00+00:00</published><updated>2025-07-28T18:00:00+00:00</updated><id>/2025/07/28/questions-nobody-asked</id><content type="html" xml:base="/2025/07/28/questions-nobody-asked.html"><![CDATA[<p>15 years ago, I was unemployed. I’d dropped out of university the year before and my job prospects weren’t looking good.</p>
+
+<p>I was spending a lot of time on Twitter (presently X). And I noticed some patterns, the ways different users behaved. And I wrote <a href="https://oatzy.github.io/2010/07/28/how-do-you-categorise-tweets-obviously.html">a blog post about it</a>.</p>
+
+<hr />
+
+<p>Some years earlier, when I was in secondary school, I created my first blog on MSN Spaces. It was called “Philosophical Sheep”, after a doodle I would draw on my exam revision notes</p>
+
+<p><img src="/assets/philosophical-sheep.jpg" alt="philosophical sheep" /></p>
+
+<p>(<em>this is a recreation</em>)</p>
+
+<p>I read a lot of ‘popular maths’ books at the time: <a href="https://www.goodreads.com/book/show/131305.Fermat_s_Last_Theorem">Fermat’s Last Theorem</a>, <a href="https://www.goodreads.com/book/show/208916.The_Music_of_the_Primes">Music of the Primes</a>; going back to the books that first sparked my interest in maths: <a href="https://www.goodreads.com/book/show/1225641.Why_Do_Buses_Come_in_Threes_The_Hidden_Mathematics_of_Everyday_Life">Why Do Buses Come in Threes</a> and its sequel <a href="https://www.goodreads.com/book/show/632979.How_Long_Is_a_Piece_of_String_">How Long is a Piece of String</a></p>
+
+<p>I thought that I’d like to do something like that - explain maths-y things in a way that was interesting and accessible to casual readers.</p>
+
+<p>The first blog post was called “How to Weigh the Sun”, making use of Newton’s law of gravitation, angular momentum, and algebra.</p>
+
+<p>The only person who read it (to my knowledge) was my sister. Her comment was along the lines of “you’re such a geek”. Which is hard to argue.</p>
+
+<p>The second, and last, post on that blog was about houses of cards: how many cards do you need to build a house of a given height, and how high of a house you can build with a standard deck (5 rows).</p>
+
+<p>The post ended</p>
+
+<blockquote>
+  <p>And basically, that’s it. Answers to questions you’d probably never ask.</p>
+</blockquote>
+
+<p>That was where this blog got its name: <em>Questions Nobody Asked</em></p>
+
+<hr />
+
+<p>I ultimately went back to university (a different one), and completed my degree. But before that, I wrote a lot more blog posts.</p>
+
+<p>At that time, I thought that the blog might even help me get a job (or at least that’s what I told my parents).</p>
+
+<p>The name of this blog is kind of ironic - each post does start with a question that <em>I</em> asked. Something I’m curious about. Or sometimes the question is just “I wonder if I can”</p>
+
+<p>And I try to answer those questions using the tools I have at my disposal: maths, physics, coding.</p>
+
+<p>If I find an answer, and especially if the answer or the process of finding it is interesting, then I write about it. Because I want to share this cool thing I did.</p>
+
+<p>And I want to explain it in a way that casual readers can understand, and hopefully find interesting.</p>
+
+<p>That’s the reason I keep writing this blog.</p>
+
+<hr />
+
+<p>When I applied for my current job, I included a link to this blog. On my first day, when I met my line manager, he said that what he found appealing, more than the topics of the posts (which aren’t really applicable to the job), was that it showed how I think through problems.</p>
+
+<p>I’ve been working there almost 10 years now.</p>
+
+<p>Granted, I haven’t written as many posts since then. But then, it’s a lot easier to find the time when you’re unemployed ;)</p>
+
+<p>I started this blog 15 years and 136 posts ago.</p>
+
+<p>I thought I should mark the occasion</p>
+
+<p>Chris.</p>
+
+<p>[I don’t think my sister reads the blog anymore]</p>]]></content><author><name>Chris Oates</name></author><category term="biographical" /><summary type="html"><![CDATA[15 years ago, I was unemployed. I’d dropped out of university the year before and my job prospects weren’t looking good.]]></summary></entry><entry><title type="html">When will I get the cards I want in Pokemon TCG Pocket</title><link href="/2025/04/08/how-log-to-pull-pokemon.html" rel="alternate" type="text/html" title="When will I get the cards I want in Pokemon TCG Pocket" /><published>2025-04-08T19:40:00+00:00</published><updated>2025-04-08T19:40:00+00:00</updated><id>/2025/04/08/how-log-to-pull-pokemon</id><content type="html" xml:base="/2025/04/08/how-log-to-pull-pokemon.html"><![CDATA[<p>When Pokemon first took the world by storm, I was 8 years old. Which is to say, I was the perfect age for it. And I was WAY into it.</p>
+
+<p>Nearly 30 years later, and <a href="https://oatzy.github.io/2022/05/28/data-structure-pokemon-cards.html">something</a> of it is still deeply ingrained in my psyche. So when Pokemon TCG Pocket was released, I was an easy mark.</p>
+
+<h1 id="secret-mission">Secret Mission</h1>
+
+<p>Garchomp is my favourite Pokemon, so when the second expansion — Space Time Smackdown — was release with a full-art Garchomp, I had to have it.</p>
+
+<p>And I got it!</p>
+
+<p>But then I learned about secret mission: <a href="https://www.eurogamer.net/pokemon-tcg-pocket-secret-missions#section-12">Champion of the Sinnoh Region</a></p>
+
+<p>Completing this mission would earn me a Garchomp emblem, to proudly display on my player profile.</p>
+
+<p>How hard could it be?</p>
+
+<p>To complete the secret mission, I would need to collect:</p>
+
+<ul>
+  <li>Garchomp (one star)</li>
+  <li>Lucario (one star)</li>
+  <li>Gastrodon (one star)</li>
+  <li>Spiritomb (one star)</li>
+  <li>Cynthia (two star)</li>
+</ul>
+
+<p>Luckily, by that point I already had the Garchomp and Lucario, so I only needed 2 more one star cards and a two star card to complete the mission.</p>
+
+<h1 id="getting-cards">Getting cards</h1>
+
+<p>There are four ways to acquire a given card</p>
+
+<ol>
+  <li>pull it from a booster pack</li>
+  <li>wonder pick it</li>
+  <li>trade for it</li>
+  <li>buy it with pack points</li>
+</ol>
+
+<p>We’ll come back to (1)</p>
+
+<h2 id="wonder-pick">Wonder Pick</h2>
+
+<p>Wonder pick shows you sets of cards that other players pulled when opening a booster pack. You can chose a set, and the cards from that set are placed face-down and shuffled. You then pick one, and get a copy of whatever is revealed.</p>
+
+<p>There are 5 cards to pick from, which means a 1 in 5 chance of getting the card you want, which is much better odds than pulling the card from a booster pack.</p>
+
+<p>However, this only works if the card you want is available to pick at all. This becomes less and less likely over time, as new expansions are released and players open fewer boosters from the older expansions.</p>
+
+<p>For that reason, this method is too unreliable to take into account.</p>
+
+<h2 id="trade">Trade</h2>
+
+<p>The trade feature is trash, and we won’t dignify it with further discussion.</p>
+
+<p><em>[edit]</em>: In August 2025, the trade feature was significantly improved with the introduction of wishlists.
+This potentially helps with obtaining the one star cards, tho it’s still not possible to trade two star cards.</p>
+
+<h2 id="pack-points">Pack Points</h2>
+
+<p>With each booster pack you open, you earn 5 pack points (pp), and with enough pack points you can out-right buy the card you want.</p>
+
+<p>The number of points required to buy a card depends on its rarity. In my case, the relevance numbers are</p>
+
+<ul>
+  <li>one star: 400 pp</li>
+  <li>two star: 1250 pp</li>
+</ul>
+
+<p>So all together, I would need… 2050 pp.</p>
+
+<p>To achieve that many pack points, I would need to open <strong>410 booster packs</strong>. Let’s put that in context.</p>
+
+<p>If you’re a free-to-play player, you get to open 2 booster packs a day. That means it would take 205 days to get the required number of points, or <strong>almost 7 months</strong>!</p>
+
+<p>If, instead, you pay for a premium pass (£7.99/month), you get to open a third pack per day, bringing it down to 137 days or about 4.5 months.</p>
+
+<p>It’s not impossible, but it would suck the joy out of the game; always opening packs from the same expansion, and in most cases getting low value duplicates over and over.</p>
+
+<p>There are various missions and bonuses which allow you to open more booster packs per month, but not enough to move the needle much.</p>
+
+<h3 id="cold-hard-cash">Cold hard cash</h3>
+
+<p>What if you wanted to buy the booster packs with real money?</p>
+
+<p>The best deal just now is to buy the 690 Pokemon gold bundle (500 paid + 190 ‘free’) for £79.99.</p>
+
+<p>One booster pack costs 6 gold, so the bundle would give you 115 booster packs at a cost of about 69.5p per pack.</p>
+
+<p>So, to open the 410 booster packs, I would have to pay <strong>£285</strong> !</p>
+
+<p>Yeah. That’s a lot of money to spend on an imaginary object.</p>
+
+<h2 id="booster-packs">Booster Packs</h2>
+
+<p>But wait, let’s go back to point (1).</p>
+
+<p>Sure, pack points are a guaranteed way to get the cards you want, but if you’re opening 410 booster packs, that’s ample opportunity to just pull some of those cards. Right?</p>
+
+<h1 id="offering-rates">Offering Rates</h1>
+
+<p>Helpfully, the game shares it’s “offering rates” — the probability of pulling each card.</p>
+
+<p>So, what’s the probability of getting one or more of the desired cards when opening 410 booster packs?</p>
+
+<p>The relevant offering rates break down like so:</p>
+
+<ul>
+  <li>each booster pack contains 5 cards</li>
+  <li>in regular booster packs
+    <ul>
+      <li>the first 3 cards are always one diamond ‘common’ cards, so we can ignore them</li>
+      <li>for the 4th card
+        <ul>
+          <li>one star - <em>0.214%</em></li>
+          <li>two star - <em>0.041%</em></li>
+        </ul>
+      </li>
+      <li>for the 5th card
+        <ul>
+          <li>one star - <em>0.857%</em></li>
+          <li>two star - <em>0.166%</em></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>the probability of opening a ‘rare’ booster - <em>0.05%</em>
+    <ul>
+      <li>in a rare booster there are 5 rare cards</li>
+      <li>all rare cards (including one and two star) have the same probability - <em>3.846%</em></li>
+    </ul>
+  </li>
+</ul>
+
+<p>Note, these offering rates apply to the Space Time Smackdown booster packs. Other expansions may have different rates.</p>
+
+<h2 id="pull-probabilities">Pull probabilities</h2>
+
+<p>Let’s start by looking at the probability of pulling a one star card from a regular booster</p>
+
+<p>It’s easiest to calculate the <a href="https://oatzy.github.io/2011/08/08/quick-look-dont-blink.html">probability of NOT</a> pulling the card (not card 4 and not card 5), then subtract from 1</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">p</span><span class="p">(</span><span class="n">one</span> <span class="n">star</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p</span><span class="p">(</span><span class="n">one</span> <span class="n">star</span><span class="o">|</span><span class="mi">4</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p</span><span class="p">(</span><span class="n">one</span> <span class="n">star</span><span class="o">|</span><span class="mi">5</span><span class="p">))</span>
+            <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mf">0.00214</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mf">0.00857</span><span class="p">)</span>
+            <span class="o">=</span> <span class="mf">0.0107</span>
+</code></pre></div></div>
+
+<p>Calculated the same way, the two star probability is <code class="language-plaintext highlighter-rouge">p(two star) = 0.00207</code></p>
+
+<p>For rare booster packs, there are 5 opportunities for pulling a given card, with the same probability each time, and a card may appear more than once</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">p</span><span class="p">(</span><span class="n">rare</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mf">0.0384</span><span class="p">)</span> <span class="o">^</span> <span class="mi">5</span>
+        <span class="o">=</span> <span class="mf">0.178</span>
+</code></pre></div></div>
+
+<p>The probability is the same for both one and two star cards.</p>
+
+<p>Combining the probabilities for rare and regular boosters, we get</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">P</span><span class="p">(</span><span class="n">one</span> <span class="n">star</span><span class="p">)</span> <span class="o">=</span> <span class="mf">0.0108</span>
+<span class="n">P</span><span class="p">(</span><span class="n">two</span> <span class="n">star</span><span class="p">)</span> <span class="o">=</span> <span class="mf">0.00216</span>
+</code></pre></div></div>
+
+<h2 id="opening-boosters">Opening boosters</h2>
+
+<p>We want to know the probability of pulling one or more copies of a card while opening a large number of booster packs</p>
+
+<p>As before, it’s easiest to come at it via the probability of not pulling the card in any booster</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">p</span><span class="p">(</span><span class="n">card</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p</span><span class="p">(</span><span class="n">card</span><span class="p">))</span> <span class="o">^</span> <span class="n">N</span>
+</code></pre></div></div>
+
+<p>As previously mentioned, I would have to open N = 410 booster packs to get the required number of pack points, so we have</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">p</span><span class="p">(</span><span class="n">one</span> <span class="n">star</span><span class="p">,</span> <span class="mi">410</span><span class="p">)</span> <span class="o">=</span> <span class="mf">0.988</span>
+<span class="n">p</span><span class="p">(</span><span class="n">two</span> <span class="n">star</span><span class="p">,</span> <span class="mi">410</span><span class="p">)</span> <span class="o">=</span> <span class="mf">0.588</span>
+</code></pre></div></div>
+
+<p>In other words, I’m almost certainly going to pull one or both of the one star cards, but the two star card is only slightly better 50:50</p>
+
+<p>The probability of pulling all three is <em>58.7%</em></p>
+
+<p>But, if I do pull a one star card, I won’t need to buy it with pack points, so then don’t need to open as many boosters. But opening fewer boosters decreases the probability of pulling the card. Is there some sweet spot?</p>
+
+<h1 id="simulation">Simulation</h1>
+
+<p>How many boosters should I expect to open before I either pull all the cards, or else have enough points to buy the cards I haven’t pulled yet?</p>
+
+<p>This is more difficult to calculate from pure probability, so I used a <a href="https://en.wikipedia.org/wiki/Monte_Carlo_method">simulation</a> instead — <a href="https://github.com/oatzy/pokemon-tcg-pocket-sim/tree/main/scripts">source code here</a>.</p>
+
+<p>The results looks like this</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp"># Average boosters opened - 205.0471
+</span>
+<span class="cp"># Most likely number opened - 250 (0.5076)
+# Probability above most common - 0.0789
+</span>
+<span class="cp"># Average copies of each card
+</span> <span class="o">-</span> <span class="n">Cynthia</span><span class="o">:</span> <span class="mf">0.4393</span>
+ <span class="o">-</span> <span class="n">Spiritomb</span><span class="o">:</span> <span class="mf">2.2016</span>
+ <span class="o">-</span> <span class="n">Gastrodon</span><span class="o">:</span> <span class="mf">2.2031</span>
+
+<span class="cp"># Probabilities of card sets
+</span> <span class="o">-</span> <span class="n">Cynthia</span><span class="o">:</span> <span class="mf">0.0116</span>
+ <span class="o">-</span> <span class="n">Spiritomb</span><span class="o">:</span> <span class="mf">0.0137</span>
+ <span class="o">-</span> <span class="n">Gastrodon</span><span class="o">:</span> <span class="mf">0.0159</span>
+ <span class="o">-</span> <span class="n">Cynthia</span><span class="p">,</span> <span class="n">Spiritomb</span><span class="o">:</span> <span class="mf">0.0925</span>
+ <span class="o">-</span> <span class="n">Cynthia</span><span class="p">,</span> <span class="n">Gastrodon</span><span class="o">:</span> <span class="mf">0.0928</span>
+ <span class="o">-</span> <span class="n">Cynthia</span><span class="p">,</span> <span class="n">Gastrodon</span><span class="p">,</span> <span class="n">Spiritomb</span><span class="o">:</span> <span class="mf">0.2265</span>
+ <span class="o">-</span> <span class="n">Gastrodon</span><span class="p">,</span> <span class="n">Spiritomb</span><span class="o">:</span> <span class="mf">0.547</span>
+</code></pre></div></div>
+
+<p>I should expect to open ~205 booster packs before getting all three cards.</p>
+
+<p>The most likely outcome is I’ll pull the 2 one stars and will have to buy the two star, with probability about 50%. The probability of having to open more than 250 packs is only 7.89%</p>
+
+<p>There’s roughly a 1 in 5 chance of pulling all 3 cards before getting to the required pack points. The probability of pulling none of the cards is so unlikely it didn’t happen in 10,000 simulations (but it’s not impossible).</p>
+
+<p>If we plot a histogram, we get a clearer picture of what’s going on</p>
+
+<p><img src="/assets/pokemon-sim-histogram.png" alt="histogram of simulated booster packs expected" /></p>
+
+<p>There are four clear peaks corresponding to 80, 160, 250, and 330 packs — or 400 pp, 800pp, 1250 pp, and 1650 pp. Those numbers should look familiar.</p>
+
+<h3 id="head-start">Head start</h3>
+
+<p>When I starting this mission I had already opened about 100 boosters (500 pp).</p>
+
+<p>Taking that into account, the results become</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp"># Average boosters opened - 142.9071
+</span>
+<span class="cp"># Most likely number opened - 150 (0.4728)
+# Probability above most common - 0.2493
+</span>
+<span class="cp"># Average copies of each card
+</span> <span class="o">-</span> <span class="n">Cynthia</span><span class="o">:</span> <span class="mf">0.3124</span>
+ <span class="o">-</span> <span class="n">Gastrodon</span><span class="o">:</span> <span class="mf">1.5405</span>
+ <span class="o">-</span> <span class="n">Spiritomb</span><span class="o">:</span> <span class="mf">1.5657</span>
+
+<span class="cp"># Probabilities of card sets
+</span> <span class="o">-</span> <span class="p">(</span><span class="n">none</span><span class="p">)</span><span class="o">:</span> <span class="mf">0.0007</span>
+ <span class="o">-</span> <span class="n">Spiritomb</span><span class="o">:</span> <span class="mf">0.0464</span>
+ <span class="o">-</span> <span class="n">Gastrodon</span><span class="o">:</span> <span class="mf">0.0482</span>
+ <span class="o">-</span> <span class="n">Cynthia</span><span class="o">:</span> <span class="mf">0.056</span>
+ <span class="o">-</span> <span class="n">Cynthia</span><span class="p">,</span> <span class="n">Gastrodon</span><span class="p">,</span> <span class="n">Spiritomb</span><span class="o">:</span> <span class="mf">0.078</span>
+ <span class="o">-</span> <span class="n">Cynthia</span><span class="p">,</span> <span class="n">Gastrodon</span><span class="o">:</span> <span class="mf">0.0826</span>
+ <span class="o">-</span> <span class="n">Cynthia</span><span class="p">,</span> <span class="n">Spiritomb</span><span class="o">:</span> <span class="mf">0.0911</span>
+ <span class="o">-</span> <span class="n">Gastrodon</span><span class="p">,</span> <span class="n">Spiritomb</span><span class="o">:</span> <span class="mf">0.597</span>
+</code></pre></div></div>
+
+<p>Now the expected number of boosters is 145. Adding that to the 100 I already opened comes to 245, which is more than the expected number when starting from zero.</p>
+
+<p>But as before, I will most likely have to buy the two star card with pack points, and it’s highly likely that I will pull the one star cards in the meantime.</p>
+
+<h3 id="gotta-catch-em-all">Gotta catch ‘em all</h3>
+
+<p>In case you were wondering, the expected number of packs to get all 5 Champion of Sinnoh cards is 215 (1075 pp), which is much less than the 2850 pp required to buy the cards. It’s less even than the cost of just the two star card.</p>
+
+<p>But that calculation isn’t quite correct — Lucario is only available in the Space Time Smackdown <em>Dialga</em> boosters, while the rest are in <em>Palkia</em>. That means, if we only open Palkia boosters, there’s zero chance of pulling Lucario.</p>
+
+<p>Figuring out the optimal strategy in that case is left as an exercise for the reader.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>No matter how we come at the calculation, the most likely outcome is that I’ll have to buy the two star Cynthia with pack points, but there’s a good chance of pulling the one star cards. This comes down to two star cards being much rarer than one star cards; the probability of pulling Cynthia in any given pack is only about 1 in 500.</p>
+
+<p>Since I started drafting this post, I’ve gotten up to 900 pack points, and I managed to pull one of the one star cards (Spiritomb) along the way.</p>
+
+<p>Re-running the simulation, the expected number of boosters in now down to 85.</p>
+
+<p>Still some way to go…</p>
+
+<p>Chris.</p>
+
+<p>Oh, and if you want to add me, my user name is ‘oatzy’ and my friend code is <code class="language-plaintext highlighter-rouge">0625-2776-5308-5489</code></p>
+
+<p>I’m too much of a coward for Versus battles (PvP), but if you offer me a trade I will offer you something in return, even if I don’t need what you offered.</p>]]></content><author><name>Chris Oates</name></author><category term="maths" /><category term="probability" /><category term="pokemon" /><category term="pokemon tcg pocket" /><summary type="html"><![CDATA[When Pokemon first took the world by storm, I was 8 years old. Which is to say, I was the perfect age for it. And I was WAY into it.]]></summary></entry><entry><title type="html">Any Probability with a Dice or Coin</title><link href="/2024/12/22/any-probability-with-a-dice-or-coin.html" rel="alternate" type="text/html" title="Any Probability with a Dice or Coin" /><published>2024-12-22T18:49:00+00:00</published><updated>2024-12-22T18:49:00+00:00</updated><id>/2024/12/22/any-probability-with-a-dice-or-coin</id><content type="html" xml:base="/2024/12/22/any-probability-with-a-dice-or-coin.html"><![CDATA[<p>I woke up from a dream with a question in my head – <strong>can we generate any probability with a coin and a six-sided dice?</strong></p>
+
+<p>Let’s focus on the dice - what probabilities can we generate with a dice roll?</p>
+
+<ul>
+  <li>1 in 6 is easy, if you roll a <code class="language-plaintext highlighter-rouge">1</code> you win</li>
+  <li>for 1 in 2, if the result is even – <code class="language-plaintext highlighter-rouge">2</code>, <code class="language-plaintext highlighter-rouge">4</code>, or <code class="language-plaintext highlighter-rouge">6</code> – you win</li>
+  <li>for 1 in 3, if the result is divisible by three – <code class="language-plaintext highlighter-rouge">3</code> or <code class="language-plaintext highlighter-rouge">6</code> – you win</li>
+  <li>1 in 4 is less obvious, but since <code class="language-plaintext highlighter-rouge">1/4 = 1/2 * 1/2</code>, we can roll the dice twice and win if both rolls come up even.</li>
+</ul>
+
+<p>But what about 1 in 5 ?</p>
+
+<h1 id="keep-rollin-rollin-rollin-rollin">Keep rollin’ rollin’ rollin’ rollin’</h1>
+
+<p>Let’s start by stubbornly pretending that the dice only has five side.</p>
+
+<ul>
+  <li>If you roll a <code class="language-plaintext highlighter-rouge">1</code>, you win.</li>
+  <li>If you roll <code class="language-plaintext highlighter-rouge">2</code>, <code class="language-plaintext highlighter-rouge">3</code>, <code class="language-plaintext highlighter-rouge">4</code>, or <code class="language-plaintext highlighter-rouge">5</code>, you lose.</li>
+</ul>
+
+<p>Problem solved.</p>
+
+<p>But wait! What if you roll a <code class="language-plaintext highlighter-rouge">6</code>?</p>
+
+<p>In that case, let’s try rolling again – same rules apply – and keep rolling until we win or lose.</p>
+
+<p>What’s the probability of winning?</p>
+
+<ul>
+  <li>the probability of winning – rolling a <code class="language-plaintext highlighter-rouge">1</code> – on the first roll is <code class="language-plaintext highlighter-rouge">p(1) = 1/6</code></li>
+  <li>the probability of winning on the second roll is the probability of rolling a <code class="language-plaintext highlighter-rouge">6</code> on the first roll (<code class="language-plaintext highlighter-rouge">1/6</code>) multiplied by the probability of rolling a <code class="language-plaintext highlighter-rouge">1</code> on the second roll (<code class="language-plaintext highlighter-rouge">1/6</code>)
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">p(2) = 1/6 * 1/6 = 1/36</code></li>
+      <li>the probability of winning on first OR second roll is the sum of the probabilities
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">p(1||2) = p(1) + p(2) = 1/6 + 1/36 = 0.19444..</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>the probability of winning on the third roll, following the same logic, is
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">p(3) = 1/6 * 1/6 * 1/6 = (1/6)^3 = 1/216</code></li>
+      <li>the probability of wining on the first, second, or third roll is then
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">p(1||2||3) = 1/6 + 1/36 + 1/216 = 0.19907..</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>This is looking promising – the probability is getting closer and closer to <code class="language-plaintext highlighter-rouge">0.2</code> (<code class="language-plaintext highlighter-rouge">= 1/5</code>)</p>
+
+<p>So, the probability of winning at all, in any round, is the sum of the probabilities of winning on any of a potentially infinite number of rounds</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>p = p(1) + p(2) + p(3) + ... p(i) + ... + p(inf)
+</code></pre></div></div>
+
+<p><img src="/assets/probability/1in5-total.png" alt="1 in 5 probability" /></p>
+
+<p>This a a <a href="https://en.wikipedia.org/wiki/Geometric_series">geometric series</a>, for which there’s a simple formula</p>
+
+<p><img src="/assets/probability/sum-of-powers.png" alt="sum of powers" /></p>
+
+<p>And substituting <code class="language-plaintext highlighter-rouge">x = 1/6</code> we get… <code class="language-plaintext highlighter-rouge">p = 1/5</code></p>
+
+<p>tada!</p>
+
+<p>Granted, this approach could result in rolling dice forever, without ever winning or losing (by rolling infinite <code class="language-plaintext highlighter-rouge">6</code>s).
+But the probability of that happening is diminishingly small; the probability of rolling just four <code class="language-plaintext highlighter-rouge">6</code>s in a row is less than 1%</p>
+
+<h1 id="roll-again">Roll again</h1>
+
+<p>Now, we might well wonder: Was this a fluke? Or does this work for other numbers?</p>
+
+<p>Let’s try for 1 in 4.</p>
+
+<ul>
+  <li>roll <code class="language-plaintext highlighter-rouge">1</code> -&gt; win</li>
+  <li>roll <code class="language-plaintext highlighter-rouge">2</code>, <code class="language-plaintext highlighter-rouge">3</code>, or <code class="language-plaintext highlighter-rouge">4</code> -&gt; lose</li>
+  <li>roll <code class="language-plaintext highlighter-rouge">5</code>, or <code class="language-plaintext highlighter-rouge">6</code> -&gt; re-roll</li>
+</ul>
+
+<p>The probability is calculated the same as before</p>
+
+<ul>
+  <li>the probability of winning – rolling a <code class="language-plaintext highlighter-rouge">1</code> – on the first roll is <code class="language-plaintext highlighter-rouge">p(1) = 1/6</code></li>
+  <li>the probability of winning on the second roll is the probability of a re-roll (<code class="language-plaintext highlighter-rouge">2/6 = 1/3</code>) multiplied by the probability of winning on the second roll (<code class="language-plaintext highlighter-rouge">1/6</code>)
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">p(2) = 1/6 * 1/3</code></li>
+    </ul>
+  </li>
+  <li>the probability of winning on the third roll is <code class="language-plaintext highlighter-rouge">p(3) = 1/6 * 1/3 * 1/3 = 1/6 * (1/3)^2</code></li>
+  <li>and so on</li>
+</ul>
+
+<p>Adding up, this time, we have</p>
+
+<p><img src="/assets/probability/1in4-total.png" alt="1 in 4 probability" /></p>
+
+<p>Just like we wanted.</p>
+
+<p>[NOTE: this time, the sum is from <code class="language-plaintext highlighter-rouge">i=0</code> rather than <code class="language-plaintext highlighter-rouge">i=1</code>]</p>
+
+<h1 id="prove-it">Prove it</h1>
+
+<p>And since we’re on a roll (pun intended), let’s see if this always works.</p>
+
+<p>Suppose we have a dice with <code class="language-plaintext highlighter-rouge">N</code> sides, and we want to roll for a <code class="language-plaintext highlighter-rouge">1/r</code> probability, with integer <code class="language-plaintext highlighter-rouge">r &lt;= N</code></p>
+
+<p>Probability of a re-roll is</p>
+
+<p><img src="/assets/probability/q-reroll.png" alt="re-roll probability" /></p>
+
+<p>And following through the same logic as before</p>
+
+<p><img src="/assets/probability/1inN-proof.png" alt="1 in N proof" /></p>
+
+<p>QED</p>
+
+<h1 id="can-you-take-me-higher">Can you take me higher</h1>
+
+<p>So with our six-sided dice, we can get probabilities for <code class="language-plaintext highlighter-rouge">1/2</code> to <code class="language-plaintext highlighter-rouge">1/6</code>. But what about <code class="language-plaintext highlighter-rouge">1/7</code>?</p>
+
+<p>Our algorithm only lets us represent probabilities <code class="language-plaintext highlighter-rouge">1/r</code> for integer <code class="language-plaintext highlighter-rouge">r &lt;= N</code>, where <code class="language-plaintext highlighter-rouge">N=6</code> for a standard six-sided (d6) dice.</p>
+
+<p>Sure, we could go up to a dice with more sides, like an octahedral (d8). But I don’t have one of those.</p>
+
+<p>How about this – roll the d6 dice twice; each roll represents a digit in a two-digit, base-6 number.</p>
+
+<p>We’ll treat <code class="language-plaintext highlighter-rouge">6</code> as zero. So if we roll <code class="language-plaintext highlighter-rouge">[2][5]</code> we have hexary (sexary?) number <code class="language-plaintext highlighter-rouge">25</code> = <code class="language-plaintext highlighter-rouge">(2*6) + 5 = 17</code> in decimal</p>
+
+<p>Now we can represent 36 values. Can you see where this is going?</p>
+
+<p>So we roll our dice twice</p>
+<ul>
+  <li>if the result is two <code class="language-plaintext highlighter-rouge">6</code>s – <code class="language-plaintext highlighter-rouge">[0][0]</code> = decimal <code class="language-plaintext highlighter-rouge">0</code> – then we win</li>
+  <li>if the result is decimal <code class="language-plaintext highlighter-rouge">1</code> to <code class="language-plaintext highlighter-rouge">6</code> – hexary <code class="language-plaintext highlighter-rouge">[0][1]</code> to <code class="language-plaintext highlighter-rouge">[1][0]</code> – we lose</li>
+  <li>otherwise, re-roll.</li>
+</ul>
+
+<p>As previously demonstrated, we know this will converge on <code class="language-plaintext highlighter-rouge">1/7</code>. Job done.</p>
+
+<p>Is this practical? Not really. The re-roll probability in this case is <code class="language-plaintext highlighter-rouge">29/36 ~ 80%</code>, which means potentially a lot of re-rolls.</p>
+
+<p>But, it does work.</p>
+
+<h1 id="great-expectations">Great expectations</h1>
+
+<p>Actually, how many rolls <em>would</em> we expect?</p>
+
+<p>We can think of rolling and re-rolling as a <a href="https://en.wikipedia.org/wiki/Bernoulli_trial">Bernoulli trial</a>, where the probability of the trials ending (not re-rolling) is given by <code class="language-plaintext highlighter-rouge">p(end) = 1 - q = r/N</code></p>
+
+<p>The <a href="https://www.cut-the-knot.org/Probability/LengthToFirstSuccess.shtml">expected number of trials</a> is then given by <code class="language-plaintext highlighter-rouge">T = 1/p(end) = N/r</code></p>
+
+<p>For the two dice <code class="language-plaintext highlighter-rouge">1/7</code> example, that comes out to <code class="language-plaintext highlighter-rouge">36/7 = 5.1428..</code> rolls (or <code class="language-plaintext highlighter-rouge">10.28..</code>, since we’re rolling two dice for each trial).</p>
+
+<p>By comparison, the single dice <code class="language-plaintext highlighter-rouge">1/5</code> probability would expect only <code class="language-plaintext highlighter-rouge">T = 6/5 = 1.2</code> rolls</p>
+
+<p>We can get an improvement on two dice for <code class="language-plaintext highlighter-rouge">1/7</code> by instead pairing the dice with a coin – flip a coin for the first digit and roll a dice for the second. This gives us 12 possible values and means we expect only <code class="language-plaintext highlighter-rouge">12/7 = 1.714..</code> trials (rolls and flips), which is much more reasonable.</p>
+
+<h1 id="flippin-heck">Flippin’ heck</h1>
+
+<p>There’s question that had been floating around in my head for a while, before the dream – <strong>can we get a probability of 1 in 3 with one or more coin flips?</strong></p>
+
+<p>Following the same algorithm as for the dice, we can flip two coins (or one coin twice). The result is interpreted as a two digit binary number – heads = <code class="language-plaintext highlighter-rouge">0</code>, tails = <code class="language-plaintext highlighter-rouge">1</code>, giving us 4 possible values.</p>
+
+<ul>
+  <li>If we get two heads – <code class="language-plaintext highlighter-rouge">(0)(0)</code> – we win!</li>
+  <li>If we get one head and one tail – <code class="language-plaintext highlighter-rouge">(0)(1)</code> or <code class="language-plaintext highlighter-rouge">(1)(0)</code> (1 or 2 in decimal) – we lose.</li>
+  <li>If we get two tails – <code class="language-plaintext highlighter-rouge">(1)(1)</code> (decimal 3) – flip again.</li>
+</ul>
+
+<p>Repeat until the game ends. Surprisingly simple.</p>
+
+<p>The expected total number of coin flips is <code class="language-plaintext highlighter-rouge">2 * N/r = 2 * 4/3 = 2.66..</code></p>
+
+<hr />
+
+<p>So there you go - you can generate any probability with a single dice or coin.</p>
+
+<p>Wait, why are we only half way through this post?</p>
+
+<h1 id="re-numeration">Re-numeration</h1>
+
+<p>All the probabilities we’ve looked at so far have been one-in-X. What about higher numerators? Can we get 2-in-5 with a dice?</p>
+
+<p>If the trick worked for 1/5, why not 2/5?</p>
+
+<ul>
+  <li>roll a <code class="language-plaintext highlighter-rouge">1</code> or <code class="language-plaintext highlighter-rouge">2</code> -&gt; win</li>
+  <li>roll <code class="language-plaintext highlighter-rouge">3</code>, <code class="language-plaintext highlighter-rouge">4</code>, <code class="language-plaintext highlighter-rouge">5</code> -&gt; lose</li>
+  <li>roll <code class="language-plaintext highlighter-rouge">6</code> -&gt; re-roll</li>
+</ul>
+
+<p>Now</p>
+
+<ul>
+  <li>the probability of winning on the first roll – rolling <code class="language-plaintext highlighter-rouge">1</code> or <code class="language-plaintext highlighter-rouge">2</code> – is <code class="language-plaintext highlighter-rouge">p(1) = 2/6</code> (<code class="language-plaintext highlighter-rouge">= 1/3</code>)</li>
+  <li>the probability of a re-roll is <code class="language-plaintext highlighter-rouge">1/6</code>, so the probability of winning on the second roll is <code class="language-plaintext highlighter-rouge">p(2) = 1/6 * 1/3</code></li>
+</ul>
+
+<p>You should know the words by now</p>
+
+<p><img src="/assets/probability/2in5-total.png" alt="2 in 5 probability" /></p>
+
+<p>Likewise, if we have an N sided dice and want probability <code class="language-plaintext highlighter-rouge">p = a/b</code>, where integers <code class="language-plaintext highlighter-rouge">0 &lt;= a &lt; b &lt;= N</code></p>
+
+<p>The probability of winning on the first roll is <code class="language-plaintext highlighter-rouge">a/N</code> and the probability of a re-roll is <code class="language-plaintext highlighter-rouge">q = (N - b) / N</code></p>
+
+<p>So the total probability of winning is</p>
+
+<p><img src="/assets/probability/ainb-proof.png" alt="rational probability proof" /></p>
+
+<p>QED again.</p>
+
+<p>Okay, now we’ve covered everything. Right?</p>
+
+<h1 id="stop-making-sense">Stop making sense</h1>
+
+<p><em>“But wait…“</em>, you say, <em>“what about irrational probabilities?”</em></p>
+
+<p><em>“Oh…“</em>, I say, <em>“right…“</em> :/</p>
+
+<p>An irrational probability would be something like <code class="language-plaintext highlighter-rouge">1/pi</code> or <code class="language-plaintext highlighter-rouge">1/e</code>. Can we roll that with a six-sided dice?</p>
+
+<p>So far, we’ve been assuming the probabilities are the same each round – for example, if we roll a <code class="language-plaintext highlighter-rouge">1</code> we win, if we roll a <code class="language-plaintext highlighter-rouge">6</code> we re-roll, regardless of how many rolls we’ve already thrown.</p>
+
+<p>What if we change things up. Let’s stick with re-rolling when we get a <code class="language-plaintext highlighter-rouge">6</code>, but vary the win condition on each round.</p>
+
+<p>For example, suppose we did the following</p>
+
+<ul>
+  <li>if we roll <code class="language-plaintext highlighter-rouge">1</code> on the first round we win</li>
+  <li>if we roll <code class="language-plaintext highlighter-rouge">1</code>, <code class="language-plaintext highlighter-rouge">2</code>, <code class="language-plaintext highlighter-rouge">3</code>, <code class="language-plaintext highlighter-rouge">4</code>, or <code class="language-plaintext highlighter-rouge">5</code> on the second round we win</li>
+  <li>if we roll <code class="language-plaintext highlighter-rouge">1</code> or <code class="language-plaintext highlighter-rouge">2</code> on the third round we win</li>
+  <li>and so on</li>
+</ul>
+
+<p>The probability is then</p>
+
+<p><img src="/assets/probability/1inpi-partial.png" alt="1 in pi probability" /></p>
+
+<p>And we can see this inching upwards</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>p(1)          = 0.1666..
+p(1||2)       = 0.3055..
+p(1||2||3)    = 0.3148..
+p(1||2||3||4) = 0.3179..
+...
+</code></pre></div></div>
+
+<p>towards <code class="language-plaintext highlighter-rouge">p = 0.3183... = 1/pi</code></p>
+
+<h1 id="all-your-base">All your base</h1>
+
+<p>We can generalise this approach like so – we have an N sided dice, and to win on the <code class="language-plaintext highlighter-rouge">i-th</code> throw, we need to roll <code class="language-plaintext highlighter-rouge">ai</code> or lower, where <code class="language-plaintext highlighter-rouge">ai</code> is an integer <code class="language-plaintext highlighter-rouge">0 &lt;= ai &lt; N</code></p>
+
+<p>The total probability of winning is then</p>
+
+<p><img src="/assets/probability/baseN-prob.png" alt="base N probability" /></p>
+
+<p>And what we’re describing here is actually the base-N representation of <code class="language-plaintext highlighter-rouge">p</code>. It’s correct by construction, so no proof required.</p>
+
+<p>The coefficients <code class="language-plaintext highlighter-rouge">ai</code> can be calculated like so</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">tobase</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="n">p</span> <span class="o">*</span> <span class="n">N</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">yield</span> <span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="c1"># list(itertools.islice(tobase(1/math.pi, 6), 10))
+</span></code></pre></div></div>
+
+<p>(for p &lt; 1)</p>
+
+<p>So, for example, the first 10 values of <code class="language-plaintext highlighter-rouge">ai</code> for <code class="language-plaintext highlighter-rouge">1/pi</code> in base-6 are</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">...</span>
+</code></pre></div></div>
+
+<p>and for <code class="language-plaintext highlighter-rouge">1/e</code> in base-6</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">...</span>
+</code></pre></div></div>
+
+<p>The same works for coin flips as well – <code class="language-plaintext highlighter-rouge">1/pi</code> in base-2 is</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">...</span>
+</code></pre></div></div>
+
+<p>Is this practical – memorising an infinite sequence of coefficients? Almost certainly not.</p>
+
+<h1 id="sixes-and-sevens">Sixes and sevens</h1>
+
+<p>Incidentally, this approach does also works for rational numbers.</p>
+
+<p>And it gives us an interesting, alternative way of getting <code class="language-plaintext highlighter-rouge">1/7</code> from a dice roll.</p>
+
+<p>The coefficients (<code class="language-plaintext highlighter-rouge">ai</code>) for <code class="language-plaintext highlighter-rouge">1/7</code> in base 6 are</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="p">...</span>
+</code></pre></div></div>
+
+<p>alternating <code class="language-plaintext highlighter-rouge">0</code> and <code class="language-plaintext highlighter-rouge">5</code></p>
+
+<p>In terms of dice rolls, <code class="language-plaintext highlighter-rouge">0</code> means we lose if we roll anything other than <code class="language-plaintext highlighter-rouge">6</code> (re-roll), and <code class="language-plaintext highlighter-rouge">5</code> means we win if we roll anything other than <code class="language-plaintext highlighter-rouge">6</code></p>
+
+<p>This translate to:</p>
+
+<ul>
+  <li>Roll the dice until you get anything other than <code class="language-plaintext highlighter-rouge">6</code></li>
+  <li>If you rolled an odd number of times, you lose.</li>
+  <li>If you rolling an even number of times, you win.</li>
+</ul>
+
+<p>For example, if you rolled <code class="language-plaintext highlighter-rouge">6, 6, 3</code>, then you stopped on the third roll, which is odd, so you lose. Sorry.</p>
+
+<p>But if you rolled <code class="language-plaintext highlighter-rouge">6, 1</code>, that’s an even number of rolls, so you win. Woo!</p>
+
+<p>This is much easier to comprehend than the previously discussed <code class="language-plaintext highlighter-rouge">1/7</code> methods, and it has an expected number of rolls <code class="language-plaintext highlighter-rouge">T = 6/5 = 1.2</code>. So it would be my preferred method.</p>
+
+<p>There’s a similarly nice, repeating pattern for <code class="language-plaintext highlighter-rouge">1/7</code> in base 2</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">...</span>
+</code></pre></div></div>
+
+<p>This means we can flip a coin until we gets a heads, and if the number of flips was divisible by 3, we win.</p>
+
+<h1 id="back-to-dreaming">Back to dreaming</h1>
+
+<p>Now are we done?</p>
+
+<p>What about imaginary numbers? Can we do imaginary probabilities?</p>
+
+<p>…</p>
+
+<p>Merry Christmas.</p>
+
+<p>Chris.</p>
+
+<p>[yes, I know the singular of ‘dice’ is ‘die’]</p>]]></content><author><name>Chris Oates</name></author><category term="maths" /><category term="probability" /><summary type="html"><![CDATA[I woke up from a dream with a question in my head – can we generate any probability with a coin and a six-sided dice?]]></summary></entry><entry><title type="html">Every film I ever saw - data mining myself</title><link href="/2024/06/06/every-film-i-ever-saw.html" rel="alternate" type="text/html" title="Every film I ever saw - data mining myself" /><published>2024-06-06T19:56:00+00:00</published><updated>2024-06-06T19:56:00+00:00</updated><id>/2024/06/06/every-film-i-ever-saw</id><content type="html" xml:base="/2024/06/06/every-film-i-ever-saw.html"><![CDATA[<p>I signed up for <a href="https://letterboxd.com/oatzy/">Letterboxd</a>.</p>
+
+<h1 id="trakt">trakt</h1>
+
+<p>One of the first options, on creating a letterboxd account, is importing data from other services - one of them being <a href="https://trakt.tv/">trakt</a>.</p>
+
+<p>I don’t use trakt directly. For many years, I’ve been using <a href="https://www.seriesgui.de/">SeriesGuide</a> to keep track of TV shows. I used this in combination with trakt because I could then use the trakt api to get a list of new episodes ‘today’ for <a href="https://oatzy.github.io/2020/05/17/encounter-with-rust-safety.html">completely legal reasons</a>.</p>
+
+<p>SeriesGuide also lets you track films.</p>
+
+<p>So I <a href="https://github.com/anoopsankar/Trakt2Letterboxd">exported my data</a> and imported it into Letterboxd - roughly 950 films</p>
+
+<p>And what’s interesting about this is trakt had recorded <em>when</em> I’d watched each film, and Letterboxd displays this in a <a href="https://letterboxd.com/oatzy/films/diary/">‘diary’</a>.</p>
+
+<p>This is quite pleasing.</p>
+
+<p>The only problem is, the earliest film I had recorded in trakt was <a href="https://letterboxd.com/film/interstellar/">Interstellar</a> in November 2014.</p>
+
+<p>I could do better. I could go farther.</p>
+
+<p>Too far? Who’s to say…</p>
+
+<h1 id="etickets">eTickets</h1>
+
+<p>There were a couple films - <a href="https://letterboxd.com/film/spider-man-no-way-home/">Spider-man: No Way Home</a> and <a href="https://letterboxd.com/film/venom-let-there-be-carnage/">Venom: Let There be carnage</a> - which I hadn’t logged. Luckily, I have etickets, so just had to search my emails to get the exact date.</p>
+
+<p>But I only started buying tickets online in 2021, when movies started to come back after covid</p>
+
+<p>[the first film I saw, post-covid, was <a href="https://letterboxd.com/film/black-widow-2021/">Black Widow</a>]</p>
+
+<h1 id="ticket-stubs">Ticket stubs</h1>
+
+<p>My next thought was</p>
+
+<blockquote>
+  <p><em>you know… I’m the sort of person who would keep old ticket stubs; and I bet I know where they are…</em></p>
+
+</blockquote>
+
+<p>And reader, I am, and I did</p>
+
+<p><img src="/assets/ticket_stubs.jpg" alt="A bundle of ticket stubs" /></p>
+
+<p>I was surprised by how far back they go - the oldest is for <a href="https://letterboxd.com/film/the-world-is-not-enough/">The World is Not Enough</a> in 1999.</p>
+
+<p>The most recent is for <a href="https://letterboxd.com/film/the-amazing-spider-man-2/">Amazing Spider-Man 2</a> in April 2014.</p>
+
+<p>I was also surprised by some of the films, for example I have no memory of seeing <a href="https://letterboxd.com/film/lilo-stitch/">Lilo &amp; Stitch</a> at the cinema, but I have a ticket stub that says otherwise.</p>
+
+<p>On the other hand, I was disappointed by how much was missing. I saw <a href="https://letterboxd.com/film/pokemon-the-movie-2000/">Pokemon: The Movie 2000</a> at the cinema - I have the promo cards to prove it - but sadly no ticket stub to say when.</p>
+
+<h1 id="notion">Notion</h1>
+
+<p>While looking over my watch history from trakt, I noticed a weird empty spot from November-December 2022. This didn’t look right, because I’m in the habit of watching movies every weekend.</p>
+
+<p>Maybe I was lazy those two months, or maybe trakt was having some issues? I dunno.</p>
+
+<p>I started using <a href="https://www.notion.so/">notion</a> for note keeping in 2020, and I had a movie watching list in there. And when I watched a movie, I would check a box to hide it.</p>
+
+<p>Now, I didn’t record when exactly I watched the films, but notion does auto-track the last edit time on each item - such as when a checkbox is checked.</p>
+
+<p>I was a little lax about when I checked the box on notion - sometimes it would be days later - but it was enough to tell me which films I was missing from that period.</p>
+
+<p>[I also did star ratings in notion, which I could manually copy across]</p>
+
+<h1 id="netflix">Netflix</h1>
+
+<p>Netflix keeps a <a href="https://help.netflix.com/en/node/101917">watch history</a>, and even better lets you download it as a <a href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV</a> file</p>
+
+<p>But not a CSV that can be imported to letterboxd.</p>
+
+<p>It only tells you title and watch date, and annoyingly combines tv shows and movies.</p>
+
+<p>The quick and dirty work around was to <a href="https://en.wikipedia.org/wiki/Grep">grep</a> out words like “Episode”, “Season”, “Series”</p>
+
+<p>Starting from the bottom, the earliest entry was <a href="https://letterboxd.com/film/cloudy-with-a-chance-of-meatballs/">Cloudy With a Chance of Meatballs</a> in September 2014</p>
+
+<p>I only had to add a few entries from 2014 before I hit the movies I’d recorded in trakt.</p>
+
+<h1 id="prime-video">Prime Video</h1>
+
+<p>Amazon also keeps a watch history, but you have to make a <a href="https://www.amazon.co.uk/hz/privacy-central/data-requests/preview.html">formal request</a> and wait a couple of days for the download.</p>
+
+<p>It’s CSV again, and with a similar issue as netflix of mixing tv and movies. And to make matters worse, it seems to record trailers, including the ones that auto-play in the app</p>
+
+<p>I only got Amazon Prime when I entered full time employment (end of 2015), and 2015 onwards I had in trakt. So most of it was already covered.</p>
+
+<p>There were a couple of early films I hadn’t logged. The first film I watched on Prime was <a href="https://letterboxd.com/film/it-follows/">It Follows</a> on Boxing Day 2015.</p>
+
+<p>I’ve watched films on other streaming services, but none before 2015. I did have to look up one on <a href="https://www.crunchyroll.com/">Crunchyroll</a>, which sadly does not provide a downloadable history.</p>
+
+<h1 id="lovefilm">LoveFilm</h1>
+
+<p>…was a DVD rental service, like the UK equivalent of the original incarnation of netflix.</p>
+
+<p>I signed up for an account in 2010. <a href="https://en.wikipedia.org/wiki/LoveFilm">LoveFilm</a> was later bought out by Amazon, who ultimately discontinued the service in 2017</p>
+
+<p>Unfortunately, I don’t have any record of what films I rented or when. I searched my email and found two “Your next rental is on the way…” messages (<a href="https://letterboxd.com/film/twelve-monkeys/">Twelve Monkeys</a> and <a href="https://letterboxd.com/film/creation/">Creation</a>)</p>
+
+<p>Apparently, I deleted all the subsequent emails.</p>
+
+<p>IIRC, my subscription was 3 DVDs a month, and I had the account ~7 years - totalling about 250 films, which is a pretty major loss of data.</p>
+
+<p>When I was requesting my Amazon data, I also enquired about my LoveFilm rental history. But they just sent me another copy of my prime video data (which doesn’t include Lovefilm). So one has to assume that data no longer exists.</p>
+
+<h1 id="foursquare">Foursquare</h1>
+
+<p>Clutching at straws, I was starting to wonder if I could use my phone’s location data (google maps) to figure out when I visited (or was near) a cinema. Then I remembered I had something even better.</p>
+
+<p>There was a period, 2010-2014, when I used <a href="https://foursquare.com/city-guide">foursquare</a> to record everywhere I went - including cinema visits, and including what film I saw</p>
+
+<p>(2014 conveniently being when I started tracking films in SeriesGuide, more or less)</p>
+
+<p>And the data still exists on the foursquare website (tho it was hard to find the right login page from google). Once I reset my password, it was a simple matter of filtering on <em>“Category: Movie Theatre”</em>.</p>
+
+<p>But it turned out I didn’t log the specific film for my first 3 recorded cinema visits.</p>
+
+<p>For the first one, I added the comment <em>“Mind suitably braced for being blown…”</em> and safely assumed this was <a href="https://letterboxd.com/film/inception/">Inception</a> (it aligned with the release date)</p>
+
+<p>Similarly, I remembered seeing <a href="https://letterboxd.com/film/source-code/">Source Code</a> around this time, and it wasn’t mentioned in any of my other check-ins. And again the release date lines up.</p>
+
+<p>For the last one I wasn’t sure what it could be. I had a scroll through old blog posts from around that time for clues, and lo and behold - “<a href="https://letterboxd.com/film/tron-legacy/">Tron Legacy</a>: <a href="https://oatzy.github.io/2011/01/15/tron-legacy-review.html">A Review</a>”</p>
+
+<p>Incidentally, there are a couple other old posts on this blog <a href="https://oatzy.github.io/2010/08/08/inception-review.html">for</a> <a href="https://oatzy.github.io/2010/08/15/handful-of-film-reviews.html">film</a> <a href="https://oatzy.github.io/2010/08/27/good-departed-pilgrim-flew-over.html">reviews</a></p>
+
+<h1 id="twitter">Twitter</h1>
+
+<p>Between 2009 and 2015, I was a prolific tweeter, so it seemed likely I would have mentioned watching a bunch of films.</p>
+
+<p>To check, I downloaded my twitter data. I can find quite a few relevant tweets by grepping: ‘watch’ (watched, watching), ‘cinema’, ‘film’, ‘movie’, ‘see’ (seen), ‘saw’ …</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Watched 'Non Stop'. Was better than I expected. As if any movie where Liam Neeson plays an action hero could be bad.
+-- Sat Aug 16 21:55:48 +0000 2014
+</code></pre></div></div>
+
+<p>[I guess a lot can <a href="https://letterboxd.com/film/retribution-2023/">change</a> in 10 years :p]</p>
+
+<p>But this isn’t foolproof, it’s hard to pick out all mentions or allusions to films</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Who is this old joker? #BucketList
+-- Sat Sep 11 21:06:15 +0000 2010
+</code></pre></div></div>
+
+<p>Maybe one could use machine learning to pick out movie titles.</p>
+
+<p>Then there’s this spicy take</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I've got nothing against subtitled film, but they're a pain in the arse if you like to watch films while you eat. #RemakeAllTheForeignFilms
+-- Sun Feb 26 13:59:20 +0000 2012
+</code></pre></div></div>
+
+<p>I remembered I was referring to <a href="https://letterboxd.com/film/the-extraordinary-adventures-of-adele-blanc-sec/">The Extraordinary Adventures of Adele Blac-Sec</a> - or as I typed it into google, since I couldn’t remember the title, <em>“french comic movie adel”</em>.</p>
+
+<p>Side note: one set of tweets shows me starting to watch <a href="https://letterboxd.com/film/transformers/">Michael Bay’s Transformers</a>, and giving up after ~1 hour. Should that count?</p>
+
+<h1 id="myspace">MySpace</h1>
+
+<p>Before twitter, I had a MySpace blog, and from 2007-2008 I updated it almost daily.</p>
+
+<p>In a way, the blog was like a proto-twitter, in that it was a collection of disconnected thoughts, autobiography, and random quotes and song lyrics.</p>
+
+<p>I kept a backup of all my posts when MySpace went out of fashion; the live blog no longer exists.</p>
+
+<p>So I fetched the backup and, as with the tweets, grepped for pertinent words</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2 Aug 2007
+    [Another chapter of my pathetic life]
+
+    I'm disinclined to acquiesce to your request.
+
+    Means no.
+
+    Due to the lack of decent TV before the setting of the sun, I've rediscovered my DVD collection.
+    [I've got perhaps more Johnny Depp DVDs than is normal for a boy of my age]
+    Today I watched 'Pirates of the Caribbean: Curse of the Balck Pearl' [longest name ever], and tomorrow I intend to watch 'Deadman's Chest'.
+
+    Other movies I've watched over the past week [most on TV]:
+    'Edward Scissorhand', 'Charlie's Angels', 'Secretary', the back end of Napolean 'Dynamite', 'Charlie and the Chocolate Factory', 'Constantine', 'Dodge Ball'...
+    can't think of any others off the top of my head.
+</code></pre></div></div>
+
+<p>Frustratingly, a few time I mention going to the cinema, without saying which film I saw</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I went to the movies. But I don't need to tell you about that, 'cause most of my 'core' readers were there.
+</code></pre></div></div>
+
+<p>[Reading back over those blogs, I was surprised by how often I wrote about getting drunk. Ah, to be 18 again.]</p>
+
+<h1 id="memory">Memory?</h1>
+
+<p>It’s frustrating, knowing you saw a film at the cinema, but not being able to pin down an actual date.</p>
+
+<p>I mean, it’s going to be within, say, 2 weeks of release. But I’m not sure I can allow myself that big a margin of error.</p>
+
+<h1 id="compromise">Compromise</h1>
+
+<p>Of course, I’m never going to be able to figure out <em>when</em> I saw every film I ever saw.</p>
+
+<p>Beyond a certain point I just have to settle for logging that I saw a film ‘at some point’.</p>
+
+<p>Even this is harder than it seems.</p>
+
+<p>Given a specific film, it’s fairly easy to say whether or not I’ve seen it. So one approach was to browse through popular films, directors, actors. But there are going to be things you miss from this approach - the unpopular, the obscure.</p>
+
+<p>The harder approach is trying to randomly remember films I’ve seen.</p>
+
+<p>[<em>“Ooh, what was that <a href="https://letterboxd.com/film/byzantium/">vampire film</a> with Saoirse Ronan?”</em>]</p>
+
+<p>This mostly works by association - I’ve seen this film, oh that reminds me of this other film.</p>
+
+<p>I’ve reached the point where I think I’ve covered maybe 99% - I struggle to think of new ones.</p>
+
+<p>Then occasionally I’ll be like <em>“wait, how did I forget <a href="https://letterboxd.com/film/who-framed-roger-rabbit/">Who Framed Roger Rabbit?</a>”</em></p>
+
+<h1 id="fools-errand">Fool’s Errand</h1>
+
+<p>One thing I’ve learned from the films I had concretely recorded - there are films I’ve seen that I have no memory of seeing. Which means there are probably films I don’t remember, which I don’t have any record of.</p>
+
+<p>And if you don’t remember seeing a film, does it really count?</p>
+
+<p>To date, I’ve managed to log ~1,800 films, of which ~1,200 have a definitive watch date. So I managed to pin down ~250 films in addition to those from trakt.</p>
+
+<p>Which is not too shabby. Not an entirely fruitless endeavour.</p>
+
+<p>Chris.</p>
+
+<p>[It really is a shame I couldn’t get that LoveFilm data]</p>]]></content><author><name>Chris Oates</name></author><category term="biography" /><category term="data" /><category term="movies" /><summary type="html"><![CDATA[I signed up for Letterboxd.]]></summary></entry><entry><title type="html">My hat contains a hidden message</title><link href="/2024/03/17/hat-contains-hidden-message.html" rel="alternate" type="text/html" title="My hat contains a hidden message" /><published>2024-03-17T16:49:00+00:00</published><updated>2024-03-17T16:49:00+00:00</updated><id>/2024/03/17/hat-contains-hidden-message</id><content type="html" xml:base="/2024/03/17/hat-contains-hidden-message.html"><![CDATA[<p>I shaved my head.</p>
+
+<p>My hair’s been getting thinner for a while now, so I thought I’d try going all in.</p>
+
+<p>I’m still getting used to it.</p>
+
+<p>But one thing I <em>did</em> expect, was that my head would feel colder now. So I needed a hat.</p>
+
+<p>I looked over my save crochet patterns and found this one - <a href="https://www.hanjancrochet.com/free-c2c-crochet-hat-patten/">Widcombe C2C crochet hat</a></p>
+
+<p>It uses a crochet technique called ‘corner-to-corner’ (c2c) - effectively the fabric is made up of squares, worked in diagonal rows.</p>
+
+<p>The design as written is okay, but a little generic. I wanted something more meaningful.</p>
+
+<p>The c2c effectively gives us a grid, and in the original design the middle band is a repeating pattern of 6x10 square blocks.</p>
+
+<p>So the question was, what could I do with this?</p>
+
+<p>Well a row of 6 squares gives us 6 bits, allowing us to represent 64 values - more than enough to encode characters of the (latin) alphabet.</p>
+
+<p>Meanwhile we have 10 rows, and it just so happens that my name contains 10 letters - CHRIS OATES</p>
+
+<p>In fact, we only need 5 bits to represent the alphabet, so we have one spare. I considered leaving it blank, or using it to represent uppercase/lowercase. But none of those looked very good, so I just used repeating blocks of 5x10.</p>
+
+<p>The complete design looks like this</p>
+
+<p><img src="/assets/binary_hat/hat-pattern.jpg" alt="Hat design" /></p>
+
+<p>And here’s the completed hat</p>
+
+<p><img src="/assets/binary_hat/finished-hat.jpg" alt="Completed hat" /></p>
+
+<p>Following the pattern diagonally was… fun.</p>
+
+<p>But at least my head isn’t cold anymore.</p>
+
+<p>Chris.</p>]]></content><author><name>Chris Oates</name></author><category term="crochet" /><category term="maths" /><category term="binary" /><category term="design" /><summary type="html"><![CDATA[I shaved my head.]]></summary></entry><entry><title type="html">Hidden messages and an optimal ternary scarf</title><link href="/2024/01/20/hidden-message-ternary-scarf.html" rel="alternate" type="text/html" title="Hidden messages and an optimal ternary scarf" /><published>2024-01-20T18:22:00+00:00</published><updated>2024-01-20T18:22:00+00:00</updated><id>/2024/01/20/hidden-message-ternary-scarf</id><content type="html" xml:base="/2024/01/20/hidden-message-ternary-scarf.html"><![CDATA[<p>A while ago, I found a <a href="https://raffamusadesigns.com/tunisian-crochet-ribbed-scarf-pattern/">pattern for a tunisian crochet scarf</a> that I kinda liked. The design was straightforward - just three solid blocks; I picked 1 blue, 1 grey, 1 cream.</p>
+
+<p>I got maybe 20 rows into it, then got bored. I ended up <a href="https://rowhouseyarn.com/blogs/news/frogging-to-frog-or-not-to-frog">frogging</a> it.</p>
+
+<p>But now I have these three balls of super-soft aran yarn, and what to do with them?</p>
+
+<p>I wondered if I could make the pattern more interesting by cycling - blue, grey, cream, blue, grey, … - but that’s not much more exciting.</p>
+
+<p>I had the thought that I could completely randomise the colours - for each row, pick one of the three colours at random (roll a dice, even).</p>
+
+<p>I like the idea of encoding information in arts and crafts. In my <a href="https://oatzy.github.io/2023/07/30/temperature-blanket.html">temperature blanket</a> I encoded temperatures as different colours, and months as white and coloured rings representing binary numbers.</p>
+
+<p>And here I have 3 colours - a <a href="https://en.wikipedia.org/wiki/Ternary_numeral_system">base 3 encoding</a> - and, conveniently, three base-3 bits (trits?) can represent 27 values - enough for all 26 letters, plus a whitespace character.</p>
+
+<h1 id="a-simple-plan">A simple plan</h1>
+
+<p>So suppose we want to make a scarf.</p>
+
+<p>We have three colours, which we might map as</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">0</span> <span class="o">-&gt;</span> <span class="nx">cream</span>
+<span class="mi">1</span> <span class="o">-&gt;</span> <span class="nx">blue</span>
+<span class="mi">2</span> <span class="o">-&gt;</span> <span class="nx">grey</span>
+</code></pre></div></div>
+
+<p>The most simple mapping of characters to numbers is to make <code class="language-plaintext highlighter-rouge">A=1, B=2, C=3</code>, etc. saving <code class="language-plaintext highlighter-rouge">0</code> for the whitespace character.</p>
+
+<p>As mentioned, we’re representing 27 characters so we need 3 rows per character.</p>
+
+<p>If we take my name, <code class="language-plaintext highlighter-rouge">CHRIS OATES</code>, and translate it to ternary as above, we get</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">010</span> <span class="mi">022</span> <span class="mi">200</span> <span class="mi">100</span> <span class="mi">201</span> <span class="mi">000</span> <span class="mi">120</span> <span class="mi">001</span> <span class="mi">202</span> <span class="mi">012</span> <span class="mi">201</span>
+</code></pre></div></div>
+
+<p>Or in colours</p>
+
+<p><img src="/assets/ternary/basic.jpg" alt="Basic mapping in tunisian crochet" /></p>
+
+<p>Not too bad. But doesn’t it feel a little… unbalanced?</p>
+
+<p>Ignoring the space character (<code class="language-plaintext highlighter-rouge">000</code>) we have 14 cream, 7 blue, and 9 grey.</p>
+
+<p>Cream (zeroes) are way over-represented.</p>
+
+<p>Every possible 3 bit value is represented in the simple encoding, so in a random sequence of letters, we would expect all 3 colours to appear with roughly equal frequency… except, English isn’t a random sequence of letters.</p>
+
+<h1 id="popularity-contest">Popularity contest</h1>
+
+<p>Some letters appear in the English language a lot <a href="https://en.wikipedia.org/wiki/Letter_frequency">more than others</a>.</p>
+
+<p>So maybe we want to account for this in our encoding to get a more even balance of colours.</p>
+
+<p>For example, if we assigned <code class="language-plaintext highlighter-rouge">E</code> as <code class="language-plaintext highlighter-rouge">222</code> then <code class="language-plaintext highlighter-rouge">2</code> would end up very much over represented. It would be better to assign <code class="language-plaintext highlighter-rouge">E</code> a value with all three bits like <code class="language-plaintext highlighter-rouge">012</code></p>
+
+<p>The 3 bit ternary numbers can be split into 4 broad groups</p>
+
+<ul>
+  <li>6 are one of each digit, e.g. <code class="language-plaintext highlighter-rouge">012</code></li>
+  <li>3 are all the same digit (of which <code class="language-plaintext highlighter-rouge">000</code> is our space)</li>
+  <li>6 are two the same, split up, e.g. <code class="language-plaintext highlighter-rouge">010</code></li>
+  <li>12 are two the same together; 6 left e.g. <code class="language-plaintext highlighter-rouge">001</code>, and 6 rights e.g. <code class="language-plaintext highlighter-rouge">100</code></li>
+</ul>
+
+<p>So the obvious thing is to assign the 6 one-of-each codes to the six most common letters (E, T, A, S, …), and likewise the 2 all-the-same codes to the two least common letters (Q, Z)</p>
+
+<p>The six two-split codes can be assigned to the 7th-12th most common letters, on the basis that colours clumped together are less pleasing.</p>
+
+<p>How the actual codes within those groups are assigned is largely arbitrary (more on that later).</p>
+
+<p>Here’s one possible encoding <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>e -&gt; 012   t -&gt; 120   i -&gt; 201
+a -&gt; 021   n -&gt; 102   m -&gt; 210
+
+s -&gt; 010   u -&gt; 121   r -&gt; 202
+w -&gt; 020   d -&gt; 101   k -&gt; 212
+
+g -&gt; 011   o -&gt; 122   h -&gt; 200
+v -&gt; 022   f -&gt; 100   l -&gt; 211
+
+p -&gt; 001   j -&gt; 110   b -&gt; 221
+x -&gt; 002   c -&gt; 112   y -&gt; 220
+
+z -&gt; 111   q -&gt; 222
+</code></pre></div></div>
+
+<p>And here’s my name again, using this encoding</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>112 200 202 201 010 000 122 021 120 012 010
+</code></pre></div></div>
+
+<p>and in colour</p>
+
+<p><img src="/assets/ternary/frequency.jpg" alt="Frequency mapping in stockinette" /></p>
+
+<p>Hmm… this looks even less balanced than before.</p>
+
+<p>However, this time we have 11 cream, 9 blue, and 10 grey, not counting the space block. Almost perfectly balanced.</p>
+
+<p>So what’s the issue? The problem this time is that colours aren’t well distributed. We have lots of repeated digits (10, including the white space block), and the blues are biased towards the right.</p>
+
+<h1 id="going-wider">Going wider</h1>
+
+<p>I said in the previous section that how the codes are assigned to letters within each group is arbitrary.</p>
+
+<p>We can do better than that.</p>
+
+<p>Suppose we look at <a href="https://en.wikipedia.org/wiki/Bigram">pairs of letters</a> - can we assign codes so as to maintain ‘evenness’ across pairs? And will that make the encoding more even across whole texts? <sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup></p>
+
+<p>For example, in the above we assigned <code class="language-plaintext highlighter-rouge">Q=222</code>. Now Q is (almost) always followed by a U, so it would be foolish to assign e.g. <code class="language-plaintext highlighter-rouge">U=220</code> as we would then get a run of five 2s in a row <code class="language-plaintext highlighter-rouge">222 220</code></p>
+
+<p>It would be better to give U a code with no 2s, say <code class="language-plaintext highlighter-rouge">101</code> -&gt; <code class="language-plaintext highlighter-rouge">222 101</code></p>
+
+<p>We should also take into account the white space character. I want to keep white space pinned as <code class="language-plaintext highlighter-rouge">000</code>, so letters which tend to appear at the end of words should not end with 0s, and letters which tend to appear at the start of words should not start with 0s.</p>
+
+<p>For example, if we assigned <code class="language-plaintext highlighter-rouge">Y=100</code> and <code class="language-plaintext highlighter-rouge">D=001</code>, we might suddenl<strong>y d</strong>iscover a run of 7 zeros - <code class="language-plaintext highlighter-rouge">100 000 001</code></p>
+
+<h1 id="a-more-perfect-encoding">A more perfect encoding</h1>
+
+<p>To figure out the ‘best’ encoding, we need a way to quantify or ‘score’ each possible encoding.</p>
+
+<p>We did this implicitly, above, for the 3 bit codes - i.e. the all-different codes are higher scoring than the all-same codes because they have a higher variety of digits/colours.</p>
+
+<p>Likewise, the two-same-split codes are higher value than 2-same-together codes because the colours are more spread out.</p>
+
+<p>We just need to extend that logic to pairs of 3 bit codes (or equivalently, 6 bit codes) and come up with an empirical ‘score’ function, alike</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">score</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="mi">213</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nx">score</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="mi">111</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span>
+</code></pre></div></div>
+
+<p>For scoring the ‘spread’ of digits, we can</p>
+
+<ol>
+  <li>look at each pair of bits</li>
+  <li>add 1 if different, else add 0 if same</li>
+  <li>divide by the total number of pairs (5)</li>
+</ol>
+
+<p>e.g.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">220</span> <span class="mi">021</span> <span class="o">-&gt;</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">00</span><span class="p">,</span> <span class="mi">02</span><span class="p">,</span> <span class="mi">21</span> <span class="o">-&gt;</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">-&gt;</span> <span class="mf">0.6</span>
+</code></pre></div></div>
+
+<p>For ‘balance’ we can use <a href="https://en.wikipedia.org/wiki/Entropy_(information_theory)">entropy</a> with a base of 3</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">-</span> <span class="nx">n0</span><span class="o">/</span><span class="mi">6</span> <span class="o">*</span> <span class="nx">log3</span><span class="p">(</span><span class="nx">n0</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span> <span class="o">-</span> <span class="nx">n1</span><span class="o">/</span><span class="mi">6</span> <span class="o">*</span> <span class="nx">log3</span><span class="p">(</span><span class="nx">n1</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span> <span class="o">-</span> <span class="nx">n2</span><span class="o">/</span><span class="mi">6</span> <span class="o">*</span> <span class="nx">log3</span><span class="p">(</span><span class="nx">n2</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>where <code class="language-plaintext highlighter-rouge">n0</code> is the number of <code class="language-plaintext highlighter-rouge">0</code> digits, etc. <sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup></p>
+
+<p>For example, in the worst case scenario, where all the digits are the same, we get</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">6</span><span class="o">/</span><span class="mi">6</span> <span class="o">*</span> <span class="nx">log3</span><span class="p">(</span><span class="mi">6</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span> <span class="o">+</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span> <span class="o">=</span> <span class="nx">log3</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span>
+</code></pre></div></div>
+
+<p>and in the best case, with two of each digit, we get</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">3</span> <span class="o">*</span> <span class="p">(</span> <span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="mi">6</span> <span class="o">*</span> <span class="nx">log3</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span> <span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="nx">log3</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span> <span class="o">=</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<p>So now we can smash (multiply) the balance score together with the spread score to get a combined score for a given pair of codes, e.g.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">s</span><span class="p">(</span><span class="mi">121</span><span class="p">,</span> <span class="mi">102</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="nx">log3</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">/</span><span class="mi">6</span> <span class="o">+</span> <span class="nx">log3</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="nx">log3</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+            <span class="o">=</span> <span class="mf">0.8</span> <span class="o">*</span> <span class="mf">0.921</span>
+            <span class="o">=</span> <span class="mf">0.736</span>
+</code></pre></div></div>
+
+<p>Now we have to take into account how those codes are assigned to actual letter pairs. That is, it’s better to assign high scoring codes to common pairs (EA) than to uncommon pairs (ZW)</p>
+
+<p>Similar to how we can calculate the frequency of individual letters in the English language - by counting occurences in a text - we can also calculate the frequency of letter pairs in English.</p>
+
+<p>We can then use these frequencies as a weighting, by multipling the letter pair frequency by the score of the assigned codes.</p>
+
+<p>So if we come up with a possible mapping, we can calculate the score for each possible letter pair and take the sum, giving us the total score for that mapping</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">total</span> <span class="nx">score</span> <span class="o">=</span> <span class="nx">sum</span> <span class="p">[</span> <span class="nx">f</span><span class="p">(</span><span class="nx">c_i</span><span class="p">,</span> <span class="nx">c_j</span><span class="p">)</span> <span class="o">*</span> <span class="nx">s</span><span class="p">(</span><span class="nx">c_i</span><span class="p">,</span> <span class="nx">c_j</span><span class="p">)</span> <span class="p">]</span>
+</code></pre></div></div>
+
+<p>For example, in the <code class="language-plaintext highlighter-rouge">A=1</code> encoding, we would calculate</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">total</span> <span class="nx">score</span> <span class="o">=</span> <span class="nx">f</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">a</span><span class="p">)</span> <span class="o">*</span> <span class="nx">s</span><span class="p">(</span><span class="mi">001</span><span class="p">,</span> <span class="mi">001</span><span class="p">)</span> <span class="o">+</span> <span class="nx">f</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">*</span> <span class="nx">s</span><span class="p">(</span><span class="mi">001</span><span class="p">,</span> <span class="mi">002</span><span class="p">)</span> <span class="o">+</span> <span class="p">...</span> <span class="o">+</span> <span class="nx">f</span><span class="p">(</span><span class="nx">z</span><span class="p">,</span> <span class="nx">z</span><span class="p">)</span> <span class="o">*</span> <span class="nx">s</span><span class="p">(</span><span class="mi">222</span><span class="p">,</span> <span class="mi">222</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This is our metric for comparing and finding the best encoding.</p>
+
+<h1 id="the-best-enough">The best enough</h1>
+
+<p>What now?</p>
+
+<p>Here’s the tricky part - we have a method of scoring any given encoding, but how do we find the ‘best’ one?</p>
+
+<p>The problem is, there are <code class="language-plaintext highlighter-rouge">26!</code> (factorial) possible ways of assigning codes to characters - <code class="language-plaintext highlighter-rouge">4 x 10^26</code> - that’s more than something something in the universe! 🤯</p>
+
+<p>Suffice to say, finding an optimal solution <sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup> is not viable.</p>
+
+<p>Instead, we can look at a <a href="https://en.wikipedia.org/wiki/Heuristic_(computer_science)">heuristic solution</a>.</p>
+
+<p>The approach that worked the best for me was</p>
+
+<ol>
+  <li>generate a random starting mapping</li>
+  <li>for each character in the mapping, find the swap which produces the best score</li>
+  <li>repeat 2 until the score doesn’t increase anymore</li>
+  <li>repeat 1+2 multiple times and pick the best scoring result</li>
+</ol>
+
+<p>You can find my code <a href="https://github.com/oatzy/ternary">here</a>. I won’t go into detail about the code in this post, as it is already quite long. I have provided code comments.</p>
+
+<p>For my experiments, I grabbed a copy of <a href="https://www.gutenberg.org/ebooks/84">Frankenstein off Project Gutenberg</a> to generate the bigram frequencies. This gives us <code class="language-plaintext highlighter-rouge">426_160</code> letter pairs</p>
+
+<p>As the baseline, the scores for the mappings we already discussed are</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">A=1</code> -&gt; <code class="language-plaintext highlighter-rouge">0.51581</code></li>
+  <li>letter frequency-based -&gt; <code class="language-plaintext highlighter-rouge">0.58679</code> <sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup></li>
+</ul>
+
+<p>I tried multiple runs and the best score I got was <code class="language-plaintext highlighter-rouge">0.66869</code></p>
+
+<p>Here’s what that mapping looks like</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a -&gt; 210   b -&gt; 122   c -&gt; 022
+d -&gt; 121   e -&gt; 021   f -&gt; 221
+g -&gt; 011   h -&gt; 012   i -&gt; 101
+j -&gt; 100   k -&gt; 001   l -&gt; 020
+m -&gt; 220   n -&gt; 202   o -&gt; 120
+p -&gt; 110   q -&gt; 222   r -&gt; 201
+s -&gt; 212   t -&gt; 102   u -&gt; 010
+v -&gt; 002   w -&gt; 211   x -&gt; 200
+y -&gt; 112   z -&gt; 111
+</code></pre></div></div>
+
+<p>I tried running it a few times, and it consistently turned up this mapping as the best, which suggests it’s the most optimal. Or perhaps it’s the most optimal solution that this method can generate; maybe a different optimisation method could generate an even better solution. <sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup></p>
+
+<p>Here’s what my name looks like with the optimised mapping</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>022 012 201 101 212 000 120 210 102 021 212
+</code></pre></div></div>
+
+<p>and here it is in colours</p>
+
+<p><img src="/assets/ternary/optimal.jpg" alt="Optimal mapping in half-treble crochet" /></p>
+
+<p>Doesn’t that look so much more balanced?</p>
+
+<p>Here we have 11 cream, 10 blue, and 12 grey, this time including the space block since it was part of the optimisation. It’s almost perfectly balanced, and this time it also has a much better spread of colours; we have only 5 repeated digits (of which 2 are in the space block)</p>
+
+<h1 id="spinning-out">Spinning out</h1>
+
+<p>This idea can be extended to different bases. For example, with 4 colours and 2 rows per colour you get 64 possibilities - enough for upper and lower case, 10 digits, 1 space, and 1 left over for a period (or exclamation mark!)</p>
+
+<p>The principle remains the same, you just have more character combinations to deal with.</p>
+
+<p>Similarly, I’ve been talking about a scarf, but this would work just as well for a blanket. For, what is a blanket if not a really wide scarf?</p>
+
+<p>Alternatively, we could construct a blanket of squares - similar to my temperature blanket - with one block per character comprised of 3 bands of colour representing the 3 bits.</p>
+
+<p>This can make for a much more striking design</p>
+
+<p><img src="/assets/ternary/squares.jpg" alt="Example basic mapping in squares design" /></p>
+
+<p>Tho in the squares case, the criteria for what is optimal is slightly different.</p>
+
+<p>For example, in the above the second and third to last squares are <code class="language-plaintext highlighter-rouge">202 012</code> which has no repeated digits</p>
+
+<p>But with squares</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>22222 22222
+20002 21112
+20202 21012
+20002 21112
+22222 22222
+</code></pre></div></div>
+
+<p>the last digits <sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup> - the outer rings of 2s - <strong>are</strong> adjacent.</p>
+
+<p>And that’s only thinking one-dimensionally. For a blanket, we’re going to have a grid, with the text split across multiple rows. How do we account for that?</p>
+
+<p>And notice that in a square the outer ring would use a lot more yarn than the inner ring. So maybe we’d like to ensure that each digit is represented in each position roughly equally - that we use roughly equal amounts of each colour.</p>
+
+<p>Maybe I’ll come back to this idea in a future blog…</p>
+
+<h1 id="unravelled">Unravelled</h1>
+
+<p>At this point, you’re expecting to see a completed scarf?</p>
+
+<p>The truth is, I already used some of the yarn I mentioned to <a href="https://www.ravelry.com/projects/oatzy/crochet-slipper-socks">make a sock</a>. Yes, just the one sock. And maybe someday I’ll get around to making it a matching pair.</p>
+
+<p>And maybe someday I’ll even make a ternary scarf.</p>
+
+<p>But first I need to figure out what message is worth wearing around one’s neck…</p>
+
+<p>Chris.</p>
+
+<p>[was this all just a waste of time? you must be new here]</p>
+
+<hr />
+
+<h1 id="epilogue-structure-and-interpretation-of-scarf">Epilogue: Structure and interpretation of scarf</h1>
+
+<p>Suppose you’re presented with a scarf. It’s made up of stripes of three different colours, but the patterns seem… odd. Random? But why would anyone make a random patterned scarf?</p>
+
+<p>Given that there are three colours, you think maybe it’s a base 3 encoding, and you intuit that 3 rows gives you 27 sequences - enough for 26 letters and a space.</p>
+
+<p>You might assume a basic encoding - <code class="language-plaintext highlighter-rouge">A=1</code>, <code class="language-plaintext highlighter-rouge">B=2</code>, etc. But you don’t know how the colours map to bits <code class="language-plaintext highlighter-rouge">0</code>, <code class="language-plaintext highlighter-rouge">1</code>, <code class="language-plaintext highlighter-rouge">2</code></p>
+
+<p>But then, there are only 6 possible arrangements, so you can just try them all, and see what yields a meaningful message. Perhaps you notice a particular colour regularly appears in blocks of 3, and you think “maybe that’s a space character”. You call that colour <code class="language-plaintext highlighter-rouge">0</code> and now you only need to figure out which colour is <code class="language-plaintext highlighter-rouge">1</code> and which is <code class="language-plaintext highlighter-rouge">2</code> - two possibilities.</p>
+
+<p>It’s not trivial, but it’s possible. This feels ideal to me.</p>
+
+<p>By comparison, you couldn’t infer the frequency-based or optimal encoding in the same way - in the first one, some of the assignments are arbitrary, and in the second the assignment is heuristic so even following the same procedure you might not reproduce the same mapping.</p>
+
+<p>If the message (scarf) is long enough, you can ignore the base 3 aspect, treat each 3-row sequence as an arbitrary symbol and perform <a href="https://en.wikipedia.org/wiki/Frequency_analysis">frequency analysis</a> to figure out the letter mapping.</p>
+
+<p>But we’re talking a <a href="https://en.wikipedia.org/wiki/Fourth_Doctor#/media/File:The_Fourth_Doctor_(6097263309).jpg">Tom Baker length of scarf</a>, at least.</p>
+
+<h1 id="appendix-the-example-stitches">Appendix: the example stitches</h1>
+
+<p>Each of the examples uses a different stitch/technique. Some may call this an unfair comparison, but it made things more interesting for me ;)</p>
+
+<p>The first example, for the <code class="language-plaintext highlighter-rouge">A=1</code> encoding, was done in <a href="https://en.wikipedia.org/wiki/Tunisian_crochet">tunisian crochet</a>, using repeated tunisian simple stitch (TSS)</p>
+
+<p>The second example, for the frequency encoding, was knitted in a basic <a href="https://en.wikipedia.org/wiki/Basic_knitted_fabrics#Stockinette/stocking_stitch_and_reverse_stockinette_stitch">stockinette</a> - 1 row knit stitch + 1 row purl stitch.</p>
+
+<p>In this case there are actually two rows per bit (1 knit + 1 purl). This was mostly so the colour change would always happened along the same edge, for my convenience.</p>
+
+<p>The last example, for the optimal encoding, was done in regular crochet, using repeated half-treble (Htr) crochet stitches in UK notation, or half-double (Hdc) in US notation.</p>
+
+<p>I didn’t do an example for the squares because that would have required cutting the yarn (and also I’m lazy).</p>
+
+<h1 id="footnotes">Footnotes</h1>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>For the common-ness of letters I <a href="https://en.wikipedia.org/wiki/Morse_code#Alternative_display_of_common_characters_in_International_Morse_code">copied Morse code</a>, which isn’t strictly accurate to the English language. Tho it should be said that any frequency mapping is not going to be universally correct. It depends on the text it’s calculated from. Tho they do tend to align at the extremes. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>Naturally we can extend this to groups of 3 letters, groups of N letters, or whole words. But let’s not get carried away ;) <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>Fun fact, even tho there are <code class="language-plaintext highlighter-rouge">27 * 27 = 729</code> possible pairs of 3 digit codes, if we ignore permutations, there are only 7 unique partitions of 6 digits into 3 types, and therefore only 7 entropies to calculate</p>
+
+      <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">600</span> <span class="o">-&gt;</span> <span class="mi">0</span>
+<span class="mi">510</span> <span class="o">-&gt;</span> <span class="mf">0.410</span>
+<span class="mi">420</span> <span class="o">-&gt;</span> <span class="mf">0.579</span>
+<span class="mi">411</span> <span class="o">-&gt;</span> <span class="mf">0.790</span>
+<span class="mi">330</span> <span class="o">-&gt;</span> <span class="mf">0.631</span>
+<span class="mi">321</span> <span class="o">-&gt;</span> <span class="mf">0.921</span>
+<span class="mi">222</span> <span class="o">-&gt;</span> <span class="mi">1</span>
+</code></pre></div>      </div>
+      <p><a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:4" role="doc-endnote">
+      <p>there are at least two optimal solutions; for any given solution, we can swap the 1s with the 2s and get another mapping with the exact same score. We can’t do the same with 0s since we pinned the white space character as <code class="language-plaintext highlighter-rouge">000</code>, otherwise there would be 6 equivalents for each solution. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:5" role="doc-endnote">
+      <p>as mentioned in footnote 1, the frequency encoding in this blog is based on Morse code. An encoding based on measured letter frequencies scores <code class="language-plaintext highlighter-rouge">0.62144</code>; better than Morse, but still less than ‘optimal’ <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:6" role="doc-endnote">
+      <p>This mapping was a close second</p>
+
+      <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a -&gt; 120   b -&gt; 211   c -&gt; 011
+d -&gt; 212   e -&gt; 012   f -&gt; 112
+g -&gt; 022   h -&gt; 021   i -&gt; 202
+j -&gt; 200   k -&gt; 002   l -&gt; 010
+m -&gt; 110   n -&gt; 101   o -&gt; 210
+p -&gt; 220   q -&gt; 111   r -&gt; 102
+s -&gt; 121   t -&gt; 201   u -&gt; 020
+v -&gt; 001   w -&gt; 122   x -&gt; 100
+y -&gt; 221   z -&gt; 222
+</code></pre></div>      </div>
+
+      <p>Its score is <code class="language-plaintext highlighter-rouge">4 x 10^-16</code> less than the ‘optimal’. But notice, if you swap all the 1s for 2s and vice versa in the optimal mapping you get this mapping! This is actually expected, per footnote 4. The difference in scores is probably a floating point rounding quirk. <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:7" role="doc-endnote">
+      <p>I think you would call that.. little-endian? I could never remember which is which <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name>Chris Oates</name></author><category term="crochet" /><category term="maths" /><category term="optimisation" /><category term="coding" /><summary type="html"><![CDATA[A while ago, I found a pattern for a tunisian crochet scarf that I kinda liked. The design was straightforward - just three solid blocks; I picked 1 blue, 1 grey, 1 cream.]]></summary></entry><entry><title type="html">Temperature Blanket - Completed</title><link href="/2024/01/10/temperature-blanket-completed.html" rel="alternate" type="text/html" title="Temperature Blanket - Completed" /><published>2024-01-10T18:14:00+00:00</published><updated>2024-01-10T18:14:00+00:00</updated><id>/2024/01/10/temperature-blanket-completed</id><content type="html" xml:base="/2024/01/10/temperature-blanket-completed.html"><![CDATA[<p>A temperature blanket is a crochet or knitting project where one makes a blanket over the course of a year, doing a piece a day with the colours based on each day’s temperature.</p>
+
+<p>For the full background and design of my blanket, see the <a href="https://oatzy.github.io/2023/07/30/temperature-blanket.html">previous blog post</a></p>
+
+<h1 id="god-laughs">God laughs</h1>
+
+<p>When we last left our temperature blanket, it was the end of July, and I said</p>
+
+<blockquote>
+  <p>we haven’t made it into the oranges/reds […] it would be nice to see those colours incorporated</p>
+</blockquote>
+
+<p>Turns out I got my wish, but when I least expected it.</p>
+
+<p>Going back to the original layout</p>
+
+<p><img src="/assets/blanket_complete/old-layout.png" alt="The old layout" /></p>
+
+<p>the plan was that when I got to the start of September, I would move to the top right, following a truncated z-ordered curve.</p>
+
+<p>But then, come the start of September, we had an unexpected heatwave - including the hottest day of the year! (22.2C)</p>
+
+<p>Following the original plan would have put these yellows and oranges next to the blues of March/April, which felt to me like it wouldn’t look so good.</p>
+
+<h1 id="back-to-the-old-drawing-board">Back to the old drawing board</h1>
+
+<p>The most obvious redesign - instead of shifting to top right, we simply continue downward, but otherwise adhering to the z-order layout.</p>
+
+<p><img src="/assets/blanket_complete/new-layout.png" alt="The new layout" /></p>
+
+<p>In retrospect, this feels much more natural.</p>
+
+<p>Doing this, the completed blanket becomes 16x24 squares. This is slightly longer and thinner than the original design, and comes out to 384 squares total.</p>
+
+<p>The original plan had 365 day + 12 months = 377 with 1 spare to represent the year (378 total). In the new plan, I was left with 7 spare squares.</p>
+
+<p>7 is a bit of an ‘odd’ number, so I decided to use one to ‘sign’ the piece, and then use the other 6 as a block for representing the year as a whole.</p>
+
+<p>The signature square is straightforward - it’s my initials, CO. I chose a shade of grey so that it would be cohesive with the overall design, without standing out or being mistaken for any of the other colours used.</p>
+
+<p><img src="/assets/blanket_complete/signature-square.jpg" alt="Completed blanket" /></p>
+
+<p>The year marker is more interesting. The original thought was to represent the year ‘2023’ in a similar way to the month markers, which are the month numbers in binary.</p>
+
+<p>I hit on the fact that 2023 in hexadecimal is <code class="language-plaintext highlighter-rouge">7e7</code> which is conveniently 3 digits (and I have 6 squares to fill). It’s also a palindrome, which makes for a nice, symmetrical pattern.</p>
+
+<p>Each square represents 2 bits - an outer ring and the centre, plus a separating ring which is always white. And each vertical pair together represent one hex digit (nibble?)</p>
+
+<p><img src="/assets/blanket_complete/year-block.jpg" alt="Completed blanket" /></p>
+
+<p>The bits are read outside-in - so for example, top left is white outer and solid centre = <code class="language-plaintext highlighter-rouge">01</code>, bottom left is solid outer and centre = <code class="language-plaintext highlighter-rouge">11</code>; so all together the pair is <code class="language-plaintext highlighter-rouge">0111</code> or 7 in hex.</p>
+
+<p>The complete pattern also looks <a href="https://en.wikipedia.org/wiki/Pareidolia">kind of like</a> a smiley face ° □ °</p>
+
+<p>Naturally, the colour represents the average temperature across the whole year (9.9C).</p>
+
+<p>I also broke the z-ordering a little - the December marker (binary of 12) looks too similar to the <code class="language-plaintext highlighter-rouge">10</code> year square, so I wanted to move it away from the year block so as not to confuse the design.</p>
+
+<p><img src="/assets/blanket_complete/december-layout.png" alt="December layout" /></p>
+
+<p>(If I’d thought of it sooner, I would have put the signature as the bottom-left square of the complete blanket, in the October region)</p>
+
+<h1 id="wrapped-up">Wrapped up</h1>
+
+<p>Without further rambling, here’s the completed blanket</p>
+
+<p><img src="/assets/blanket_complete/completed-blanket.jpg" alt="Completed blanket" /></p>
+
+<p>(rotated 90 degrees, January at top right)</p>
+
+<p>The completed blanket is ~118x170cm</p>
+
+<p>Overall, it wasn’t too difficult on a technical level, but boy did it take a lot of time. Including joining and weaving in ends it took ~ 25mins per square, which comes out at ~157 hours (!) total, or ~3 hours a week.</p>
+
+<p>As for the scarf I mentioned in the previous post; well… the blanket alone was a <em>lot</em> of effort. And I couldn’t muster the enthusiasm to keep working on it. Two year-long projects at once was a little ambitious, oh well.</p>
+
+<p>Chris.</p>
+
+<p>[Now I’ve got to figure out what to do with the damn thing…]</p>]]></content><author><name>Chris Oates</name></author><category term="crochet" /><category term="maths" /><category term="infographic" /><summary type="html"><![CDATA[A temperature blanket is a crochet or knitting project where one makes a blanket over the course of a year, doing a piece a day with the colours based on each day’s temperature.]]></summary></entry></feed>
