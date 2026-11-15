@@ -1,0 +1,4 @@
+{{- .Page.Store.Set "hasMath" true -}}
+{{- /* Blogger-era LaTeX holds HTML entities (&amp; &nbsp;); unescape so auto-escaping doesn't double them */ -}}
+{{- $tex := .Inner | htmlUnescape -}}
+{{- if eq .Type "block" }}\[{{ $tex }}\]{{ else }}\({{ $tex }}\){{ end -}}

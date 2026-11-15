@@ -44,5 +44,5 @@ This folder is underscore-prefixed so Jekyll doesn't publish it; Hugo ignores it
 - [x] 3 HTML → md: all 108 Blogger posts converted (pandoc 3.12.1, `scripts/blogger_to_md.py`). Rendered text identical apart from `...`→`…` (typographer); embeds, coloured/monospace text kept as raw HTML; images now local and full-size. See `phase3-notes.md` (spot-check list). Commit staged renames separately from the content.
 - [x] 4 Links: 105 blogspot links → github.io, 82 Dropbox links → `question-nobody-asked` (29 folders, 5.3 MB; push it before going live) + 4 runnable pages in `static/files/`, 13/16 other images saved (1 unrecoverable). Dead-link report: 112 dead (80 with Wayback copies), 52 unverifiable; awaiting Chris's decisions. See `phase4-notes.md`.
 - [x] 5 Theme / home / search: own theme (one CSS file, orange `#c2410c`, 4.88:1), logo links home, home cards for latest 10, /archive/, /tags/, Pagefind /search/ (140 posts). Old theme CSS removed. See `phase5-notes.md`.
-- [ ] 6 MathJax
+- [x] 6 MathJax: MathJax 4.1.3 via passthrough render hook, loaded only on the 7 maths posts; 0 MathJax errors in headless Chromium. 189 equation-image candidates (43 posts) in `phase7-candidates.tsv`. See `phase6-notes.md`.
 - [ ] 7 Equation images (stretch)

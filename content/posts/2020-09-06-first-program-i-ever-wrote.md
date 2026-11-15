@@ -16,14 +16,14 @@ When people ask how I got into programming, I usually tell them "mostly for math
 
 Back in secondary school (high school), we'd just been taught about Pythagoras's theorem
 
-$a^2 + b^2 = c^2$
+\(a^2 + b^2 = c^2\)
 
 And we were doing exercises, which was pretty dull - once you get the concept, the exercises are just putting numbers in to the equation.
 
 But an interesting thing was that a lot of the exercises used 'pythagorean triplet' - sets of three integers which fit the equations. I guess the textbooks use them because the numbers work out nicely, no rounding and all that.
 
-- $3^2 + 4^2 = 5^2$
-- $5^2 + 7^2 = 12^2$
+- \(3^2 + 4^2 = 5^2\)
+- \(5^2 + 7^2 = 12^2\)
 
 After doing a few of these exercises, I noticed a pattern in some of the triplets - that the two largest values were one different from each other - 4 and 5, 12 and 13
 
