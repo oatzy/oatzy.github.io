@@ -1,0 +1,4 @@
+<ul class="post-list">
+  {{ range . }}<li><time datetime="{{ .Date.UTC.Format "2006-01-02" }}">{{ .Date.UTC.Format "02 Jan" }}</time><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+  {{ end }}
+</ul>

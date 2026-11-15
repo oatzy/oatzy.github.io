@@ -1,14 +1,19 @@
 {{ define "main" }}
-<div class="home">
-  <h2 class="post-list-heading">Posts</h2>
-  <ul class="post-list">
-    {{ range where site.RegularPages "Section" "posts" }}
-    <li>
-      <span class="post-meta">{{ .Date.UTC.Format "Jan 2, 2006" }}</span>
-      <h3><a class="post-link" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-    </li>
-    {{ end }}
-  </ul>
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
-</div>
+{{ $posts := where site.RegularPages "Section" "posts" }}
+<ul class="cards">
+  {{ range first 10 $posts }}
+  {{ $thumb := .Params.thumbnail }}
+  {{ if not (and $thumb (hasPrefix $thumb "/")) }}{{/* front-matter thumbnail only if local; else first local image */}}
+    {{ $thumb = "" }}{{ with findRESubmatch `<img[^>]+src="(/(?:images|assets)/[^"]+)"` .Content 1 }}{{ $thumb = index (index . 0) 1 }}{{ end }}
+  {{ end }}
+  <li class="card">
+    {{ with $thumb }}<a class="thumb" href="{{ $.RelPermalink }}" tabindex="-1" aria-hidden="true"><img src="{{ . }}" alt="" loading="lazy"></a>{{ end }}
+    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <span class="meta">{{ .Date.UTC.Format "02 Jan 2006" }}</span>
+    <p>{{ partial "summary.html" . }}</p>
+    {{ partial "tags.html" . }}
+  </li>
+  {{ end }}
+</ul>
+<p class="more"><a href="/archive/">All {{ len $posts }} posts &rarr;</a></p>
 {{ end }}

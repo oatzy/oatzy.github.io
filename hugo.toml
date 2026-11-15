@@ -1,8 +1,19 @@
 baseURL = "https://oatzy.github.io/"
 locale = "en-us"
 title = "Questions Nobody Asked.."
-# Tags/sections/sitemap come with the new theme in phase 5.
-disableKinds = ["taxonomy", "term", "section", "rss", "sitemap"]
+capitalizeListTitles = false # show tags as written (e.g. "pokemon tcg pocket", "AI")
+disableKinds = ["section", "rss", "sitemap"]
+
+[taxonomies]
+  tag = "tags"
+
+[related]
+  includeNewer = true
+  threshold = 80
+  toLower = true
+  [[related.indices]]
+    name = "tags"
+    weight = 100
 
 [params]
   description = "Answering questions that nobody asked"

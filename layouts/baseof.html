@@ -1,35 +1,24 @@
 <!DOCTYPE html>
 <html lang="en-us">
   {{ partial "head.html" . }}
-  <body class="theme-base-09">
-    {{ partial "sidebar.html" . }}
-    <!-- Wrap is the content to shift when toggling the sidebar. -->
-    <div class="wrap">
-      <div class="masthead">
-        <div class="container">
-          <h3 class="masthead-title">
-            <a href="/" title="Home">{{ site.Title }}</a>
-          </h3>
-        </div>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="/" title="Home"><img src="/public/blog-logo.png" alt="{{ site.Title }}" width="523" height="187"></a>
+        <nav class="site-nav" aria-label="Site">
+          {{ $here := .RelPermalink }}
+          {{ range slice (slice "/" "Home") (slice "/archive/" "Archive") (slice "/tags/" "Tags") (slice "/search/" "Search") (slice "/about/" "About") }}
+          <a href="{{ index . 0 }}"{{ if eq $here (index . 0) }} aria-current="page"{{ end }}>{{ index . 1 }}</a>
+          {{ end }}
+          <a href="/atom.xml">RSS</a>
+        </nav>
       </div>
-      <div class="container content">
-        {{ block "main" . }}{{ end }}
-      </div>
-    </div>
-    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
-    <script>
-      (function(document) {
-        var toggle = document.querySelector('.sidebar-toggle');
-        var sidebar = document.querySelector('#sidebar');
-        var checkbox = document.querySelector('#sidebar-checkbox');
-        document.addEventListener('click', function(e) {
-          var target = e.target;
-          if(!checkbox.checked ||
-             sidebar.contains(target) ||
-             (target === checkbox || target === toggle)) return;
-          checkbox.checked = false;
-        }, false);
-      })(document);
-    </script>
+    </header>
+    <main class="wrap">
+      {{ block "main" . }}{{ end }}
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">{{ site.Params.description }} &middot; <a href="/atom.xml">RSS</a></div>
+    </footer>
   </body>
 </html>

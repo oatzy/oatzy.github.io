@@ -1,0 +1,14 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+<link rel="stylesheet" href="/pagefind/pagefind-ui.css">
+<div id="search"></div>
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const ui = new PagefindUI({ element: "#search", showSubResults: true, showImages: false });
+    const q = new URLSearchParams(location.search).get("q");
+    if (q) ui.triggerSearch(q);
+  });
+</script>
+<noscript>Search needs JavaScript. The <a href="/archive/">archive</a> lists every post.</noscript>
+{{ end }}

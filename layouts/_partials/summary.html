@@ -1,0 +1,4 @@
+{{- /* ~40 plain words of body text: headings and code blocks dropped so cards start with prose */ -}}
+{{- $text := .Content | replaceRE `(?s)<(h[1-6]|pre|figcaption|script|style)\b.*?</(h[1-6]|pre|figcaption|script|style)>` " " | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace -}}
+{{- $words := split $text " " -}}
+{{- delimit (first 40 $words) " " }}{{ if gt (len $words) 40 }}&hellip;{{ end -}}
