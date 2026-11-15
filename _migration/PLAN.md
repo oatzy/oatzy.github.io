@@ -30,7 +30,7 @@ This folder is underscore-prefixed so Jekyll doesn't publish it; Hugo ignores it
    - blogspot post links → github.io URLs via `blogger_orig_url`
    - Dropbox `/s/`, `/sh/`: download, commit to `question-nobody-asked/<post-slug>/`, rewrite links; flag failures
    - Dropbox `/u/`: list filenames for Chris to supply from Dropbox, then copy + rewrite
-   - **Update 2026-11-14:** Chris shared his Dropbox folder (link not stored here, it's in his Dropbox / ask him). All 82 links matched: see `_migration/dropbox-map.tsv` (post, old URL, file path in that folder). The 3 `/sh/` folder shares map to `android-wear/`, `gravity/`, `zooper-templates/autumn-theme/`. `time/index1.htm` is a page that needs its sibling js/css copied with it. 60 files in the folder aren't linked from any post (mostly old pirate-game APKs, Unity Centre site), so ask before copying those.
+   - **Update 2026-11-14:** Chris shared his Dropbox folder (local copy: `~/workspace/dropbox-Public/`, not in git). All 82 links matched: see `_migration/dropbox-map.tsv` (post, old URL, file path in that folder). The 3 `/sh/` folder shares map to `android-wear/`, `gravity/`, `zooper-templates/autumn-theme/`. `time/index1.htm` is a page that needs its sibling js/css copied with it. 60 files in the folder aren't linked from any post (mostly old pirate-game APKs, Unity Centre site), so ask before copying those.
    - external links: lychee dead-link report; suggest Wayback snapshots, apply only approved ones
 5. **Theme**: small custom theme, one CSS file, orange accent/link colour via CSS vars, no sidebar. Header logo + title inside home link; nav: Home, About, Archive, Tags, Search, RSS. Home = cards for latest N posts (title, date, summary, thumbnail), archive for the rest. Pagefind search page.
 6. **Maths**: MathJax 3 only on pages with maths, via Hugo math passthrough. Verify existing maths posts.
@@ -39,7 +39,7 @@ This folder is underscore-prefixed so Jekyll doesn't publish it; Hugo ignores it
 ## Status
 
 - [x] 0 Baseline (see `baseline/README.md`)
-- [x] 1 Images: 524 unique images (34 MB, all original size) in `static/images/`, 913 post URLs mapped in `image-map.tsv`. 1 lost: `christmas-eve-graph.png` (2011-12-24-christmas-eve), 404 on Blogger and the live blogspot post, no Wayback copy. 16 non-Blogger images listed in `other-images.tsv` for phase 4. Script: `scripts/fetch_blogger_images.py` (re-runnable).
+- [x] 1 Images: 524 unique images (34 MB, all original size) in `static/images/`, 913 post URLs mapped in `image-map.tsv`. All 525 now saved: `christmas-eve-graph.png` (gone from Blogger and Wayback) restored from Chris's own copy on 2026-11-15. 16 non-Blogger images listed in `other-images.tsv` for phase 4. Script: `scripts/fetch_blogger_images.py` (re-runnable).
 - [x] 2 Hugo swap: Hugo 0.169.0 builds all baseline URLs except dead `/assets/main.css`, feeds match (entry ids kept), 138/140 posts text-identical (2 expected diffs). Not yet live: see `phase2-notes.md` cut-over steps (switch Pages source to GitHub Actions first).
 - [x] 3 HTML → md: all 108 Blogger posts converted (pandoc 3.12.1, `scripts/blogger_to_md.py`). Rendered text identical apart from `...`→`…` (typographer); embeds, coloured/monospace text kept as raw HTML; images now local and full-size. See `phase3-notes.md` (spot-check list). Commit staged renames separately from the content.
 - [ ] 4 Links

@@ -12,14 +12,14 @@ tags:
 - data analysis
 - maths
 modified_time: '2011-12-24T16:44:33.100-08:00'
-thumbnail: http://1.bp.blogspot.com/-WP963EM_myc/TvZlOLVf-kI/AAAAAAAAAuE/MQ1OyTMmHuw/s72-c/christmas-eve-graph.png
+thumbnail: /images/christmas-eve/christmas-eve-graph.png
 blogger_id: tag:blogger.com,1999:blog-14769935.post-6910888118376605061
 blogger_orig_url: https://oatzy.blogspot.com/2011/12/christmas-eve.html
 ---
 
 The run up to Christmas is over, and hopefully everyone has their Christmas shopping done. So now seems like as good a time as any to look at what the crowds are doing:
 
-[![](http://1.bp.blogspot.com/-WP963EM_myc/TvZlOLVf-kI/AAAAAAAAAuE/MQ1OyTMmHuw/s400/christmas-eve-graph.png)](http://1.bp.blogspot.com/-WP963EM_myc/TvZlOLVf-kI/AAAAAAAAAuE/MQ1OyTMmHuw/s1600/christmas-eve-graph.png)
+[![](/images/christmas-eve/christmas-eve-graph.png)](/images/christmas-eve/christmas-eve-graph.png)
 
 Now that is interesting. I think it is, anyway.
 
