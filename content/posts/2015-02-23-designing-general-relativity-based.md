@@ -74,7 +74,7 @@ I studied theoretical physics at university, and that included a module on Gener
 
 I read a bunch of articles for this blog, and have tried to get as scientifically accurate as possible - or at least I've tried to avoid making massive errors. But even so, there are numerous assumptions, approximations, and inaccuracies in this formulation. So just bear that in mind - I don't necessarily know what I'm talking about. Do feel free to offer corrections.
 
-*<strong>Prototyping</strong>* - For coding the prototype/simulations I used Python with [PyGame](http://pygame.org/).
+*<strong>Prototyping</strong>* - For coding the prototype/simulations I used Python with [PyGame](https://web.archive.org/web/20130922091530/http://www.pygame.org/).
 
 In PyGame, coordinates are defined with the origin (0,0) in the top right corner. This isn't a problem mathematically, it just means the graphical layout is 'upside-down'.
 
@@ -376,13 +376,13 @@ Admittedly, this doesn't work perfectly - sometimes it behaves a little screwy. 
 
 **Conclusion**
 
-If you were feeling really ambitious, you could do the game from the first-person perspective of someone on the spaceship - see for example '[Falling into a Black Hole](http://jila.colorado.edu/~ajsh/insidebh/index.html)', or the [Interstellar papers](http://arxiv.org/find/gr-qc/1/au:+James_O/0/1/0/all/0/1).
+If you were feeling really ambitious, you could do the game from the first-person perspective of someone on the spaceship - see for example '[Falling into a Black Hole](http://jila.colorado.edu/~ajsh/insidebh/index.html)', or the [Interstellar papers](https://web.archive.org/web/20160112151952/http://arxiv.org/find/gr-qc/1/au:+James_O/0/1/0/all/0/1).
 
 There are almost certainly things wrong with this 'formulation' of General Relativity. But then, this is meant to be for a game, so it [doesn't need to](https://en.wikipedia.org/wiki/Rationalization_%28making_excuses%29) be 100% scientifically accurate. I did feel like I should make an effort, though. And I'm willing to call this good enough. If you're someone who knows what they're talking about, feel free to offer your thoughts/corrections.
 
 Anyway, I've done my job as a theoretician - now it's up to someone else to actually make the game. If you do, please send me link to the completed game. And maybe give me a name-check? A little kickback would be nice too..\. ;)
 
-You can have a look at my prototype/simulation code [here](https://www.dropbox.com/sh/l4ai8vacc921x9t/AAAp630npPaluD8QhYNhXbf4a?dl=0).
+You can have a look at my prototype/simulation code [here](https://github.com/oatzy/question-nobody-asked/tree/main/designing-general-relativity-based/gravity).
 
 Oatzy.
 

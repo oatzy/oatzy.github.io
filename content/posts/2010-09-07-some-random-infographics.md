@@ -19,7 +19,7 @@ This is just a collection, as the title suggests, of random 'infographics' that 
 
 **The X-Factor Volcano**
 
-Using [TwitScoop](http://www.twitscoop.com/) I got this graph of tweet volume for last Saturday (times are approximate)
+Using [TwitScoop](https://web.archive.org/web/20100909115532/http://www.twitscoop.com:80/) I got this graph of tweet volume for last Saturday (times are approximate)
 
 [![](/images/some-random-infographics/X-Factor-trend.png)](/images/some-random-infographics/X-Factor-trend.png)
 
@@ -55,7 +55,7 @@ Obviously, this isn't comprehensive, since I only used a relatively small sample
 
 My favourite. And this is the Doctor Who episode we're talking about ([season 5 finale](http://en.wikipedia.org/wiki/The_Big_Bang_%28Doctor_Who%29)).
 
-Basically, I plotted out the character's timelines (a la [XKCD](http://xkcd.com/657/)), using a website I can't seem to find, in an attempt to make the plot clearer. It didn't turn out exactly as I [wanted](http://dl.dropbox.com/u/4635169/BB-draft.jpg) because the web-app had a mind of it's own. But I'm still happy with it.
+Basically, I plotted out the character's timelines (a la [XKCD](http://xkcd.com/657/)), using a website I can't seem to find, in an attempt to make the plot clearer. It didn't turn out exactly as I [wanted](/images/some-random-infographics/BB-draft.jpg) because the web-app had a mind of it's own. But I'm still happy with it.
 
 [![](/images/some-random-infographics/bigbang2-edit-labeled.jpg)](/images/some-random-infographics/bigbang2-edit-labeled.jpg)
 

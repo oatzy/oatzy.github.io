@@ -17,7 +17,7 @@ blogger_id: tag:blogger.com,1999:blog-14769935.post-7939085758103022734
 blogger_orig_url: https://oatzy.blogspot.com/2015/01/follow-up-binary-proof-and-trinary-clock.html
 ---
 
-In the [last blog](http://oatzy.blogspot.co.uk/2015/01/metric-and-binary-clocks-for-android.html) I talked about making a binary clock widget (for Android) using [Zooper](https://play.google.com/store/apps/details?id=org.zooper.zwfree&hl=en_GB), and I made a claim about how individual binary digits can be extracted from a decimal number - what follows is an explanation/proof of why it works.
+In the [last blog](https://oatzy.github.io/2015/01/09/metric-and-binary-clocks-for-android.html) I talked about making a binary clock widget (for Android) using [Zooper](https://web.archive.org/web/20150405151242/https://play.google.com/store/apps/details?id=org.zooper.zwfree&hl=en_GB), and I made a claim about how individual binary digits can be extracted from a decimal number - what follows is an explanation/proof of why it works.
 
 **The Claim**
 
@@ -83,7 +83,7 @@ So as an example, the zeroth and first digits of 35 in base 16 (hexadecimal) are
 \[ D_{16}^{0}(35) = \left \lfloor{ \frac{35}{16^{0}} \bmod 16 }\right \rfloor = \left \lfloor{ 35 \bmod 16 }\right \rfloor&nbsp; = 3 \\ D_{16}^{1}(35) = \left \lfloor{ \frac{35}{16^{1}} \bmod 16 }\right \rfloor = \left \lfloor{ 2.1875 \bmod 16 }\right \rfloor&nbsp; = 2\]\
 So 35 in hexadecimal is 23. Easy.
 
-<strong>Trinary Clock </strong> [[download]](https://www.dropbox.com/s/xfxtzcqxtsxs164/trinary-clock.zw?dl=0)
+<strong>Trinary Clock </strong> [[download]](https://github.com/oatzy/question-nobody-asked/blob/main/follow-up-binary-proof-and-trinary-clock/trinary-clock.zw)
 
 [![](/images/follow-up-binary-proof-and-trinary-clock/Screenshot_2015-01-05-15-52-58.png)](/images/follow-up-binary-proof-and-trinary-clock/Screenshot_2015-01-05-15-52-58.png)
 
@@ -91,7 +91,7 @@ So 35 in hexadecimal is 23. Easy.
 
 The thing is, binary clocks are great and all. But they're old hat. So now we have a way of finding the individual digits of a number in any base, we can make something a little more unique - a trinary clock.
 
-[Before](http://oatzy.blogspot.co.uk/2015/01/metric-and-binary-clocks-for-android.html), when I constructed the binary clock, I used rectangles for each binary digit, which changed colour depending on whether the digit it represented was a one or a zero. For a trinary clock we'd need each rectangle to have 3 state - 0, 1, 2. The problem is, Zooper can only do 2-state logic - if-then-else - not else-ifs, and no nested if-statements. So we can't make a rectangle that switches between 3 colours.
+[Before](https://oatzy.github.io/2015/01/09/metric-and-binary-clocks-for-android.html), when I constructed the binary clock, I used rectangles for each binary digit, which changed colour depending on whether the digit it represented was a one or a zero. For a trinary clock we'd need each rectangle to have 3 state - 0, 1, 2. The problem is, Zooper can only do 2-state logic - if-then-else - not else-ifs, and no nested if-statements. So we can't make a rectangle that switches between 3 colours.
 
 Instead, I made each segment a progress bar with values 0-2. For the current value of each bar/digit, we can use the formula we found above - \(D^{n}_{3}(x) = \frac{x}{3^n} \bmod 3\).
 
@@ -105,7 +105,7 @@ The progress bar automatically rounds values down to the nearest whole number, s
 
 Like the binary clock, I made the sizes of each segment proportional to the values they represent - the three-segment is 3 times bigger than the one-segment, etc. And to make reading clearer, I've made the leading edge of each segment a darker blue - that way it's easier to tell where one segment ends and the next one begins.
 
-<strong>Quinary (Base 5) Clock </strong> [[download]](https://www.dropbox.com/s/qf8rpja23i334c7/quintary-clock.zw?dl=0)
+<strong>Quinary (Base 5) Clock </strong> [[download]](https://github.com/oatzy/question-nobody-asked/blob/main/follow-up-binary-proof-and-trinary-clock/quintary-clock.zw)
 
 [![](/images/follow-up-binary-proof-and-trinary-clock/Screenshot_2015-01-05-22-44-54.png)](/images/follow-up-binary-proof-and-trinary-clock/Screenshot_2015-01-05-22-44-54.png)
 
@@ -113,7 +113,7 @@ Like the binary clock, I made the sizes of each segment proportional to the valu
 
 Once you've figured out the trinary clock, adapting it to other bases is very straightforward.
 
-<strong>Decary (Base 10) Clock </strong> [[download]](https://www.dropbox.com/s/q181cj6qh8vxvk9/decary-clock.zw?dl=0)
+<strong>Decary (Base 10) Clock </strong> [[download]](https://github.com/oatzy/question-nobody-asked/blob/main/follow-up-binary-proof-and-trinary-clock/decary-clock.zw)
 
 [![](/images/follow-up-binary-proof-and-trinary-clock/Screenshot_2015-01-06-22-16-19.png)](/images/follow-up-binary-proof-and-trinary-clock/Screenshot_2015-01-06-22-16-19.png)
 
@@ -125,7 +125,7 @@ You get the idea..\.
 
 As far as telling the time goes, all the clocks in this and the previous blog are pretty..\. challenging. At least until you get the hang of it. But they look cool. And that, I think is worth the extra effort. If I ever get a smartwatch I'll probably try to port some of these designs over. And if/when I do, you can bet I'll post them here.
 
-[edit] - Android Wear versions are [here](http://oatzy.blogspot.co.uk/2015/03/watch-face-concepts-for-android-wear.html).
+[edit] - Android Wear versions are [here](https://oatzy.github.io/2015/03/12/watch-face-concepts-for-android-wear.html).
 
 Oatzy.
 

@@ -43,6 +43,6 @@ So that's all pretty and such.
 
 Fairly straight-forward.
 
-And as a side note, I wish I'd known about this program sooner. Then, I wouldn't have had to work out [PageRanks](http://oatzy.blogspot.com/2010/12/pagerank.html) by hand.
+And as a side note, I wish I'd known about this program sooner. Then, I wouldn't have had to work out [PageRanks](https://oatzy.github.io/2010/12/07/pagerank.html) by hand.
 
 Oatzy.

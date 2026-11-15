@@ -17,7 +17,7 @@ blogger_id: tag:blogger.com,1999:blog-14769935.post-860686026254167010
 blogger_orig_url: https://oatzy.blogspot.com/2011/01/quick-look-petrol-station-model.html
 ---
 
-So a model of a petrol station is effectively the same as [the café](http://oatzy.blogspot.com/2011/01/model-cafe.html) (albeit with different variables), EXCEPT that for the petrol station you queue to pay just before you leave (rather than as soon as you arrive).
+So a model of a petrol station is effectively the same as [the café](https://oatzy.github.io/2011/01/09/model-cafe.html) (albeit with different variables), EXCEPT that for the petrol station you queue to pay just before you leave (rather than as soon as you arrive).
 
 [![](/images/quick-look-petrol-station-model/Petrol-Station-Flow.png)](/images/quick-look-petrol-station-model/Petrol-Station-Flow.png)
 
@@ -31,7 +31,7 @@ Of course, it doesn't take a mathematical model to tell you that the control of 
 
 But what the model can tell you is how quickly the staff need to work to limit backlogs; basically, they have to serve quicker than the average arrival rate.
 
-Like with the café model you could probably adapt this model to [predict](http://oatzy.blogspot.com/2011/01/follow-up-will-i-get-table.html) how long you can expect to wait as well. And as a final, intellectual, exercise, you could factor in pay at the pump (assuming not everyone who can, does), and look at to what degree that allows the staff to relax their pace.
+Like with the café model you could probably adapt this model to [predict](https://oatzy.github.io/2011/01/17/follow-up-will-i-get-table.html) how long you can expect to wait as well. And as a final, intellectual, exercise, you could factor in pay at the pump (assuming not everyone who can, does), and look at to what degree that allows the staff to relax their pace.
 
 Here's an example output graph,
 
@@ -39,6 +39,6 @@ Here's an example output graph,
 
 Blue is pumps in use, yellow is number of people queuing to pay and orange is waiting for a pump.
 
-You can find the code [here](http://dl.dropbox.com/u/4635169/petrol-station-model.py) if you're interested.
+You can find the code [here](https://github.com/oatzy/question-nobody-asked/blob/main/quick-look-petrol-station-model/petrol-station-model.py) if you're interested.
 
 Oatzy.

@@ -32,7 +32,7 @@ People who don't get Twitter think it's just that thing where you can tell peopl
 
 But I'm going off on a tangent.
 
-By August 2010, I was well into Twitter - I was posting around [30 tweets per day](http://oatzy.blogspot.com/2010/08/life-by-numbers.html), and I had around 30 friends\*. And back then, I decided I wanted to see what my friends network looked like. So I broke out [Python](http://www.python.org/) and the [Twitter API](https://dev.twitter.com/docs), I pulled data, and I made [the graph](http://oatzy.blogspot.com/2010/07/follow-up-twitter-network.html). Here's an updated version of it.
+By August 2010, I was well into Twitter - I was posting around [30 tweets per day](https://oatzy.github.io/2010/08/31/life-by-numbers.html), and I had around 30 friends\*. And back then, I decided I wanted to see what my friends network looked like. So I broke out [Python](http://www.python.org/) and the [Twitter API](https://dev.twitter.com/docs), I pulled data, and I made [the graph](https://oatzy.github.io/2010/07/31/follow-up-twitter-network.html). Here's an updated version of it.
 
 [![](/images/friend-network-evolution/graph-20100831-alt.png)](/images/friend-network-evolution/graph-20100831-alt.png)
 
@@ -46,7 +46,7 @@ By December 2010, I decided to have a look again.
 
 [![](/images/friend-network-evolution/graph-20101208-alt.png)](/images/friend-network-evolution/graph-20101208-alt.png)
 
-Again, this is an update of the version I [originally posted](http://oatzy.blogspot.com/2010/11/follow-up-twitter-bffs.html); and in this case, I've tried to arrange it so that key people stay in approximately the same place.
+Again, this is an update of the version I [originally posted](https://oatzy.github.io/2010/11/07/follow-up-twitter-bffs.html); and in this case, I've tried to arrange it so that key people stay in approximately the same place.
 
 So you still vaguely have that left-right divide, but now there's much more mixing in the middle. I'd made some new friends, but more interesting is the people who were already in the graph who formed new connections with others in my graph.
 
@@ -82,7 +82,7 @@ I should also point out that the people I follow who aren't friends with anyone 
 
 **Technical stuff**
 
-You can read details on how I collected the data before, in the [previous blogs](http://oatzy.blogspot.com/2010/07/twitter-friend-network.html). But, as I say, those methods don't work anymore.
+You can read details on how I collected the data before, in the [previous blogs](https://oatzy.github.io/2010/07/31/twitter-friend-network.html). But, as I say, those methods don't work anymore.
 
 For this run, I read up on the API, and found some bits that don't need authentication to grab and manipulate.
 
@@ -104,7 +104,7 @@ Which works through the browser, but I couldn't get to work in my code. So in pl
 
 Which is very convenient. Though I do worry all the requests might be putting strain on that site's server.
 
-So, putting all that together with a bit of Python, you get [something like this](http://dl.dropbox.com/u/4635169/FriendLinks.py).
+So, putting all that together with a bit of Python, you get [something like this](https://github.com/oatzy/question-nobody-asked/blob/main/friend-network-evolution/FriendLinks.py).
 
 A few important points:
 
@@ -122,4 +122,4 @@ Aaand..\. Yeah, I think that's about it.
 
 Oatzy.
 
-[shinelikestars6 lost his [red circle](http://oatzy.blogspot.com/2010/07/follow-up-twitter-network.html), on account of he isn't my nemesis anymore.]
+[shinelikestars6 lost his [red circle](https://oatzy.github.io/2010/07/31/follow-up-twitter-network.html), on account of he isn't my nemesis anymore.]

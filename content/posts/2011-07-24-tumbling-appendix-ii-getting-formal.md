@@ -18,11 +18,11 @@ blogger_orig_url: https://oatzy.blogspot.com/2011/07/tumbling-appendix-ii-gettin
 
 **Pre-Ramble**
 
-The problem with what I've described [previously](http://oatzy.blogspot.com/2011/06/tumbling-part-three-stochastic-spread.html) is it's all a bit fuzzy - it's based on flow diagrams and vague descriptions, it was informal, and lacked precision. Mathematics, however, likes to have ideas clarified, by transforming them into precise, but somewhat impenetrable, collections of symbols. And who am I to argue with maths?
+The problem with what I've described [previously](https://oatzy.github.io/2011/06/29/tumbling-part-three-stochastic-spread.html) is it's all a bit fuzzy - it's based on flow diagrams and vague descriptions, it was informal, and lacked precision. Mathematics, however, likes to have ideas clarified, by transforming them into precise, but somewhat impenetrable, collections of symbols. And who am I to argue with maths?
 
 Having found [PlosOne](http://www.plosone.org/home.action) and [arXiv](http://arxiv.org/), which offer open-access to academic papers, I've come across a few papers - some related to subjects in my blogs - that have grabbed my interest. And usually I'll skim over them, then download for reading 'at a later date'. But even just skimming, I have started to picked up a few tricks
 
-Being as this is just an informal blog, there's nothing wrong with being informal. Nonetheless, there's no harm in a little practice. So this is an attempt to reintroduce the model (derived [previously](http://oatzy.blogspot.com/2011/06/tumbling-part-one-some-background.html)) as a formal set of equations. It should be noted, though, that none of this changes or nullifies what was previously written. It simply sets it out in a more precise - albeit cryptic looking - way.
+Being as this is just an informal blog, there's nothing wrong with being informal. Nonetheless, there's no harm in a little practice. So this is an attempt to reintroduce the model (derived [previously](https://oatzy.github.io/2011/06/25/tumbling-part-one-some-background.html)) as a formal set of equations. It should be noted, though, that none of this changes or nullifies what was previously written. It simply sets it out in a more precise - albeit cryptic looking - way.
 
 Consider this fair warning of what's to follow.
 
@@ -38,13 +38,13 @@ In fact, the exposed state (*E*) isn't strictly necessary in this case (more on 
 
 [![](/images/tumbling-appendix-ii-getting-formal/sir-model.png)](/images/tumbling-appendix-ii-getting-formal/sir-model.png)
 
-Here's an example of what the output might look like (N=10,000, alpha=0.001, beta=[0.14](http://oatzy.blogspot.com/2011/06/tumbling-part-two-over-threshold.html)),
+Here's an example of what the output might look like (N=10,000, alpha=0.001, beta=[0.14](https://oatzy.github.io/2011/06/26/tumbling-part-two-over-threshold.html)),
 
 [![](/images/tumbling-appendix-ii-getting-formal/sir-model-graph.png)](/images/tumbling-appendix-ii-getting-formal/sir-model-graph.png)
 
 With the compartmental form of the model, because the variables - such as the reblog rate - are constant, the behaviour across multiple simulations is uniform.
 
-In fact, for the same initial conditions, the results will always be the same. By comparison, the behaviour of the model [previously](http://oatzy.blogspot.com/2011/06/tumbling-part-three-stochastic-spread.html) outlined can vary wildly between multiple simulations, run with the same initial conditions.
+In fact, for the same initial conditions, the results will always be the same. By comparison, the behaviour of the model [previously](https://oatzy.github.io/2011/06/29/tumbling-part-three-stochastic-spread.html) outlined can vary wildly between multiple simulations, run with the same initial conditions.
 
 You could modify it - maybe make the variables, literally, variable - but since we already have a perfectly good model, it's not really worth bothering.
 

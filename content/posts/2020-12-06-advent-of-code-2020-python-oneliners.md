@@ -223,7 +223,7 @@ print(sum(sum(all(c in m for m in members) for c in members[0]) for members in (
 
 # Update - lambda-wrapping
 
-I remembered where I got the idea for lambda wrapping, as used in day 1 above - [onelinerizer](http://www.onelinerizer.com/)
+I remembered where I got the idea for lambda wrapping, as used in day 1 above - [onelinerizer](https://web.archive.org/web/20201111223853/http://www.onelinerizer.com/)
 
 Here's an alternative, maybe clearer, way of doing day 3 using lambdas
 

@@ -27,7 +27,7 @@ The other week I was waiting for my tram, reading Metro, and I see this article 
 
 In other word, a set of equations that will tell you, for example, how much tinsel, or how many baubles are 'required' for the 'perfect' Christmas tree.
 
-[Here](http://www.shef.ac.uk/news/nr/debenhams-christmas-tree-formula-1.227810) is the press release, with the actual formulas.
+[Here](https://web.archive.org/web/20121216140244/http://www.shef.ac.uk/news/nr/debenhams-christmas-tree-formula-1.227810) is the press release, with the actual formulas.
 
 Now, I have a few issues with this. For one thing, it's a bit silly. Surely the perfect tree is a matter of personal preference, and in that sense can't be defined by a set of mathematical rules.
 
@@ -122,7 +122,7 @@ In particular, there's this thing you see in nature; for example, if you look at
 
 And you get the same effect on other things, like the spirals of seeds in the head of a sunflower, or the seeds on a strawberry, or the spirals on a pinecone, or a cauliflower, or all sorts of things. Hell, maybe the branches on a Christmas tree form Fibonacci spirals.
 
-[Vi Hart](http://www.youtube.com/watch?v=ahXIMUkSXX0) explains it better than me.
+[Vi Hart](https://web.archive.org/web/20121220112628/http://www.youtube.com/watch?v=ahXIMUkSXX0) explains it better than me.
 
 So maybe that has something to do with that pre-factor. Or maybe not. It's an interesting tidbit, though.
 
@@ -158,7 +158,7 @@ In fact, if your baubles are all, more or less, the same, you can lay them out o
 
 **Thoughts**
 
-[Here](http://www.badscience.net/2006/12/mediaslut-ideas-money-corporatewhore/) [are](http://www.badscience.net/2007/09/imaginary-numbers/) [various](http://www.badscience.net/2007/09/clarion-communications-respond-on-the-rigged-jessica-alba-wiggle/) [things](http://www.badscience.net/2008/08/fame/) Ben Goldacre, of Bad Science, has said on the subject of commissioned, 'perfect' formulas. [Here](http://www.guardian.co.uk/science/2009/sep/02/perfect-formula-festival-science) is an article by mathematician, Simon Singh. [Here](http://news.bbc.co.uk/1/hi/magazine/3794419.stm) is an article on BBC News. And [here](http://www.andrewt.net/blog/the-perfect-formula/) is a collection of such formulas on Apathy Sketchpad.
+[Here](https://web.archive.org/web/20121208001546/http://www.badscience.net/2006/12/mediaslut-ideas-money-corporatewhore/) [are](https://web.archive.org/web/20121208001542/http://www.badscience.net/2007/09/imaginary-numbers/) [various](https://web.archive.org/web/20121207235106/http://www.badscience.net/2007/09/clarion-communications-respond-on-the-rigged-jessica-alba-wiggle/) [things](https://web.archive.org/web/20121208001518/http://www.badscience.net/2008/08/fame/) Ben Goldacre, of Bad Science, has said on the subject of commissioned, 'perfect' formulas. [Here](http://www.guardian.co.uk/science/2009/sep/02/perfect-formula-festival-science) is an article by mathematician, Simon Singh. [Here](http://news.bbc.co.uk/1/hi/magazine/3794419.stm) is an article on BBC News. And [here](http://www.andrewt.net/blog/the-perfect-formula/) is a collection of such formulas on Apathy Sketchpad.
 
 To be honest, I wouldn't bother with any of this; their equations, or mine. I mean, would you really want a tree that was 'perfectly' decorated? Cold and artificial are the words that come to mind.
 
@@ -179,4 +179,4 @@ Oatzy.
 
 [*I want you to know, I had no part in decorating that tree.*]
 
-[*..\.And, yes, that's a [weeping angel](http://oatzy.blogspot.co.uk/2010/12/weeping-angel-christmas-tree-topper.html) on top.*]
+[*..\.And, yes, that's a [weeping angel](https://oatzy.github.io/2010/12/16/weeping-angel-christmas-tree-topper.html) on top.*]

@@ -1,0 +1,17 @@
+﻿body 
+{
+    background-color:#ffffff;
+}
+
+#clock 
+{
+    position:fixed;
+    padding: 150px 0 0 350px;
+    font-size: 1000%;
+    text-align: center;
+}
+#sec
+{
+    position:fixed;
+    padding: 225px 0 0 700px;
+    font-size: 500%;

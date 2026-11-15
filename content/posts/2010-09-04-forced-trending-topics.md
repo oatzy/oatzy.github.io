@@ -21,7 +21,7 @@ blogger_orig_url: https://oatzy.blogspot.com/2010/09/forced-trending-topics.html
 
 **Origin**
 
-So I tried to work out why this was trending. The reasons were most likely to be related to them releasing [two new songs](http://venomousformaldehyde.blogspot.com/2010/09/na-na-na-new-my-chemical-romance-song.html) and one of the band members having a birthday recently.
+So I tried to work out why this was trending. The reasons were most likely to be related to them releasing [two new songs](https://web.archive.org/web/20100907063724/http://venomousformaldehyde.blogspot.com:80/2010/09/na-na-na-new-my-chemical-romance-song.html) and one of the band members having a birthday recently.
 
 But there's very little talk of these, specifically. Instead, what you see a lot of is people tweeting along the lines of "*get \#MyChemicalRomance trending*", "*\#MyChemicalRomance is trending!*", and so on.
 
@@ -87,7 +87,7 @@ And the fact that it's basically non-existent until after midnight on the 4th le
 
 So if all of this has taught me anything, it's that when aggressive fandom meets social media, the results can be potentially dangerous.
 
-And more so, it's a troubling forewarning for what a determined, politically motivated group *could* achieve - an example of this is already happening on [Digg](http://blogs.alternet.org/oleoleolson/2010/08/05/massive-censorship-of-digg-uncovered/). And frankly, I think we should all fear it greatly. But I'm probably just paranoid. Maybe.
+And more so, it's a troubling forewarning for what a determined, politically motivated group *could* achieve - an example of this is already happening on [Digg](https://web.archive.org/web/20100906125714/http://blogs.alternet.org:80/oleoleolson/2010/08/05/massive-censorship-of-digg-uncovered/). And frankly, I think we should all fear it greatly. But I'm probably just paranoid. Maybe.
 
 So if you want to get something trending, the most important step is get it to a connector that will support your cause and expose it to a wider audience of supporters.
 

@@ -144,7 +144,7 @@ Putting it all together, we calculate the (posterior) probability of the mystery
 
 As we expected, this probability is much greater than 50% - the mystery person is more likely to be female than male, given their height.
 
-\*Aside: [These figures](https://www.census.gov/compendia/statab/2012/tables/12s0209.pdf) come from average heights for Americans aged 20-80 for 2007-2008.
+\*Aside: [These figures](https://web.archive.org/web/20141017053057/http://www.census.gov/compendia/statab/2012/tables/12s0209.pdf) come from average heights for Americans aged 20-80 for 2007-2008.
 
 Obviously the probabilities would vary depending on where the mystery person is from, how old they are, etc. Since all we know about this mystery person is their height, we shouldn't really make assumptions about their background. But for the sake of demonstration (and convenience), these values are sufficient.
 

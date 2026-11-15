@@ -121,7 +121,7 @@ So then *rate = tweets/time*, or, *time = tweets/rate*
 
 If rate is in tweets per day, then time is in days.
 
-I wrote a program for this, that you can look at [here](http://dl.dropbox.com/u/4635169/twitterCatch.py), if you're so inclined. And according to that program, I should catch up in *437* *days*, or on *11th October 2011*.
+I wrote a program for this, that you can look at [here](https://github.com/oatzy/question-nobody-asked/blob/main/miscellaneous-crap/twitterCatch.py), if you're so inclined. And according to that program, I should catch up in *437* *days*, or on *11th October 2011*.
 
 *NB*, Due to difficulty in calculating the rates and the variability of rates over time, the results aren't particularly exact. Especially for long periods of time like above.
 

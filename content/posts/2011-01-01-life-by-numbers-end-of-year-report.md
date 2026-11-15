@@ -75,12 +75,12 @@ Graphic novels read: *~12*
 
 Films seen at the cinema: *3*\
 \* The Lovely Bones\
-\* [Inception](http://oatzy.blogspot.com/2010/08/inception-review.html)\
+\* [Inception](https://oatzy.github.io/2010/08/08/inception-review.html)\
 \* Scott Pilgrim vs The World
 
 2010 released films seen: *6*
 
-Films rented ([LoveFilm](http://www.lovefilm.com/)): *10*
+Films rented ([LoveFilm](https://web.archive.org/web/20110101021716/http://www.lovefilm.com/)): *10*
 
 Words written for [NaNoWriMo](http://www.nanowrimo.org/eng/user/665862): *28,369*\
 Percent to target: *56.7%*
@@ -172,7 +172,7 @@ Average tweet distribution over 1 day:
 New friends\*: *28*\
 Total foll/followers (as of 31/12/10): *57/120*
 
-Most talked to [friends](http://oatzy.blogspot.com/2010/11/follow-up-twitter-bffs.html):\
+Most talked to [friends](https://oatzy.github.io/2010/11/07/follow-up-twitter-bffs.html):\
 @[aaangst](http://twitter.com/#%21/aaangst) (*3.69*)\
 @[PkmnTrainerJ](http://twitter.com/#%21/PkmnTrainerJ) (*3.04*)\
 @[SallyBembridge](http://twitter.com/#%21/SallyBembridge) (*3.01*)\
@@ -192,13 +192,13 @@ Equivalent RTs per day: *1.17*
 \* no, I don't know which publications precisely.\
 \* 'friends' here defined as a mutual follow. Though I would consider most of them friends, to varying degrees.
 
-You can compare these numbers with those from August 31st [here](http://oatzy.blogspot.com/2010/08/life-by-numbers.html).
+You can compare these numbers with those from August 31st [here](https://oatzy.github.io/2010/08/31/life-by-numbers.html).
 
 Further stats on individual websites below. Due to various reasons there are limits on what data I actually have. So it's worth pointing out that following websites only cover the last -% of the year,
 
 [Daytum](http://daytum.com/oatzy) - *80%*\
 [FourSquare](http://foursquare.com/oatz) - *74%*\
-[Twitter](http://twitter.com/#%21/oatz) ([Twoolr](http://twoolr.com/twitter/statistics/Oatz)) - *66%*
+[Twitter](http://twitter.com/#%21/oatz) ([Twoolr](https://web.archive.org/web/20111219231023/http://twoolr.com/twitter/statistics/oatz)) - *66%*
 
 Though the interesting thing about Twitter is that while the data I've got only covers *40%* of my total time on Twitter, it covers *81%* of my total tweets!
 

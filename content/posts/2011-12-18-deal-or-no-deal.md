@@ -20,7 +20,7 @@ Certainly [card counting](http://en.wikipedia.org/wiki/Card_counting) (when you 
 
 **It's How you Play the Game**
 
-Behind all the 'quirky' contestants, the blatant superstition and Noel Edmond's [interesting shirts](http://floralshirtsonline.co.uk/2011/03/top-ten-celebrity-floral-shirt-wearers/), lies a surprisingly complex game. Albeit a 'complex' game which can be played competently with little to no skill.
+Behind all the 'quirky' contestants, the blatant superstition and Noel Edmond's [interesting shirts](https://web.archive.org/web/20110508230916/http://floralshirtsonline.co.uk:80/2011/03/top-ten-celebrity-floral-shirt-wearers/), lies a surprisingly complex game. Albeit a 'complex' game which can be played competently with little to no skill.
 
 In fact skill only comes into it when you start trying to tip the probability scales in your favour, without relying on trinkets and 'special numbers'.
 
@@ -88,7 +88,7 @@ But again, this is for a slightly different game than ours. So we'll want to che
 
 Thing is, there's a whole bunch of probability calculations involved in working that out. And probability calculations are a pain in the arse. So in lieu of all that, I did a [Monte Carlo simulation](http://en.wikipedia.org/wiki/Monte_Carlo_method) instead.
 
-Here's [the code](http://dl.dropbox.com/u/4635169/DoND.py).
+Here's [the code](https://github.com/oatzy/question-nobody-asked/blob/main/deal-or-no-deal/DoND.py).
 
 And what the code suggests, is that the best strategy is actually to pass on the first *two* offers - giving a success rate of about ~49%
 

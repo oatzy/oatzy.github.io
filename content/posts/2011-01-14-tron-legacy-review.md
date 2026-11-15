@@ -57,7 +57,7 @@ And bear in mind that, if we're honest, the script of the original *Tron* was ha
 
 It really is quite a stunning film to look at.
 
-At least one review described it as part sequel, part remake/re-imagining. And that is basically it. If you rewatch *Tron* having seen *Legacy* (or vice versa), you see all the [little nods](http://io9.com/5715324/15-easter-eggs-to-watch-out-for-in-tron-legacy) to the original, some scenes taken almost verbatim ("big door"). But this is not a bad thing. Given how dramatic the change in the graphic appearance of everything, you'd feel almost let down if you didn't get to see, say, an updated light-cycle.
+At least one review described it as part sequel, part remake/re-imagining. And that is basically it. If you rewatch *Tron* having seen *Legacy* (or vice versa), you see all the [little nods](https://web.archive.org/web/20101229141313/http://io9.com:80/5715324/15-easter-eggs-to-watch-out-for-in-tron-legacy) to the original, some scenes taken almost verbatim ("big door"). But this is not a bad thing. Given how dramatic the change in the graphic appearance of everything, you'd feel almost let down if you didn't get to see, say, an updated light-cycle.
 
 And the dramatic upgrade in the appearances and visual effects really is a good reflection of how much technology has advanced since 1982.
 

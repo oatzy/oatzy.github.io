@@ -18,15 +18,15 @@ blogger_id: tag:blogger.com,1999:blog-14769935.post-8863241527627371068
 blogger_orig_url: https://oatzy.blogspot.com/2015/01/metric-and-binary-clocks-for-android.html
 ---
 
-A long while back I wrote a couple of blogs about clocks. In [the first](http://oatzy.blogspot.co.uk/2010/08/decimalising-time.html) I talked about decimalising time. Half a year later, I wrote [another](http://oatzy.blogspot.co.uk/2011/01/needlessly-incomprehensible-clock.html) where I designed a couple of circular binary clocks. I thought I'd try to recreate those clocks for my phone.
+A long while back I wrote a couple of blogs about clocks. In [the first](https://oatzy.github.io/2010/08/01/decimalising-time.html) I talked about decimalising time. Half a year later, I wrote [another](https://oatzy.github.io/2011/01/20/needlessly-incomprehensible-clock.html) where I designed a couple of circular binary clocks. I thought I'd try to recreate those clocks for my phone.
 
-I had a widget making app - [Zooper](https://play.google.com/store/apps/details?id=org.zooper.zwfree&hl=en_GB) - installed on my phone, that I'd played with before. I build myself an autumnal homescreen, that looked like this.
+I had a widget making app - [Zooper](https://web.archive.org/web/20150405151242/https://play.google.com/store/apps/details?id=org.zooper.zwfree&hl=en_GB) - installed on my phone, that I'd played with before. I build myself an autumnal homescreen, that looked like this.
 
 [![](/images/metric-and-binary-clocks-for-android/Screenshot_2013-10-12-17-13-30.png)](/images/metric-and-binary-clocks-for-android/Screenshot_2013-10-12-17-13-30.png)
 
-I don't use that theme anymore. These days I prefer a more minimalist homescreen - no widgets, as few icons as possible. But if you like it, you can [[download]](https://www.dropbox.com/sh/h0xeohfu4lxoyuh/AAAbtXxZelo8YQSTbEAKa2gza?dl=0) the widgets/wallpaper for the above theme. You'll need the [Media Utilities](https://play.google.com/store/apps/details?id=com.batescorp.notificationmediacontrols.alpha&hl=en_GB) app for the music bar.
+I don't use that theme anymore. These days I prefer a more minimalist homescreen - no widgets, as few icons as possible. But if you like it, you can [[download]](https://github.com/oatzy/question-nobody-asked/tree/main/metric-and-binary-clocks-for-android/autumn-theme) the widgets/wallpaper for the above theme. You'll need the [Media Utilities](https://web.archive.org/web/20141015222548/https://play.google.com/store/apps/details?id=com.batescorp.notificationmediacontrols.alpha&hl=en_GB) app for the music bar.
 
-Note - if you want to use any of the widgets I've linked in this blog, you'll need the [paid version](https://play.google.com/store/apps/details?id=org.zooper.zwpro&hl=en_GB) of Zooper. Alternatively, you can try to recreate them yourself - I'll include important details in this blog. There are other widget making apps, but I don't know much of using them.
+Note - if you want to use any of the widgets I've linked in this blog, you'll need the [paid version](https://web.archive.org/web/20150131023620/https://play.google.com/store/apps/details?id=org.zooper.zwpro&hl=en_GB) of Zooper. Alternatively, you can try to recreate them yourself - I'll include important details in this blog. There are other widget making apps, but I don't know much of using them.
 
 **How to Make a Basic Clock Widget**
 
@@ -42,7 +42,7 @@ Above is actually one of the built-in widgets that I de-cluttered a little. So i
 
 Note - all the clock images in this blog are shown on a grey background for clarity. Their actual backgrounds (if you download them) are transparent.
 
-<strong>Backwards Clock </strong> [[download]](https://www.dropbox.com/s/uf5rakmombc5u1c/backwards-clock.zw?dl=0)
+<strong>Backwards Clock </strong> [[download]](https://github.com/oatzy/question-nobody-asked/blob/main/metric-and-binary-clocks-for-android/backwards-clock.zw)
 
 [![](/images/metric-and-binary-clocks-for-android/Screenshot_2015-01-07-17-54-47.png)](/images/metric-and-binary-clocks-for-android/Screenshot_2015-01-07-17-54-47.png)
 
@@ -50,7 +50,7 @@ This is actually the last one I made. I have an analogue backwards clock on my b
 
 As before, you make your hour and minute rings from progress bars, but in this case you set the curve to negative 360. Like I said, trivial.
 
-<strong>Decimalised/Metric Clock </strong> [[download]](https://www.dropbox.com/s/9ze3ompo7awmuc5/decimal-clock.zw?dl=0)
+<strong>Decimalised/Metric Clock </strong> [[download]](https://github.com/oatzy/question-nobody-asked/blob/main/metric-and-binary-clocks-for-android/decimal-clock.zw)
 
 [![](/images/metric-and-binary-clocks-for-android/Screenshot_2015-01-07-17-55-56.png)](/images/metric-and-binary-clocks-for-android/Screenshot_2015-01-07-17-55-56.png)
 
@@ -90,7 +90,7 @@ $(floor(0.00694*(60*#DH#+#Dm#)))$:$(0.694*(60*#DH#+#Dm#)%100)<10?(0)$$(floor(0.6
 
 Yeah, it's a little unwieldy.
 
-<strong>Binary Clock </strong> [[download]](https://www.dropbox.com/s/b0q1du0n4ml66hg/binary-clock.zw?dl=0)
+<strong>Binary Clock </strong> [[download]](https://github.com/oatzy/question-nobody-asked/blob/main/metric-and-binary-clocks-for-android/binary-clock.zw)
 
 [![](/images/metric-and-binary-clocks-for-android/Screenshot_2015-01-07-19-29-25.png)](/images/metric-and-binary-clocks-for-android/Screenshot_2015-01-07-19-29-25.png)
 
@@ -110,7 +110,7 @@ Now, we need a way of converting the time to binary, and a way of telling each b
 
 I'll prove this in a supplemental blog, that will be posted shortly after this one. In the meantime, you might like to try proving it for yourself.\*
 
-*[edit]* - You can read that supplemental blog [here](http://oatzy.blogspot.co.uk/2015/01/follow-up-binary-proof-and-trinary-clock.html).
+*[edit]* - You can read that supplemental blog [here](https://oatzy.github.io/2015/01/12/follow-up-binary-proof-and-trinary-clock.html).
 
 So we can use this condition to set/change the colours of each rectangle. For example, for the 2nd rectangle on the minutes ring (n=1), go to "Advanced Parameters", and enter something like
 
@@ -126,15 +126,15 @@ $(#DH# % 32)<16?([c]#19ffffff[/c]):([c]#ff1084cb[/c])$
 
 And so on.
 
-I also made an annotated version of the design [[download]](https://www.dropbox.com/s/8kshu9xeeavxl2k/binary-num-clock.zw?dl=0) to make telling the time slightly easier; albeit at the cost of looking a little cluttered
+I also made an annotated version of the design [[download]](https://github.com/oatzy/question-nobody-asked/blob/main/metric-and-binary-clocks-for-android/binary-num-clock.zw) to make telling the time slightly easier; albeit at the cost of looking a little cluttered
 
 [![](/images/metric-and-binary-clocks-for-android/Screenshot_2015-01-05-20-45-07.png)](/images/metric-and-binary-clocks-for-android/Screenshot_2015-01-05-20-45-07.png)
 
 (16+4):(32+8+4+1) = 20:45
 
-I tried adding a seconds circle, like in the version from the old blog, but the widgets don't seem to refresh often enough for it to work. Which is a shame, 'cause it's fun to [watch the seconds move](https://dl.dropboxusercontent.com/u/4635169/time/time2/index-alt.htm).
+I tried adding a seconds circle, like in the version from the old blog, but the widgets don't seem to refresh often enough for it to work. Which is a shame, 'cause it's fun to [watch the seconds move](/files/metric-and-binary-clocks-for-android/index-alt.htm).
 
-<strong>Proportional Binary Clock </strong> [[download]](https://www.dropbox.com/s/3v3v4tutm1xucbs/alt-binary-clock.zw?dl=0)
+<strong>Proportional Binary Clock </strong> [[download]](https://github.com/oatzy/question-nobody-asked/blob/main/metric-and-binary-clocks-for-android/alt-binary-clock.zw)
 
 [![](/images/metric-and-binary-clocks-for-android/Screenshot_2015-01-07-13-52-11.png)](/images/metric-and-binary-clocks-for-android/Screenshot_2015-01-07-13-52-11.png)
 

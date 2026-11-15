@@ -29,7 +29,7 @@ You then have a system of differential equations to describe how these groups va
 
 **How do you model a Zombie Apocalypse?**
 
-In the paper "[WHEN ZOMBIES ATTACK!: MATHEMATICAL MODELLING OF AN OUTBREAK OF ZOMBIE INFECTION](http://www.mathstat.uottawa.ca/%7Ersmith/Zombies.pdf)", mathematicians at Carleton University modified this model in various ways. In the simplest form, they replaced 'infective' with 'zombie' and allowed a certain proportion of the dead to be resurrected (as zombies).
+In the paper "[WHEN ZOMBIES ATTACK!: MATHEMATICAL MODELLING OF AN OUTBREAK OF ZOMBIE INFECTION](https://web.archive.org/web/20100210071041/http://www.mathstat.uottawa.ca/%7Ersmith/Zombies.pdf)", mathematicians at Carleton University modified this model in various ways. In the simplest form, they replaced 'infective' with 'zombie' and allowed a certain proportion of the dead to be resurrected (as zombies).
 
 [![](/images/modelling-zombie-apocalypse/Zombie-basic.png)](/images/modelling-zombie-apocalypse/Zombie-basic.png)
 

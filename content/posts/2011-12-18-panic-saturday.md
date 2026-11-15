@@ -16,7 +16,7 @@ So yesterday was what the tabloids called [Panic Saturday](http://www.bbc.co.uk/
 
 CHRISTMAS!!
 
-So we go to our [check-in data](http://oatzy.blogspot.com/2011/12/best-day-to-go-shopping.html), and we can clearly see tha-
+So we go to our [check-in data](https://oatzy.github.io/2011/12/10/best-day-to-go-shopping.html), and we can clearly see tha-
 
 [![](/images/panic-saturday/week4-checkin-average.png)](/images/panic-saturday/week4-checkin-average.png)
 
@@ -30,13 +30,13 @@ Okay, so professional analysts probably have better metrics for measuring crowd 
 
 So what's going on?
 
-One theory would be that [Foursquare](https://foursquare.com/) users, generally, got their Christmas shopping done relatively early. And it's a nice thought, to think that [people](http://oatzy.blogspot.com/2011/01/life-by-numbers-end-of-year-report.html) who obsessively log where they've been are 'more organised' when it comes to shopping.
+One theory would be that [Foursquare](https://foursquare.com/) users, generally, got their Christmas shopping done relatively early. And it's a nice thought, to think that [people](https://oatzy.github.io/2011/01/01/life-by-numbers-end-of-year-report.html) who obsessively log where they've been are 'more organised' when it comes to shopping.
 
 But the more likely explanation is this - if places were that busy, and if people were that panicked, maybe they were just to busy to bother stop and check-in to Foursquare.
 
 That's what my money is on, anyway.
 
-And as a final point of interest, here is the updated graph for [Westfield London](http://uk.westfield.com/london)
+And as a final point of interest, here is the updated graph for [Westfield London](https://web.archive.org/web/20111220162143/http://uk.westfield.com:80/london)
 
 [![](/images/panic-saturday/week4-checkin-westfield.png)](/images/panic-saturday/week4-checkin-westfield.png)
 

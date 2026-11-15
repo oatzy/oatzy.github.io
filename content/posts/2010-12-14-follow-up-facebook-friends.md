@@ -14,7 +14,7 @@ blogger_id: tag:blogger.com,1999:blog-14769935.post-1679415112653213243
 blogger_orig_url: https://oatzy.blogspot.com/2010/12/follow-up-facebook-friends.html
 ---
 
-Every freaking time! I do something, like graph my [Facebook friends](http://oatzy.blogspot.com/2010/12/facebook-friends.html), and I'm one-up'd by Facebook going and doing this,
+Every freaking time! I do something, like graph my [Facebook friends](https://oatzy.github.io/2010/12/12/facebook-friends.html), and I'm one-up'd by Facebook going and doing this,
 
 [![](/images/follow-up-facebook-friends/fb-preview.jpg)](/images/follow-up-facebook-friends/fb-preview.jpg)
 

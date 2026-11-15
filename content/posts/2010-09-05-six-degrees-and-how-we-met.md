@@ -29,7 +29,7 @@ And it's because of these connectors that we can find short routes (six degrees 
 
 In the case of Twitter, if we assume that a connection between a pair of individuals only has to be one way, the degree of separation between users is surprisingly small.
 
-"the average path length is 4.12 with 93.5% of people within 5 or fewer hops of everyone else" [[source](http://an.kaist.ac.kr/traces/WWW2010.html)]
+"the average path length is 4.12 with 93.5% of people within 5 or fewer hops of everyone else" [[source](https://web.archive.org/web/20110222063252/http://an.kaist.ac.kr/traces/WWW2010.html)]
 
 This is almost entirely on account of celebrities. I mean, over 5million people have a maximum separation of degree 2, thanks to being followers of Bieber. But the less said about him the better.
 
@@ -39,7 +39,7 @@ To demonstrate the "Law of Few", Gladwell offers the following exercise - list 4
 
 What you will tend to find is that a majority of those links pass through 1 (or a very small number) of those friends - the connectors.
 
-Obviously, I had to try this for myself. I decided to go with my Twitter follows; it follows on from [previous](http://oatzy.blogspot.com/2010/07/twitter-friend-network.html) [posts](http://oatzy.blogspot.com/2010/07/follow-up-twitter-network.html), I've already done a lot of the leg work in those posts, and because you people are likely to care more if you're involved.
+Obviously, I had to try this for myself. I decided to go with my Twitter follows; it follows on from [previous](https://oatzy.github.io/2010/07/31/twitter-friend-network.html) [posts](https://oatzy.github.io/2010/07/31/follow-up-twitter-network.html), I've already done a lot of the leg work in those posts, and because you people are likely to care more if you're involved.
 
 So I tried to recall through whom I met everyone (some before or outside of Twitter). I'll admit, it may not be perfect - my memory is only so good.
 

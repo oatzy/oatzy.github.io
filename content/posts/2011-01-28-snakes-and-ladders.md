@@ -33,7 +33,7 @@ In the book, Professor Stewart also suggests that the reader might like to try t
 
 If you're not familiar with Snakes and Ladders and how it works, you had a very deprived childhood. There's an example game board below
 
-[![](http://upload.wikimedia.org/wikipedia/en/b/ba/Cnl03.jpg)](http://upload.wikimedia.org/wikipedia/en/b/ba/Cnl03.jpg)
+[![](/images/snakes-and-ladders/Cnl03.jpg)](/images/snakes-and-ladders/Cnl03.jpg)
 
 [[wikipedia](http://en.wikipedia.org/wiki/Snakes_and_ladders)]
 
@@ -53,9 +53,9 @@ Over-arcs are forward movements (dice rolls and ladders), under-arcs are backwar
 
 One run of the simulation is equivalent to one possible game. So what you do, is run the simulation, say, *10,000* times, and measure things like, how many times you land on each square, average or minimum number of turns it takes to get to the end, etc.
 
-There is a way of solving this exactly, and mathematically, as discussed for Monopoly in Ian Stewart's book, and indeed as was done in [this paper](http://www.divbyzero.ca/oberman/w/images/c/cc/SnakesandLadders.pdf) [pdf]. But this way is much easier.
+There is a way of solving this exactly, and mathematically, as discussed for Monopoly in Ian Stewart's book, and indeed as was done in [this paper](https://web.archive.org/web/20101225081133/http://www.divbyzero.ca/oberman/w/images/c/cc/SnakesandLadders.pdf) [pdf]. But this way is much easier.
 
-You can get the code [here](http://dl.dropbox.com/u/4635169/Snakes-and-Ladders.py).
+You can get the code [here](https://github.com/oatzy/question-nobody-asked/blob/main/snakes-and-ladders/Snakes-and-Ladders.py).
 
 **Results**
 

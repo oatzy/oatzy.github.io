@@ -107,7 +107,7 @@ Interestingly, this model seems to have a linear decrease for the first ~20-30 t
 
 **Why Do Chocoholics Come in Threes?**
 
-I wrote about the [Poisson distribution](http://en.wikipedia.org/wiki/Poisson_distribution) before, back when I was [modelling cafes](http://oatzy.blogspot.co.uk/2011/01/model-cafe.html). Basically, while we might see an average of one person per time interval, we don't expect to see them so evenly spaced out. Rather, people will arrive in 'bursts' of varying size. This behaviour is described by the Poisson distribution.
+I wrote about the [Poisson distribution](http://en.wikipedia.org/wiki/Poisson_distribution) before, back when I was [modelling cafes](https://oatzy.github.io/2011/01/09/model-cafe.html). Basically, while we might see an average of one person per time interval, we don't expect to see them so evenly spaced out. Rather, people will arrive in 'bursts' of varying size. This behaviour is described by the Poisson distribution.
 
 So I wrote my simulation in Python, using the [numpy](http://www.numpy.org/) library for the Poisson distributed random numbers. The results look something like this
 
@@ -115,7 +115,7 @@ So I wrote my simulation in Python, using the [numpy](http://www.numpy.org/) lib
 
 In this case, the initial decrease is less linear than in the simple model, but the overall decay times are roughly the same (except for the blue line above). This is what we'd expect since, in the above, I chose the average number of people per interval to be 1.
 
-So yeah. [Try the code](https://dl.dropboxusercontent.com/u/4635169/chocolates.py), have a play with the parameters, see what happens. The output is the total number of chocolates remaining after each time step.\
+So yeah. [Try the code](https://github.com/oatzy/question-nobody-asked/blob/main/modelling-survival-of-chocolates/chocolates.py), have a play with the parameters, see what happens. The output is the total number of chocolates remaining after each time step.\
 One thing to look at would be how changing the probabilities affects the rate of decay - for example, does the number of chocolates decay faster when all the chocolates are equally popular, or when some are much more popular than others. I suspect the former is the case.
 
 It might also be worth adding an option where a person can pick again if their prefered chocolate isn't avaiable.\
@@ -123,7 +123,7 @@ It might also be worth adding an option where a person can pick again if their p
 
 So that's that. And I can definitely see the original paper being nominated for an [IgNobel](http://www.improbable.com/ig/), at the very least.
 
-As for me, I have some [gift wrapping](http://oatzy.blogspot.co.uk/2011/12/gift-wrapping.html) I really need to get to..\.
+As for me, I have some [gift wrapping](https://oatzy.github.io/2011/12/29/gift-wrapping.html) I really need to get to..\.
 
 Merry Christmas!
 

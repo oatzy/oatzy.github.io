@@ -35,7 +35,7 @@ Data collection on this is tricky. Especially if you don't have legions of peopl
 
 So here's the game - [Foursquare](https://foursquare.com/).
 
-If you're unfamiliar, Foursquare is a 'social game', for which you 'check-in' to locations and earn points and badges accordingly. It's also good if you're an [obsessive types](http://oatzy.blogspot.com/2011/01/life-by-numbers-end-of-year-report.html) who likes to keep track of where they've been.
+If you're unfamiliar, Foursquare is a 'social game', for which you 'check-in' to locations and earn points and badges accordingly. It's also good if you're an [obsessive types](https://oatzy.github.io/2011/01/01/life-by-numbers-end-of-year-report.html) who likes to keep track of where they've been.
 
 So the idea is this - some subset of shoppers will be Foursquare users, who will check-in when they visit any given shopping centre. If we can extract check-in counts over a given time period, hopefully that can be used as an indicator of a place's 'busyness'. Obviously, this is flawed - but more on that below.
 
@@ -43,7 +43,7 @@ Right. So on the Foursquare page for a given venue, there isn't a total historic
 
 What we do, then, is record that number at some fixed time every day (say, midnight). Then the number of check-ins on a given day is the difference between the total at the end of the day and the total for the end of the previous day. Easy.
 
-In fact, to make life a little easier, I wrote [this bit of code](http://dl.dropbox.com/u/4635169/CheckinCounter.py) [python]. All I have to do is remember to run that every evening, and we have our data.
+In fact, to make life a little easier, I wrote [this bit of code](https://github.com/oatzy/question-nobody-asked/blob/main/best-day-to-go-shopping/CheckinCounter.py) [python]. All I have to do is remember to run that every evening, and we have our data.
 
 **Sampling**
 
@@ -75,7 +75,7 @@ So this may introduce a [disparity](http://en.wikipedia.org/wiki/Sample_bias) be
 
 By far, Saturday is the worst day to go shopping (in terms of crowds). But you already knew that.
 
-So I have my data for the last 3 weeks, for 20 shopping centres across Britain. Here's the [raw data](http://dl.dropbox.com/u/4635169/checkins.txt), for if you're into that sort of thing.
+So I have my data for the last 3 weeks, for 20 shopping centres across Britain. Here's the [raw data](https://github.com/oatzy/question-nobody-asked/blob/main/best-day-to-go-shopping/checkins.txt), for if you're into that sort of thing.
 
 I worked out the check-ins for each place on each day, then normalised by shopping centre - so that the total number of check-ins for each shopping centre over the three week period now adds up to 100. I then averaged these 'norms' across all shopping centres.
 
@@ -113,7 +113,7 @@ For example, [Meadowhall](http://www.meadowhall.co.uk/website/home.aspx) has typ
 
 NB/ Wednesday, week 2 maybe distorted due to [public sector strikes](http://www.bbc.co.uk/news/uk-15953806) - there certainly appeared to be more people on the train. But but a lot of that increase was from children (see sample bias above).
 
-Of course, each shopping centre is unique, and there will be variation as to which days are best and worse for each. As an example, here's what the (non-normilised) plot looks like for [Westfield London](http://uk.westfield.com/london) (the most checked-in to shopping centre by far)
+Of course, each shopping centre is unique, and there will be variation as to which days are best and worse for each. As an example, here's what the (non-normilised) plot looks like for [Westfield London](https://web.archive.org/web/20111210044556/http://uk.westfield.com:80/london) (the most checked-in to shopping centre by far)
 
 [![](/images/best-day-to-go-shopping/shoppers-westfield.png)](/images/best-day-to-go-shopping/shoppers-westfield.png)
 

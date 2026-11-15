@@ -18,7 +18,7 @@ blogger_id: tag:blogger.com,1999:blog-14769935.post-7772781446703186398
 blogger_orig_url: https://oatzy.blogspot.com/2011/06/tumbling-part-one-some-background.html
 ---
 
-I've talked about *Tumblr* [before](http://oatzy.blogspot.com/2010/12/quick-look-tumblr-reblogs.html), and I've [talked about](http://oatzy.blogspot.com/2010/09/social-viruses.html) using epidemiology models as an analogue for the spread of 'information' on social networks.
+I've talked about *Tumblr* [before](https://oatzy.github.io/2010/12/05/quick-look-tumblr-reblogs.html), and I've [talked about](https://oatzy.github.io/2010/09/06/social-viruses.html) using epidemiology models as an analogue for the spread of 'information' on social networks.
 
 And having spent a fair amount of time on *Tumblr* recently, I have more insights, and more to say on the subject.
 
@@ -96,7 +96,7 @@ So I think it's fair to say that *HIMYM* and *Scrubs* fans are (in general) less
 
 *<strong>[edit]</strong>* - Shortly after I posted this blog, [an image](http://oatzy.tumblr.com/post/6689947433/the-hand-of-fear-sarah-jane-dont-forget-me) I posted last week - that had garnered very little attention until now - hit a super-node. And as with the *Dr Who* example, it exploded with likes and reblogs. So that's arguably points against a '*spread over time*' approach. If only because it's too unpredictable.
 
-So that's that. In [Part 2](http://oatzy.blogspot.com/2011/06/tumbling-part-two-over-threshold.html) and [Part 3](http://oatzy.blogspot.com/2011/06/tumbling-part-three-stochastic-spread.html) of this series, I'll be looking at creating a mathematical model of the information spread discussed here.
+So that's that. In [Part 2](https://oatzy.github.io/2011/06/26/tumbling-part-two-over-threshold.html) and [Part 3](https://oatzy.github.io/2011/06/29/tumbling-part-three-stochastic-spread.html) of this series, I'll be looking at creating a mathematical model of the information spread discussed here.
 
 Oatzy
 

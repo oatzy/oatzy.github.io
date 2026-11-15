@@ -20,7 +20,7 @@ blogger_id: tag:blogger.com,1999:blog-14769935.post-3996765015493626779
 blogger_orig_url: https://oatzy.blogspot.com/2012/05/sexuality-and-population-dynamics.html
 ---
 
-So I was reading [this](http://misformaddie.tumblr.com/post/21092347758) response to a [Daily Mail opinion piece](http://www.dailymail.co.uk/debate/article-2129340/Gay-cure-bus-advert-Homosexuality-IS-departure-norm.html#ixzz1s1f6TPCa) about those 'gay cure' bus adverts, and I see this quote (from the Mail article)
+So I was reading [this](http://misformaddie.tumblr.com/post/21092347758) response to a [Daily Mail opinion piece](https://web.archive.org/web/20120615000936/http://www.dailymail.co.uk:80/debate/article-2129340/Gay-cure-bus-advert-Homosexuality-IS-departure-norm.html) about those 'gay cure' bus adverts, and I see this quote (from the Mail article)
 
 > “*Since only about one percent of us are [gay], homosexuality is obviously a departure from the norm..\. Reversing that proportion would spell the end of the human race, which is clearly undesirable.*”
 

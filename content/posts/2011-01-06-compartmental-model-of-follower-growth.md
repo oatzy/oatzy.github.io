@@ -17,7 +17,7 @@ blogger_id: tag:blogger.com,1999:blog-14769935.post-4145630703953773574
 blogger_orig_url: https://oatzy.blogspot.com/2011/01/compartmental-model-of-follower-growth.html
 ---
 
-I've mentioned the [SIR model](http://en.wikipedia.org/wiki/Epidemic_model#The_SIR_Model) of epidemics before [here](http://oatzy.blogspot.com/2010/09/modelling-zombie-apocalypse.html).
+I've mentioned the [SIR model](http://en.wikipedia.org/wiki/Epidemic_model#The_SIR_Model) of epidemics before [here](https://oatzy.github.io/2010/09/03/modelling-zombie-apocalypse.html).
 
 Basically, how it works is, the population is divided between 3 groups: susceptible, infective, removed. You then have a set of differential equations that describe how the sizes of those groups change over time. And from that you can get a decent prediction of how a particular disease will spread, how far it'll spread, whether it'll go epidemic, and so on.
 
@@ -55,7 +55,7 @@ And from all this, you get a system of differential equations,
 
 Now these aren't solvable, in the sense that you can't get an equation *I(t)* which will tell you that, say, after a week on Twitter you'll have 5 followers, after a month, 20, etc.
 
-But with a [bit of code](http://dl.dropbox.com/u/4635169/follow-sir-simple.py), you can model the system's progression over time. And from that, you get follower curves like these; with a population of *1,000* and varying follow rates
+But with a [bit of code](https://github.com/oatzy/question-nobody-asked/blob/main/compartmental-model-of-follower-growth/follow-sir-simple.py), you can model the system's progression over time. And from that, you get follower curves like these; with a population of *1,000* and varying follow rates
 
 [![](/images/compartmental-model-of-follower-growth/inf-curve-simp-multi.jpg)](/images/compartmental-model-of-follower-growth/inf-curve-simp-multi.jpg)
 
@@ -95,11 +95,11 @@ And this is more like epidemiology, in that the more followers (infectives) you 
 
 **Updated Model**
 
-So the [new model](http://dl.dropbox.com/u/4635169/SIR-final-eqns.png) looks something like this,
+So the [new model](/images/compartmental-model-of-follower-growth/SIR-final-eqns.png) looks something like this,
 
 [![](/images/compartmental-model-of-follower-growth/SIR-Followers2.png)](/images/compartmental-model-of-follower-growth/SIR-Followers2.png)
 
-And as with the previous one, you can write a [bit of code](http://dl.dropbox.com/u/4635169/follow-sir-final.py) to simulate the system, you can play with variables and get an idea of how the system works, what happens when you do such and such, and so on.
+And as with the previous one, you can write a [bit of code](https://github.com/oatzy/question-nobody-asked/blob/main/compartmental-model-of-follower-growth/follow-sir-final.py) to simulate the system, you can play with variables and get an idea of how the system works, what happens when you do such and such, and so on.
 
 Here are some example curves,
 

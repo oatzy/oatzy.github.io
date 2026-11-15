@@ -49,7 +49,7 @@ And the graph in this case looks like this, with a fan page (note the name) bein
 
 None of this is actually important. Vaguely interesting maybe. It's basically what I'd've done a while back with retweets on Twitter, if Twitter would facilitate it. Why do things spread further on Tumblr? Damned if I know. The average retweet apparently only goes about two jumps from the originator.
 
-But again, this is another good example of [connectors](http://oatzy.blogspot.com/2010/09/forced-trending-topics.html) and all that - how passing something through the right person/people can make it explode in popularity and spread massively.
+But again, this is another good example of [connectors](https://oatzy.github.io/2010/09/04/forced-trending-topics.html) and all that - how passing something through the right person/people can make it explode in popularity and spread massively.
 
 In the Doctor Who one, "timelordian" only passes it on to one person from me. But if they weren't there, it might not have reached "thetardis", in which case, the bottom half of the graph would disappear. So again, you don't have to pass something on to a lot of people to have a massive effect. You just have to pass it on to the right person.
 

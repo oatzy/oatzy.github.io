@@ -25,7 +25,7 @@ blogger_id: tag:blogger.com,1999:blog-14769935.post-4528652080738022139
 blogger_orig_url: https://oatzy.blogspot.com/2015/03/watch-face-concepts-for-android-wear.html
 ---
 
-In a previous [pair](http://oatzy.blogspot.co.uk/2015/01/metric-and-binary-clocks-for-android.html) of [blogs](http://oatzy.blogspot.co.uk/2015/01/follow-up-binary-proof-and-trinary-clock.html), I designed some clock widgets for Android, using [Zooper](https://play.google.com/store/apps/details?id=org.zooper.zwfree&hl=en_GB). At the end, I said that if I ever got a smart watch I'd remake them for [Android Wear](http://www.android.com/wear/).
+In a previous [pair](https://oatzy.github.io/2015/01/09/metric-and-binary-clocks-for-android.html) of [blogs](https://oatzy.github.io/2015/01/12/follow-up-binary-proof-and-trinary-clock.html), I designed some clock widgets for Android, using [Zooper](https://web.archive.org/web/20150405151242/https://play.google.com/store/apps/details?id=org.zooper.zwfree&hl=en_GB). At the end, I said that if I ever got a smart watch I'd remake them for [Android Wear](http://www.android.com/wear/).
 
 Well, here I am following up on that promise. I've also thrown in a few new designs for good measure.
 
@@ -83,17 +83,17 @@ Anyway, with all that in mind, lets look at some designs.
 
 **\> A Bunch of Binary**
 
-**<em>Proportional Binary</em>** [[WM]](https://www.dropbox.com/s/0fwh94bkgxybsmt/binary-watch.watch?dl=0)
+**<em>Proportional Binary</em>** [[WM]](https://github.com/oatzy/question-nobody-asked/blob/main/watch-face-concepts-for-android-wear/android-wear/binary-watch.watch)
 
 [![](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-08-22-22-08.png)](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-08-22-22-08.png)
 
 22:22
 
-I have to start, of course, with my pet design - already available in [javascript](http://oatzy.blogspot.co.uk/2011/01/needlessly-incomprehensible-clock.html), and for [Zooper](http://oatzy.blogspot.co.uk/2015/01/metric-and-binary-clocks-for-android.html).
+I have to start, of course, with my pet design - already available in [javascript](https://oatzy.github.io/2011/01/20/needlessly-incomprehensible-clock.html), and for [Zooper](https://oatzy.github.io/2015/01/09/metric-and-binary-clocks-for-android.html).
 
 Each ring segment is a binary bit, sized in proportion to the value it represents - the 4 minutes bit is twice as big as the two minutes bit, etc. The outer ring is hours (24h), the inner is minutes.
 
-In Zooper, this design was constructed using curved rectangles, which neither of the face making apps support. However, in [WatchMaker Premium](https://play.google.com/store/apps/details?id=slide.watchFrenzy.premium&hl=en_GB), we can get more or less the same effect by creating a circle with a 'Segment Between' shader, and hiding the centre of the segment with a circle that's the same colour as the face background.
+In Zooper, this design was constructed using curved rectangles, which neither of the face making apps support. However, in [WatchMaker Premium](https://web.archive.org/web/20151204083029/https://play.google.com/store/apps/details?id=slide.watchFrenzy.premium&hl=en_GB), we can get more or less the same effect by creating a circle with a 'Segment Between' shader, and hiding the centre of the segment with a circle that's the same colour as the face background.
 
 Once we have that, the rest of the face construction is essentially the same as the one described in the previous blog. It's set up so that the segment opacity is 100% if the bit (segment) is 'on', and 15% if 'off'.
 
@@ -109,11 +109,11 @@ Unfortunately, this is one of the designs that suffers significant pixelation on
 
 [![](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-08-22-22-44.png)](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-08-22-22-44.png)
 
-[[download]](https://www.dropbox.com/s/9wrc3ix6wr2xnx3/binary-watch-thin.watch?dl=0)
+[[download]](https://github.com/oatzy/question-nobody-asked/blob/main/watch-face-concepts-for-android-wear/android-wear/binary-watch-thin.watch)
 
 In this case we could put some other information in the middle of the screen and use the binary as decoration.
 
-**<em>Binary Rings</em>** [[Facer]](https://www.dropbox.com/s/k7jku8myy3wdclr/Binary%20Rings.face?dl=0)
+**<em>Binary Rings</em>** [[Facer]](https://github.com/oatzy/question-nobody-asked/blob/main/watch-face-concepts-for-android-wear/android-wear/Binary%20Rings.face)
 
 [![](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-08-22-17-52.png)](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-08-22-17-52.png)
 
@@ -131,7 +131,7 @@ Opacity: $(#Dm#%4)<2?15:100$
 
 Aside - It's not obvious, but the brackets in the above are important. In general, if you find your code isn't behaving in Facer, try copy-pasting it into a text object to see what it's being interpreted as. Usually you can solve problems by adding/removing brackets, or by looking for any spaces that might have been auto-inserted after punctuation marks.
 
-**<em>Binary Numbers</em>** [[Facer]](https://www.dropbox.com/s/yfoxak1ft5zvh3a/Binary%20Numbers.face?dl=0)
+**<em>Binary Numbers</em>** [[Facer]](https://github.com/oatzy/question-nobody-asked/blob/main/watch-face-concepts-for-android-wear/android-wear/Binary%20Numbers.face)
 
 [![](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-03-21-30-07.png)](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-03-21-30-07.png)
 
@@ -147,7 +147,7 @@ The face shown above is 24hour format, where the leftmost hours digit is a dummy
 
 Aside - I had this idea for a face where the background is an image of a circuit board with two rows of those little square LEDs, which could be 'illuminated' to represent the time in binary. But I'm not much of an artist, so I doubt I could create a decent background image.
 
-**<em>Trinary</em>** [[WM]](https://www.dropbox.com/s/xhpp14emhzupoyp/trinary-watch-2.watch?dl=0)
+**<em>Trinary</em>** [[WM]](https://github.com/oatzy/question-nobody-asked/blob/main/watch-face-concepts-for-android-wear/android-wear/trinary-watch-2.watch)
 
 [![](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-08-21-35-46.png)](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-08-21-35-46.png)
 
@@ -155,9 +155,9 @@ Aside - I had this idea for a face where the background is an image of a circuit
 
 In trinary, or base 3, each bit (trit?) can have one of three values - 0, 1, 2. In Zooper, I handled this by using curved progress bars, but that doesn't really work in WatchMaker. In this case, I had to use pairs of segments for each bit.
 
-As with Zooper, I had the first of each bit pair change colour when the second was 'on', to make reading easier. Sometimes, though, WatchMaker doesn't change the segment colours like it should (possible bug?). If you prefer, you can download a version without colour changing [here](https://www.dropbox.com/s/i038i9tjkx9uyt7/trinary-watch.watch?dl=0).
+As with Zooper, I had the first of each bit pair change colour when the second was 'on', to make reading easier. Sometimes, though, WatchMaker doesn't change the segment colours like it should (possible bug?). If you prefer, you can download a version without colour changing [here](https://github.com/oatzy/question-nobody-asked/blob/main/watch-face-concepts-for-android-wear/android-wear/trinary-watch.watch).
 
-I explained how to do trinary in the [previous blog](http://oatzy.blogspot.co.uk/2015/01/follow-up-binary-proof-and-trinary-clock.html). A quick reminder - the n-th digit of a number in base b is given by \(\lfloor \frac{x}{b^n} \bmod b\rfloor\).
+I explained how to do trinary in the [previous blog](https://oatzy.github.io/2015/01/12/follow-up-binary-proof-and-trinary-clock.html). A quick reminder - the n-th digit of a number in base b is given by \(\lfloor \frac{x}{b^n} \bmod b\rfloor\).
 
 As an example, for the pair of segments in the 3s minute bit we have
 
@@ -177,13 +177,13 @@ Similar to the binary design at the top, we have the pixelation problem on the a
 
 [![](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-08-21-37-51.png)](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-08-21-37-51.png)
 
-[[download]](https://www.dropbox.com/s/wr1nejd9479n8we/trinary-watch-thin.watch?dl=0)
+[[download]](https://github.com/oatzy/question-nobody-asked/blob/main/watch-face-concepts-for-android-wear/android-wear/trinary-watch-thin.watch)
 
 Clocks in other bases (as seen in the previous blog) can be constructed in a similar way.
 
 **\> Planets and Parametrisations**
 
-**<em>Orbital</em>** [[WM]](https://www.dropbox.com/s/7qr1ruf6q0yuyvd/orbital.watch?dl=0)
+**<em>Orbital</em>** [[WM]](https://github.com/oatzy/question-nobody-asked/blob/main/watch-face-concepts-for-android-wear/android-wear/orbital.watch)
 
 [![](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-08-22-05-38.png)](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-08-22-05-38.png)
 
@@ -213,13 +213,13 @@ x: 150*math.sin(math.rad({drh})) + 50*math.sin(math.rad({drm}))
 y: -150*math.cos(math.rad({drh})) - 50*math.cos(math.rad({drm}))
 ```
 
-**<em>Orbital Numbers</em>** [[WM]](https://www.dropbox.com/s/m8ep50de6qsxjla/orbital-numbers.watch?dl=0)
+**<em>Orbital Numbers</em>** [[WM]](https://github.com/oatzy/question-nobody-asked/blob/main/watch-face-concepts-for-android-wear/android-wear/orbital-numbers.watch)
 
 [![](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-08-21-48-09.png)](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-08-21-48-09.png)
 
 This is basically the same principle as the above, except we've replaced the sun with the hours, the planet with the minutes, and the moon with the seconds. The code is similar to above, except we replace {drh} with {drm} and replace {drm} with {drs}. We also need to make the orbital radii slightly bigger to avoid overlapping - 165 for the planet/minutes, and 55 for the moon/seconds.
 
-**<em>Elliptical Orbit</em>** [[WM]](https://www.dropbox.com/s/tvo6uvbl2x0ppw8/elliptical-orbit.watch?dl=0)
+**<em>Elliptical Orbit</em>** [[WM]](https://github.com/oatzy/question-nobody-asked/blob/main/watch-face-concepts-for-android-wear/android-wear/elliptical-orbit.watch)
 
 [![](/images/watch-face-concepts-for-android-wear/gif_u15.gif)](/images/watch-face-concepts-for-android-wear/gif_u15.gif)
 
@@ -250,11 +250,11 @@ The downside to this design is that it's pretty hard to tell where the aphelion 
 
 As a variation, we could have, for example, three elliptical orbits (one for each hand), to make a face modeled after the [classic portrayal](https://commons.wikimedia.org/wiki/File:Stylised_Lithium_Atom.svg#mediaviewer/File:Stylised_Lithium_Atom.svg) of an atom (nucleus in the centre, with electrons whizzing around).
 
-**<em>Binary Orbit</em>** [[Facer]](https://www.dropbox.com/s/9kuag1hlk00yyj9/Binary%20Orbit%20WatchFace.face?dl=0) [[WM]](https://www.dropbox.com/s/zf5lfqra6sjzew0/binary-orbit.watch?dl=0)
+**<em>Binary Orbit</em>** [[Facer]](https://github.com/oatzy/question-nobody-asked/blob/main/watch-face-concepts-for-android-wear/android-wear/Binary%20Orbit%20WatchFace.face) [[WM]](https://github.com/oatzy/question-nobody-asked/blob/main/watch-face-concepts-for-android-wear/android-wear/binary-orbit.watch)
 
 [![](/images/watch-face-concepts-for-android-wear/gif_u7.gif)](/images/watch-face-concepts-for-android-wear/gif_u7.gif)
 
-This design was inspired by another [previous blog post](http://oatzy.blogspot.co.uk/2015/02/designing-general-relativity-based.html). Here we have a planet doing a figure-8 orbit around a pair of stars.
+This design was inspired by another [previous blog post](https://oatzy.github.io/2015/02/23/designing-general-relativity-based.html). Here we have a planet doing a figure-8 orbit around a pair of stars.
 
 To set the planet's position, the sideways figure-8 path can be parametrised as
 
@@ -276,7 +276,7 @@ Changing the signs in front of either or both of the sin-functions will change t
 
 I was tempted to also have the stars (co)rotate - using the rotation matrix above to rotate the planet's orbit - so that they could act like an hours/minutes hand. But that seemed too much like hard work.
 
-**<em>Spiral</em>** [[WM]](https://www.dropbox.com/s/vew07552jy7t1sk/spiral.watch?dl=0)
+**<em>Spiral</em>** [[WM]](https://github.com/oatzy/question-nobody-asked/blob/main/watch-face-concepts-for-android-wear/android-wear/spiral.watch)
 
 [![](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-08-21-35-30.png)](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-08-21-35-30.png)
 
@@ -305,7 +305,7 @@ Text: {dh23}<12 and 11 or 1
 
 And so on.
 
-**<em>Heart</em>** [[WM]](https://www.dropbox.com/s/dc64psaeigjgyi7/heart-clock.watch?dl=0)
+**<em>Heart</em>** [[WM]](https://github.com/oatzy/question-nobody-asked/blob/main/watch-face-concepts-for-android-wear/android-wear/heart-clock.watch)
 
 [![](/images/watch-face-concepts-for-android-wear/gif_u6.gif)](/images/watch-face-concepts-for-android-wear/gif_u6.gif)
 
@@ -330,7 +330,7 @@ I added a (poorly drawn) arrow as an hour hand. The shaft is a rectangle rotated
 
 **\> Analogue-esque**
 
-**<em>Metric</em>** [[WM]](https://www.dropbox.com/s/ijy209fhgtovya6/metric-clock.watch?dl=0)
+**<em>Metric</em>** [[WM]](https://github.com/oatzy/question-nobody-asked/blob/main/watch-face-concepts-for-android-wear/android-wear/metric-clock.watch)
 
 [![](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-08-21-29-11.png)](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-08-21-29-11.png)
 
@@ -340,7 +340,7 @@ Aside - this means a metric minute is equal to 1 milliday, and a metric second i
 
 For the hours hand, we just set its rotation to '#DWFH#' (Facer) or '{drh24}' (WatchMaker) - even though the day is being defined as 10 hours long, the hours hand still only needs to do one revolution per day.
 
-For the minutes hand, we have to do the full conversion, as [described](http://oatzy.blogspot.co.uk/2015/01/metric-and-binary-clocks-for-android.html) [previously](http://oatzy.blogspot.co.uk/2010/08/decimalising-time.html), then convert that to a rotation (in degrees). The code looks like this
+For the minutes hand, we have to do the full conversion, as [described](https://oatzy.github.io/2015/01/09/metric-and-binary-clocks-for-android.html) [previously](https://oatzy.github.io/2010/08/01/decimalising-time.html), then convert that to a rotation (in degrees). The code looks like this
 
 ```
 WM: 360*((0.00011574*(3600*{dh23}+60*{dm}+{ds}))%1)
@@ -370,7 +370,7 @@ Facer: (3.6*floor((1.1574*(3600*#DH#+60*#Dm#+#DWFSS#/6))%100))
 
 Alternatively, we could omit the 'floor' function, and have a smooth seconds hand.
 
-**<em>Backwards</em>** [[WM]](https://www.dropbox.com/s/z7fclwkuzojoa30/backwards-clock.watch?dl=0)
+**<em>Backwards</em>** [[WM]](https://github.com/oatzy/question-nobody-asked/blob/main/watch-face-concepts-for-android-wear/android-wear/backwards-clock.watch)
 
 [![](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-08-21-22-53.png)](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-08-21-22-53.png)
 
@@ -382,7 +382,7 @@ WM: 360-{drh}, 360-{drm}, 360-{drs}
 Facer: (360-#DWFKS#), (360-#DWFMS#), (360-#DWFS#)
 ```
 
-**<em>Squares</em>** [[WM]](https://www.dropbox.com/s/gqih1rkflylh1j2/squares.watch?dl=0)
+**<em>Squares</em>** [[WM]](https://github.com/oatzy/question-nobody-asked/blob/main/watch-face-concepts-for-android-wear/android-wear/squares.watch)
 
 [![](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-08-21-29-55.png)](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-08-21-29-55.png)
 
@@ -390,7 +390,7 @@ This was just a random idea I had, and is another good example of a cryptic cloc
 
 Probably I should have added indicators to show which corner of each square is the 'hand'. But I reckon you could figure out the time (or at least guess) without. I mean, the above is obviously showing 9:29:55.
 
-**<em>Spotlight</em>** [[WM]](https://www.dropbox.com/s/d3dd76cdqaj76xl/spotlight.watch?dl=0)
+**<em>Spotlight</em>** [[WM]](https://github.com/oatzy/question-nobody-asked/blob/main/watch-face-concepts-for-android-wear/android-wear/spotlight.watch)
 
 [![](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-09-17-08-07.png)](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-09-17-08-07.png)
 
@@ -407,7 +407,7 @@ y: 350*math.cos(math.rad({drh}))
 
 The hour line is just a rectangle with rotation {drh}
 
-**<em>Spotlight with Minutes</em>** [[WM]](https://www.dropbox.com/s/bd703v7r0ae3lg8/spotlight-minutes.watch?dl=0)
+**<em>Spotlight with Minutes</em>** [[WM]](https://github.com/oatzy/question-nobody-asked/blob/main/watch-face-concepts-for-android-wear/android-wear/spotlight-minutes.watch)
 
 [![](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-09-17-08-12.png)](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-09-17-08-12.png)
 
@@ -422,7 +422,7 @@ y: -135*math.cos(math.rad({drh}))
 
 Alternatively, we could use a dial that has a more useful number of minor markers. But the minutes circle is more visually striking, I think.
 
-**<em>Spotlight with Minutes and Date</em>** [[WM]](https://www.dropbox.com/s/dvu4k3lcuuo1fnp/spotlight-minutesdate.watch?dl=0)
+**<em>Spotlight with Minutes and Date</em>** [[WM]](https://github.com/oatzy/question-nobody-asked/blob/main/watch-face-concepts-for-android-wear/android-wear/spotlight-minutesdate.watch)
 
 [![](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-09-23-16-27.png)](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-09-23-16-27.png)
 
@@ -446,7 +446,7 @@ There is a slight problem with this on the Moto 360 - as you might notice in the
 
 **\> Fun with Progress Rings**
 
-**<em>Circles 1</em>** [[WM]](https://www.dropbox.com/s/fmwmf28o110yko9/circles-1.watch?dl=0)
+**<em>Circles 1</em>** [[WM]](https://github.com/oatzy/question-nobody-asked/blob/main/watch-face-concepts-for-android-wear/android-wear/circles-1.watch)
 
 [![](/images/watch-face-concepts-for-android-wear/circles1.png)](/images/watch-face-concepts-for-android-wear/circles1.png)
 
@@ -469,7 +469,7 @@ Colour: {dm}>=5 and 'ffbd2a' or 'fbfbfb'
 
 for the 5 minute marker, and so on.
 
-**<em>Circles 2</em>** [[WM]](https://www.dropbox.com/s/csmesz3rce799k6/circles-2.watch?dl=0)
+**<em>Circles 2</em>** [[WM]](https://github.com/oatzy/question-nobody-asked/blob/main/watch-face-concepts-for-android-wear/android-wear/circles-2.watch)
 
 [![](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-08-21-34-04.png)](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-08-21-34-04.png)
 
@@ -477,7 +477,7 @@ for the 5 minute marker, and so on.
 
 This design has the minutes as a separate inner ring, with four marker that behave similar to above, and with a 'progress ring' which indicates the exact minutes past the hour. The progress ring is made with another Segment shader, and the rounded corners on leading edge is done with a small circle, moved around with sin and -cos.
 
-**<em>Circles 3</em>** [[WM]](https://www.dropbox.com/s/f3faj2qac33tao2/circles-3.watch?dl=0)
+**<em>Circles 3</em>** [[WM]](https://github.com/oatzy/question-nobody-asked/blob/main/watch-face-concepts-for-android-wear/android-wear/circles-3.watch)
 
 [![](/images/watch-face-concepts-for-android-wear/circles3-alt.png)](/images/watch-face-concepts-for-android-wear/circles3-alt.png)
 
@@ -517,13 +517,13 @@ Colour: ((({dh11}>1 and {dh23}<12) or ({dh11}<1 and {dh23}>=12)) and {dm}>=5) an
 
 You might notice in the screenshots above that this design seems to have a thin grey shadow/outline around some of the ring. I don't know if this is a bug or a feature of the shaders, but ideally it shouldn't be there.
 
-*<strong>Apple Activity</strong>* [[WM]](https://www.dropbox.com/s/1k4o6ygsspi1gon/apple-activity.watch?dl=0)
+*<strong>Apple Activity</strong>* [[WM]](https://github.com/oatzy/question-nobody-asked/blob/main/watch-face-concepts-for-android-wear/android-wear/apple-activity.watch)
 
 [![](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-11-02-32-47.png)](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-11-02-32-47.png)
 
 I saw something that looked like this in an Apple Watch promo - I think it was supposed to be an activity tracker. Anyway, it's a watch face for Android, now (take *that*, Apple). Shaders for progress rings, circles over the edges for rounded corners, I'm sure you get the idea by now.
 
-**<em>Buffering</em>** [[WM]](https://www.dropbox.com/s/1nwjdaf64az1mjs/buffering.watch?dl=0)
+**<em>Buffering</em>** [[WM]](https://github.com/oatzy/question-nobody-asked/blob/main/watch-face-concepts-for-android-wear/android-wear/buffering.watch)
 
 [![](/images/watch-face-concepts-for-android-wear/gif_u11.gif)](/images/watch-face-concepts-for-android-wear/gif_u11.gif)
 
@@ -544,7 +544,7 @@ Text: string.format('%.1f', 100*{dtp})
 
 The format function is used to round the percentage to one decimal place ([Lua](http://www.lua.org/manual/5.3/manual.html#6.4) uses [C-style formatting](http://en.wikipedia.org/wiki/Printf_format_string)). Alternatively, I guess you could have hour and minute rings doing similar to this seconds ring, but that might be a bit dizzying.
 
-**Bonus: <em>How to Make a Battery Ring in Facer</em>** [[Facer]](https://www.dropbox.com/s/o88ts0v23l5vxtp/Battery%20Circle.face?dl=0)
+**Bonus: <em>How to Make a Battery Ring in Facer</em>** [[Facer]](https://github.com/oatzy/question-nobody-asked/blob/main/watch-face-concepts-for-android-wear/android-wear/Battery%20Circle.face)
 
 [![](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-03-21-29-41.png)](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-03-21-29-41.png)
 
@@ -593,7 +593,7 @@ So there you have it - it's not easy, but it is possible to make a progress ring
 
 **\> Other Assorted Nonsense**
 
-**<em>50 Shades of Grey</em>** [[Facer]](https://www.dropbox.com/s/a7z3cy24q3e5s8v/50%20Shades.face?dl=0) [[WM]](https://www.dropbox.com/s/urv3hycz3w1tilm/50-shades.watch?dl=0)
+**<em>50 Shades of Grey</em>** [[Facer]](https://github.com/oatzy/question-nobody-asked/blob/main/watch-face-concepts-for-android-wear/android-wear/50%20Shades.face) [[WM]](https://github.com/oatzy/question-nobody-asked/blob/main/watch-face-concepts-for-android-wear/android-wear/50-shades.watch)
 
 [![](/images/watch-face-concepts-for-android-wear/gif_u20.gif)](/images/watch-face-concepts-for-android-wear/gif_u20.gif)
 
@@ -607,7 +607,7 @@ Facer: (2*floor(#DWFSS#/7.2))
 
 This will cycle through 50 different shades of grey - from white to black - over the course of a minute.
 
-Alternatively, we could have it cycle from white to black to white, so that we don't have the sudden jump from black to white at the end of a minute - [[download]](https://www.dropbox.com/s/k61m0j1b3l3ixjb/50-shades-cycle.watch?dl=0)
+Alternatively, we could have it cycle from white to black to white, so that we don't have the sudden jump from black to white at the end of a minute - [[download]](https://github.com/oatzy/question-nobody-asked/blob/main/watch-face-concepts-for-android-wear/android-wear/50-shades-cycle.watch)
 
 For that, the code is
 
@@ -617,7 +617,7 @@ WM: {ds}<=30 and 4*math.floor(5*{dsps}/6000) or (198-4*math.floor(5*{dsps}/6000)
 
 Aside - Facer doesn't seem to allow mathematical expressions in both the then-statement and the else-statement (?!), so we can't adapt the above. Which is annoying.
 
-**<em>That Dress</em>** [[WM]](https://www.dropbox.com/s/xxi7di5kmio4nia/that-dress.watch?dl=0)
+**<em>That Dress</em>** [[WM]](https://github.com/oatzy/question-nobody-asked/blob/main/watch-face-concepts-for-android-wear/android-wear/that-dress.watch)
 
 [![](/images/watch-face-concepts-for-android-wear/gif_u32.gif)](/images/watch-face-concepts-for-android-wear/gif_u32.gif)
 
@@ -637,7 +637,7 @@ Value: 8*({dsps}/6000)-80
 
 This will go from black-blue to white-gold over the course of a minute. We can get a similar effect by layering a blue circle on top of a white background, and black text on top of a gold copy of the text, then varying the opacity of the black and blue. That method should work in Facer.
 
-Alternatively, we can have the face cycle black-blue to white-gold to black-blue - [[download]](https://www.dropbox.com/s/2mphydfq52tmor7/that-dress-cycle.watch?dl=0)
+Alternatively, we can have the face cycle black-blue to white-gold to black-blue - [[download]](https://github.com/oatzy/question-nobody-asked/blob/main/watch-face-concepts-for-android-wear/android-wear/that-dress-cycle.watch)
 
 ```
 Circle:
@@ -647,13 +647,13 @@ Text/bars:
 Value: {ds}<=30 and {dsps}/375-80 or 78-{dsps}/375
 ```
 
-**<em>Racing Numbers</em>** [[WM]](https://www.dropbox.com/s/pgzw2ect1ku6jw1/racing-numbers.watch?dl=0)
+**<em>Racing Numbers</em>** [[WM]](https://github.com/oatzy/question-nobody-asked/blob/main/watch-face-concepts-for-android-wear/android-wear/racing-numbers.watch)
 
 [![](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-08-21-30-10.png)](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-08-21-30-10.png)
 
 Racing, in the sense that the numbers are moving from the right side of the screen to the left, all at different speeds (I couldn't think of a better name). Alternatively, you can think of it as the numbers being positioned horizontally based on their current value. It's straightforward enough to construct, I'm sure you can figure it out.
 
-**<em>Jitters</em>** [[Facer]](https://www.dropbox.com/s/9gjgflczxogx24y/Jitters.face?dl=0)
+**<em>Jitters</em>** [[Facer]](https://github.com/oatzy/question-nobody-asked/blob/main/watch-face-concepts-for-android-wear/android-wear/Jitters.face)
 
 [![](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-12-15-57-03.png)](/images/watch-face-concepts-for-android-wear/Screenshot_2015-03-12-15-57-03.png)
 
@@ -676,7 +676,7 @@ But the point is, you can do some design things with a smart watch that you coul
 
 Feel free to download, use, modify, re-post, etc. any of the designs or code in this post. You don't need to ask permission. If you do re-post, a name-check or link back would be nice, but I won't hold you to it.
 
-The folder with all the faces is available [here](https://www.dropbox.com/sh/07oras34brqi3kh/AAASaFy2le10J35DkqepscPGa?dl=0).
+The folder with all the faces is available [here](https://github.com/oatzy/question-nobody-asked/tree/main/watch-face-concepts-for-android-wear/android-wear).
 
 If you have any problems, want more details, or just want help with something, feel free to ask in the comments and I'll see what I can do.
 

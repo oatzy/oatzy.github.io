@@ -15,7 +15,7 @@ blogger_id: tag:blogger.com,1999:blog-14769935.post-7253103867730393928
 blogger_orig_url: https://oatzy.blogspot.com/2011/01/follow-up-more-graphics.html
 ---
 
-I'm sticking these in a new post, rather than updating the [last post](http://oatzy.blogspot.com/2011/01/snakes-and-ladders.html) (and potentially, nobody seeing them).
+I'm sticking these in a new post, rather than updating the [last post](https://oatzy.github.io/2011/01/29/snakes-and-ladders.html) (and potentially, nobody seeing them).
 
 First of all, as I said yesterday, the 'entrance' squares of the snakes and ladders don't technically exist; in so much as, as soon as you land on them you move to the coresponding exit. So I updated the network graph to reflect this
 

@@ -4,6 +4,8 @@ usage: python3 -I blogger_to_md.py [REV]   (run from the repo root)
 
 Reads each original post from git (REV, default 2f24a8b = last commit with the .html files)
 and writes content/posts/<name>.md. Re-runnable: it never reads the current .md files.
+SUPERSEDED after phase 3: posts are now edited in place (phase 4 link rewrites onwards); re-running this
+overwrites those later edits.
 Pipeline: HTML pre-pass (regex) -> pandoc JSON AST -> filter below -> pandoc gfm.
 """
 import csv, html, json, re, subprocess, sys

@@ -23,7 +23,7 @@ But realistically, this is an idea that has been considered and explorer a lot t
 
 But enough about *The* *Matrix* and the ridiculousness of its being held up as a yard-stick for all modern Sci-fi and reality questioning.
 
-Okay, first of all, let me get this out of the way - the final scene of *Inception* *<strong>wasn't</strong>* a dream! Contrary to appearances, *Cobb*'s children were wearing [different clothes](http://clothesonfilm.com/inception-jeffrey-kurland-costume-qa/14317/) AND were played by *<strong>[DIFFERENT ACTORS](http://revolvingdoorproject.files.wordpress.com/2010/07/different-child-actors.jpg)</strong>*! And there are other hints, like how *Cobb* is always wearing his [wedding ring](http://revolvingdoorproject.net/2010/07/23/inception-what-happened-at-the-end/) in dreams, but never in reality - he wasn't wearing it in the final scene.
+Okay, first of all, let me get this out of the way - the final scene of *Inception* *<strong>wasn't</strong>* a dream! Contrary to appearances, *Cobb*'s children were wearing [different clothes](http://clothesonfilm.com/inception-jeffrey-kurland-costume-qa/14317/) AND were played by *<strong>[DIFFERENT ACTORS](/images/inception-review/different-child-actors.jpg)</strong>*! And there are other hints, like how *Cobb* is always wearing his [wedding ring](https://web.archive.org/web/20100810220323/http://revolvingdoorproject.net:80/2010/07/23/inception-what-happened-at-the-end/) in dreams, but never in reality - he wasn't wearing it in the final scene.
 
 So, mystery solved. End of story.
 
@@ -51,12 +51,12 @@ I've also seen more extreme reviews; and perhaps evident by this entire post, th
 
 I'm not going to claim that *Inception* is perfect, or even my favourite film. But it is a damn good film! If there is anyone in the world who hasn't seen it yet, I'm not going to demand you go and see it right now. But if you want my opinion, I would definitely recommend it.
 
-And if you find yourself at all confused as to what's going on, go see it again! And if you're still confused, there are [plenty](http://www.cinemablend.com/new/Inception-Explained-Unraveling-The-Dream-Within-The-Dream-19615.html) [of](http://www.smartfaqt.com/ViewQAPage.php?qaPageID=1) [explanations](http://www.cinemablend.com/new/An-Illustrated-Guide-To-The-5-Levels-Of-Inception-19643.html) [online](http://www.salon.com/entertainment/movies/film_salon/2010/07/19/inception_explainer/index.html) (and an [infographic](http://dehahs.deviantart.com/#/d2unnlj)).\
+And if you find yourself at all confused as to what's going on, go see it again! And if you're still confused, there are [plenty](https://web.archive.org/web/20100823083848/http://www.cinemablend.com/new/Inception-Explained-Unraveling-The-Dream-Within-The-Dream-19615.html) [of](https://web.archive.org/web/20100806172158/http://www.smartfaqt.com:80/ViewQAPage.php?qaPageID=1) [explanations](https://web.archive.org/web/20100722173024/http://www.cinemablend.com:80/new/An-Illustrated-Guide-To-The-5-Levels-Of-Inception-19643.html?) [online](https://web.archive.org/web/20100809094138/http://www.salon.com:80/entertainment/movies/film_salon/2010/07/19/inception_explainer/index.html) (and an [infographic](http://dehahs.deviantart.com/#/d2unnlj)).\
 But really, it's best just to enjoy it without asking too many questions. Because you can ruin anything by over-thinking it.
 
 And if you prefer to think of the ending as being ambiguous, or even a dream, then feel free. I've put forward my case, but I'm sure there's someone in the world who can give you a convincing counter-argument. And unless Nolan himself gives us an answer, we may never know for certain.
 
-Oh, and if you have a spare moment, you might also like to check out my previous post - "[If You Liked Inception..\.](http://oatzy.blogspot.com/2010/07/if-you-liked-inception.html)".
+Oh, and if you have a spare moment, you might also like to check out my previous post - "[If You Liked Inception..\.](https://oatzy.github.io/2010/07/29/if-you-liked-inception.html)".
 
 Oatzy.
 

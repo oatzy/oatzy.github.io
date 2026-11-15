@@ -18,7 +18,7 @@ blogger_id: tag:blogger.com,1999:blog-14769935.post-8945736300929382254
 blogger_orig_url: https://oatzy.blogspot.com/2010/08/procrastination-dieting-and-will-power.html
 ---
 
-As a follow up to the [previous](http://oatzy.blogspot.com/2010/08/beauty-of-procrastination.html) procrastination post, it's worth noting that, in fact, the '*Principle of Procrastination*' is a special case of a more general *will power* principle.
+As a follow up to the [previous](https://oatzy.github.io/2010/08/07/beauty-of-procrastination.html) procrastination post, it's worth noting that, in fact, the '*Principle of Procrastination*' is a special case of a more general *will power* principle.
 
 To demonstrate this, lets look at a more general example of temptation verses will power - Dieting.
 

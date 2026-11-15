@@ -26,7 +26,7 @@ Oh, and that's just a screen shot up there. The real, interactive version is [he
 
 Okay, so what happened was I was playing with the [Twitter API for Python](http://code.google.com/p/python-twitter/). I already had this idea - for the people I follow, who follows who (within that group)? Now when I first thought of the idea, I thought I'd have to go through everyone by hand. So thank God for the API.
 
-What the code does [you can find it [here](http://dl.dropbox.com/u/4635169/twitterFollows.py) if you're interested] is retrieve a list of the people I follow, then for each user checks which of the other users in the list they follow. Then outputs the result.
+What the code does [you can find it [here](https://github.com/oatzy/question-nobody-asked/blob/main/twitter-friend-network/twitterFollows.py) if you're interested] is retrieve a list of the people I follow, then for each user checks which of the other users in the list they follow. Then outputs the result.
 
 I know, that's basically what I said up there. But it really is that straight forward.
 
@@ -38,7 +38,7 @@ So once I'd removed the celebrities, Charlie's delinquency wasn't a problem anym
 
 And that's pretty much it.
 
-But while I'm on the subject, the website I used to build the graph was [ManyEyes](http://manyeyes.alphaworks.ibm.com/manyeyes/) [brought to you by IBM]. It does a crap load of different graphs and infographical goodness, and it's definitely worth checking out and having a play with.
+But while I'm on the subject, the website I used to build the graph was [ManyEyes](https://web.archive.org/web/20100731103237/http://manyeyes.alphaworks.ibm.com/manyeyes/) [brought to you by IBM]. It does a crap load of different graphs and infographical goodness, and it's definitely worth checking out and having a play with.
 
 So yeah. Enjoy. And if you make any fancy graphs of your own, please do share.
 

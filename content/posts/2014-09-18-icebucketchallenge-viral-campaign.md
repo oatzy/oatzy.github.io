@@ -31,7 +31,7 @@ Anyway, what I was interested in is how the challenge spread - this was a 'viral
 
 **The Viral Model**
 
-I've written about this sort of [thing](http://oatzy.blogspot.co.uk/2010/09/social-viruses.html) [several](http://oatzy.blogspot.co.uk/2011/01/compartmental-model-of-follower-growth.html) [times](http://oatzy.blogspot.co.uk/2012/05/sexuality-and-population-dynamics.html) [before](http://oatzy.blogspot.co.uk/2010/09/modelling-zombie-apocalypse.html). The basic idea is this - the population is divided into three groups:
+I've written about this sort of [thing](https://oatzy.github.io/2010/09/06/social-viruses.html) [several](https://oatzy.github.io/2011/01/07/compartmental-model-of-follower-growth.html) [times](https://oatzy.github.io/2012/05/30/sexuality-and-population-dynamics.html) [before](https://oatzy.github.io/2010/09/03/modelling-zombie-apocalypse.html). The basic idea is this - the population is divided into three groups:
 
 Susceptible (S) - The population that hasn't been exposed to a disease/virus, but is susceptible to infection\
 Infectious (I) - The people who have been exposed, and can infect other people\

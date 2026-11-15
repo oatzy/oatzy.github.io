@@ -50,7 +50,7 @@ This is actually similar to the problem of apportioning parliamentary seats betw
 
 Currently there are 435 seats in the [House of Representatives](http://en.wikipedia.org/wiki/United_States_House_of_Representatives#Apportionment), which need to be shared out between the 50 states according to each state's population - the idea being that each seat should represent roughly the same number of voters.
 
-There are [various methods](http://www.ctl.ua.edu/math103/apportionment/quick.htm) for doing this, but I'm only going to go over two of them.
+There are [various methods](https://web.archive.org/web/20111228030702/http://www.ctl.ua.edu:80/math103/apportionment/quick.htm) for doing this, but I'm only going to go over two of them.
 
 **The Hamilton method**
 
@@ -86,7 +86,7 @@ But one advantage Hamilton's Method has over HHM, is that it will always give ea
 
 HHM, on the other hand, can 'violate quota' - that is, it can result in a given service being assigned more or fewer cars than it's ideal number (e.g. the 3.67 service might end up with only 2 cars). But this problem only occurs when the number of cars is fixed prior to apportioning. And sadly, it usually is.
 
-As an aside, it turns out it's [impossible](http://en.wikipedia.org/wiki/Alabama_paradox#Impossibility_result) to find a 'perfect' method of apportioning - one with neither paradoxes nor quota violating. Incidentally, the [mathematical theory](http://en.wikipedia.org/wiki/Category:Voting_theory) surrounding voting is [quite fascinating](http://www.newscientist.com/article/mg20627581.400-electoral-dysfunction-why-democracy-is-always-unfair.html). You know, if you're into that sort of thing.
+As an aside, it turns out it's [impossible](http://en.wikipedia.org/wiki/Alabama_paradox#Impossibility_result) to find a 'perfect' method of apportioning - one with neither paradoxes nor quota violating. Incidentally, the [mathematical theory](http://en.wikipedia.org/wiki/Category:Voting_theory) surrounding voting is [quite fascinating](https://web.archive.org/web/20111207175029/http://www.newscientist.com/article/mg20627581.400-electoral-dysfunction-why-democracy-is-always-unfair.html). You know, if you're into that sort of thing.
 
 **Unfortunately..**
 

@@ -14,7 +14,7 @@ blogger_id: tag:blogger.com,1999:blog-14769935.post-3391701605383614895
 blogger_orig_url: https://oatzy.blogspot.com/2011/07/t-shirt-calendar-revisited.html
 ---
 
-If you'll recall, in early February I created a T-shirt calendar - that is, a 'calendar' where each square is coloured according to the colour of the T-shirt I wore on that day. Previous post [here](http://oatzy.blogspot.com/2011/02/t-shirt-calendar.html).
+If you'll recall, in early February I created a T-shirt calendar - that is, a 'calendar' where each square is coloured according to the colour of the T-shirt I wore on that day. Previous post [here](https://oatzy.github.io/2011/02/04/t-shirt-calendar.html).
 
 So, with half the year more or less done, here's what the calendar is looking like now,
 

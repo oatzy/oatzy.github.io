@@ -13,9 +13,9 @@ blogger_id: tag:blogger.com,1999:blog-14769935.post-8735627754606628831
 blogger_orig_url: https://oatzy.blogspot.com/2011/02/t-shirt-calendar.html
 ---
 
-When I was putting together the [Life by Numbers](http://oatzy.blogspot.com/2011/01/life-by-numbers-end-of-year-report.html) blog, I was thinking about other things I could track, without the tracking thing becoming too intrusive.
+When I was putting together the [Life by Numbers](https://oatzy.github.io/2011/01/01/life-by-numbers-end-of-year-report.html) blog, I was thinking about other things I could track, without the tracking thing becoming too intrusive.
 
-First couple of things I did was signing up for [miso](http://gomiso.com/u/oatzy) to track TV and film viewing habits, as well as [RunKeeper](http://runkeeper.com/user/oatzy/profile) to track my movements on foot (which wouldn't be logged with FourSquare). So far, RunKeeper - or perhaps just my phone's GPS - have been a bit of a disappointment. But that's a whole other story.
+First couple of things I did was signing up for [miso](https://web.archive.org/web/20110129064854/http://gomiso.com:80/u/oatzy) to track TV and film viewing habits, as well as [RunKeeper](http://runkeeper.com/user/oatzy/profile) to track my movements on foot (which wouldn't be logged with FourSquare). So far, RunKeeper - or perhaps just my phone's GPS - have been a bit of a disappointment. But that's a whole other story.
 
 The other thing I did was to take a picture a day of myself. I had nothing in mind specifically to do with the pictures, but thought why not?
 

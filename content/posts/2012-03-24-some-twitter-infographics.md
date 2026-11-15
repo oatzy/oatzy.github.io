@@ -25,13 +25,13 @@ blogger_id: tag:blogger.com,1999:blog-14769935.post-7821856258678068359
 blogger_orig_url: https://oatzy.blogspot.com/2012/03/some-twitter-infographics.html
 ---
 
-I did [some](http://oatzy.blogspot.co.uk/2010/10/more-twitter-insights.html) [stuff](http://oatzy.blogspot.co.uk/2010/10/follow-up-women-really-do-tweet-more.html) [like](http://oatzy.blogspot.co.uk/2010/08/life-by-numbers.html) [this](http://oatzy.blogspot.co.uk/2011/01/life-by-numbers-end-of-year-report.html) before. And I figured, while I was updating my [network graphs](http://oatzy.blogspot.co.uk/2012/03/friend-network-evolution.html), why not update some of the other graphics?
+I did [some](https://oatzy.github.io/2010/10/01/more-twitter-insights.html) [stuff](https://oatzy.github.io/2010/10/02/follow-up-women-really-do-tweet-more.html) [like](https://oatzy.github.io/2010/08/31/life-by-numbers.html) [this](https://oatzy.github.io/2011/01/01/life-by-numbers-end-of-year-report.html) before. And I figured, while I was updating my [network graphs](https://oatzy.github.io/2012/03/15/friend-network-evolution.html), why not update some of the other graphics?
 
-And it helps that I worked out how to easily extract data from Twitter (see [previous blog](http://oatzy.blogspot.co.uk/2012/03/friend-network-evolution.html)). The code is [here](http://dl.dropbox.com/u/4635169/TwitterData/TwitterStuff.py). Again, rate limits apply.
+And it helps that I worked out how to easily extract data from Twitter (see [previous blog](https://oatzy.github.io/2012/03/15/friend-network-evolution.html)). The code is [here](https://github.com/oatzy/question-nobody-asked/blob/main/some-twitter-infographics/TwitterStuff.py). Again, rate limits apply.
 
 **Who Do I Follow?**
 
-This is one of the ones I did [before](http://oatzy.blogspot.co.uk/2010/10/more-twitter-insights.html) - collect together the bios of the people I follow, then make a word cloud (using [Wordle](http://www.wordle.net/))
+This is one of the ones I did [before](https://oatzy.github.io/2010/10/01/more-twitter-insights.html) - collect together the bios of the people I follow, then make a word cloud (using [Wordle](http://www.wordle.net/))
 
 [![](/images/some-twitter-infographics/edscription-cloud.png)](/images/some-twitter-infographics/edscription-cloud.png)
 
@@ -39,7 +39,7 @@ Basically, I follow a bunch of *geeks* and *writers*. Who like '*things*'. So re
 
 I would point out though that 6 of the people I follow don't have bios, and about 7 just have lyrics.
 
-Data [here](http://dl.dropbox.com/u/4635169/TwitterData/descriptions.txt).
+Data [here](https://github.com/oatzy/question-nobody-asked/blob/main/some-twitter-infographics/descriptions.txt).
 
 **Who Tweets the Most?**
 
@@ -59,11 +59,11 @@ The orange is a logarithmic trend-line. It's a pretty good fit ([R2](http://en.w
 
 You get similar log-shaped graphs when you split up the genders.
 
-Full data [here](http://dl.dropbox.com/u/4635169/TwitterData/twitterdata-2012317.txt).
+Full data [here](https://github.com/oatzy/question-nobody-asked/blob/main/some-twitter-infographics/twitterdata-2012317.txt).
 
 **Chattiest Gender?**
 
-You can read all the explanation, caveats, etc. in the previous posts ([here](http://oatzy.blogspot.co.uk/2010/10/more-twitter-insights.html) and [here](http://oatzy.blogspot.co.uk/2010/10/follow-up-women-really-do-tweet-more.html)). I'm just going to go straight into the data.
+You can read all the explanation, caveats, etc. in the previous posts ([here](https://oatzy.github.io/2010/10/01/more-twitter-insights.html) and [here](https://oatzy.github.io/2010/10/02/follow-up-women-really-do-tweet-more.html)). I'm just going to go straight into the data.
 
 I follow 27 men and 21 women (excluding celebrities, etc.). The stats are as follow:
 
@@ -91,11 +91,11 @@ Here's treemap ([ManyEyes](http://www-958.ibm.com/software/data/cognos/manyeyes/
 
 Specifically, the graphic above is 62.5% purple (female).
 
-Data [here](http://dl.dropbox.com/u/4635169/TwitterData/twitterdata-2012317-gender.csv).
+Data [here](https://github.com/oatzy/question-nobody-asked/blob/main/some-twitter-infographics/twitterdata-2012317-gender.csv).
 
 **Where in the World Are My Followers?**
 
-The site I used [last time](http://oatzy.blogspot.co.uk/2010/10/more-twitter-insights.html) doesn't seem to exist anymore. So I'm using [MapMyFollowers](http://http//www.mapmyfollowers.com) instead. As the name suggests, these are my followers, rather than just the people I follow. Nonetheless..
+The site I used [last time](https://oatzy.github.io/2010/10/01/more-twitter-insights.html) doesn't seem to exist anymore. So I'm using [MapMyFollowers](http://www.mapmyfollowers.com) instead. As the name suggests, these are my followers, rather than just the people I follow. Nonetheless..
 
 [![](/images/some-twitter-infographics/followers-map.jpg)](/images/some-twitter-infographics/followers-map.jpg)
 
@@ -111,7 +111,7 @@ Here's a zoom in on the UK
 
 [![](/images/some-twitter-infographics/tweet-cloud.png)](/images/some-twitter-infographics/tweet-cloud.png)
 
-Made with [Wordle](http://www.wordle.net/), with data from [TweetStats](http://http//tweetstats.com/).
+Made with [Wordle](http://www.wordle.net/), with data from [TweetStats](http://tweetstats.com/).
 
 Words are sized by how often I tweet them; and by extension, @usernames are sized by how often I tweet those people.
 
@@ -123,7 +123,7 @@ Couldn't get a good source on who @replies me. That was one of the things Twoolr
 
 **When Do I Tweet?**
 
-[Twoolr](http://twoolr.com/) used to be awesome for Twitter statistics. But sadly, when they left beta, they started charging. And their free service went to shit. Luckily, I found [TweetStats](http://http//tweetstats.com/). Weirdly, it doesn't need you to log-in or anything, but somehow it can pull data on (nearly) all your tweets - beyond the 3,200 limit. Strange.
+[Twoolr](http://twoolr.com/) used to be awesome for Twitter statistics. But sadly, when they left beta, they started charging. And their free service went to shit. Luckily, I found [TweetStats](http://tweetstats.com/). Weirdly, it doesn't need you to log-in or anything, but somehow it can pull data on (nearly) all your tweets - beyond the 3,200 limit. Strange.
 
 Here's some more graphs
 
@@ -135,21 +135,21 @@ And I've never tweeted at 5am. But that's probably because I'm always asleep at 
 
 [![](/images/some-twitter-infographics/sleep-dist-03-25-02-35-35.png)](/images/some-twitter-infographics/sleep-dist-03-25-02-35-35.png)
 
-Except that one time I got really drunk. ([SleepBot](https://play.google.com/store/apps/details?id=com.lslk.sleepbot&hl=en))
+Except that one time I got really drunk. ([SleepBot](https://web.archive.org/web/20121209225312/https://play.google.com/store/apps/details?id=com.lslk.sleepbot&hl=en))
 
 **How Much Do I Tweet?**
 
-This is another one I used to go to Twoolr for. And, to be fair, I still could. But that only goes as far back as April '10, and its graphics aren't as clear. Here's [TweetStats](http://http//tweetstats.com/) again
+This is another one I used to go to Twoolr for. And, to be fair, I still could. But that only goes as far back as April '10, and its graphics aren't as clear. Here's [TweetStats](http://tweetstats.com/) again
 
 [![](/images/some-twitter-infographics/tweetstat-usage.png)](/images/some-twitter-infographics/tweetstat-usage.png)
 
-Like I said [before](http://oatzy.blogspot.co.uk/2012/03/friend-network-evolution.html), I didn't tweet much in my first year. In fact, I only posted 36 tweets in all of 2009.
+Like I said [before](https://oatzy.github.io/2012/03/15/friend-network-evolution.html), I didn't tweet much in my first year. In fact, I only posted 36 tweets in all of 2009.
 
 Now, the one problem with TweetStats is that 5 month gap in 2010. Why is this significant? Well, I was definitely tweeting during that time. In fact, by my estimates, over those 5 months I posted 5,724 tweets (~37tweets/day). So those 5 months account for 43% of all my tweets.
 
 See, the thing is, in 2010, I was out of university, single, and unemployed. I posted a total 8,823 tweets - 24tweets/day. Since I've been back at university, that number's dropped to 11tweets/day.
 
-That lull in Summer 2011 was when I was spending all my time on [Tumblr](http://oatzy.blogspot.co.uk/2011/06/tumbling-part-one-some-background.html) and watching classic [Doctor Who](http://oatzy.tumblr.com/tagged/doctor-who). Incidentally, I haven't posted on Tumblr since the start of September '11. It's terribly addictive, you see. I wouldn't recommend it; unless you're addicted to Doctor Who and Sherlock, and have lots of time on your hands..
+That lull in Summer 2011 was when I was spending all my time on [Tumblr](https://oatzy.github.io/2011/06/25/tumbling-part-one-some-background.html) and watching classic [Doctor Who](http://oatzy.tumblr.com/tagged/doctor-who). Incidentally, I haven't posted on Tumblr since the start of September '11. It's terribly addictive, you see. I wouldn't recommend it; unless you're addicted to Doctor Who and Sherlock, and have lots of time on your hands..
 
 So yeah.
 

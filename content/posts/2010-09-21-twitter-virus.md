@@ -41,9 +41,9 @@ The general form looks like this:
 
 > *[some URL]/@"onmouseover="[some javascript]*
 
-In it's simplest form, the code might be something like this (via [Sophos.com](http://www.sophos.com/blogs/gc/g/2010/09/21/twitter-onmouseover-security-flaw-widely-exploited/)):
+In it's simplest form, the code might be something like this (via [Sophos.com](https://web.archive.org/web/20100923072855/http://www.sophos.com:80/blogs/gc/g/2010/09/21/twitter-onmouseover-security-flaw-widely-exploited)):
 
-[![](http://www.sophos.com/images/blogs/gc/2010/09/onmouseover-popup.jpg)](http://www.sophos.com/images/blogs/gc/2010/09/onmouseover-popup.jpg)
+[![](/images/twitter-virus/onmouseover-popup-470.jpg)](/images/twitter-virus/onmouseover-popup-470.jpg)
 
 Which only uses the 'alert' function to create an annoying pop-up with some random message.
 
@@ -91,7 +91,7 @@ The code is the same as the first of the above, except instead of the the *modal
 
 Obviously, the exploit wasn't limited to "onMouseOver". Any JavaScript could've been used (so long as it was 140 characters or less). But nonetheless, the code would need a trigger, and mouseover was one of the best ways of doing it. Others apparently managed to make it activate by moving the cursor anywhere on screen. So yeah.
 
-Personally I'd be interested to see how far this spread. And indeed, given the 'contagiousness' of it, it'd be quite useful for modelling how this - and indeed everything else - spread through Twitter (as I've [previously](http://oatzy.blogspot.com/2010/09/social-viruses.html) [talked about](http://oatzy.blogspot.com/2010/09/spread-through-network.html)).
+Personally I'd be interested to see how far this spread. And indeed, given the 'contagiousness' of it, it'd be quite useful for modelling how this - and indeed everything else - spread through Twitter (as I've [previously](https://oatzy.github.io/2010/09/06/social-viruses.html) [talked about](https://oatzy.github.io/2010/09/07/spread-through-network.html)).
 
 Again, a great part of this was the celebs and the connectors; including an early victim, Sarah Brown (Gordon's wife), who has over 1mil followers. And as I said, passing it on isn't as voluntary as RTing.
 
@@ -105,7 +105,7 @@ Wonder if anyone's tried XSS on Facebook yet..\.
 
 The exploit has definitely been [nullified](http://twitter.com/delbius/status/25120366027). Twitter explain what happened [here](http://blog.twitter.com/2010/09/all-about-onmouseover-incident.html).
 
-One of the [discoverers](http://twitter.com/zzap/status/25105107613) of the exploit seems to be @[Zzap](http://twitter.com/zzap) [[source](http://news.netcraft.com/archives/2010/09/21/twitter-users-fall-victim-to-new-xss-worm.html)], who had no malicious intent for it. More curiosity. And he, himself, was inspired by the now suspended "RainbowTwtr" - screenshot of how they used it [here](http://news.netcraft.com/wp-content/uploads/2010/09/web-rainbow.png).
+One of the [discoverers](http://twitter.com/zzap/status/25105107613) of the exploit seems to be @[Zzap](http://twitter.com/zzap) [[source](http://news.netcraft.com/archives/2010/09/21/twitter-users-fall-victim-to-new-xss-worm.html)], who had no malicious intent for it. More curiosity. And he, himself, was inspired by the now suspended "RainbowTwtr" - screenshot of how they used it [here](/images/twitter-virus/web-rainbow.png).
 
 [This guy](http://www.securelist.com/en/blog/2297/Live_Twitter_XSS) from Kaspersky gives a brief analysis, including a graph of the exploit's growth over time (reaching 93 tweets per second at it's peak). [ThreatPost](http://threatpost.com/en_us/blogs/twitter-closes-web-hole-after-attack-hits-500000-092110) also has some analysis.
 

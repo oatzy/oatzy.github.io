@@ -28,11 +28,11 @@ In the game, you're given a pattern of lights, such as the one above, and the ta
 
 Interestingly, in the pattern above (on the left), you can clear the board by just pressing the squares that are on at the start (in any order).
 
-Anyway, I was reminded of that. Meanwhile, I'd been learning some [Pygame](http://www.pygame.org/) for this other thing (that I'll talk about in a later blog). Now, Pygame is a [Python](https://www.python.org/) library for making games (amongst other things). So you can probably see where this is going..\.
+Anyway, I was reminded of that. Meanwhile, I'd been learning some [Pygame](https://web.archive.org/web/20130922091530/http://www.pygame.org/) for this other thing (that I'll talk about in a later blog). Now, Pygame is a [Python](https://www.python.org/) library for making games (amongst other things). So you can probably see where this is going..\.
 
-Coding a 'Lights Out' clone was straightforward enough - the code is short and not too complicated. The above images are actually screenshots. You can look at my code/download it [here](https://www.dropbox.com/s/pcjmz11a0jncuqf/lightsout.py?dl=0). You'll need Python and Pygame to run it.
+Coding a 'Lights Out' clone was straightforward enough - the code is short and not too complicated. The above images are actually screenshots. You can look at my code/download it [here](https://github.com/oatzy/question-nobody-asked/blob/main/lights-out-game/lightsout.py). You'll need Python and Pygame to run it.
 
-This is a very threadbare version of the game. You can load a level as a text file of five lines of ones and zeros, like [here](https://www.dropbox.com/s/927jmw3yw43nzc0/level.txt?dl=0). Or else you can just play from a blank board - make patterns then try to get rid of them again (not necessarily as easy as it sounds).
+This is a very threadbare version of the game. You can load a level as a text file of five lines of ones and zeros, like [here](https://github.com/oatzy/question-nobody-asked/blob/main/lights-out-game/level.txt). Or else you can just play from a blank board - make patterns then try to get rid of them again (not necessarily as easy as it sounds).
 
 If you want something more fancy, or if you don't want to install Python and all that, there are probably loads of playable clones online.
 

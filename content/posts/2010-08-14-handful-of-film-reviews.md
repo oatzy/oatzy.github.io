@@ -74,7 +74,7 @@ For the love of God, why didn't they kill that nut-case sooner?! [*The Mist*](ht
 
 Based on a book by *Stephen King*, it's fantastic, end of the world, horror that's more about how people can turn against each other in dire situations, than about the actual threat. Though the monsters are suitably formidable.
 
-The [*Dream Lord*](http://www.youtube.com/watch?v=VN0hLWpFi3c) himself ([Toby Jones](http://www.youtube.com/watch?v=kNdo4Mekw0w))co-stars as friendly shop assistant and surprise bad-ass, and he was just plain amazing. So how dare they let him get eaten when he was so close to freedom and safety.
+The [*Dream Lord*](https://web.archive.org/web/20250825092005/https://www.youtube.com/watch?v=VN0hLWpFi3c) himself ([Toby Jones](http://www.youtube.com/watch?v=kNdo4Mekw0w))co-stars as friendly shop assistant and surprise bad-ass, and he was just plain amazing. So how dare they let him get eaten when he was so close to freedom and safety.
 
 The other amazing thing about *The Mist* is its ending. So bittersweet, you'll hate *Stephen King* for daring to think up something so sinister. But I'm not going to give it away.
 

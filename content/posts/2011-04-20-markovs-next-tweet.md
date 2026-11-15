@@ -25,7 +25,7 @@ If you've ever taken the time to read spam - and you really should - you might h
 
 **Markov Chains**
 
-I've mentioned [Markov Chains](http://en.wikipedia.org/wiki/Markov_chain) before, for example, in the [Snakes and Ladders](http://oatzy.blogspot.com/2011/01/snakes-and-ladders.html) post. Here's the formal definition from Wikipedia,
+I've mentioned [Markov Chains](http://en.wikipedia.org/wiki/Markov_chain) before, for example, in the [Snakes and Ladders](https://oatzy.github.io/2011/01/29/snakes-and-ladders.html) post. Here's the formal definition from Wikipedia,
 
 > A **Markov chain**, named for [Andrey Markov](http://en.wikipedia.org/wiki/Andrey_Markov), is a mathematical system that undergoes transitions from one state to another (from a finite or countable number of possible states) in a chain-like manner. It is a [random process](http://en.wikipedia.org/wiki/Stochastic_process "Stochastic process") endowed with the [Markov property](http://en.wikipedia.org/wiki/Markov_property): the next state depends only on the current state and not on the past.
 
@@ -87,23 +87,23 @@ It all ultimately comes down to getting a desirable balance between variability 
 
 **Stuff to Play With**
 
-I threw together this quick and dirty implementation in [python](http://dl.dropbox.com/u/4635169/markov.py) - mostly just to show that I could. I ran it on the first few paragraphs of this post (pre-editing), and got this as an example output,
+I threw together this quick and dirty implementation in [python](https://github.com/oatzy/question-nobody-asked/blob/main/markovs-next-tweet/markov.py) - mostly just to show that I could. I ran it on the first few paragraphs of this post (pre-editing), and got this as an example output,
 
 > *almost seems human but while no-one is going on some spam was text that has anyone really should you might have postulated that has anyone really*
 
-[That Can Be My Next Tweet](http://thatcan.be/my/next/tweet), mentioned above.
+[That Can Be My Next Tweet](https://web.archive.org/web/20170420120809/http://thatcan.be:80/my/next/tweet/), mentioned above.
 
 On [TweetCloud](http://tweetcloud.com/), you can enter a word and get a word cloud of words that commonly follow that word in tweets. Word.
 
 [Word-O-Matic](http://ohthehugemanatee.net/word-o-matic/), also mention above, creates words based on any source text you give it. See also: associated [Reddit thread](http://www.reddit.com/r/programming/comments/9z4ds/i_made_a_markov_text_analyzergenerator_and_input/) with lots of example results.
 
-[Markov Text Synthesizer](http://www.beetleinabox.com/mkv_input.html), a general online generator you can play with.
+[Markov Text Synthesizer](https://web.archive.org/web/20110511093914/http://www.beetleinabox.com/mkv_input.html), a general online generator you can play with.
 
 There are various Twitter-bot attempts [here](http://www.reddit.com/r/programming/comments/c6o1t/i_created_a_markov_text_generator_that_learns/).
 
-[Markov Shakespearean Sonnet](http://www.devjason.com/2010/12/28/shakespeare-sonnet-sourced-markov-text-generation/) (uses a slightly more complex generation method)
+[Markov Shakespearean Sonnet](https://web.archive.org/web/20101231142058/http://www.devjason.com:80/2010/12/28/shakespeare-sonnet-sourced-markov-text-generation/) (uses a slightly more complex generation method)
 
-[Someone](http://www.codinghorror.com/blog/2008/06/markov-and-you.html) who explains it better than me.
+[Someone](https://web.archive.org/web/20110416105038/http://www.codinghorror.com/blog/2008/06/markov-and-you.html) who explains it better than me.
 
 Oh, and you can also use Markov Chains to [generate music](http://thepasqualian.com/?p=1831).
 

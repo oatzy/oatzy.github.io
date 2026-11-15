@@ -81,7 +81,7 @@ That's why I try not to [get into](http://xkcd.com/386/) arguments regarding Mac
 
 Really, the best response to all this, and the people who insist on bothering you with this nonsense, is to say "So fucking what. Go bother someone who gives a damn".
 
-And if you're really dead set on having pointless arguments, you'll find the *Pointless Internet Argument Forums* [here](http://www.pointlessinternetargumentforums.com/). Otherwise, for the love of God, keep it to yourself.
+And if you're really dead set on having pointless arguments, you'll find the *Pointless Internet Argument Forums* [here](https://web.archive.org/web/20110208050402/http://pointlessinternetargumentforums.com/). Otherwise, for the love of God, keep it to yourself.
 
 Oatzy.
 

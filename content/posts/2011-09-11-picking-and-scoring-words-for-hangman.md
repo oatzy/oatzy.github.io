@@ -136,7 +136,7 @@ So for example, if we guess the vowels and get the pattern \_A\_, then the entro
 
 **From a Practical Stand Point**
 
-To work out the word entropy we can [download a dictionary](http://www.morewords.com/enable2k.txt), then [write some code](http://dl.dropbox.com/u/4635169/word-count.py) which will find and count the words which match our required pattern, excluding those containing already guessed letters.
+To work out the word entropy we can [download a dictionary](https://web.archive.org/web/20110902202252/http://www.morewords.com:80/enable2k.txt), then [write some code](https://github.com/oatzy/question-nobody-asked/blob/main/picking-and-scoring-words-for-hangman/word-count.py) which will find and count the words which match our required pattern, excluding those containing already guessed letters.
 
 We then find the 'smallest maximum' entropy - which of the character entropy and the word entropy is smallest. In most cases it'll be the word entropy.
 
@@ -144,7 +144,7 @@ And finally we multiply that by the probability, one minus big P, to assign to e
 
 *(1-P)\*min{H(W), H(C)}*
 
-Or you can use [this code](http://dl.dropbox.com/u/4635169/HangmanScorer.py).
+Or you can use [this code](https://github.com/oatzy/question-nobody-asked/blob/main/picking-and-scoring-words-for-hangman/HangmanScorer.py).
 
 In and of themselves, the scores this gives don't have any specific meaning - the exact score for each word will depend on your choice of dictionary and initial guess letters. But so long as you use them consistently, the scores should stand as an indicator of each word's relative 'quality'.
 
@@ -152,7 +152,7 @@ For example, by this system, CAT gets a score of 5.3, and EQUALITY gets a score 
 
 **So What's the Best Word**
 
-JAZZ, apparently. In fact, while researching this blog, I came across a few [other](http://www.jkwchui.com/2010/04/the-best-hangman-word/) [people](http://140.177.205.236/2010/08/13/25-best-hangman-words/)'s attempts to find the best words for hangman. Pleasingly, they went with different approaches to me.
+JAZZ, apparently. In fact, while researching this blog, I came across a few [other](http://www.jkwchui.com/2010/04/the-best-hangman-word/) [people](https://web.archive.org/web/20111009022206/http://140.177.205.236/2010/08/13/25-best-hangman-words/)'s attempts to find the best words for hangman. Pleasingly, they went with different approaches to me.
 
 In fact, JAZZ never occurred to me when I was thinking up random good words. The best I thought of was WAX. Also reassuring is the fact that JAZZ does score highly under my system - 6.07 - and scores only slightly better than WAX, with its score of 5.92
 

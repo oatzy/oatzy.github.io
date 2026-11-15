@@ -18,7 +18,7 @@ blogger_id: tag:blogger.com,1999:blog-14769935.post-6916298533874752781
 blogger_orig_url: https://oatzy.blogspot.com/2011/02/follow-up-rotten-bias.html
 ---
 
-One of the things that stuck in my mind from the [last blog's](http://oatzy.blogspot.com/2011/01/oscars-vs-rotten-tomatoes.html) analysis was 2007
+One of the things that stuck in my mind from the [last blog's](https://oatzy.github.io/2011/01/28/oscars-vs-rotten-tomatoes.html) analysis was 2007
 
 [![](/images/follow-up-rotten-bias/RT-2007.png)](/images/follow-up-rotten-bias/RT-2007.png)
 
@@ -34,7 +34,7 @@ But realistically, it's best not to make assumptions either way if you can get a
 
 **Rotten Audience**
 
-The are two sites I look at for site demographics. The first is [Alexa](http://www.alexa.com/siteinfo/rottentomatoes.com), which you may have heard of. It has some benefits, but unfortunately for more detailed analysis, they want your money.
+The are two sites I look at for site demographics. The first is [Alexa](https://web.archive.org/web/20120921024711/http://www.alexa.com/siteinfo/rottentomatoes.com), which you may have heard of. It has some benefits, but unfortunately for more detailed analysis, they want your money.
 
 The other is [Quantcast](http://www.quantcast.com/rottentomatoes.com;jsessionid=AD12F50DE1EC889C1EB9D690C0894665?country=US#summary), which is a lot better, but sometimes their numbers are only estimates (not the case for RT). This is the one I'm using here. Here's what the demographics look like
 

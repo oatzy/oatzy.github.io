@@ -42,7 +42,7 @@ This folder is underscore-prefixed so Jekyll doesn't publish it; Hugo ignores it
 - [x] 1 Images: 524 unique images (34 MB, all original size) in `static/images/`, 913 post URLs mapped in `image-map.tsv`. All 525 now saved: `christmas-eve-graph.png` (gone from Blogger and Wayback) restored from Chris's own copy on 2026-11-15. 16 non-Blogger images listed in `other-images.tsv` for phase 4. Script: `scripts/fetch_blogger_images.py` (re-runnable).
 - [x] 2 Hugo swap: Hugo 0.169.0 builds all baseline URLs except dead `/assets/main.css`, feeds match (entry ids kept), 138/140 posts text-identical (2 expected diffs). Not yet live: see `phase2-notes.md` cut-over steps (switch Pages source to GitHub Actions first).
 - [x] 3 HTML → md: all 108 Blogger posts converted (pandoc 3.12.1, `scripts/blogger_to_md.py`). Rendered text identical apart from `...`→`…` (typographer); embeds, coloured/monospace text kept as raw HTML; images now local and full-size. See `phase3-notes.md` (spot-check list). Commit staged renames separately from the content.
-- [ ] 4 Links
+- [x] 4 Links: 105 blogspot links → github.io, 82 Dropbox links → `question-nobody-asked` (29 folders, 5.3 MB; push it before going live) + 4 runnable pages in `static/files/`, 13/16 other images saved (1 unrecoverable). Dead-link report: 112 dead (80 with Wayback copies), 52 unverifiable; awaiting Chris's decisions. See `phase4-notes.md`.
 - [ ] 5 Theme / home / search
 - [ ] 6 MathJax
 - [ ] 7 Equation images (stretch)

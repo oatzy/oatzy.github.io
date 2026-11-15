@@ -22,7 +22,7 @@ blogger_orig_url: https://oatzy.blogspot.com/2011/07/social-posting-part-two-we-
 
 **Where were we..**
 
-So the main limit to the stripped down model in the [previous post](http://oatzy.blogspot.com/2011/07/social-posting-part-one-whos-online.html) is that it only puts people into one of two states - posting, or not posting.
+So the main limit to the stripped down model in the [previous post](https://oatzy.github.io/2011/07/30/social-posting-part-one-whos-online.html) is that it only puts people into one of two states - posting, or not posting.
 
 A more realistic model would take into account how much people are posting. The nice thing is, the change to the model is only minor - T no longer has the condition that makes its value has to be either one or zero.
 
@@ -228,7 +228,7 @@ Modifying one user affects everyone else in the graph (to some degree). Modifyin
 
 Of course, in the real world, external effects are unpredictable, and will tend to keep the system off-balance (unstable). But we do what we can.
 
-Oh, and if you were wondering how I got the numbers for the graphs, [here's](http://dl.dropbox.com/u/4635169/coherence.py) the code I used. But be forewarned, it's very sloppy.
+Oh, and if you were wondering how I got the numbers for the graphs, [here's](https://github.com/oatzy/question-nobody-asked/blob/main/social-posting-part-two-we-post/coherence.py) the code I used. But be forewarned, it's very sloppy.
 
 Oatzy.
 

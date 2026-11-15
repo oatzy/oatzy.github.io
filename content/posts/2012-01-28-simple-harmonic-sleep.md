@@ -21,7 +21,7 @@ blogger_id: tag:blogger.com,1999:blog-14769935.post-8698149030893768436
 blogger_orig_url: https://oatzy.blogspot.com/2012/01/simple-harmonic-sleep.html
 ---
 
-So I started using [SleepBot Tracker](https://market.android.com/details?id=com.lslk.sleepbot&hl=en) to track my sleep. This is what it's looking like so far
+So I started using [SleepBot Tracker](https://web.archive.org/web/20120121115630/https://market.android.com/details?id=com.lslk.sleepbot&hl=en) to track my sleep. This is what it's looking like so far
 
 [![](/images/simple-harmonic-sleep/screenshot-crop.png)](/images/simple-harmonic-sleep/screenshot-crop.png)
 

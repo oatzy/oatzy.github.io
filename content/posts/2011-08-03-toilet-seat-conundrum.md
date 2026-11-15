@@ -156,7 +156,7 @@ The Game One simulation gives a result of ~ *3.28* seat moves per male per day, 
 
 The Game Two simulation gives a result of *9.11* seat moves per male per day - bearing in mind, men have to move the seat twice per standing visit, in this version - and women never have to move the seat.
 
-Code [here](http://dl.dropbox.com/u/4635169/toilet-seat.py).
+Code [here](https://github.com/oatzy/question-nobody-asked/blob/main/toilet-seat-conundrum/toilet-seat.py).
 
 Fun fact: Without additional costs and rewards, Game One is always preferable to men, Game Two to women. Regardless of the balance of men and women in a house.
 

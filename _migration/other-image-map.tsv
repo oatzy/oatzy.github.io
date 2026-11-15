@@ -1,0 +1,17 @@
+post	old_url	local_path	status
+2010-08-08-inception-review	http://revolvingdoorproject.files.wordpress.com/2010/07/different-child-actors.jpg	/images/inception-review/different-child-actors.jpg	ok live
+2010-09-07-some-random-infographics	http://dl.dropbox.com/u/4635169/BB-draft.jpg	/images/some-random-infographics/BB-draft.jpg	ok dropbox-local
+2010-09-21-twitter-virus	http://www.sophos.com/images/blogs/gc/2010/09/onmouseover-popup.jpg	/images/twitter-virus/onmouseover-popup-470.jpg	ok wayback 20101002000505 (resized version of the same image)
+2010-09-21-twitter-virus	http://news.netcraft.com/wp-content/uploads/2010/09/web-rainbow.png	/images/twitter-virus/web-rainbow.png	ok wayback 20101001032923
+2010-09-29-acslaw-vs-internet	http://localhostr.com/files/baea39/1285203297086.png	/images/acslaw-vs-internet/1285203297086.png	ok wayback 20100929 (via redirect)
+2010-09-29-acslaw-vs-internet	http://i.imgur.com/14rJM.png	/images/acslaw-vs-internet/14rJM.png	ok wayback 20131003121207
+2010-09-29-acslaw-vs-internet	http://i.imgur.com/DmleF.png	/images/acslaw-vs-internet/DmleF.png	ok wayback 20110115085304
+2010-09-29-acslaw-vs-internet	http://localhostr.com/files/34804c/1285181519074.png		unrecoverable
+2010-09-29-acslaw-vs-internet	http://img208.imageshack.us/img208/4145/opacs4.png	/images/acslaw-vs-internet/opacs4.png	ok wayback 20101001235522
+2010-12-07-normal-icicles	http://www.usablestats.com/images/men_women_height_histogram.jpg	/images/normal-icicles/men_women_height_histogram.jpg	ok live
+2011-01-06-compartmental-model-of-follower-growth	http://dl.dropbox.com/u/4635169/SIR-final-eqns.png	/images/compartmental-model-of-follower-growth/SIR-final-eqns.png	ok dropbox-local
+2011-01-28-snakes-and-ladders	http://upload.wikimedia.org/wikipedia/en/b/ba/Cnl03.jpg	/images/snakes-and-ladders/Cnl03.jpg	ok live
+2011-02-03-revisited-tweets-by-gender	http://blog.hubspot.com/Portals/249/images/tweets.gif	/images/revisited-tweets-by-gender/tweets.gif	ok live
+2011-06-24-fibonaccis-rainstorm	http://imgs.xkcd.com/comics/collatz_conjecture.png	/images/fibonaccis-rainstorm/collatz_conjecture.png	ok live
+2015-03-12-watch-face-concepts-for-android-wear	https://commons.wikimedia.org/wiki/File:Stylised_Lithium_Atom.svg#mediaviewer/File:Stylised_Lithium_Atom.svg		skipped: not an image file
+2024-01-02-advent-of-code-jq	https://github.com/oatzy/advent_of_code_2023/blob/main/day24-part1.png		skipped: not an image file

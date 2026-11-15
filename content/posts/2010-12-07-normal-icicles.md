@@ -28,9 +28,9 @@ As you'll notice, the individual icicles are clustered into groups, with the lon
 
 **Normal Distribution**
 
-The [normal distribution](http://en.wikipedia.org/wiki/Normal_distribution) is one of those things that pops up everywhere. For example if you measure the heights of a significantly large group of people and plot the results you'll get a graph shaped something similar to [this](http://www.usablestats.com/lessons/normal)
+The [normal distribution](http://en.wikipedia.org/wiki/Normal_distribution) is one of those things that pops up everywhere. For example if you measure the heights of a significantly large group of people and plot the results you'll get a graph shaped something similar to [this](https://web.archive.org/web/20101124213526/http://www.usablestats.com:80/lessons/normal)
 
-[![](http://www.usablestats.com/images/men_women_height_histogram.jpg)](http://www.usablestats.com/images/men_women_height_histogram.jpg)
+[![](/images/normal-icicles/men_women_height_histogram.jpg)](/images/normal-icicles/men_women_height_histogram.jpg)
 
 With the averages approximately in the middle, and the width/height of the curves based on the standard deviation of the sample.
 
@@ -40,7 +40,7 @@ And as I say, this sort of thing [shows up](http://en.wikipedia.org/wiki/Normal_
 
 **Equations Everywhere**
 
-I was partly inspired by a program I recently watched - [The Joy of Stats](http://www.bbc.co.uk/programmes/b00wgq0l) - and partly by the website "[Found Functions](http://www.wired.com/magazine/2010/01/pl_arts_found/)", whose creator finds graphs (and their accompanying formulas) in photos of everyday scenes.
+I was partly inspired by a program I recently watched - [The Joy of Stats](http://www.bbc.co.uk/programmes/b00wgq0l) - and partly by the website "[Found Functions](https://web.archive.org/web/20101203153217/http://www.wired.com/magazine/2010/01/pl_arts_found/)", whose creator finds graphs (and their accompanying formulas) in photos of everyday scenes.
 
 I flipped the photo vertically (for clarity) and skewed it slightly to try to account for the fact that it was taken side-on, then put some normal curves on it to hopefully prove I'm not just crazy and imagining it
 

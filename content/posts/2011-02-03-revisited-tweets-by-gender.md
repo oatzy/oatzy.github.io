@@ -16,7 +16,7 @@ blogger_id: tag:blogger.com,1999:blog-14769935.post-5396609866611142549
 blogger_orig_url: https://oatzy.blogspot.com/2011/02/revisited-tweets-by-gender.html
 ---
 
-So I first looked at this [here](http://oatzy.blogspot.com/2010/10/more-twitter-insights.html), with a follow up [here](http://oatzy.blogspot.com/2010/10/follow-up-women-really-do-tweet-more.html). The conclusion was that among the people I follow, the women do tweet more than the men.
+So I first looked at this [here](https://oatzy.github.io/2010/10/01/more-twitter-insights.html), with a follow up [here](https://oatzy.github.io/2010/10/02/follow-up-women-really-do-tweet-more.html). The conclusion was that among the people I follow, the women do tweet more than the men.
 
 So it's now about 4 months since that last post, so I thought I'd have a quick look at how things have changed.
 
@@ -30,7 +30,7 @@ And here are the new numbers
 
 [![](/images/revisited-tweets-by-gender/rates-new.png)](/images/revisited-tweets-by-gender/rates-new.png)
 
-It's pretty much the same deal, but it's there for those interested. And just to further clarify whatever point it is I'm trying to make, here's a [boxplot](http://en.wikipedia.org/wiki/Boxplot) comparison of the numbers (made in [R](http://www2.warwick.ac.uk/fac/sci/moac/degrees/modules/ch923/r_introduction/boxplot/))
+It's pretty much the same deal, but it's there for those interested. And just to further clarify whatever point it is I'm trying to make, here's a [boxplot](http://en.wikipedia.org/wiki/Boxplot) comparison of the numbers (made in [R](https://web.archive.org/web/20090530041817/http://www2.warwick.ac.uk:80/fac/sci/moac/degrees/modules/ch923/r_introduction/boxplot))
 
 [![](/images/revisited-tweets-by-gender/boxplot.jpg)](/images/revisited-tweets-by-gender/boxplot.jpg)
 
@@ -48,7 +48,7 @@ This isn't something I'm going to try and work out myself, because frankly it's 
 
 So I googled it instead, and found [this](http://blog.hubspot.com/blog/tabid/6307/bid/5987/Data-Shows-On-Twitter-Women-Are-More-Social.aspx?source=BlogTwitter_%5BData%20Shows:%20On%20Twitt%5D)
 
-[![](http://blog.hubspot.com/Portals/249/images/tweets.gif)](http://blog.hubspot.com/Portals/249/images/tweets.gif)
+[![](/images/revisited-tweets-by-gender/tweets.gif)](/images/revisited-tweets-by-gender/tweets.gif)
 
 Apparently, on average women tweet *12%* more than men. That number is based on total number of tweets posted though, where mine are based on rate.
 

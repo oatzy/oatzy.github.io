@@ -17,7 +17,7 @@ blogger_orig_url: https://oatzy.blogspot.com/2017/04/testing-python-unicode-hand
 
 **Background**
 
-At work, we've been working on a [Python API](http://arcapix.com/gpfsapi/) for IBM's [Spectrum Scale](http://www-03.ibm.com/systems/uk/storage/spectrum/scale/) (GPFS) filesystem.
+At work, we've been working on a [Python API](https://web.archive.org/web/20180202035444/http://www.arcapix.com:80/gpfsapi/) for IBM's [Spectrum Scale](http://www-03.ibm.com/systems/uk/storage/spectrum/scale/) (GPFS) filesystem.
 
 The API is well tested, with good coverage. But one thing that's caught us out a couple of times is unicode.
 

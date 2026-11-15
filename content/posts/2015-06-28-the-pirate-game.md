@@ -23,7 +23,7 @@ blogger_orig_url: https://oatzy.blogspot.com/2015/06/the-pirate-game.html
 
 A few months ago, my friend was telling me about this mobile game he wanted to make. He, and some of our other friends, are teachers, and this is a game they play with their students. The students apparently love it. And if there were an app version, they'd be willing to pay 59p for it. Or so they say.
 
-Now, as he was explaining the game to me, I thought maybe he was building towards asking for my help. I felt almost betrayed that he didn't. Several years ago, [I'd built a website](http://oatzy.blogspot.co.uk/2011/02/designing-for-free.html) for this friend that he'd had nothing but praise and gratitude for.
+Now, as he was explaining the game to me, I thought maybe he was building towards asking for my help. I felt almost betrayed that he didn't. Several years ago, [I'd built a website](https://oatzy.github.io/2011/02/17/designing-for-free.html) for this friend that he'd had nothing but praise and gratitude for.
 
 A month or so later, I got a text message - "How are you at programming?" For whatever reason, the guy they had originally 'hired' wasn't doing it anymore.
 
@@ -43,15 +43,15 @@ At the start of the game, the players arrange the items in their grids to their 
 
 **Making Games 1: The Right Tools**
 
-In a [previous blog](http://oatzy.blogspot.co.uk/2015/02/designing-general-relativity-based.html), I asserted that making mobile games was difficult. In fact, it turns out to not be so bad with the right framework. In this case I used the popular [LibGdx](http://libgdx.badlogicgames.com/). What's particularly nice about it is that there are a lot of how-to guides, and there's plenty of help for when things go wrong.
+In a [previous blog](https://oatzy.github.io/2015/02/23/designing-general-relativity-based.html), I asserted that making mobile games was difficult. In fact, it turns out to not be so bad with the right framework. In this case I used the popular [LibGdx](https://web.archive.org/web/20150630231959/http://libgdx.badlogicgames.com/). What's particularly nice about it is that there are a lot of how-to guides, and there's plenty of help for when things go wrong.
 
 As they say, programming is 1% inspiration, 99% Googling.
 
 For anyone interested in making their own Android game, I found these guides particularly helpful,
 
-[LibGdx Zombie Bird Tutorial](http://www.kilobolt.com/zombie-bird-tutorial-flappy-bird-remake.html)\
-[LibGdx Game Development Essentials](https://www.geekbooks.me/book/view/libgdx-game-development-essentials)\
-[Set up Google Services with LibGdx](http://fortheloss.org/tutorial-set-up-google-services-with-libgdx/)
+[LibGdx Zombie Bird Tutorial](https://web.archive.org/web/20150623020844/http://www.kilobolt.com:80/zombie-bird-tutorial-flappy-bird-remake.html)\
+[LibGdx Game Development Essentials](https://web.archive.org/web/20160112114703/https://www.geekbooks.me/book/view/libgdx-game-development-essentials)\
+[Set up Google Services with LibGdx](https://web.archive.org/web/20150513085555/http://fortheloss.org/tutorial-set-up-google-services-with-libgdx/)
 
 **HAL9000**
 
@@ -61,7 +61,7 @@ In those first few tests of the game, I found that the computer player kept beat
 
 So loosing 7 times out of 8 seemed significant to me. As far as I could tell, the mechanics were working correctly. The only theory I could come up with was that maybe there was some advantage in the order in which we took our turns.
 
-To try and figure out what was going on, I created a simulation. Basically, I re-wrote a very stripped down version of the player and game mechanics in [Python](https://www.dropbox.com/s/dpcenzal4tn7i13/pirate-sim.py?dl=0). I then had two computer players play against each other in 10,000 matches. The results from this were - Player 1: 5005, Player 2: 4995.\
+To try and figure out what was going on, I created a simulation. Basically, I re-wrote a very stripped down version of the player and game mechanics in [Python](https://github.com/oatzy/question-nobody-asked/blob/main/the-pirate-game/pirate-sim.py). I then had two computer players play against each other in 10,000 matches. The results from this were - Player 1: 5005, Player 2: 4995.\
 In other words, the winner *was* just random chance. And turn order didn't matter.
 
 If nothing else, this was a lesson in not drawing conclusions from such a small data set - it's not really statistically significant if there are only 8 data points (that's a standard error of ~3). After playing more games, the wins did end up averaging out.

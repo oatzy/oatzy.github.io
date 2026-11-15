@@ -238,13 +238,13 @@ Of course, if you wait too long, someone behind you might assume you're not in t
 
 **Nothing's so simple that it can't be made complex**
 
-I've written about queuing before, in the context of a mathematical [model of a cafe](http://oatzy.blogspot.co.uk/2011/01/model-cafe.html).
+I've written about queuing before, in the context of a mathematical [model of a cafe](https://oatzy.github.io/2011/01/09/model-cafe.html).
 
 The long and short of it is this - people arrive at random (following a [Poisson distribution](https://en.wikipedia.org/wiki/Poisson_distribution)) and join the queue with some probability (see above). Each iteration, some people are served, some join the queue, some get tired of waiting and leave, etc.
 
 I'm going to iterate in 5 min time-step and say that a haircut takes 10-25 minutes (i.e. 2-5 steps). The exact duration is randomly generated for each customer.
 
-I'm going to say that on average one person shows up every 10 minutes (0.5 per step). Here's an [example](http://docs.scipy.org/doc/numpy/reference/generated/numpy.random.poisson.html) of how that might look over 12 steps (one hour), using the Poisson distribution: *[2, 0, 2, 0, 0, 0, 1, 0, 0, 1, 0, 0]*
+I'm going to say that on average one person shows up every 10 minutes (0.5 per step). Here's an [example](https://web.archive.org/web/20160729100145/http://docs.scipy.org:80/doc/numpy/reference/generated/numpy.random.poisson.html) of how that might look over 12 steps (one hour), using the Poisson distribution: *[2, 0, 2, 0, 0, 0, 1, 0, 0, 1, 0, 0]*
 
 I set up the simulation so that you specify some number of steps for the barbers to be considered 'open'. After that, no more people are added to the queue, but the simulation keeps running until the queue is empty.
 
@@ -295,7 +295,7 @@ Here we have a person who had to wait 9 steps (45mins) to be served, followed by
 
 It's also interesting that you can run the simulation multiple times with the exact same settings, and one time the queue will never go higher than 4, while in the the next it'll go as high as 13. This is [complexity](https://en.wikipedia.org/wiki/Complexity) at work - various small random factors in the model interacting to produce wildly different outcomes.
 
-So yeah. If you're interested, you can see the full [code here](https://dl.dropboxusercontent.com/u/4635169/barber.py). I may have gotten carried away with the object-orienting.
+So yeah. If you're interested, you can see the full [code here](https://github.com/oatzy/question-nobody-asked/blob/main/barber-queue/barber.py). I may have gotten carried away with the object-orienting.
 
 Oatzy.
 
@@ -309,7 +309,7 @@ The last blog post was about the making of an Android game - The Pirate Game.
 
 The game is now finished-ish and has been released in 'beta' on the [Play Store](https://play.google.com/store/apps/details?id=com.cavillum.pirategame.android).
 
-In the [previous post](http://oatzy.blogspot.co.uk/2015/06/the-pirate-game.html), I mentioned that the game would eventually get a less utilitarian design. I ended up making that design myself (because I'm a control freak). I'm pretty pleased with how it turned out.
+In the [previous post](https://oatzy.github.io/2015/06/29/the-pirate-game.html), I mentioned that the game would eventually get a less utilitarian design. I ended up making that design myself (because I'm a control freak). I'm pretty pleased with how it turned out.
 
 [![](/images/barber-queue/pg-board-mock.png)](/images/barber-queue/pg-board-mock.png)
 
@@ -323,9 +323,9 @@ So yeah. I finally got a job. I'm now a Software Developer at a company called [
 
 The company sells large scale 'storage solutions' to companies primarily in the VFX industry, as well as universities and other such people that do high performance computing.
 
-What I personally work on is primarily a Python API for the [IBM Spectrum Scale](http://www-03.ibm.com/systems/uk/storage/spectrum/scale/) (GPFS) filesystem. You can see the [API docs online](http://arcapix.com/gpfsapi/). I wrote a decent amount of the documentation (and the code that's being documented).
+What I personally work on is primarily a Python API for the [IBM Spectrum Scale](http://www-03.ibm.com/systems/uk/storage/spectrum/scale/) (GPFS) filesystem. You can see the [API docs online](https://web.archive.org/web/20180202035444/http://www.arcapix.com:80/gpfsapi/). I wrote a decent amount of the documentation (and the code that's being documented).
 
-In particular, the '[Getting Started With List Processing](http://arcapix.com/gpfsapi/list_processing_guide.html)' guide. Admittedly the topic is a bit niche - I doubt many readers of this blog even know of GPFS, let along have a cluster with it installed. But you might still find it interesting; you can learn some stuff about [MapReduce](https://en.wikipedia.org/wiki/MapReduce) - a technique for taking advantage of parallelism when processing large data-sets.
+In particular, the '[Getting Started With List Processing](https://web.archive.org/web/20180203222002/http://www.arcapix.com:80/gpfsapi/list_processing_guide.html)' guide. Admittedly the topic is a bit niche - I doubt many readers of this blog even know of GPFS, let along have a cluster with it installed. But you might still find it interesting; you can learn some stuff about [MapReduce](https://en.wikipedia.org/wiki/MapReduce) - a technique for taking advantage of parallelism when processing large data-sets.
 
 There's also the '[example scripts](https://github.com/arcapix/gpfsapi-examples)' repository - scripts written to use the API, some of while I wrote. But, again, they're a bit niche.
 

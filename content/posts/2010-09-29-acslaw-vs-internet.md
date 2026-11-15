@@ -28,13 +28,13 @@ Now setting aside for a second the fact that *DDoSing* is illegal, this was not 
 
 > "This is unacceptable to Anonymous. The time has come to show these fuckers that we will not tolerate this."
 
-"[*Operation Payback is a Bitch*](http://localhostr.com/files/baea39/1285203297086.png)" was devised as a means of retalitation by [*Anonymous*](http://en.wikipedia.org/wiki/Anonymous_%28group%29), in close association with [infamous](http://en.wikipedia.org/wiki/4chan#Media_attention) image-board site, *4chan* (among others).
+"[*Operation Payback is a Bitch*](/images/acslaw-vs-internet/1285203297086.png)" was devised as a means of retalitation by [*Anonymous*](http://en.wikipedia.org/wiki/Anonymous_%28group%29), in close association with [infamous](http://en.wikipedia.org/wiki/4chan#Media_attention) image-board site, *4chan* (among others).
 
 *Anonymous* are an interesting group. As internet activists, they may well stand for justice, but their definition of justice isn't always in line with, say, the law's - it's very vigilantist. The important thing to keep in mind though, is that *Anonymous* is akin to a flash mob, and therefore any given 'mob' is going to vary in membership, and even overall ideology, etc.
 
 But in general, *Anonymous* will act in favour of whatever gives them lulz, or makes a lamentable person suffer.
 
-This can be seen in their attacks on [Scientology](http://en.wikipedia.org/wiki/Project_Chanology), on [Sarah Palin](http://en.wikipedia.org/wiki/Sarah_Palin_email_hack), their tracking down of [Dusty the cat](http://www.ted.com/talks/lang/eng/christopher_m00t_poole_the_case_for_anonymity_online.html)'s tormentor and [cat-bin-lady](http://valleywag.gawker.com/5622237/how-4chan-brought-the-evil-british-cat-lady-to-justice?skyline=true&s=i) or, perhaps most unsettling of all, their tormenting of an [11 year old girl](http://gawker.com/5589103/how-the-internet-beat-up-an-11+year+old-girl) (who, to be fair, probably had it coming). To name [but a few](http://www.artfagcity.com/2010/09/09/img-mgmt-what-relational-aesthetics-can-learn-from-4chan/).
+This can be seen in their attacks on [Scientology](http://en.wikipedia.org/wiki/Project_Chanology), on [Sarah Palin](http://en.wikipedia.org/wiki/Sarah_Palin_email_hack), their tracking down of [Dusty the cat](http://www.ted.com/talks/lang/eng/christopher_m00t_poole_the_case_for_anonymity_online.html)'s tormentor and [cat-bin-lady](https://web.archive.org/web/20100831034743/http://valleywag.gawker.com:80/5622237/how-4chan-brought-the-evil-british-cat-lady-to-justice?skyline=true&s=i) or, perhaps most unsettling of all, their tormenting of an [11 year old girl](https://web.archive.org/web/20100919112122/http://gawker.com:80/5589103/how-the-internet-beat-up-an-11+year+old-girl) (who, to be fair, probably had it coming). To name [but a few](https://web.archive.org/web/20101007170536/http://www.artfagcity.com:80/2010/09/09/img-mgmt-what-relational-aesthetics-can-learn-from-4chan/).
 
 Long story short, anyone who knows anything about *4chan* and *Anonymous* will know that no sane person would ever risk incurring their wrath.
 
@@ -56,9 +56,9 @@ To call this hacking is being far too generous; and from a legal point of view, 
 
 **Operation Payback**
 
-A call to arms was posted on *4chan*, and various other sites, demanding [retaliation](http://i.imgur.com/14rJM.png).
+A call to arms was posted on *4chan*, and various other sites, demanding [retaliation](/images/acslaw-vs-internet/14rJM.png).
 
-This started with [revenge](http://i.imgur.com/DmleF.png) upon *AiPlex*, along with *[MPAA](http://torrentfreak.com/4chan-to-ddos-riaa-next-is-this-the-protest-of-the-future-100919/)* and *RIAA*. Then they went after notorious UK anti-piracy law firm and all-round bastards, *ACS:Law*, who have been guilty of sending out vast numbers of 'menacing' letters demanding money for copyright infringement.
+This started with [revenge](/images/acslaw-vs-internet/DmleF.png) upon *AiPlex*, along with *[MPAA](http://torrentfreak.com/4chan-to-ddos-riaa-next-is-this-the-protest-of-the-future-100919/)* and *RIAA*. Then they went after notorious UK anti-piracy law firm and all-round bastards, *ACS:Law*, who have been guilty of sending out vast numbers of 'menacing' letters demanding money for copyright infringement.
 
 The [first attack](http://torrentfreak.com/new-4chan-ddos-targets-hated-anti-piracy-law-firm-100922/) on them took the site down for a couple of hours.
 
@@ -66,7 +66,7 @@ Head of the company, Andrew Crossley, made the [remark](http://www.theregister.c
 
 > "It was only down for a few hours. I have far more concern over the fact of my train turning up 10 minutes late or having to queue for a coffee than them wasting my time with this sort of rubbish."
 
-Now I don't know about you, but [antagonising](http://localhostr.com/files/34804c/1285181519074.png) [your attackers](http://img208.imageshack.us/img208/4145/opacs4.png) seems like a poor move. Anonymous attacked again, this time knocking out the server and causing it to reset.
+Now I don't know about you, but [antagonising](http://localhostr.com/files/34804c/1285181519074.png) [your attackers](/images/acslaw-vs-internet/opacs4.png) seems like a poor move. Anonymous attacked again, this time knocking out the server and causing it to reset.
 
 But [here's](http://torrentfreak.com/acslaw-anti-piracy-law-firm-torn-apart-by-leaked-emails-100925/) what happened this time:
 
@@ -78,13 +78,13 @@ Unsurprisingly, the backups were then put of *[The Pirate Bay](http://thepirateb
 
 As of this time, there have been no reports of victim's sensitive data being used maliciously. Rather, downloaders are more interested in destroying *ACS*. And, in fact, some of the people who have downloaded the emails have tried to contact and alert the victims whose personal information has been exposed.
 
-Oh, and attacks on various other anti-piracy websites are still on going. See [here](http://www.tieve.tk/) for more information or to participate.
+Oh, and attacks on various other anti-piracy websites are still on going. See [here](https://web.archive.org/web/20100925215348/http://tieve.tk:80/) for more information or to participate.
 
 **Data Protection Breach**
 
 First of all, there's the personal information that's been leaked, including that of thousands of *[Bskyb](http://www.guardian.co.uk/media/blog/2010/sep/28/bskyb-acslaw-filesharing)* customers. This is the part of the story being reported by [various](http://www.bbc.co.uk/news/technology-11418962) [outlets](http://www.guardian.co.uk/technology/2010/sep/27/email-leak-data-online-activists).
 
-And if anything, it's that which will get *ACS* in trouble, since this is a fairly major [breach](http://www.privacyinternational.org/article.shtml?cmd%5B347%5D=x-347-566663) of the [Data Protection Act](http://en.wikipedia.org/wiki/Data_protection_act) - given that the data was unencrypted and was revealed by a clumsy server, rather than hacking (and PI acknowledge this wasn't hacking).
+And if anything, it's that which will get *ACS* in trouble, since this is a fairly major [breach](https://web.archive.org/web/20100930145957/http://www.privacyinternational.org:80/article.shtml?cmd%5B347%5D=x-347-566663) of the [Data Protection Act](http://en.wikipedia.org/wiki/Data_protection_act) - given that the data was unencrypted and was revealed by a clumsy server, rather than hacking (and PI acknowledge this wasn't hacking).
 
 Word is, the punishment will be around [£500,000](http://www.guardian.co.uk/media/2010/sep/28/filesharing-acs-law) worth of fine, plus disciplinary action from the Solicitor Regulation Authority - and this wouldn't be the first time they'd faced disciplinary action from the SRA. So even if the company isn't completely destroyed by all this, they'll still have to pay up more than twice their takings from 'infringers' (~£220,000) - and Crossley might just have to give up that Jeep Compass 2.4CVT he bragged about.
 
@@ -100,7 +100,7 @@ No. *ACS:Law* have jumped on copyright infringement as a way to make a quick buc
 
 A lot of this has been classed as "[legal blackmail](http://arstechnica.com/tech-policy/news/2010/06/straightforward-legal-blackmail-a-tale-of-p2p-lawyering.ars/)". We see [letters and emails](http://torrentfreak.com/acslaw-gay-porn-letters-target-pensioners-married-men-100925/) from a vast number of people who, quite obviously, have been wrongfully accused - including old people who are very confused by the claims - that are still paying up because they don't want to be taken to court. And in a lot of the cases the victims having to ask if they can pay in installments, since they can't afford to pay the lump sum.
 
-NB/ Consumer group *[Which?](http://www.which.co.uk/news/2010/01/acs-law-letter-writing-continues-197714)*, local councils and [judges](http://torrentfreak.com/judge-warns-of-end-to-file-sharing-cash-demands-100922/) (amongst others) have reported receiving large numbers of complaints from people who have been harassed by *ACS*.
+NB/ Consumer group *[Which?](https://web.archive.org/web/20100224082007/http://www.which.co.uk:80/news/2010/01/acs-law-letter-writing-continues-197714)*, local councils and [judges](http://torrentfreak.com/judge-warns-of-end-to-file-sharing-cash-demands-100922/) (amongst others) have reported receiving large numbers of complaints from people who have been harassed by *ACS*.
 
 From what I understand, the victims are being accused of infringing individual (porn) movies or individual songs, and in each case *ACS* are offering a settlement payment of £495 - just below the "psychological barrier" of £500.
 

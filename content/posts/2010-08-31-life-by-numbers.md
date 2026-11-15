@@ -64,7 +64,7 @@ And here are the people who think I'm interesting/funny enough to retweet:
 
 A lot of these people I don't know. Some surprises. And if any of you are reading, thank you :]
 
-Another site I look at from time to time is [TwitterAnalyzer](http://twitteranalyzer.com/). But that gives much the same information (maybe less) in a less aesthetically pleasing interface. It also seems to be borked at the moment. But there you go.
+Another site I look at from time to time is [TwitterAnalyzer](https://web.archive.org/web/20100828014524/http://www.twitteranalyzer.com/). But that gives much the same information (maybe less) in a less aesthetically pleasing interface. It also seems to be borked at the moment. But there you go.
 
 There's also this - [Twitter Grader](http://twittergrader.com/oatz). It doesn't give anything particularly insightful, but my 'grade' is *81/100*. Which is nice.
 

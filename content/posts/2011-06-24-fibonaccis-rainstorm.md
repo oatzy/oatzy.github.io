@@ -38,7 +38,7 @@ After playing around with various functions, what I settled on where that *Hails
 
 The [Collatz Conjecture](http://en.wikipedia.org/wiki/Collatz_conjecture) (also known as the hailstone numbers) works something like this
 
-[![](http://imgs.xkcd.com/comics/collatz_conjecture.png)](http://xkcd.com/710/)
+[![](/images/fibonaccis-rainstorm/collatz_conjecture.png)](http://xkcd.com/710/)
 
 Well, all except the last sentence fragment. The actual idea is that, regardless of what starting number you pick, the sequence will always end on the number 1 (full details on the [wiki page](http://en.wikipedia.org/wiki/Collatz_conjecture)).
 
@@ -117,7 +117,7 @@ I've already [mentioned above](http://youtu.be/XJtLSLCJKHE) the music based on t
 
 There was also a guy who worked out a way to convert games of [chess into music](http://jonathanwstokes.com/2011/02/14/chess-music/).
 
-And, as mention briefly in a [previous post](http://oatzy.blogspot.com/2011/04/markovs-next-tweet.html), you can go (almost) completely random and generate music using Markov chains - [for example](http://thepasqualian.com/?p=1831).
+And, as mention briefly in a [previous post](https://oatzy.github.io/2011/04/21/markovs-next-tweet.html), you can go (almost) completely random and generate music using Markov chains - [for example](http://thepasqualian.com/?p=1831).
 
 Oatzy.
 

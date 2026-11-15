@@ -72,7 +72,7 @@ But for simplicity, we're ignoring that all these eccentricities, on the assumpt
 
 **Model Affinity**
 
-I wrote a quick model of this behaviour (Python, can be viewed/downloaded [here](http://dl.dropbox.com/u/4635169/user.affinity-alt.py)).
+I wrote a quick model of this behaviour (Python, can be viewed/downloaded [here](https://github.com/oatzy/question-nobody-asked/blob/main/tumbling-part-two-over-threshold/user.affinity-alt.py)).
 
 For this model, the user's thresholds are generated uniformly - that is, all numbers in the ranges have the same probability of being chosen,
 
@@ -83,7 +83,7 @@ The user's assessment of a post is randomly generated based on a normal distribu
 
 For a simulation of *100,000* users, this model returns approximately *25,575 likes* and *14,487 reblogs*. This gives a '*reblog to like' ratio* of *0.56*.
 
-This is quite different from the *'R:L ratio'* of the Dr Who image, discussed in the [previous post](http://oatzy.blogspot.com/2011/06/tumbling-part-one-some-background.html) - which turns out to be *1.42*
+This is quite different from the *'R:L ratio'* of the Dr Who image, discussed in the [previous post](https://oatzy.github.io/2011/06/25/tumbling-part-one-some-background.html) - which turns out to be *1.42*
 
 But if we (effectively) increase the quality of the post - *mean=10*, *sd=2*, same interval - we now get approximately *32,393 likes* and *41,872 reblogs*, giving a *R:L ratio* of *1.29*
 
@@ -110,7 +110,7 @@ This would make the behaviour more uniform across multiple simulations, but woul
 
 It can be argued that, when you average over a large number of simulations, you will get (almost) identical results for both approaches. So it's ultimately a matter of preference.
 
-In [Part 3](http://oatzy.blogspot.com/2011/06/tumbling-part-three-stochastic-spread.html) of the series, I'll be looking at constructing a model of how posts spread through Tumblr, building on the model described here.
+In [Part 3](https://oatzy.github.io/2011/06/29/tumbling-part-three-stochastic-spread.html) of the series, I'll be looking at constructing a model of how posts spread through Tumblr, building on the model described here.
 
 Oatzy.
 

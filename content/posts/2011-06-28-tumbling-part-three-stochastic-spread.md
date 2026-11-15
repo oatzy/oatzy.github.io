@@ -22,11 +22,11 @@ blogger_orig_url: https://oatzy.blogspot.com/2011/06/tumbling-part-three-stochas
 
 **No SIR**
 
-So having written the [previous](http://oatzy.blogspot.com/2011/06/tumbling-part-one-some-background.html) [posts](http://oatzy.blogspot.com/2011/06/tumbling-part-two-over-threshold.html), I was wondering if this spread could be modeled. We could use the [SIR equations](http://en.wikipedia.org/wiki/Epidemic_model#The_SIR_Model), but this runs into the problems I mentioned [before](http://oatzy.blogspot.com/2010/09/social-viruses.html) - i.e. it assumes regular infection rate, approximately uniform population distribution, etc - and as the graphs showed, this is not the case with Tumblr (or Twitter, for that matter).
+So having written the [previous](https://oatzy.github.io/2011/06/25/tumbling-part-one-some-background.html) [posts](https://oatzy.github.io/2011/06/26/tumbling-part-two-over-threshold.html), I was wondering if this spread could be modeled. We could use the [SIR equations](http://en.wikipedia.org/wiki/Epidemic_model#The_SIR_Model), but this runs into the problems I mentioned [before](https://oatzy.github.io/2010/09/06/social-viruses.html) - i.e. it assumes regular infection rate, approximately uniform population distribution, etc - and as the graphs showed, this is not the case with Tumblr (or Twitter, for that matter).
 
 There are, in fact, [modifications](http://en.wikipedia.org/wiki/Epidemic_models_on_lattices) to the SIR model to make it work with irregular population distributions. But I'm not entirely familiar with these, so I'm kinda going my own way with it and hoping for the best.
 
-I should point out that, while SIR models are typically time linked, in this case we're working in '*spread over eccentricity*' (as discussed in [Part 1](http://oatzy.blogspot.com/2011/06/tumbling-part-one-some-background.html)). The effect of this is that the model won't reflect real-time spread, but rather how wide and far from the source it goes.
+I should point out that, while SIR models are typically time linked, in this case we're working in '*spread over eccentricity*' (as discussed in [Part 1](https://oatzy.github.io/2011/06/25/tumbling-part-one-some-background.html)). The effect of this is that the model won't reflect real-time spread, but rather how wide and far from the source it goes.
 
 **Scattered Clusters**
 
@@ -40,7 +40,7 @@ Pre-generating the users creates consistency, and makes it easier to keep track 
 
 **Model Mechanics**
 
-You can download the code for the completed model [here](http://dl.dropbox.com/u/4635169/tumblr.model.py) (Python)
+You can download the code for the completed model [here](https://github.com/oatzy/question-nobody-asked/blob/main/tumbling-part-three-stochastic-spread/tumblr.model.py) (Python)
 
 So the basics of the model work like this:
 
@@ -60,7 +60,7 @@ ii\) *How does the user react to the post?*
 
 *Ignore*, *like*, *reblog*? Increment counters accordingly.
 
-This bit of code is essentially the same as that discussed in [Part 2](http://oatzy.blogspot.com/2011/06/tumbling-part-two-over-threshold.html) - using the '*per-person*' approach. We also introduce a new counter, *eReblog*, which keeps track of the (cumulative) number of reblogs at each level of eccentricity.
+This bit of code is essentially the same as that discussed in [Part 2](https://oatzy.github.io/2011/06/26/tumbling-part-two-over-threshold.html) - using the '*per-person*' approach. We also introduce a new counter, *eReblog*, which keeps track of the (cumulative) number of reblogs at each level of eccentricity.
 
 iii\) *If a user reblogs, add* *their follower count* *to the 'follower counter' (fi)*
 
@@ -90,7 +90,7 @@ Below is a graph of seven example outputs of the model - ALL with the same initi
 
 Note the wide variation in behaviour. This is really the sort of thing I wanted to see.
 
-In particular, I like '*Row 8*' (dark purple) - the way it stays fairly low, then has a sudden burst at generation 4 - similar to what happened with the *Dr Who* image in [Part 1](http://oatzy.blogspot.com/2011/06/tumbling-part-one-some-background.html) (albeit with only one burst).
+In particular, I like '*Row 8*' (dark purple) - the way it stays fairly low, then has a sudden burst at generation 4 - similar to what happened with the *Dr Who* image in [Part 1](https://oatzy.github.io/2011/06/25/tumbling-part-one-some-background.html) (albeit with only one burst).
 
 We also have, in '*Row 2*' (red) a spread that starts to die out immediately, as with the *HIMYM* image (also mentioned previously).
 
@@ -132,7 +132,7 @@ Some people just don't see the post, or don't see it til much later and from som
 
 4\) Who Reblogged Who
 
-We'd have to replace the part of code where the reblogs are grouped into a single counter with code that has some sort awareness of who each user reblogged - see [Appendix I](http://oatzy.blogspot.com/2011/06/tumbling-appendix-i-making-connections.html)
+We'd have to replace the part of code where the reblogs are grouped into a single counter with code that has some sort awareness of who each user reblogged - see [Appendix I](https://oatzy.github.io/2011/06/29/tumbling-appendix-i-making-connections.html)
 
 And while we're at it, we could also build up a graph off how all these users are connected - ie, a who follows who graph. But that's not necessary.
 

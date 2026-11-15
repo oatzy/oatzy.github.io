@@ -17,7 +17,7 @@ blogger_id: tag:blogger.com,1999:blog-14769935.post-5125602504653656323
 blogger_orig_url: https://oatzy.blogspot.com/2011/01/follow-up-will-i-get-table.html
 ---
 
-So the model I talked about [last time](http://oatzy.blogspot.com/2011/01/model-cafe.html) is all well and good, but you might find yourself thinking, "well what good does it do me?"
+So the model I talked about [last time](https://oatzy.github.io/2011/01/09/model-cafe.html) is all well and good, but you might find yourself thinking, "well what good does it do me?"
 
 It's a fair question. So here's how it works.
 
@@ -73,7 +73,7 @@ Secondly, the output is mostly intellectual; that is, the output is unlikely to 
 
 And as said above, in terms of ensuring you'll get a table, the strategy for when tables are limited is to grab a table as soon as you see one free up; and hopefully before anyone else can get to it.
 
-But all that aside, the code is [here](http://dl.dropbox.com/u/4635169/cafe-predict.py) for if you want to have a play.
+But all that aside, the code is [here](https://github.com/oatzy/question-nobody-asked/blob/main/follow-up-will-i-get-table/cafe-predict.py) for if you want to have a play.
 
 Oatzy.
 

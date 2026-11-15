@@ -21,7 +21,7 @@ When the parent's work schedules both coincide with a school day, it's often my 
 
 I don't much care for it.
 
-I didn't [track](http://oatzy.blogspot.com/2011/01/life-by-numbers-end-of-year-report.html) how many times that happened last year. But out of shear curiosity, and because I can, I tried modelling the set up to get an estimate.
+I didn't [track](https://oatzy.github.io/2011/01/01/life-by-numbers-end-of-year-report.html) how many times that happened last year. But out of shear curiosity, and because I can, I tried modelling the set up to get an estimate.
 
 You could probably work it out with probability alone. But that's too much like hard work.
 
@@ -41,13 +41,13 @@ First you create three sets representing a year's worth of shifts for each of my
 
 Finally, you count on how many days, shifts and school days coincide.
 
-You can look at the code [here](http://dl.dropbox.com/u/4635169/pickup.py).
+You can look at the code [here](https://github.com/oatzy/question-nobody-asked/blob/main/quick-look-uphill-struggle/pickup.py).
 
-Since this is [another](http://oatzy.blogspot.com/2011/01/snakes-and-ladders.html) random use of the [Monte Carlo method](http://en.wikipedia.org/wiki/Monte_carlo_method) - you run the model 10,000 times and then draw a histogram of the resulting counts.
+Since this is [another](https://oatzy.github.io/2011/01/29/snakes-and-ladders.html) random use of the [Monte Carlo method](http://en.wikipedia.org/wiki/Monte_carlo_method) - you run the model 10,000 times and then draw a histogram of the resulting counts.
 
 **Hey Look!**
 
-It's a [normal distribution](http://oatzy.blogspot.com/2010/12/normal-icicles.html)
+It's a [normal distribution](https://oatzy.github.io/2010/12/08/normal-icicles.html)
 
 [![](/images/quick-look-uphill-struggle/pickup-hist.png)](/images/quick-look-uphill-struggle/pickup-hist.png)
 

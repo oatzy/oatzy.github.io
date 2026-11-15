@@ -26,7 +26,7 @@ I took the numbers for the last two weeks. I don't entirely trust them, but as a
 
 [![](/images/follow-up-twitter-bffs/BFF.jpg)](/images/follow-up-twitter-bffs/BFF.jpg)
 
-Using the method outlined in the [previous post](http://oatzy.blogspot.com/2010/10/twitter-bffs.html), the fifth column is the geometric mean of mentions (assuming a two-way connections between myself and all listed). For comparison, the fourth column is the arithmetic mean. The numbers are fairly similar.
+Using the method outlined in the [previous post](https://oatzy.github.io/2010/10/19/twitter-bffs.html), the fifth column is the geometric mean of mentions (assuming a two-way connections between myself and all listed). For comparison, the fourth column is the arithmetic mean. The numbers are fairly similar.
 
 As I said last time, I can't adjust for talkativeness. It's possible the picture would be dramatically different if I did have the numbers, but I guess we'll never know.
 

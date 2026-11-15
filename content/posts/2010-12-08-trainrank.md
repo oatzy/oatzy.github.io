@@ -18,7 +18,7 @@ blogger_orig_url: https://oatzy.blogspot.com/2010/12/trainrank.html
 
 Or StationRank. Either way, it's a misnomer, since [PageRank](http://en.wikipedia.org/wiki/Pagerank) is named after it's creator, Larry Page. But I digress.
 
-Anyway, the idea is basically this - going back to the [previously mentioned](http://oatzy.blogspot.com/2010/08/train-problem.html) train problem, in a moment of inspiration it seemed worth trying working out PageRanks for UK train network; this hopefully correlating somehow to where passengers on a given train are likely to be going.
+Anyway, the idea is basically this - going back to the [previously mentioned](https://oatzy.github.io/2010/08/26/train-problem.html) train problem, in a moment of inspiration it seemed worth trying working out PageRanks for UK train network; this hopefully correlating somehow to where passengers on a given train are likely to be going.
 
 **Stations**
 
@@ -52,7 +52,7 @@ Now obviously, there are some problems with that definition, the most obvious be
 
 It does seem to make sense to limit the ranks to given networks, since passengers have to get off the train of one network to leave the station or get on a train for another network. But at the same time, what other networks call at a given station may have an effect on the probability a passenger will get off the train at that station. Maybe.
 
-But on the other hand, it doesn't make sense to simplify to route level, since routes being straight lines, their TrainRanks would probably end up forming something close to a [normal distribution](http://oatzy.blogspot.com/2010/12/normal-icicles.html) - the middle station having the highest probability, and decreasing towards the ends.
+But on the other hand, it doesn't make sense to simplify to route level, since routes being straight lines, their TrainRanks would probably end up forming something close to a [normal distribution](https://oatzy.github.io/2010/12/08/normal-icicles.html) - the middle station having the highest probability, and decreasing towards the ends.
 
 Just some thoughts, anyway.
 

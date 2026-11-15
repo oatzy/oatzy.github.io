@@ -97,7 +97,7 @@ Well I'm glad you asked! Below is a screen-shot of a metric clock:
 
 [![](/images/decimalising-time/mertic-clock.png)](/images/decimalising-time/mertic-clock.png)
 
-It's of an actual, working (JavaScript based) clock I made. And you can watch it tick and tell the time [here](http://dl.dropbox.com/u/4635169/time/index1.htm).
+It's of an actual, working (JavaScript based) clock I made. And you can watch it tick and tell the time [here](/files/decimalising-time/index1.htm).
 
 **Drawbacks**
 

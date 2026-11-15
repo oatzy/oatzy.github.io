@@ -34,7 +34,7 @@ Which is which?
 
 The correct answer is, ours is the first one - probably evident from the vulgar language.
 
-As for the second one; I've discussed Markov generators [before](http://oatzy.blogspot.com/2011/04/markovs-next-tweet.html). In the simplest case, they work by randomly picking words based on how likely they are to follow the preceding word. This particular example was generated from the first four chapters of [Dirk Gently's Holistic Detective Agency](http://en.wikipedia.org/wiki/Dirk_Gently%27s_Holistic_Detective_Agency) (Douglas Adams) using [this site](http://www.beetleinabox.com/mkv_input.html).
+As for the second one; I've discussed Markov generators [before](https://oatzy.github.io/2011/04/21/markovs-next-tweet.html). In the simplest case, they work by randomly picking words based on how likely they are to follow the preceding word. This particular example was generated from the first four chapters of [Dirk Gently's Holistic Detective Agency](http://en.wikipedia.org/wiki/Dirk_Gently%27s_Holistic_Detective_Agency) (Douglas Adams) using [this site](https://web.archive.org/web/20120212184518/http://www.beetleinabox.com:80/mkv_input.html).
 
 How does this relate to our game?
 

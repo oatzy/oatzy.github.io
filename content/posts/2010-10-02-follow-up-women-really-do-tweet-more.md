@@ -24,7 +24,7 @@ In fact, it turns out the numbers I would've gotten with the Twitter API, I can 
 
 And what you can get in there is the date a user joined and their total number of tweets, which means you can work out a '*lifetime average*'.
 
-For those interested, [here](http://dl.dropbox.com/u/4635169/DaysCount.py) is the code that turns date joined into number of days online.
+For those interested, [here](https://github.com/oatzy/question-nobody-asked/blob/main/follow-up-women-really-do-tweet-more/DaysCount.py) is the code that turns date joined into number of days online.
 
 Anyway. I ran the numbers. Some were surprisingly close to those I got yesterday. Others were wildly out.
 

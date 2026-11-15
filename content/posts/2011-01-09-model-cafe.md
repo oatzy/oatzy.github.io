@@ -147,6 +147,6 @@ Slight alterations needed, maybe. Like for a car park, there are more spaces, bu
 
 So there you have it.
 
-My code's [here](http://dl.dropbox.com/u/4635169/cafe-model.py). It's messy, and the output is really designed to be simple, and useful to me, so don't expect it to spit out graphs - they were all made in 'post-production'. But if you're interested, it's there.
+My code's [here](https://github.com/oatzy/question-nobody-asked/blob/main/model-cafe/cafe-model.py). It's messy, and the output is really designed to be simple, and useful to me, so don't expect it to spit out graphs - they were all made in 'post-production'. But if you're interested, it's there.
 
 Oatzy.

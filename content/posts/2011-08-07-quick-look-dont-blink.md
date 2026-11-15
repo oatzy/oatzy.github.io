@@ -44,7 +44,7 @@ That's an *83.5%* chance that at least one person *will* blink. Those odds aren'
 
 So if we take *S* number of photos, what is the probability that at least one of those is 'perfect'?
 
-This goes back to the methods use in the [Law Of Truly Large Numbers](http://oatzy.blogspot.com/2011/07/with-enough-tries.html) post - the probability of at least one perfect photo, big *P*, is one minus the probability that *none* of the *S* photos are perfect:
+This goes back to the methods use in the [Law Of Truly Large Numbers](https://oatzy.github.io/2011/07/13/with-enough-tries.html) post - the probability of at least one perfect photo, big *P*, is one minus the probability that *none* of the *S* photos are perfect:
 
 *P = 1 - (1-p1)^S*
 

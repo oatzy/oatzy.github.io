@@ -23,7 +23,7 @@ Alright, let's be done with this.
 
 Just a quick reminder - what I did was collect Foursquare check-in data for various shopping centres around the UK, in the hope that the data might show something interesting.
 
-Previous blog posts on this data collecting - [Best Day to Go Shopping](http://oatzy.blogspot.com/2011/12/best-day-to-go-shopping.html), [Panic Saturday](http://oatzy.blogspot.com/2011/12/panic-saturday.html), [Christmas Eve](http://oatzy.blogspot.com/2011/12/christmas-eve.html).
+Previous blog posts on this data collecting - [Best Day to Go Shopping](https://oatzy.github.io/2011/12/10/best-day-to-go-shopping.html), [Panic Saturday](https://oatzy.github.io/2011/12/18/panic-saturday.html), [Christmas Eve](https://oatzy.github.io/2011/12/25/christmas-eve.html).
 
 Anyway, I've been collecting data for over 3 months now. And that seems like quite enough.
 
@@ -60,7 +60,7 @@ And the last thing to point out is that these are the averages over 20 shopping 
 
 And, basically, that's that.
 
-If you're interested, you can see the raw check-in data [here](http://dl.dropbox.com/u/4635169/checkins.txt).
+If you're interested, you can see the raw check-in data [here](https://github.com/oatzy/question-nobody-asked/blob/main/so-what-was-best-day-to-go-shopping/checkins.txt).
 
 Oatzy.
 

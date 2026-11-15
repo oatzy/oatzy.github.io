@@ -29,7 +29,7 @@ The short answer is no.
 
 For those interested, the data was collected like this.
 
-First, the list of nominees and winners is copied from [Wikipedia](http://en.wikipedia.org/wiki/Academy_Award_for_Best_Picture). The data is then imported into [Google Refine](http://code.google.com/p/google-refine/) to be tidied up and sorted. Then, still in Refine, the list is reconciled - that is, each film on the list is linked to the appropriate page on [FreeBase](http://www.freebase.com/).
+First, the list of nominees and winners is copied from [Wikipedia](http://en.wikipedia.org/wiki/Academy_Award_for_Best_Picture). The data is then imported into [Google Refine](http://code.google.com/p/google-refine/) to be tidied up and sorted. Then, still in Refine, the list is reconciled - that is, each film on the list is linked to the appropriate page on [FreeBase](https://web.archive.org/web/20110126131420/http://www.freebase.com:80/).
 
 Having been reconciled, extra data can then be pulled from FreeBase; and with a bit of extra coding, the Rotten Tomatoes scores can also be mined.
 

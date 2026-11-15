@@ -47,9 +47,9 @@ And if I'm honest, I enjoy doing it anyway.
 
 Or I did; We're past the interesting part, and it's all just adding content now. Which is dull.
 
-[Here](http://dearnevalleyswimmingclub.info/) is the link. ~~There's only an under-construction page there at the moment~~, and I doubt you'd be interested anyway, but with each link I post to it, the page's search rank will get incrementally better - it's currently on page 3, with the old, no-longer-functioning site dominating the first page of results.
+[Here](https://web.archive.org/web/20130415182907/http://dearnevalleyswimmingclub.info) is the link. ~~There's only an under-construction page there at the moment~~, and I doubt you'd be interested anyway, but with each link I post to it, the page's search rank will get incrementally better - it's currently on page 3, with the old, no-longer-functioning site dominating the first page of results.
 
-In fact, if you're interested, ~~you can see the work in progress design [here](http://dearnevalleyswimmingclub.info/)~~, or just look at the image below
+In fact, if you're interested, ~~you can see the work in progress design [here](https://web.archive.org/web/20130415182907/http://dearnevalleyswimmingclub.info)~~, or just look at the image below
 
 [![](/images/designing-for-free/site-design-preview.jpg)](/images/designing-for-free/site-design-preview.jpg)
 

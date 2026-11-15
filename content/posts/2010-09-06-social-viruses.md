@@ -25,7 +25,7 @@ The first example is the "*25 things*" meme that was going around Facebook a sho
 
 In the wake of this phenomenon, [Slate.com](http://www.slate.com/id/2211068) took a survey of a number of users, asking them when they first encountered the meme and if and when they participated.
 
-This information was then sent to a biology professor, who used it to model the spread of the meme through Facebook, using the ([previously mentioned](http://oatzy.blogspot.com/2010/09/modelling-zombie-apocalypse.html)) SIR model.
+This information was then sent to a biology professor, who used it to model the spread of the meme through Facebook, using the ([previously mentioned](https://oatzy.github.io/2010/09/03/modelling-zombie-apocalypse.html)) SIR model.
 
 [![](/images/social-viruses/25things.png)](/images/social-viruses/25things.png)
 
@@ -63,7 +63,7 @@ In this analogy then, the 'house' is equivalent to a relatively small and contai
 
 Celebrities, on the other hand are the man in the shopping centre, or a 'care-giver' at a hospital - they expose the 'virus' to a large number of people. And anyone who's then 'infected' will carry that on to their own network. And then it may even spread out more from there.
 
-So for a '*tweet epidemic*', a tweet/RT has to come into contact with one of these mass connectors (as [previously](http://oatzy.blogspot.com/2010/09/forced-trending-topics.html) [discussed](http://oatzy.blogspot.com/2010/09/six-degrees-and-how-we-met.html)).
+So for a '*tweet epidemic*', a tweet/RT has to come into contact with one of these mass connectors (as [previously](https://oatzy.github.io/2010/09/04/forced-trending-topics.html) [discussed](https://oatzy.github.io/2010/09/05/six-degrees-and-how-we-met.html)).
 
 **Sometimes I Just Want To Copy Someone Else's Status,..**
 
@@ -83,7 +83,7 @@ Anyway, all this complicates things - trying to model if and how a tweet will re
 
 **Visual Demonstration**
 
-These are based on a [previous](http://oatzy.blogspot.com/2010/07/follow-up-twitter-network.html) graph of my Twitter follows. For this, we pretend that this small network is completely isolated.
+These are based on a [previous](https://oatzy.github.io/2010/07/31/follow-up-twitter-network.html) graph of my Twitter follows. For this, we pretend that this small network is completely isolated.
 
 In this first one, the red circle in the middle posts a tweet. The purple circles are the people who see that tweet:
 
@@ -113,7 +113,7 @@ For example, if I post something worth RTing, at best it's going to go maybe 2 g
 
 The limitation of the SIR equations though, is that it assumes homogenous mixing of susceptible and infected - i.e. that everyone in the population has equal odds of being infected. But as with the analogy, on Twitter you get more clustering, so that's not necessarily the case.
 
-Instead, you have to use [this](http://www.utexas.edu/features/archive/2003/meyers.html) approach, where you plot out a situation-specific network graph of the system - like the above diagrams - and work from that. And given that Twitter has in excess of 4 million users, that's a little beyond my resources and inclination<em>\*\*</em>.
+Instead, you have to use [this](https://web.archive.org/web/20110430025514/http://www.utexas.edu/features/archive/2003/meyers.html) approach, where you plot out a situation-specific network graph of the system - like the above diagrams - and work from that. And given that Twitter has in excess of 4 million users, that's a little beyond my resources and inclination<em>\*\*</em>.
 
 But basically, if a tweet hits a connector, it will spread like swine-flu hysteria.
 
@@ -121,4 +121,4 @@ Oatzy.
 
 \* [TechCrunch](http://techcrunch.com/2010/08/26/twitter-human-virus/) found an earlier example on the *19th of August* - a Bieber fan with 809 followers. It's hard to say if Tim wrote the (almost identical) tweet independent of her, or if she was the true 'patient zero'.
 
-\*\* This guy crawled Twitter and got connections for most of the users (at the time of crawling). You can find this data, and his analysis, [here](http://an.kaist.ac.kr/traces/WWW2010.html).
+\*\* This guy crawled Twitter and got connections for most of the users (at the time of crawling). You can find this data, and his analysis, [here](https://web.archive.org/web/20110222063252/http://an.kaist.ac.kr/traces/WWW2010.html).

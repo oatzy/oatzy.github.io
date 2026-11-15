@@ -84,7 +84,7 @@ I decided to have a go with Twilight instead; and looking at the graph noticed t
 
 So I tried a few variations and finally found the adequately convincing "Edward Cullen" one. Just the right popularity to line up with the recession curve - and, for whatever reason, it fit the general shape quite well.
 
-The point is, if you know how to tweak the variables: the search terms, the time scale, etc. it's not that hard to lie with a fairly convincing graph. Most of the '[Sex and Lesbians](http://oatzy.blogspot.com/2010/08/google-trends.html)' ones in yesterday's post were gamed.
+The point is, if you know how to tweak the variables: the search terms, the time scale, etc. it's not that hard to lie with a fairly convincing graph. Most of the '[Sex and Lesbians](https://oatzy.github.io/2010/08/28/google-trends.html)' ones in yesterday's post were gamed.
 
 The trick for most searches is - for the year view, you'll get either a peak or a dip around Christmas/New Year; for the week/month, view you'll get peaks or dips around the weekends.
 

@@ -39,6 +39,6 @@ It was even more incomprehensible when all the chunks were the same colour. Ther
 
 The time on that one is *12:52:11*
 
-There's a working version of the first [here](http://dl.dropbox.com/u/4635169/time/time2/index.htm), and of the second [here](http://dl.dropbox.com/u/4635169/time/time2/index-alt.htm). It's written in JavaScript with the help of the [jsDraw](http://jsdraw2d.jsfiction.com/) library.
+There's a working version of the first [here](/files/needlessly-incomprehensible-clock/index.htm), and of the second [here](/files/needlessly-incomprehensible-clock/index-alt.htm). It's written in JavaScript with the help of the [jsDraw](https://web.archive.org/web/20101124141356/http://jsdraw2d.jsfiction.com:80/) library.
 
 Oatzy.

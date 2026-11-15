@@ -22,11 +22,11 @@ blogger_orig_url: https://oatzy.blogspot.com/2011/06/tumbling-appendix-i-making-
 
 **Where Things Get Interesting**
 
-Recall in [Part 3](http://oatzy.blogspot.com/2011/06/tumbling-part-three-stochastic-spread.html) (under '*Notes and Improvements*'), I mentioned the possibility of creating graphs of *how* a post spreads - ie who reblogged who.
+Recall in [Part 3](https://oatzy.github.io/2011/06/29/tumbling-part-three-stochastic-spread.html) (under '*Notes and Improvements*'), I mentioned the possibility of creating graphs of *how* a post spreads - ie who reblogged who.
 
 As it turns out it was possible. And in fact, not that difficult.
 
-You can find the modified code [here](http://dl.dropbox.com/u/4635169/tumblr.model.2.py).
+You can find the modified code [here](https://github.com/oatzy/question-nobody-asked/blob/main/tumbling-appendix-i-making-connections/tumblr.model.2.py).
 
 In addition to the outputs the previous iteration generated, this updated version also creates a '*graph.csv*' file, which contains all the links between reblogging users. This file can then be imported into, for example, [Gephi](http://gephi.org/), to create a visualisation of the graph.
 
@@ -44,7 +44,7 @@ The simulation ends when *f_i* is empty - ie, no-one reblogs.
 
 **Pretty as a Picture**
 
-So, keeping the initial conditions the same as for [Part 3](http://oatzy.blogspot.com/2011/06/tumbling-part-three-stochastic-spread.html), here is an example output
+So, keeping the initial conditions the same as for [Part 3](https://oatzy.github.io/2011/06/29/tumbling-part-three-stochastic-spread.html), here is an example output
 
 [![](/images/tumbling-appendix-i-making-connections/sample-graph.png)](/images/tumbling-appendix-i-making-connections/sample-graph.png)
 
@@ -52,7 +52,7 @@ And here if the accompanying '*spread over eccentricity*' graph.
 
 [![](/images/tumbling-appendix-i-making-connections/sample-flow.png)](/images/tumbling-appendix-i-making-connections/sample-flow.png)
 
-Compare for those visualisations in [Part 1](http://oatzy.blogspot.com/2011/06/tumbling-part-one-some-background.html)
+Compare for those visualisations in [Part 1](https://oatzy.github.io/2011/06/25/tumbling-part-one-some-background.html)
 
 I have to say, I am extremely pleased with this. I mean, just look at it! It's amazing.
 
@@ -76,7 +76,7 @@ The only things that really bother me now:
 This is probably a result of the distribution/variables chosen in creating approval thresholds.
 
 2\) There's only a small number of reblogs coming from OP.\
-This relates to the '*reblogs from tags*' thing discussed in [Part 3](http://oatzy.blogspot.com/2011/06/tumbling-part-three-stochastic-spread.html).
+This relates to the '*reblogs from tags*' thing discussed in [Part 3](https://oatzy.github.io/2011/06/29/tumbling-part-three-stochastic-spread.html).
 
 3\) Small population\
 At some point, when I've got the time to run the simulation, I'd like to try it with larger populations/larger *f0*

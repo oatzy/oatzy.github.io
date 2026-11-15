@@ -49,7 +49,7 @@ Now, this is another situation where the best numbers aren't readily available -
 1\) date started following\
 2\) total number of @replies since then
 
-This obviously raises the same problems I talked about in the [previous](http://oatzy.blogspot.com/2010/10/more-twitter-insights.html) post. But for demonstrative purposes, I'll use the number I can get.
+This obviously raises the same problems I talked about in the [previous](https://oatzy.github.io/2010/10/01/more-twitter-insights.html) post. But for demonstrative purposes, I'll use the number I can get.
 
 So for this, I'm using [Twoolr](http://twoolr.com/), over the period Sept 1 - Oct 18 (48 days).
 
@@ -67,7 +67,7 @@ Covering about 2 week. But then, that particular site's numbers haven't been ent
 
 **Accounting for Rates**
 
-Given that people tweet at [different rates](http://oatzy.blogspot.com/2010/10/follow-up-women-really-do-tweet-more.html) - and may talk a lot with almost all their follows - it would probably make sense to take this into account.
+Given that people tweet at [different rates](https://oatzy.github.io/2010/10/02/follow-up-women-really-do-tweet-more.html) - and may talk a lot with almost all their follows - it would probably make sense to take this into account.
 
 For this I would probably say take
 
@@ -93,7 +93,7 @@ Basically, how many friends *Alice* and *Bob* have in common. You could even go 
 
 [![](/images/twitter-bffs/net-map-with.png)](/images/twitter-bffs/net-map-with.png)So in general, you'd expect *Alice* to be closer friends with *Bob* than *Carol* if *Alice* and *Bob* have more friends in common - or are part of a large clique - than *Alice* and *Carol*.
 
-I updated the network map (old version [here](http://oatzy.blogspot.com/2010/07/follow-up-twitter-network.html)) to clarify this point, and also just because I can.
+I updated the network map (old version [here](https://oatzy.github.io/2010/07/31/follow-up-twitter-network.html)) to clarify this point, and also just because I can.
 
 [![](/images/twitter-bffs/net-map-wo.png)](/images/twitter-bffs/net-map-wo.png)
 

@@ -18,7 +18,7 @@ blogger_id: tag:blogger.com,1999:blog-14769935.post-1024945003950111067
 blogger_orig_url: https://oatzy.blogspot.com/2010/12/model-trains.html
 ---
 
-Continuing from the previous post on using [PageRank](http://oatzy.blogspot.com/2010/12/trainrank.html) to rank stations by 'popularity', and with the help of [Gephi](http://gephi.org/) - which makes it ridiculously easy to built network graphs and work PageRank out - I built the [Virgin Pendolino](http://www.virgintrains.co.uk/routes-stations/) lines, and they look like this
+Continuing from the previous post on using [PageRank](https://oatzy.github.io/2010/12/08/trainrank.html) to rank stations by 'popularity', and with the help of [Gephi](http://gephi.org/) - which makes it ridiculously easy to built network graphs and work PageRank out - I built the [Virgin Pendolino](http://www.virgintrains.co.uk/routes-stations/) lines, and they look like this
 
 [![](/images/model-trains/pendolino.jpg)](/images/model-trains/pendolino.jpg)
 
@@ -26,7 +26,7 @@ I then worked out PageRanks and picked a route I'm failiar with - the one that g
 
 **Old Model**
 
-Going back to the equation I outlined in the [first train post](http://oatzy.blogspot.com/2010/08/train-problem.html), the number of passenger on the train at station *i* is modelled by
+Going back to the equation I outlined in the [first train post](https://oatzy.github.io/2010/08/26/train-problem.html), the number of passenger on the train at station *i* is modelled by
 
 [![](/images/train-problem/Train-Eqn.png)](/images/train-problem/Train-Eqn.png)
 
@@ -70,7 +70,7 @@ Realistically, I should try the same for other routes to see if the same happens
 
 **Other Factors**
 
-And that's that. So the only other thing that would affect passenger numbers on a per-station basis is [rush-hour effects](http://oatzy.blogspot.com/2010/12/rush-hour.html). This is significant over longer routes mainly, but it's significant bacause it affects the passengers getting on at a particular station differently to how it affects those getting off - this creates a disparity that doesn't cancel itself out like the above.
+And that's that. So the only other thing that would affect passenger numbers on a per-station basis is [rush-hour effects](https://oatzy.github.io/2010/12/30/rush-hour.html). This is significant over longer routes mainly, but it's significant bacause it affects the passengers getting on at a particular station differently to how it affects those getting off - this creates a disparity that doesn't cancel itself out like the above.
 
 But at the same time, thanks to the [Department of Transport](http://www.dft.gov.uk/pgr/statistics/), we do have numbers to work from for that. Then we just need to put together that model and multiply by some number - which can be found by counting, say, the number of people on the platform - and we hopefully have a pretty got estimation of whether or not you'll get a seat.
 
