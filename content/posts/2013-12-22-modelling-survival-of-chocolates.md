@@ -50,15 +50,15 @@ So, in the model, each person will pick a random chocolate based on this prefere
 
 We have a box of N chocolates total. There are m different types of chocolate, with each type i=1,..,m having a count of ni such that 
 
-[![](/images/modelling-survival-of-chocolates/eqn1.png)](/images/modelling-survival-of-chocolates/eqn1.png)
+$$ \sum_{i=1}^{m} n_i = N $$
 
 Each type also has a 'preference probability' pi with 0 \<= pi \<= 1 and
 
-[![](/images/modelling-survival-of-chocolates/eqn2.png)](/images/modelling-survival-of-chocolates/eqn2.png)
+$$ \sum_{i=1}^{m} p_i = 1 $$
 
 In each time step dt an individual randomly chooses a type of chocolate, i in {1,..\.,m}, based on the preference distribution, and one chocolate of that type is removed from the box according to 
 
-[![](/images/modelling-survival-of-chocolates/eqn3.png)](/images/modelling-survival-of-chocolates/eqn3.png)
+$$ n_i(t) = \begin{cases} n_i(t - \delta t) - 1 & \text{if } n_i(t - \delta t) > 0 \\ 0 & \text{otherwise} \end{cases} $$
 
 This process is repeated until N(t) = 0
 
@@ -70,15 +70,15 @@ In the simplest model, one person chooses a single chocolate in each time step. 
 
 For each type of chocolate we have the rate of consumption given by
 
-[![](/images/modelling-survival-of-chocolates/eqn4.png)](/images/modelling-survival-of-chocolates/eqn4.png)
+$$ \frac{dn_i}{dt} = -p_i\, n_i $$
 
 which has standard (exponential decay) solution 
 
-[![](/images/modelling-survival-of-chocolates/eqn5.png)](/images/modelling-survival-of-chocolates/eqn5.png)
+$$ n_i(t) = n_i(0) \cdot e^{-p_i t} $$
 
 And since the total count N is just the sum of the individual counts ni we get the full solution
 
-[![](/images/modelling-survival-of-chocolates/eqn6.png)](/images/modelling-survival-of-chocolates/eqn6.png)
+$$ N(t) = \sum_{i=1}^{m} n_i(0) \cdot e^{-p_i t} $$
 
 In other words, it's just the sum of several exponential decays (with different decay rates) - making it, roughly, an exponential decay itself. 
 
@@ -86,7 +86,7 @@ In other words, it's just the sum of several exponential decays (with different 
 
 In particular, in the special case where all the chocolates are equally preferred such that pi = p for all i=1,..,m we get the solution
 
-[![](/images/modelling-survival-of-chocolates/eqn7.png)](/images/modelling-survival-of-chocolates/eqn7.png)
+$$ N(t) = N(0) \cdot e^{-pt} $$
 
 And all that is loosely what was observed on the hospital wards. 
 

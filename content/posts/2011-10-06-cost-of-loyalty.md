@@ -85,7 +85,7 @@ All of this also goes for Tesco, and Waterstones, and wherever else does money-f
 
 If we call this value [rho](http://en.wikipedia.org/wiki/Rho) (which looks a bit like a lower-case p), then the general formulas are:
 
-[![](/images/cost-of-loyalty/loyalty-formulas.png)](/images/cost-of-loyalty/loyalty-formulas.png)
+$$ N = \mathit{ceil}\left(\frac{P}{\rho \cdot \mathit{fl}(P)}\right) \qquad \%S = \frac{1}{N+1} $$
 
 But again, we're assuming you spend approximately the same amount (P) every time you visit a given place. If not, things get tricky. For a rough estimate, one thing we can try is using an average per visit spend (Pbar).
 

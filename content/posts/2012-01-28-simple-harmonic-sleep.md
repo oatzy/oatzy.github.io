@@ -43,13 +43,13 @@ I'm not sure what the sleep-based analogy for damping would be.
 
 There's a standard equation for defining a (weakly) damped harmonic oscillator. It looks like this:
 
-[![](/images/simple-harmonic-sleep/78730_0.png)](/images/simple-harmonic-sleep/78730_0.png)
+$$ A_0e^{-\gamma t}cos(\omega t + \phi) + C $$
 
 Where:- *A0* is the initial displacement, the *e* bit is the decaying term, *gamma* is the damping coefficient (which determines how quickly the oscillations decay), *cos()* is the oscillating term, *omega* is the (damped) frequency of oscillation, *t* is time (in days), *phi* is the phase shift, and *C* is the equilibrium amplitude.
 
 So working out the variables from the data, the model equation for my sleep looks something like this
 
-[![](/images/simple-harmonic-sleep/79122_0.png)](/images/simple-harmonic-sleep/79122_0.png)
+$$ 2.2e^{-0.996t}cos(\pi t + \pi) + 8.3 $$
 
 And the graph looks like this
 
@@ -65,7 +65,7 @@ In fact, you might notice the real data is still oscillating a little. But the e
 
 To account for this, we could add a baseline oscillation term
 
-[![](/images/simple-harmonic-sleep/79124_0.png)](/images/simple-harmonic-sleep/79124_0.png)
+$$ Ae^{-\gamma t}cos(\omega t + \phi) + A_0cos(\omega_0t + \phi_0) + C $$
 
 And fitting the data again, here's what the graph looks like
 

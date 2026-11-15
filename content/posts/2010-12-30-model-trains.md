@@ -32,7 +32,7 @@ Going back to the equation I outlined in the [first train post](https://oatzy.gi
 
 So now, we define
 
-[![](/images/model-trains/T-eqn.png)](/images/model-trains/T-eqn.png)
+$$ T(i, j) = a \cdot P(i)P(j) $$
 
 Where *P(i)* is the PageRank of station *i*, and *a* is some constant. We then work out 'passenger' numbers for each stop and get the graph below
 
@@ -48,7 +48,7 @@ So the question then was, how significant is the wiggliness that's left in the y
 
 For this, we imagine a train with the same number of stops (10) as above, but where *T(i,j)=1* for all stations *i,j* - i.e. there's only one person going between each pair of stops. And the nice thing about this is that the above monstrocity of an equation reduces to
 
-[![](/images/model-trains/simple-eqn.png)](/images/model-trains/simple-eqn.png)
+$$ N_i = i(n - i) $$
 
 where *i* is the current station's position on the route and *n* is the total number of stops.
 

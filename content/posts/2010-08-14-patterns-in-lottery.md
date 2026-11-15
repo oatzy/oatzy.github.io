@@ -72,7 +72,7 @@ The way you work out your odds of winning the lottery is relatively straight-for
 
 Now, again, I can't remember how I derived this, but the probability of the *i-th* ball being *x* (when the balls are put in numerical order) is given by:
 
-[![](/images/patterns-in-lottery/lotto-eqn-1.png)](/images/patterns-in-lottery/lotto-eqn-1.png)
+$$ \begin{aligned} p_i(x) &= C^{x-1}_{i-1} \times C^{49-x}_{6-i} \\ &= 0 \;\; \text{for} \;\; x < i,\; x > 43 + i \end{aligned} $$
 
 And using that, we see what the plots above should actually look like:
 
@@ -84,7 +84,7 @@ Which is the exact same shape, only smoother (as you'd expect).
 
 So say you want to know the probability of a certain (ordered) sequence, you just take the product,
 
-[![](/images/patterns-in-lottery/lotto-eqn-2.png)](/images/patterns-in-lottery/lotto-eqn-2.png)
+$$ p(seq) = \prod p_i(x_i) \;\; \text{with} \;\; x_i < x_{i+1} $$
 
 But that's where a problem arises.
 

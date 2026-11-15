@@ -120,7 +120,7 @@ Now, we're given a new piece of information - this mystery person's height is 5'
 
 This is where [Bayes' Theorem](http://en.wikipedia.org/wiki/Bayes%27_theorem) comes in. It looks like this
 
-[![](/images/dark-matter-and-machine-learning/bayes-theorem.png)](/images/dark-matter-and-machine-learning/bayes-theorem.png)
+$$ p(H|\Theta) = \frac{p(\Theta|H)\; p(H)}{p(\Theta)} $$
 
 Basically, this calculates the probability of a hypothesis (H) given some observation/evidence (O). p(H\|O) is called the [posterior probability](http://en.wikipedia.org/wiki/Posterior_probability).
 
@@ -156,7 +156,7 @@ Let's go back to EMI - we can ask, what is the probability that an event is EMI-
 
 Using Bayes' Theorem, we have
 
-[![](/images/dark-matter-and-machine-learning/emi-bayes.png)](/images/dark-matter-and-machine-learning/emi-bayes.png)
+$$ p(E|emi = 30) = \frac{p(emi = 30|E)\; p(E)}{p(emi = 30|E)\; p(E) + p(emi = 30|!E)\; p(!E)} $$
 
 Now we need to calculate the probabilities. We're going to assume we have a training set of (31) events that have already been classified. From this we can calculate/estimate these probabilities.
 
@@ -178,13 +178,13 @@ In other words, an event with an emi value of 30 is almost certainly an EMI-type
 
 For the full Naive Bayes Classifier, you just repeat the process above for all the parameters, then combine the probabilities. For example, the probability that an event is noise given its log-meantime value and peak number, would be given by
 
-[![](/images/dark-matter-and-machine-learning/noise-bayes.png)](/images/dark-matter-and-machine-learning/noise-bayes.png)
+$$ p(N|logMT, peaks) = p(N)\,\frac{p(logMT|N)}{p(logMT)}\,\frac{p(peaks|N)}{p(peaks)} $$
 
 It's 'naive' because it assumes all the parameters are independent of each other. This isn't strictly true, but it's an acceptable approximation.
 
 In fact, in practice, rather than calculating the probability, we calculate the '[log-likelihood ratio](http://en.wikipedia.org/wiki/Log-likelihood_ratio)'
 
-[![](/images/dark-matter-and-machine-learning/log-likelihood.png)](/images/dark-matter-and-machine-learning/log-likelihood.png)
+$$ ln\left(\frac{p(N|\mathbf{P})}{p(S|\mathbf{P})}\right) = ln\left(\frac{p(N)}{p(S)}\right) + \sum_i ln\left(\frac{p(P_i|N)}{p(P_i|S)}\right) $$
 
 where Pi are the various parameters. From that it's pretty straightforward to extract the probability that an event is noise given its parameters. Alternatively, we can just say that if the log-likelihood is greater than 0 - if the probability of being noise is greater than the probability of being signal - then the pulse is classified as noise.
 
@@ -218,7 +218,7 @@ One approach to this optimisation is a '[nearest neighbour search](http://en.wik
 
 We can find the distance of each point from (1,0) using Pythagoras, making the scoring function
 
-[![](/images/dark-matter-and-machine-learning/score.png)](/images/dark-matter-and-machine-learning/score.png)
+$$ Score = \left(1 - \frac{N_i}{N}\right)^2 + \left(\frac{S_i}{S}\right)^2 $$
 
 which we want to minimise.
 
@@ -226,13 +226,13 @@ There is one caveat though - a cut that, for example, removes 10% of the signal 
 
 To differentiate the two cases we can use the angle between the point and the noise-axis
 
-[![](/images/dark-matter-and-machine-learning/angle-score.png)](/images/dark-matter-and-machine-learning/angle-score.png)
+$$ \theta = \arctan\left(\frac{\frac{S_i}{S}}{1 - \frac{N_i}{N}}\right) $$
 
 So if, for example, we want to save as much signal as possible then we want to minimise the angle. Or perhaps for a better balance between removing signal and noise, we should prefer the cut that gives an angle closest to 45deg. For myself, I prefer to save as much signal as possible. In practice, however, having two or more cuts with the same distance score is rare.
 
 When it comes to reporting the (distance) scores, they are re-formatted as
 
-[![](/images/dark-matter-and-machine-learning/score-alt.png)](/images/dark-matter-and-machine-learning/score-alt.png)
+$$ Score = 1 - \sqrt{2\left(1 - \frac{N_i}{N}\right)^2 + 2\left(\frac{S_i}{S}\right)^2} $$
 
 This gives a score of 1 for a cut that removes all noise and no signal, a score of -1 for a cut that removes all signal and no noise, a score of 0 for a cut that removes no signal or noise at all, etc. This score could be used in the optimisation algorithm (where it would need to be maximised), but the results would be the same, and the Pythagorean distance is easier to calculate.
 

@@ -95,7 +95,7 @@ I'm not going to go through the derivation, but basically you work out each hand
 
 The equation looks like this
 
-[![](/images/miscellaneous-crap/clock-hands.png)](/images/miscellaneous-crap/clock-hands.png)
+$$ T = H \;\, \mathit{hrs} + \frac{60}{11}H \;\, \mathit{mins} $$
 
 Where, *H* is hours - 0 to 11 - and the minute fraction is rounded to the nearest whole number.
 
@@ -109,7 +109,7 @@ That is, when will I match his number of tweets? This is something I worked out 
 
 So first of all we have to assume that our rates of tweeting can be considered approximately constant when averaged over some period of time. So say my rate is *r_1* and his is *r_2*. If we assume that I post more tweets a day than him, then my relative speed of tweeting is
 
-[![](/images/miscellaneous-crap/dr.png)](/images/miscellaneous-crap/dr.png)
+$$ r_1 - r_2 $$
 
 (If his rate is greater than mine, then I'll 'never' catch up.)
 
@@ -117,7 +117,7 @@ You then take the difference between my tweets and his - i.e. how much I have to
 
 So then *rate = tweets/time*, or, *time = tweets/rate*
 
-[![](/images/miscellaneous-crap/catch.png)](/images/miscellaneous-crap/catch.png)
+$$ t = \frac{d}{r_1 - r_2} $$
 
 If rate is in tweets per day, then time is in days.
 
@@ -129,13 +129,13 @@ I wrote a program for this, that you can look at [here](https://github.com/oatzy
 
 How many cards, *c*, does it take to build a house of cards *n* levels high?
 
-[![](/images/miscellaneous-crap/cards.png)](/images/miscellaneous-crap/cards.png)
+$$ c = \frac{1}{2}n(3n + 1) $$
 
 If you want to know how that's worked out, feel free to ask.
 
 From that, we can rearrange to get the highest 'house' we can build with *c* cards
 
-[![](/images/miscellaneous-crap/clevels.png)](/images/miscellaneous-crap/clevels.png)
+$$ n = \frac{1}{6}\left(\sqrt{(1 + 24c)} - 1\right) $$
 
 So for a standard pack of 52 cards, the highest house you can build is *5 levels* high (with 12 cards left over). To Build a 6 level house you'd need 5 more cards.
 

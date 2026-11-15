@@ -52,7 +52,7 @@ Still with me?
 
 Your resulting function looks like this,
 
-[![](/images/perfect-price/erfc.gif)](/images/perfect-price/erfc.gif)
+$$ \frac{x}{2}\,\mathrm{erfc}\left(\frac{x - 10}{2.5\sqrt{2}}\right) $$
 
 *(before being multiplied by the sample size)*
 

@@ -30,7 +30,7 @@ The values T_i now represents the post rate of each user - that is, the number o
 
 Here is the full, modified equation for the model
 
-[![](/images/social-posting-part-two-we-post/coherence-eqn-full-alt.png)](/images/social-posting-part-two-we-post/coherence-eqn-full-alt.png)
+$$ T(n) = \alpha \cdot W \cdot T(n - 1) + \beta $$
 
 **Two More Things**
 
@@ -46,7 +46,7 @@ Alpha is a little more complicated. But loosely speaking, its values relate to t
 
 It works like this: first, imagine everyone has some maximum post rate. Tbar (T with a line over the top) is the column matrix of these values. Now, suppose everyone is posting at their maximum rate. Alpha values are calculated by rearranging the model equation, thus
 
-[![](/images/social-posting-part-two-we-post/alpha-definition.png)](/images/social-posting-part-two-we-post/alpha-definition.png)
+$$ \alpha_i = \frac{\bar{T}_i - \beta_i}{W_i \cdot \bar{T}} $$
 
 Any negative values in W are set to 0, since (in theory) a user has their highest post rate when any of their antagonist are not online.
 
@@ -56,7 +56,7 @@ For technical reasons alpha is a [diagonal matrix](http://en.wikipedia.org/wiki/
 
 Alpha and Beta look like this
 
-[![](/images/social-posting-part-two-we-post/alpha-beta.png)](/images/social-posting-part-two-we-post/alpha-beta.png)
+$$ \alpha = \begin{pmatrix} \alpha_1 & 0 & 0 & 0 \\ 0 & \alpha_2 & 0 & 0 \\ 0 & 0 & \alpha_3 & 0 \\ 0 & 0 & 0 & \alpha_4 \end{pmatrix} \qquad \beta = \begin{pmatrix} \beta_1 \\ \beta_2 \\ \beta_3 \\ \beta_4 \end{pmatrix} $$
 
 They won't all ways be size 4, of course. Their size will depend on the size of each particular network. The values of alpha and beta could vary over time, but for all intents and purposes, it will suffice to hold them constant.
 
@@ -154,15 +154,15 @@ So in the antagonist examples above, we could say that A is more important to th
 
 For this, we define some arbitrary function, E(n). We then multiply our model equation by this function
 
-[![](/images/social-posting-part-two-we-post/external-modifier.png)](/images/social-posting-part-two-we-post/external-modifier.png)
+$$ T'_i(n) = E_i(n) \cdot T_i(n) $$
 
 So for the example last time, where we removed two users C and D, then later reintroduced C, the function(s), E(n), might look like this
 
-[![](/images/social-posting-part-two-we-post/example-external-conditions.png)](/images/social-posting-part-two-we-post/example-external-conditions.png)
+$$ \begin{aligned} E_1(n) &= \{\, 1 \;\; : \;\; n \ge 0 & \qquad E_2(n) &= \{\, 1 \;\; : \;\; n \ge 0 \\[1ex] E_3(n) &= \begin{cases} 0 & : \;\; 1 \le n \le 3 \\ 1 & : \;\; \textit{otherwise} \end{cases} & \qquad E_4(n) &= \begin{cases} 0 & : \;\; 1 \le n \le 5 \\ 1 & : \;\; \textit{otherwise} \end{cases} \end{aligned} $$
 
 Or, if some major news story broke between n=2 and 5, then the function might look like this
 
-[![](/images/social-posting-part-two-we-post/example-external-breakingnews.png)](/images/social-posting-part-two-we-post/example-external-breakingnews.png)
+$$ E_i(n) = \begin{cases} 3 & : \;\; 2 \le n \le 5 \\ 1 & : \;\; \textit{otherwise} \end{cases} \qquad \forall\, i $$
 
 So, if we were to, say, remove A (indefinitely) from the top system above, then the result would look like this
 

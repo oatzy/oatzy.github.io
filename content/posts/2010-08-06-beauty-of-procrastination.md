@@ -28,7 +28,7 @@ Which is as simple as saying, if there's nothing undesirable to do, then everyth
 
 This can all be put mathematically - something like this:
 
-[![](/images/beauty-of-procrastination/procrastination-formula-edit.png)](/images/beauty-of-procrastination/procrastination-formula-edit.png)
+$$ \begin{gathered} n = \max(i) \;\; \text{st} \;\; D(T_0) < D(T_i) \le D(T_{i-1}) \\ \text{since} \;\; D(T_0) \propto 1/I(T_0) \\ \text{as} \;\; I(T_0) \to \infty:\; D(T_0) \to 0, \;\; \text{so} \;\; n \to \infty \\ \text{therefore} \;\; n \propto I(T_0) \;\; \Rightarrow \;\; n = k \cdot I(T_0) \end{gathered} $$
 
 where *D(T)* is desirability of task *T*, *I(T)* is importance of the task, *T_0* is the required task and *k* is the procrastination coefficient - *k* being dependent on a number of factors.
 
@@ -48,7 +48,7 @@ which has the same general shape as the previous one, but behaves differently at
 
 Now, the '*threshold of distraction*', i.e. the point at which you'll start to procrastinate is then given by
 
-[![](/images/beauty-of-procrastination/formula4.png)](/images/beauty-of-procrastination/formula4.png)
+$$ \min(n) \;\; \text{st} \;\; D(T_n) > D(T_0) \;\; \text{with} \;\; t_d \text{ of } T_n < x \text{ minutes} $$
 
 where *x* relates to a person's will-power and, to an extent *I(T_0)*, amongst other things - it usually works out around 5 minutes, and in practice *T_n* will usually be something like checking email/Facebook/Twitter, and the likes.
 

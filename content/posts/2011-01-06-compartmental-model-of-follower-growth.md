@@ -51,7 +51,7 @@ The proportion, *u*, can be thought of as (the inverse of) your '*retention rate
 
 And from all this, you get a system of differential equations,
 
-[![](/images/compartmental-model-of-follower-growth/SIR-simple-eqns.png)](/images/compartmental-model-of-follower-growth/SIR-simple-eqns.png)
+$$ \begin{aligned} \frac{dS}{dt} &= -fS \\ \frac{dI}{dt} &= fS - uI + rR \\ \frac{dR}{dt} &= uI - rR \end{aligned} $$
 
 Now these aren't solvable, in the sense that you can't get an equation *I(t)* which will tell you that, say, after a week on Twitter you'll have 5 followers, after a month, 20, etc.
 

@@ -88,23 +88,23 @@ Each section of grid is roughly a diamond, with all sides about the same length
 
 So with a bit of trigonometry, you can get an approximate equation for the area of this diamond
 
-[![](/images/is-there-formula-for-perfect-christmas/ad.png)](/images/is-there-formula-for-perfect-christmas/ad.png)
+$$ A \approx \frac{s^2}{2}\tan(\theta) $$
 
 Then, the density is one over that area (since there's one light per grid diamond).
 
 We then multiply this density by the total [conic surface area](http://en.wikipedia.org/wiki/Cone#Surface_area) (excluding the base) to get the total number of lights needed
 
-[![](/images/is-there-formula-for-perfect-christmas/124319_0.png)](/images/is-there-formula-for-perfect-christmas/124319_0.png)
+$$ N_l = \frac{2\pi r \cot(\theta)}{s^2}\sqrt{r^2 + h^2} $$
 
 And, finally, multiplying that by the separation between lights (s), we get the total length needed:
 
-[![](/images/is-there-formula-for-perfect-christmas/124317_0.png)](/images/is-there-formula-for-perfect-christmas/124317_0.png)
+$$ L_l = \frac{2\pi r \cot(\theta)}{s}\sqrt{r^2 + h^2} $$
 
 Easy. Though, somewhat more complicated than the *L = pi\*h* equation, derived by SUMS.
 
 So, then, for the triangular grid (theta=60), you get
 
-[![](/images/is-there-formula-for-perfect-christmas/ll60.png)](/images/is-there-formula-for-perfect-christmas/ll60.png)
+$$ L_l = \frac{2\pi r}{\sqrt{3}s}\sqrt{r^2 + h^2} $$
 
 Cool.
 
@@ -136,7 +136,7 @@ Where tinsel differs from lights is, you're not trying to set up a grid, or get 
 
 Here's where things get messy; the [equation](http://mathworld.wolfram.com/ConicalSpiral.html) for the length of a spiral on the surface of a cone is given by
 
-[![](/images/is-there-formula-for-perfect-christmas/124327_0.png)](/images/is-there-formula-for-perfect-christmas/124327_0.png)
+$$ L_t = \frac{h}{2}\sqrt{1 + r^2(1 + a^2h^2)} + \frac{1 + r^2}{2ar}\sinh^{-1}\left(\frac{arh}{\sqrt{1 + r^2}}\right) \quad \text{with} \;\; a = \frac{2\pi}{\triangle h} $$
 
 I know, right? Maybe you would be better using the SUMS equation for this one.
 
@@ -144,7 +144,7 @@ I know, right? Maybe you would be better using the SUMS equation for this one.
 
 The star/angel is going to be some fraction of the height of the tree.
 
-[![](/images/is-there-formula-for-perfect-christmas/hs.png)](/images/is-there-formula-for-perfect-christmas/hs.png)
+$$ H_s = \alpha \cdot h $$
 
 I don't know what the ideal value of the fraction (alpha) would be, but the 10th they came up with seems reasonable.
 
@@ -152,7 +152,7 @@ Baubles, I haven't a clue how they came up with those numbers. The factor of sqr
 
 You would probably want to figure it out as some ideal ornament surface density, Db (like with the lights). In this case, the number of baubles needed would be something like
 
-[![](/images/is-there-formula-for-perfect-christmas/nb.png)](/images/is-there-formula-for-perfect-christmas/nb.png)
+$$ N_b = D_b \cdot \pi r\sqrt{r^2 + h^2} $$
 
 In fact, if your baubles are all, more or less, the same, you can lay them out on a grid, like the lights. Though, this time, you'd want to have them a little more spaced out, since baubles are much bigger than fairy-lights. But at least this time you don't have the separation constraint.
 

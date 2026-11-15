@@ -1,0 +1,979 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Equation Review</title>
+<script>window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']], processEscapes: false } };</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@4.1.3/tex-chtml.js"></script>
+<style>
+:root { --bg: #f8f8f8; --card: #fff; --text: #222; --muted: #666; --accent: #c2410c; --line: #ddd; }
+body { margin: 0 auto; max-width: 1100px; padding: 16px; background: var(--bg); color: var(--text); font: 15px/1.5 system-ui, sans-serif; }
+h1 { color: var(--accent); } h2 { margin-top: 2em; border-bottom: 2px solid var(--accent); }
+article { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 12px; margin: 12px 0; }
+article.conf-medium, article.conf-low { border-left: 5px solid var(--accent); }
+.meta { color: var(--muted); font-size: 13px; } .conf { font-weight: 600; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: center; }
+@media (max-width: 700px) { .pair { grid-template-columns: 1fr; } }
+figure { margin: 0; overflow-x: auto; } figcaption { font-size: 12px; color: var(--muted); }
+img { max-width: 100%; background: #fff; }
+pre { background: #f3f3f3; padding: 8px; overflow-x: auto; font-size: 12px; white-space: pre-wrap; word-break: break-all; }
+.note { margin: 4px 0 0; font-size: 13px; color: var(--accent); }
+</style></head><body>
+<h1>Equation images → LaTeX</h1>
+<p>136 proposals in 25 posts; 6 not high confidence (orange edge).
+Compare each image with its LaTeX render, then mark <code>approved</code> y/n in <code>_migration/phase7-equations.tsv</code>
+(or fix the LaTeX in its <code>new</code> column) and re-run <code>make_phase7_review.py</code>.</p>
+<ul><li><a href="#p0">2010-08-06-beauty-of-procrastination</a></li><li><a href="#p1">2011-01-06-compartmental-model-of-follower-growth</a></li><li><a href="#p2">2011-10-06-cost-of-loyalty</a></li><li><a href="#p3">2014-10-14-dark-matter-and-machine-learning</a></li><li><a href="#p4">2014-08-11-how-long-will-prime-number-be</a></li><li><a href="#p5">2014-09-18-icebucketchallenge-viral-campaign</a></li><li><a href="#p6">2012-12-15-is-there-formula-for-perfect-christmas</a></li><li><a href="#p7">2010-08-30-miscellaneous-crap</a></li><li><a href="#p8">2010-12-30-model-trains</a></li><li><a href="#p9">2013-12-22-modelling-survival-of-chocolates</a></li><li><a href="#p10">2010-08-14-patterns-in-lottery</a></li><li><a href="#p11">2011-04-22-perfect-price</a></li><li><a href="#p12">2010-08-09-procrastination-dieting-and-will-power</a></li><li><a href="#p13">2010-12-29-rush-hour</a></li><li><a href="#p14">2012-05-29-sexuality-and-population-dynamics</a></li><li><a href="#p15">2012-07-02-sharing-burger-between-three</a></li><li><a href="#p16">2012-01-28-simple-harmonic-sleep</a></li><li><a href="#p17">2011-07-30-social-posting-part-one-whos-online</a></li><li><a href="#p18">2011-07-31-social-posting-part-two-we-post</a></li><li><a href="#p19">2010-08-07-tilting-coffee-cup</a></li><li><a href="#p20">2011-08-03-toilet-seat-conundrum</a></li><li><a href="#p21">2012-06-24-too-many-lotteries</a></li><li><a href="#p22">2010-08-26-train-problem</a></li><li><a href="#p23">2011-07-24-tumbling-appendix-ii-getting-formal</a></li><li><a href="#p24">2010-10-18-twitter-bffs</a></li><li><a href="#mixed">Mixed images (left as images)</a></li></ul>
+<section><h2 id="p0">2010-08-06-beauty-of-procrastination <small>(2)</small></h2><article class="conf-high">
+  <div class="meta"><code>formula4.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/beauty-of-procrastination/formula4.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\min(n) \;\; \text{st} \;\; D(T_n) &gt; D(T_0) \;\; \text{with} \;\; t_d \text{ of } T_n &lt; x \text{ minutes}\]</div></figure>
+  </div>
+  <pre>\min(n) \;\; \text{st} \;\; D(T_n) &gt; D(T_0) \;\; \text{with} \;\; t_d \text{ of } T_n &lt; x \text{ minutes}</pre><p class="note">Words (&#x27;st&#x27;, &#x27;with&#x27;, &#x27;of&#x27;, &#x27;minutes&#x27;) were italic in the image; shown upright here.</p>
+</article><article class="conf-high">
+  <div class="meta"><code>procrastination-formula-edit.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/beauty-of-procrastination/procrastination-formula-edit.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\begin{gathered} n = \max(i) \;\; \text{st} \;\; D(T_0) &lt; D(T_i) \le D(T_{i-1}) \\ \text{since} \;\; D(T_0) \propto 1/I(T_0) \\ \text{as} \;\; I(T_0) \to \infty:\; D(T_0) \to 0, \;\; \text{so} \;\; n \to \infty \\ \text{therefore} \;\; n \propto I(T_0) \;\; \Rightarrow \;\; n = k \cdot I(T_0) \end{gathered}\]</div></figure>
+  </div>
+  <pre>\begin{gathered} n = \max(i) \;\; \text{st} \;\; D(T_0) &lt; D(T_i) \le D(T_{i-1}) \\ \text{since} \;\; D(T_0) \propto 1/I(T_0) \\ \text{as} \;\; I(T_0) \to \infty:\; D(T_0) \to 0, \;\; \text{so} \;\; n \to \infty \\ \text{therefore} \;\; n \propto I(T_0) \;\; \Rightarrow \;\; n = k \cdot I(T_0) \end{gathered}</pre><p class="note">Lines were staggered in the image; centred here.</p>
+</article></section><section><h2 id="p1">2011-01-06-compartmental-model-of-follower-growth <small>(1)</small></h2><article class="conf-high">
+  <div class="meta"><code>SIR-simple-eqns.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/compartmental-model-of-follower-growth/SIR-simple-eqns.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\begin{aligned} \frac{dS}{dt} &amp;= -fS \\ \frac{dI}{dt} &amp;= fS - uI + rR \\ \frac{dR}{dt} &amp;= uI - rR \end{aligned}\]</div></figure>
+  </div>
+  <pre>\begin{aligned} \frac{dS}{dt} &amp;= -fS \\ \frac{dI}{dt} &amp;= fS - uI + rR \\ \frac{dR}{dt} &amp;= uI - rR \end{aligned}</pre>
+</article></section><section><h2 id="p2">2011-10-06-cost-of-loyalty <small>(1)</small></h2><article class="conf-medium">
+  <div class="meta"><code>loyalty-formulas.png</code> · <span class="conf">medium</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/cost-of-loyalty/loyalty-formulas.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[N = \mathit{ceil}\left(\frac{P}{\rho \cdot \mathit{fl}(P)}\right) \qquad \%S = \frac{1}{N+1}\]</div></figure>
+  </div>
+  <pre>N = \mathit{ceil}\left(\frac{P}{\rho \cdot \mathit{fl}(P)}\right) \qquad \%S = \frac{1}{N+1}</pre><p class="note">The post calls the floor function f() but the image shows &#x27;fl&#x27; (italic); kept as &#x27;fl&#x27;. Could be changed to f to match the text.</p>
+</article></section><section><h2 id="p3">2014-10-14-dark-matter-and-machine-learning <small>(7)</small></h2><article class="conf-high">
+  <div class="meta"><code>angle-score.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/dark-matter-and-machine-learning/angle-score.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\theta = \arctan\left(\frac{\frac{S_i}{S}}{1 - \frac{N_i}{N}}\right)\]</div></figure>
+  </div>
+  <pre>\theta = \arctan\left(\frac{\frac{S_i}{S}}{1 - \frac{N_i}{N}}\right)</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>bayes-theorem.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/dark-matter-and-machine-learning/bayes-theorem.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[p(H|\Theta) = \frac{p(\Theta|H)\; p(H)}{p(\Theta)}\]</div></figure>
+  </div>
+  <pre>p(H|\Theta) = \frac{p(\Theta|H)\; p(H)}{p(\Theta)}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>emi-bayes.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/dark-matter-and-machine-learning/emi-bayes.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[p(E|emi = 30) = \frac{p(emi = 30|E)\; p(E)}{p(emi = 30|E)\; p(E) + p(emi = 30|!E)\; p(!E)}\]</div></figure>
+  </div>
+  <pre>p(E|emi = 30) = \frac{p(emi = 30|E)\; p(E)}{p(emi = 30|E)\; p(E) + p(emi = 30|!E)\; p(!E)}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>log-likelihood.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/dark-matter-and-machine-learning/log-likelihood.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[ln\left(\frac{p(N|\mathbf{P})}{p(S|\mathbf{P})}\right) = ln\left(\frac{p(N)}{p(S)}\right) + \sum_i ln\left(\frac{p(P_i|N)}{p(P_i|S)}\right)\]</div></figure>
+  </div>
+  <pre>ln\left(\frac{p(N|\mathbf{P})}{p(S|\mathbf{P})}\right) = ln\left(\frac{p(N)}{p(S)}\right) + \sum_i ln\left(\frac{p(P_i|N)}{p(P_i|S)}\right)</pre><p class="note">&#x27;ln&#x27; was italic in the image, so kept as italic letters rather than \ln.</p>
+</article><article class="conf-high">
+  <div class="meta"><code>noise-bayes.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/dark-matter-and-machine-learning/noise-bayes.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[p(N|logMT, peaks) = p(N)\,\frac{p(logMT|N)}{p(logMT)}\,\frac{p(peaks|N)}{p(peaks)}\]</div></figure>
+  </div>
+  <pre>p(N|logMT, peaks) = p(N)\,\frac{p(logMT|N)}{p(logMT)}\,\frac{p(peaks|N)}{p(peaks)}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>score-alt.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/dark-matter-and-machine-learning/score-alt.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[Score = 1 - \sqrt{2\left(1 - \frac{N_i}{N}\right)^2 + 2\left(\frac{S_i}{S}\right)^2}\]</div></figure>
+  </div>
+  <pre>Score = 1 - \sqrt{2\left(1 - \frac{N_i}{N}\right)^2 + 2\left(\frac{S_i}{S}\right)^2}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>score.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/dark-matter-and-machine-learning/score.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[Score = \left(1 - \frac{N_i}{N}\right)^2 + \left(\frac{S_i}{S}\right)^2\]</div></figure>
+  </div>
+  <pre>Score = \left(1 - \frac{N_i}{N}\right)^2 + \left(\frac{S_i}{S}\right)^2</pre>
+</article></section><section><h2 id="p4">2014-08-11-how-long-will-prime-number-be <small>(4)</small></h2><article class="conf-high">
+  <div class="meta"><code>exN.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/how-long-will-prime-number-be/exN.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[&lt;N&gt; = \sum_{N=1}^{\infty} N \cdot p(N)\]</div></figure>
+  </div>
+  <pre>&lt;N&gt; = \sum_{N=1}^{\infty} N \cdot p(N)</pre><p class="note">Image uses plain &lt; &gt; for the expectation, kept as is.</p>
+</article><article class="conf-high">
+  <div class="meta"><code>exN1.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/how-long-will-prime-number-be/exN1.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[&lt;N&gt; = \sum_{N=1}^{\infty} N \cdot p(N) = \sum_{N=1}^{\infty} \frac{0.9N - 1}{0.9(N-1)\,ln(10)}\]</div></figure>
+  </div>
+  <pre>&lt;N&gt; = \sum_{N=1}^{\infty} N \cdot p(N) = \sum_{N=1}^{\infty} \frac{0.9N - 1}{0.9(N-1)\,ln(10)}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>pN-eqn.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/how-long-will-prime-number-be/pN-eqn.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[p(N) = \frac{0.9N - 1}{0.9N(N-1)\,ln(10)}\]</div></figure>
+  </div>
+  <pre>p(N) = \frac{0.9N - 1}{0.9N(N-1)\,ln(10)}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>piN1.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/how-long-will-prime-number-be/piN1.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\pi(n) = \frac{n}{ln(n)}\]</div></figure>
+  </div>
+  <pre>\pi(n) = \frac{n}{ln(n)}</pre>
+</article></section><section><h2 id="p5">2014-09-18-icebucketchallenge-viral-campaign <small>(2)</small></h2><article class="conf-high">
+  <div class="meta"><code>sir-diff.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/icebucketchallenge-viral-campaign/sir-diff.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\begin{aligned} \frac{dS}{dt} &amp;= -(\alpha + \beta)SI \\ \frac{dI}{dt} &amp;= \alpha SI - \gamma I \\ \frac{dR}{dt} &amp;= \gamma I + \beta SI \end{aligned}\]</div></figure>
+  </div>
+  <pre>\begin{aligned} \frac{dS}{dt} &amp;= -(\alpha + \beta)SI \\ \frac{dI}{dt} &amp;= \alpha SI - \gamma I \\ \frac{dR}{dt} &amp;= \gamma I + \beta SI \end{aligned}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>sir-dis.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/icebucketchallenge-viral-campaign/sir-dis.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\begin{aligned} S_{n+1} &amp;= S_n - \frac{3}{S_0}\, S_n I_n \\ I_{n+1} &amp;= \frac{a}{S_0}\, S_n I_n \\ R_{n+1} &amp;= R_n + I_n + \frac{(3-a)}{S_0}\, S_n I_n \end{aligned}\]</div></figure>
+  </div>
+  <pre>\begin{aligned} S_{n+1} &amp;= S_n - \frac{3}{S_0}\, S_n I_n \\ I_{n+1} &amp;= \frac{a}{S_0}\, S_n I_n \\ R_{n+1} &amp;= R_n + I_n + \frac{(3-a)}{S_0}\, S_n I_n \end{aligned}</pre>
+</article></section><section><h2 id="p6">2012-12-15-is-there-formula-for-perfect-christmas <small>(7)</small></h2><article class="conf-high">
+  <div class="meta"><code>124317_0.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/is-there-formula-for-perfect-christmas/124317_0.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[L_l = \frac{2\pi r \cot(\theta)}{s}\sqrt{r^2 + h^2}\]</div></figure>
+  </div>
+  <pre>L_l = \frac{2\pi r \cot(\theta)}{s}\sqrt{r^2 + h^2}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>124319_0.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/is-there-formula-for-perfect-christmas/124319_0.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[N_l = \frac{2\pi r \cot(\theta)}{s^2}\sqrt{r^2 + h^2}\]</div></figure>
+  </div>
+  <pre>N_l = \frac{2\pi r \cot(\theta)}{s^2}\sqrt{r^2 + h^2}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>124327_0.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/is-there-formula-for-perfect-christmas/124327_0.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[L_t = \frac{h}{2}\sqrt{1 + r^2(1 + a^2h^2)} + \frac{1 + r^2}{2ar}\sinh^{-1}\left(\frac{arh}{\sqrt{1 + r^2}}\right) \quad \text{with} \;\; a = \frac{2\pi}{\triangle h}\]</div></figure>
+  </div>
+  <pre>L_t = \frac{h}{2}\sqrt{1 + r^2(1 + a^2h^2)} + \frac{1 + r^2}{2ar}\sinh^{-1}\left(\frac{arh}{\sqrt{1 + r^2}}\right) \quad \text{with} \;\; a = \frac{2\pi}{\triangle h}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>ad.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/is-there-formula-for-perfect-christmas/ad.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[A \approx \frac{s^2}{2}\tan(\theta)\]</div></figure>
+  </div>
+  <pre>A \approx \frac{s^2}{2}\tan(\theta)</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>hs.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/is-there-formula-for-perfect-christmas/hs.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[H_s = \alpha \cdot h\]</div></figure>
+  </div>
+  <pre>H_s = \alpha \cdot h</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>ll60.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/is-there-formula-for-perfect-christmas/ll60.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[L_l = \frac{2\pi r}{\sqrt{3}s}\sqrt{r^2 + h^2}\]</div></figure>
+  </div>
+  <pre>L_l = \frac{2\pi r}{\sqrt{3}s}\sqrt{r^2 + h^2}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>nb.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/is-there-formula-for-perfect-christmas/nb.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[N_b = D_b \cdot \pi r\sqrt{r^2 + h^2}\]</div></figure>
+  </div>
+  <pre>N_b = D_b \cdot \pi r\sqrt{r^2 + h^2}</pre>
+</article></section><section><h2 id="p7">2010-08-30-miscellaneous-crap <small>(5)</small></h2><article class="conf-high">
+  <div class="meta"><code>cards.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/miscellaneous-crap/cards.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[c = \frac{1}{2}n(3n + 1)\]</div></figure>
+  </div>
+  <pre>c = \frac{1}{2}n(3n + 1)</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>catch.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/miscellaneous-crap/catch.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[t = \frac{d}{r_1 - r_2}\]</div></figure>
+  </div>
+  <pre>t = \frac{d}{r_1 - r_2}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>clevels.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/miscellaneous-crap/clevels.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[n = \frac{1}{6}\left(\sqrt{(1 + 24c)} - 1\right)\]</div></figure>
+  </div>
+  <pre>n = \frac{1}{6}\left(\sqrt{(1 + 24c)} - 1\right)</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>clock-hands.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/miscellaneous-crap/clock-hands.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[T = H \;\, \mathit{hrs} + \frac{60}{11}H \;\, \mathit{mins}\]</div></figure>
+  </div>
+  <pre>T = H \;\, \mathit{hrs} + \frac{60}{11}H \;\, \mathit{mins}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>dr.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/miscellaneous-crap/dr.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[r_1 - r_2\]</div></figure>
+  </div>
+  <pre>r_1 - r_2</pre>
+</article></section><section><h2 id="p8">2010-12-30-model-trains <small>(2)</small></h2><article class="conf-high">
+  <div class="meta"><code>T-eqn.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/model-trains/T-eqn.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[T(i, j) = a \cdot P(i)P(j)\]</div></figure>
+  </div>
+  <pre>T(i, j) = a \cdot P(i)P(j)</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>simple-eqn.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/model-trains/simple-eqn.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[N_i = i(n - i)\]</div></figure>
+  </div>
+  <pre>N_i = i(n - i)</pre>
+</article></section><section><h2 id="p9">2013-12-22-modelling-survival-of-chocolates <small>(7)</small></h2><article class="conf-high">
+  <div class="meta"><code>eqn1.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/modelling-survival-of-chocolates/eqn1.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\sum_{i=1}^{m} n_i = N\]</div></figure>
+  </div>
+  <pre>\sum_{i=1}^{m} n_i = N</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>eqn2.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/modelling-survival-of-chocolates/eqn2.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\sum_{i=1}^{m} p_i = 1\]</div></figure>
+  </div>
+  <pre>\sum_{i=1}^{m} p_i = 1</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>eqn3.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/modelling-survival-of-chocolates/eqn3.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[n_i(t) = \begin{cases} n_i(t - \delta t) - 1 &amp; \text{if } n_i(t - \delta t) &gt; 0 \\ 0 &amp; \text{otherwise} \end{cases}\]</div></figure>
+  </div>
+  <pre>n_i(t) = \begin{cases} n_i(t - \delta t) - 1 &amp; \text{if } n_i(t - \delta t) &gt; 0 \\ 0 &amp; \text{otherwise} \end{cases}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>eqn4.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/modelling-survival-of-chocolates/eqn4.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\frac{dn_i}{dt} = -p_i\, n_i\]</div></figure>
+  </div>
+  <pre>\frac{dn_i}{dt} = -p_i\, n_i</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>eqn5.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/modelling-survival-of-chocolates/eqn5.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[n_i(t) = n_i(0) \cdot e^{-p_i t}\]</div></figure>
+  </div>
+  <pre>n_i(t) = n_i(0) \cdot e^{-p_i t}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>eqn6.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/modelling-survival-of-chocolates/eqn6.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[N(t) = \sum_{i=1}^{m} n_i(0) \cdot e^{-p_i t}\]</div></figure>
+  </div>
+  <pre>N(t) = \sum_{i=1}^{m} n_i(0) \cdot e^{-p_i t}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>eqn7.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/modelling-survival-of-chocolates/eqn7.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[N(t) = N(0) \cdot e^{-pt}\]</div></figure>
+  </div>
+  <pre>N(t) = N(0) \cdot e^{-pt}</pre>
+</article></section><section><h2 id="p10">2010-08-14-patterns-in-lottery <small>(2)</small></h2><article class="conf-high">
+  <div class="meta"><code>lotto-eqn-1.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/patterns-in-lottery/lotto-eqn-1.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\begin{aligned} p_i(x) &amp;= C^{x-1}_{i-1} \times C^{49-x}_{6-i} \\ &amp;= 0 \;\; \text{for} \;\; x &lt; i,\; x &gt; 43 + i \end{aligned}\]</div></figure>
+  </div>
+  <pre>\begin{aligned} p_i(x) &amp;= C^{x-1}_{i-1} \times C^{49-x}_{6-i} \\ &amp;= 0 \;\; \text{for} \;\; x &lt; i,\; x &gt; 43 + i \end{aligned}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>lotto-eqn-2.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/patterns-in-lottery/lotto-eqn-2.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[p(seq) = \prod p_i(x_i) \;\; \text{with} \;\; x_i &lt; x_{i+1}\]</div></figure>
+  </div>
+  <pre>p(seq) = \prod p_i(x_i) \;\; \text{with} \;\; x_i &lt; x_{i+1}</pre>
+</article></section><section><h2 id="p11">2011-04-22-perfect-price <small>(1)</small></h2><article class="conf-high">
+  <div class="meta"><code>erfc.gif</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/perfect-price/erfc.gif" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\frac{x}{2}\,\mathrm{erfc}\left(\frac{x - 10}{2.5\sqrt{2}}\right)\]</div></figure>
+  </div>
+  <pre>\frac{x}{2}\,\mathrm{erfc}\left(\frac{x - 10}{2.5\sqrt{2}}\right)</pre>
+</article></section><section><h2 id="p12">2010-08-09-procrastination-dieting-and-will-power <small>(6)</small></h2><article class="conf-high">
+  <div class="meta"><code>T-max-t.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/procrastination-dieting-and-will-power/T-max-t.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[T = \max(i) \;\; \text{st} \;\; D(t_0) &lt; D(t_i) \le D(t_{i-1})\]</div></figure>
+  </div>
+  <pre>T = \max(i) \;\; \text{st} \;\; D(t_0) &lt; D(t_i) \le D(t_{i-1})</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>f-T-max.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/procrastination-dieting-and-will-power/f-T-max.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[T = \max(i) \;\; \text{st} \;\; D(f_0) &lt; D(f_i) \le D(f_{i-1})\]</div></figure>
+  </div>
+  <pre>T = \max(i) \;\; \text{st} \;\; D(f_0) &lt; D(f_i) \le D(f_{i-1})</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>inv-prop-f.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/procrastination-dieting-and-will-power/inv-prop-f.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\begin{gathered} T \propto 1/D(f_0) \\ T = k/D(f_0) \end{gathered}\]</div></figure>
+  </div>
+  <pre>\begin{gathered} T \propto 1/D(f_0) \\ T = k/D(f_0) \end{gathered}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>inv-t.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/procrastination-dieting-and-will-power/inv-t.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[T = k/D(t_0)\]</div></figure>
+  </div>
+  <pre>T = k/D(t_0)</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>kI-t.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/procrastination-dieting-and-will-power/kI-t.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[T = k \cdot I(t_0)\]</div></figure>
+  </div>
+  <pre>T = k \cdot I(t_0)</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>q-t-w.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/procrastination-dieting-and-will-power/q-t-w.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\min(n) \;\; \text{st} \;\; D(t_n) &gt; D(t_0) \;\; \text{with} \;\; (q \text{ of } t_n) &lt; w\]</div></figure>
+  </div>
+  <pre>\min(n) \;\; \text{st} \;\; D(t_n) &gt; D(t_0) \;\; \text{with} \;\; (q \text{ of } t_n) &lt; w</pre>
+</article></section><section><h2 id="p13">2010-12-29-rush-hour <small>(2)</small></h2><article class="conf-medium">
+  <div class="meta"><code>Norm-eqn.png</code> · <span class="conf">medium</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/rush-hour/Norm-eqn.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[4 + 19.0531\, e^{-0.638577\,(-17.325 + x)^2} + 18.1656\, e^{-0.725155\,(-7.64514 + x)^2}\]</div></figure>
+  </div>
+  <pre>4 + 19.0531\, e^{-0.638577\,(-17.325 + x)^2} + 18.1656\, e^{-0.725155\,(-7.64514 + x)^2}</pre><p class="note">Small Mathematica output; check the digits of the four constants.</p>
+</article><article class="conf-medium">
+  <div class="meta"><code>trigplot-eqn-crop.png</code> · <span class="conf">medium</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/rush-hour/trigplot-eqn-crop.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\begin{aligned} &amp;10.3889 - 0.927128\cos\left[\tfrac{\pi x}{18}\right] - 1.8539\cos\left[\tfrac{\pi x}{9}\right] + {} \\ &amp;0.779505\cos\left[\tfrac{\pi x}{6}\right] - 5.18843\cos\left[\tfrac{2\pi x}{9}\right] - 2.23807\cos\left[\tfrac{5\pi x}{18}\right] + {} \\ &amp;0.513889\cos\left[\tfrac{\pi x}{3}\right] - 0.727024\cos\left[\tfrac{7\pi x}{18}\right] + 0.282056\sin\left[\tfrac{\pi x}{18}\right] + {} \\ &amp;9.70141\sin\left[\tfrac{\pi x}{9}\right] + 2.00192\sin\left[\tfrac{\pi x}{6}\right] - 1.21915\sin\left[\tfrac{2\pi x}{9}\right] + {} \\ &amp;0.965679\sin\left[\tfrac{5\pi x}{18}\right] - 1.85233\sin\left[\tfrac{\pi x}{3}\right] - 1.60613\sin\left[\tfrac{7\pi x}{18}\right] \end{aligned}\]</div></figure>
+  </div>
+  <pre>\begin{aligned} &amp;10.3889 - 0.927128\cos\left[\tfrac{\pi x}{18}\right] - 1.8539\cos\left[\tfrac{\pi x}{9}\right] + {} \\ &amp;0.779505\cos\left[\tfrac{\pi x}{6}\right] - 5.18843\cos\left[\tfrac{2\pi x}{9}\right] - 2.23807\cos\left[\tfrac{5\pi x}{18}\right] + {} \\ &amp;0.513889\cos\left[\tfrac{\pi x}{3}\right] - 0.727024\cos\left[\tfrac{7\pi x}{18}\right] + 0.282056\sin\left[\tfrac{\pi x}{18}\right] + {} \\ &amp;9.70141\sin\left[\tfrac{\pi x}{9}\right] + 2.00192\sin\left[\tfrac{\pi x}{6}\right] - 1.21915\sin\left[\tfrac{2\pi x}{9}\right] + {} \\ &amp;0.965679\sin\left[\tfrac{5\pi x}{18}\right] - 1.85233\sin\left[\tfrac{\pi x}{3}\right] - 1.60613\sin\left[\tfrac{7\pi x}{18}\right] \end{aligned}</pre><p class="note">Mathematica output (Cos[...], Sin[...]) set as \cos/\sin with square brackets; check the 15 constants.</p>
+</article></section><section><h2 id="p14">2012-05-29-sexuality-and-population-dynamics <small>(17)</small></h2><article class="conf-high">
+  <div class="meta"><code>98729_0.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/sexuality-and-population-dynamics/98729_0.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[1 &lt; \frac{b}{d}(1 - g) + \frac{b_1}{d_1}g_1\]</div></figure>
+  </div>
+  <pre>1 &lt; \frac{b}{d}(1 - g) + \frac{b_1}{d_1}g_1</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>98755_0.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/sexuality-and-population-dynamics/98755_0.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\frac{b_1}{d_1}g_1 &gt; 0.05\left(\frac{b}{d}\right)\]</div></figure>
+  </div>
+  <pre>\frac{b_1}{d_1}g_1 &gt; 0.05\left(\frac{b}{d}\right)</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>complex-coupled.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/sexuality-and-population-dynamics/complex-coupled.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\begin{aligned} \dot{x} &amp;= [b_1g_1 - d_1]x + [bg]y \\ \dot{y} &amp;= [b_1(1 - g_1)]x + [b(1 - g) - d]y \end{aligned}\]</div></figure>
+  </div>
+  <pre>\begin{aligned} \dot{x} &amp;= [b_1g_1 - d_1]x + [bg]y \\ \dot{y} &amp;= [b_1(1 - g_1)]x + [b(1 - g) - d]y \end{aligned}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>gen-avalues.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/sexuality-and-population-dynamics/gen-avalues.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\begin{aligned} A_{z_1} &amp;= \frac{x_0(a_{11} - a_{12} + a_{21} - a_{22}) - z_0(\lambda_2 - a_{12} - a_{22})}{\lambda_1 - \lambda_2} \\ A_{z_2} &amp;= \frac{x_0(a_{11} - a_{12} + a_{21} - a_{22}) - z_0(\lambda_1 - a_{12} - a_{22})}{\lambda_2 - \lambda_1} \end{aligned}\]</div></figure>
+  </div>
+  <pre>\begin{aligned} A_{z_1} &amp;= \frac{x_0(a_{11} - a_{12} + a_{21} - a_{22}) - z_0(\lambda_2 - a_{12} - a_{22})}{\lambda_1 - \lambda_2} \\ A_{z_2} &amp;= \frac{x_0(a_{11} - a_{12} + a_{21} - a_{22}) - z_0(\lambda_1 - a_{12} - a_{22})}{\lambda_2 - \lambda_1} \end{aligned}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>gen-condition.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/sexuality-and-population-dynamics/gen-condition.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[a_{11}a_{22} - a_{12}a_{21} &lt; 0\]</div></figure>
+  </div>
+  <pre>a_{11}a_{22} - a_{12}a_{21} &lt; 0</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>gen-coupled.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/sexuality-and-population-dynamics/gen-coupled.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\begin{aligned} \dot{x} &amp;= a_{11}x + a_{12}y \\ \dot{y} &amp;= a_{21}x + a_{22}y \end{aligned}\]</div></figure>
+  </div>
+  <pre>\begin{aligned} \dot{x} &amp;= a_{11}x + a_{12}y \\ \dot{y} &amp;= a_{21}x + a_{22}y \end{aligned}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>gen-lambda.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/sexuality-and-population-dynamics/gen-lambda.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\lambda_{1,2} = \frac{(a_{11} + a_{22}) \pm \sqrt{(a_{11} + a_{22})^2 - 4(a_{11}a_{22} - a_{12}a_{21})}}{2}\]</div></figure>
+  </div>
+  <pre>\lambda_{1,2} = \frac{(a_{11} + a_{22}) \pm \sqrt{(a_{11} + a_{22})^2 - 4(a_{11}a_{22} - a_{12}a_{21})}}{2}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>gen-lim-xz.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/sexuality-and-population-dynamics/gen-lim-xz.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\lim_{t \to \infty} \frac{x(t)}{z(t)} = \frac{z_0a_{12} - x_0(\lambda_2 + a_{12} - a_{11})}{x_0(a_{11} - a_{12} + a_{21} - a_{22}) - z_0(\lambda_2 - a_{12} - a_{22})}\]</div></figure>
+  </div>
+  <pre>\lim_{t \to \infty} \frac{x(t)}{z(t)} = \frac{z_0a_{12} - x_0(\lambda_2 + a_{12} - a_{11})}{x_0(a_{11} - a_{12} + a_{21} - a_{22}) - z_0(\lambda_2 - a_{12} - a_{22})}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>gen-lim-z.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/sexuality-and-population-dynamics/gen-lim-z.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\lim_{t \to \infty} z(t) = A_{z_1}e^{\lambda_1 t}\]</div></figure>
+  </div>
+  <pre>\lim_{t \to \infty} z(t) = A_{z_1}e^{\lambda_1 t}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>gen-pop-diff.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/sexuality-and-population-dynamics/gen-pop-diff.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\ddot{z} = (a_{11} + a_{22})\dot{z} - (a_{11}a_{22} - a_{12}a_{21})z\]</div></figure>
+  </div>
+  <pre>\ddot{z} = (a_{11} + a_{22})\dot{z} - (a_{11}a_{22} - a_{12}a_{21})z</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>gen-pop.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/sexuality-and-population-dynamics/gen-pop.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[z(t) = A_{z_1}e^{\lambda_1 t} + A_{z_2}e^{\lambda_2 t}\]</div></figure>
+  </div>
+  <pre>z(t) = A_{z_1}e^{\lambda_1 t} + A_{z_2}e^{\lambda_2 t}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>simple-condition.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/sexuality-and-population-dynamics/simple-condition.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[g &lt; 1 - \frac{d}{b}\]</div></figure>
+  </div>
+  <pre>g &lt; 1 - \frac{d}{b}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>simple-lambda-a.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/sexuality-and-population-dynamics/simple-lambda-a.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\begin{aligned} \lambda_1 &amp;= b(1 - g) - d &amp; \qquad \lambda_2 &amp;= -d \\[1ex] A_{z_1} &amp;= \frac{z_0 - x_0}{1 - g} &amp; \qquad A_{z_2} &amp;= \frac{x_0 - gz_0}{1 - g} \end{aligned}\]</div></figure>
+  </div>
+  <pre>\begin{aligned} \lambda_1 &amp;= b(1 - g) - d &amp; \qquad \lambda_2 &amp;= -d \\[1ex] A_{z_1} &amp;= \frac{z_0 - x_0}{1 - g} &amp; \qquad A_{z_2} &amp;= \frac{x_0 - gz_0}{1 - g} \end{aligned}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>simple-lim-xz.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/sexuality-and-population-dynamics/simple-lim-xz.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\lim_{t \to \infty} \frac{x}{z} = g\]</div></figure>
+  </div>
+  <pre>\lim_{t \to \infty} \frac{x}{z} = g</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>simple-lim-z.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/sexuality-and-population-dynamics/simple-lim-z.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\lim_{t \to \infty} z(t) = \frac{z_0 - x_0}{1 - g}e^{[b(1-g)-d]t}\]</div></figure>
+  </div>
+  <pre>\lim_{t \to \infty} z(t) = \frac{z_0 - x_0}{1 - g}e^{[b(1-g)-d]t}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>simple-pop.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/sexuality-and-population-dynamics/simple-pop.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[z(t) = \frac{z_0 - x_0}{1 - g}e^{[b(1-g)-d]t} + \frac{x_0 - gz_0}{1 - g}e^{-dt}\]</div></figure>
+  </div>
+  <pre>z(t) = \frac{z_0 - x_0}{1 - g}e^{[b(1-g)-d]t} + \frac{x_0 - gz_0}{1 - g}e^{-dt}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>simpled-coupled.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/sexuality-and-population-dynamics/simpled-coupled.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\begin{aligned} \dot{x} &amp;= [-d]x + [bg]y \\ \dot{y} &amp;= [b(1 - g) - d]y \end{aligned}\]</div></figure>
+  </div>
+  <pre>\begin{aligned} \dot{x} &amp;= [-d]x + [bg]y \\ \dot{y} &amp;= [b(1 - g) - d]y \end{aligned}</pre>
+</article></section><section><h2 id="p15">2012-07-02-sharing-burger-between-three <small>(15)</small></h2><article class="conf-high">
+  <div class="meta"><code>103118_0.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/sharing-burger-between-three/103118_0.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\cos x = \sum_{n=0} \frac{(-1)^n}{(2n)!}x^{2n} = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots\]</div></figure>
+  </div>
+  <pre>\cos x = \sum_{n=0} \frac{(-1)^n}{(2n)!}x^{2n} = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots</pre><p class="note">The image&#x27;s sum has no upper limit; kept that way.</p>
+</article><article class="conf-high">
+  <div class="meta"><code>103119_0.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/sharing-burger-between-three/103119_0.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[x_{n+1} = \frac{1}{2}\left(x_n + \frac{S}{x_n}\right)\]</div></figure>
+  </div>
+  <pre>x_{n+1} = \frac{1}{2}\left(x_n + \frac{S}{x_n}\right)</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>103120_0.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/sharing-burger-between-three/103120_0.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\begin{aligned} f(x) &amp;= \sum_{n=0} \frac{f^{(n)}(a)}{n!}(x - a)^n \\ &amp;= f(a) + \frac{f&#x27;(a)}{1!}(x - a) + \frac{f&#x27;&#x27;(a)}{2!}(x - a)^2 + \frac{f^{(3)}(a)}{3!}(x - a)^3 + \cdots \end{aligned}\]</div></figure>
+  </div>
+  <pre>\begin{aligned} f(x) &amp;= \sum_{n=0} \frac{f^{(n)}(a)}{n!}(x - a)^n \\ &amp;= f(a) + \frac{f&#x27;(a)}{1!}(x - a) + \frac{f&#x27;&#x27;(a)}{2!}(x - a)^2 + \frac{f^{(3)}(a)}{3!}(x - a)^3 + \cdots \end{aligned}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>103171_0.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/sharing-burger-between-three/103171_0.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\begin{aligned} \sin(150) = \sin(180 - 30) &amp;= \sin(180)\cos(-30) + \sin(-30)\cos(180) \\ &amp;= (0)\left(\frac{\sqrt{3}}{2}\right) \;+\; (-0.5)(-1) \;=\; 0.5 \end{aligned}\]</div></figure>
+  </div>
+  <pre>\begin{aligned} \sin(150) = \sin(180 - 30) &amp;= \sin(180)\cos(-30) + \sin(-30)\cos(180) \\ &amp;= (0)\left(\frac{\sqrt{3}}{2}\right) \;+\; (-0.5)(-1) \;=\; 0.5 \end{aligned}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>103172_0.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/sharing-burger-between-three/103172_0.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\cos(a + b) = \cos(a)\cos(b) - \sin(a)\sin(b)\]</div></figure>
+  </div>
+  <pre>\cos(a + b) = \cos(a)\cos(b) - \sin(a)\sin(b)</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>103174_0.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/sharing-burger-between-three/103174_0.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\begin{aligned} \cos(75) = \cos(45 + 30) &amp;= \cos(45)\cos(30) - \sin(45)\sin(30) \\ &amp;= \left(\frac{1}{\sqrt{2}}\right)\left(\frac{\sqrt{3}}{2}\right) \;-\; \left(\frac{1}{\sqrt{2}}\right)\left(\frac{1}{2}\right) \;=\; \frac{\sqrt{3} - 1}{2\sqrt{2}} \end{aligned}\]</div></figure>
+  </div>
+  <pre>\begin{aligned} \cos(75) = \cos(45 + 30) &amp;= \cos(45)\cos(30) - \sin(45)\sin(30) \\ &amp;= \left(\frac{1}{\sqrt{2}}\right)\left(\frac{\sqrt{3}}{2}\right) \;-\; \left(\frac{1}{\sqrt{2}}\right)\left(\frac{1}{2}\right) \;=\; \frac{\sqrt{3} - 1}{2\sqrt{2}} \end{aligned}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>Taylor-sin-alt.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/sharing-burger-between-three/Taylor-sin-alt.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\begin{aligned} \sin(x) &amp;= \sum_{n=0} \frac{f^{(n)}(\pi)}{n!}(x - \pi)^n \\ &amp;= sin(\pi) + \frac{cos(\pi)}{1!}(x - \pi) + \frac{-sin(\pi)}{2!}(x - \pi)^2 + \frac{-cos(\pi)}{3!}(x - \pi)^3 + \cdots \\[1ex] &amp;= (\pi - x) - \frac{(\pi - x)^3}{3!} + \frac{(\pi - x)^5}{5!} - \frac{(\pi - x)^7}{7!} + \cdots \end{aligned}\]</div></figure>
+  </div>
+  <pre>\begin{aligned} \sin(x) &amp;= \sum_{n=0} \frac{f^{(n)}(\pi)}{n!}(x - \pi)^n \\ &amp;= sin(\pi) + \frac{cos(\pi)}{1!}(x - \pi) + \frac{-sin(\pi)}{2!}(x - \pi)^2 + \frac{-cos(\pi)}{3!}(x - \pi)^3 + \cdots \\[1ex] &amp;= (\pi - x) - \frac{(\pi - x)^3}{3!} + \frac{(\pi - x)^5}{5!} - \frac{(\pi - x)^7}{7!} + \cdots \end{aligned}</pre><p class="note">The middle line&#x27;s sin/cos were italic in the image; kept as italic letters.</p>
+</article><article class="conf-high">
+  <div class="meta"><code>area-cut.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/sharing-burger-between-three/area-cut.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[A_{cut} = \frac{x}{2}r^2 - \frac{1}{2}r^2\sin(x)\]</div></figure>
+  </div>
+  <pre>A_{cut} = \frac{x}{2}r^2 - \frac{1}{2}r^2\sin(x)</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>area-seg.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/sharing-burger-between-three/area-seg.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[A_{seg} = \frac{x}{2}r^2\]</div></figure>
+  </div>
+  <pre>A_{seg} = \frac{x}{2}r^2</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>area-tri.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/sharing-burger-between-three/area-tri.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[A_{tri} = \frac{1}{2}r^2\sin(x)\]</div></figure>
+  </div>
+  <pre>A_{tri} = \frac{1}{2}r^2\sin(x)</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>eqn-1.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/sharing-burger-between-three/eqn-1.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\frac{x}{2}r^2 - \frac{r^2}{2}\sin(x) = \frac{\pi}{3}r^2\]</div></figure>
+  </div>
+  <pre>\frac{x}{2}r^2 - \frac{r^2}{2}\sin(x) = \frac{\pi}{3}r^2</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>eqn-2.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/sharing-burger-between-three/eqn-2.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\sin(x) = x - \frac{2\pi}{3}\]</div></figure>
+  </div>
+  <pre>\sin(x) = x - \frac{2\pi}{3}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>eqn-3.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/sharing-burger-between-three/eqn-3.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\frac{l}{r} = \cos\left(\frac{x}{2}\right)\]</div></figure>
+  </div>
+  <pre>\frac{l}{r} = \cos\left(\frac{x}{2}\right)</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>sin-mult.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/sharing-burger-between-three/sin-mult.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\sin(a + b) = \sin(a)\cos(b) + \sin(b)\cos(a)\]</div></figure>
+  </div>
+  <pre>\sin(a + b) = \sin(a)\cos(b) + \sin(b)\cos(a)</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>sin-taylor.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/sharing-burger-between-three/sin-taylor.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\begin{aligned} (\pi - x) - \frac{(\pi - x)^3}{3!} + \frac{(\pi - x)^5}{5!} &amp;= x - \frac{2\pi}{3} \\ \frac{5\pi}{3} - 2x - \frac{(\pi - x)^3}{3!} + \frac{(\pi - x)^5}{5!} &amp;= 0 \end{aligned}\]</div></figure>
+  </div>
+  <pre>\begin{aligned} (\pi - x) - \frac{(\pi - x)^3}{3!} + \frac{(\pi - x)^5}{5!} &amp;= x - \frac{2\pi}{3} \\ \frac{5\pi}{3} - 2x - \frac{(\pi - x)^3}{3!} + \frac{(\pi - x)^5}{5!} &amp;= 0 \end{aligned}</pre>
+</article></section><section><h2 id="p16">2012-01-28-simple-harmonic-sleep <small>(3)</small></h2><article class="conf-high">
+  <div class="meta"><code>78730_0.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/simple-harmonic-sleep/78730_0.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[A_0e^{-\gamma t}cos(\omega t + \phi) + C\]</div></figure>
+  </div>
+  <pre>A_0e^{-\gamma t}cos(\omega t + \phi) + C</pre><p class="note">&#x27;cos&#x27; was italic in the image; kept as italic letters.</p>
+</article><article class="conf-high">
+  <div class="meta"><code>79122_0.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/simple-harmonic-sleep/79122_0.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[2.2e^{-0.996t}cos(\pi t + \pi) + 8.3\]</div></figure>
+  </div>
+  <pre>2.2e^{-0.996t}cos(\pi t + \pi) + 8.3</pre><p class="note">&#x27;cos&#x27; was italic in the image; kept as italic letters.</p>
+</article><article class="conf-high">
+  <div class="meta"><code>79124_0.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/simple-harmonic-sleep/79124_0.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[Ae^{-\gamma t}cos(\omega t + \phi) + A_0cos(\omega_0t + \phi_0) + C\]</div></figure>
+  </div>
+  <pre>Ae^{-\gamma t}cos(\omega t + \phi) + A_0cos(\omega_0t + \phi_0) + C</pre><p class="note">&#x27;cos&#x27; was italic in the image; kept as italic letters.</p>
+</article></section><section><h2 id="p17">2011-07-30-social-posting-part-one-whos-online <small>(6)</small></h2><article class="conf-high">
+  <div class="meta"><code>M-def.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/social-posting-part-one-whos-online/M-def.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[M_{ij} = \begin{cases} 1 &amp; : \;\; i \textit{ follows } j \\ 0 &amp; : \;\; \textit{otherwise} \end{cases}\]</div></figure>
+  </div>
+  <pre>M_{ij} = \begin{cases} 1 &amp; : \;\; i \textit{ follows } j \\ 0 &amp; : \;\; \textit{otherwise} \end{cases}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>T-def-1.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/social-posting-part-one-whos-online/T-def-1.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[T_i(n) = \begin{cases} 1 &amp; : \;\; i \textit{ posts at time } n \\ 0 &amp; : \;\; \textit{otherwise} \end{cases}\]</div></figure>
+  </div>
+  <pre>T_i(n) = \begin{cases} 1 &amp; : \;\; i \textit{ posts at time } n \\ 0 &amp; : \;\; \textit{otherwise} \end{cases}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>Tni-defs.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/social-posting-part-one-whos-online/Tni-defs.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[T_i(n) = \begin{cases} 1 &amp; : \;\; W_i \cdot T(n - 1) \ge \frac{1}{2} \\[1ex] 0 &amp; : \;\; \textit{otherwise} \end{cases}\]</div></figure>
+  </div>
+  <pre>T_i(n) = \begin{cases} 1 &amp; : \;\; W_i \cdot T(n - 1) \ge \frac{1}{2} \\[1ex] 0 &amp; : \;\; \textit{otherwise} \end{cases}</pre>
+</article><article class="conf-medium">
+  <div class="meta"><code>W-def-alt.png</code> · <span class="conf">medium</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/social-posting-part-one-whos-online/W-def-alt.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[W_{ij} = \begin{cases} 2S &amp; : \;\; \sum^{j} W&#x27;_{ij} = 0 \\ S &amp; : \;\; \textit{otherwise} \end{cases} \qquad \textit{with} \;\; S = \frac{W&#x27;_{ij}}{\sum^{j} |W&#x27;_{ij}|}\]</div></figure>
+  </div>
+  <pre>W_{ij} = \begin{cases} 2S &amp; : \;\; \sum^{j} W&#x27;_{ij} = 0 \\ S &amp; : \;\; \textit{otherwise} \end{cases} \qquad \textit{with} \;\; S = \frac{W&#x27;_{ij}}{\sum^{j} |W&#x27;_{ij}|}</pre><p class="note">The sums show only a &#x27;j&#x27; above the sigma (no lower limit); kept that way.</p>
+</article><article class="conf-high">
+  <div class="meta"><code>W-def.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/social-posting-part-one-whos-online/W-def.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[W_{ij} = \frac{M_{ij}}{\sum^{j} M_{ij}}\]</div></figure>
+  </div>
+  <pre>W_{ij} = \frac{M_{ij}}{\sum^{j} M_{ij}}</pre><p class="note">The sum shows only a &#x27;j&#x27; above the sigma; kept that way.</p>
+</article><article class="conf-high">
+  <div class="meta"><code>coherence-eqn-simple.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/social-posting-part-one-whos-online/coherence-eqn-simple.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[T(n) = W \cdot T(n - 1)\]</div></figure>
+  </div>
+  <pre>T(n) = W \cdot T(n - 1)</pre>
+</article></section><section><h2 id="p18">2011-07-31-social-posting-part-two-we-post <small>(6)</small></h2><article class="conf-high">
+  <div class="meta"><code>alpha-beta.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/social-posting-part-two-we-post/alpha-beta.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\alpha = \begin{pmatrix} \alpha_1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; \alpha_2 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; \alpha_3 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; \alpha_4 \end{pmatrix} \qquad \beta = \begin{pmatrix} \beta_1 \\ \beta_2 \\ \beta_3 \\ \beta_4 \end{pmatrix}\]</div></figure>
+  </div>
+  <pre>\alpha = \begin{pmatrix} \alpha_1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; \alpha_2 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; \alpha_3 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; \alpha_4 \end{pmatrix} \qquad \beta = \begin{pmatrix} \beta_1 \\ \beta_2 \\ \beta_3 \\ \beta_4 \end{pmatrix}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>alpha-definition.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/social-posting-part-two-we-post/alpha-definition.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\alpha_i = \frac{\bar{T}_i - \beta_i}{W_i \cdot \bar{T}}\]</div></figure>
+  </div>
+  <pre>\alpha_i = \frac{\bar{T}_i - \beta_i}{W_i \cdot \bar{T}}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>coherence-eqn-full-alt.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/social-posting-part-two-we-post/coherence-eqn-full-alt.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[T(n) = \alpha \cdot W \cdot T(n - 1) + \beta\]</div></figure>
+  </div>
+  <pre>T(n) = \alpha \cdot W \cdot T(n - 1) + \beta</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>example-external-breakingnews.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/social-posting-part-two-we-post/example-external-breakingnews.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[E_i(n) = \begin{cases} 3 &amp; : \;\; 2 \le n \le 5 \\ 1 &amp; : \;\; \textit{otherwise} \end{cases} \qquad \forall\, i\]</div></figure>
+  </div>
+  <pre>E_i(n) = \begin{cases} 3 &amp; : \;\; 2 \le n \le 5 \\ 1 &amp; : \;\; \textit{otherwise} \end{cases} \qquad \forall\, i</pre>
+</article><article class="conf-medium">
+  <div class="meta"><code>example-external-conditions.png</code> · <span class="conf">medium</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/social-posting-part-two-we-post/example-external-conditions.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\begin{aligned} E_1(n) &amp;= \{\, 1 \;\; : \;\; n \ge 0 &amp; \qquad E_2(n) &amp;= \{\, 1 \;\; : \;\; n \ge 0 \\[1ex] E_3(n) &amp;= \begin{cases} 0 &amp; : \;\; 1 \le n \le 3 \\ 1 &amp; : \;\; \textit{otherwise} \end{cases} &amp; \qquad E_4(n) &amp;= \begin{cases} 0 &amp; : \;\; 1 \le n \le 5 \\ 1 &amp; : \;\; \textit{otherwise} \end{cases} \end{aligned}\]</div></figure>
+  </div>
+  <pre>\begin{aligned} E_1(n) &amp;= \{\, 1 \;\; : \;\; n \ge 0 &amp; \qquad E_2(n) &amp;= \{\, 1 \;\; : \;\; n \ge 0 \\[1ex] E_3(n) &amp;= \begin{cases} 0 &amp; : \;\; 1 \le n \le 3 \\ 1 &amp; : \;\; \textit{otherwise} \end{cases} &amp; \qquad E_4(n) &amp;= \begin{cases} 0 &amp; : \;\; 1 \le n \le 5 \\ 1 &amp; : \;\; \textit{otherwise} \end{cases} \end{aligned}</pre><p class="note">Single-case braces for E_1 and E_2 drawn as a plain &#x27;{&#x27;.</p>
+</article><article class="conf-high">
+  <div class="meta"><code>external-modifier.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/social-posting-part-two-we-post/external-modifier.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[T&#x27;_i(n) = E_i(n) \cdot T_i(n)\]</div></figure>
+  </div>
+  <pre>T&#x27;_i(n) = E_i(n) \cdot T_i(n)</pre>
+</article></section><section><h2 id="p19">2010-08-07-tilting-coffee-cup <small>(6)</small></h2><article class="conf-high">
+  <div class="meta"><code>solution.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/tilting-coffee-cup/solution.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\begin{gathered} \textit{with} \;\; \theta = 3^\circ, \;\; r = 5\,\text{cm} \\ h = 10 \cdot \tan(3) \approx 0.5\,\text{cm} \\ V = 5^3\pi \cdot \tan(3) = 6.55\,\text{ml} \end{gathered}\]</div></figure>
+  </div>
+  <pre>\begin{gathered} \textit{with} \;\; \theta = 3^\circ, \;\; r = 5\,\text{cm} \\ h = 10 \cdot \tan(3) \approx 0.5\,\text{cm} \\ V = 5^3\pi \cdot \tan(3) = 6.55\,\text{ml} \end{gathered}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>tan.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/tilting-coffee-cup/tan.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\tan(\theta) = \tfrac{h}{2r} \;\; \Rightarrow \;\; h = 2r \cdot \tan(\theta)\]</div></figure>
+  </div>
+  <pre>\tan(\theta) = \tfrac{h}{2r} \;\; \Rightarrow \;\; h = 2r \cdot \tan(\theta)</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>theta-max.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/tilting-coffee-cup/theta-max.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\theta_{max} = \tan^{-1}\left(\tfrac{h_0}{r}\right) \;\; \textit{where} \;\; h_0 = \tfrac{1}{2}h\]</div></figure>
+  </div>
+  <pre>\theta_{max} = \tan^{-1}\left(\tfrac{h_0}{r}\right) \;\; \textit{where} \;\; h_0 = \tfrac{1}{2}h</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>theta.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/tilting-coffee-cup/theta.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\theta = \tan^{-1}\left(\tfrac{V}{\pi r^3}\right) \qquad \theta = \tan^{-1}\left(\tfrac{h}{2r}\right)\]</div></figure>
+  </div>
+  <pre>\theta = \tan^{-1}\left(\tfrac{V}{\pi r^3}\right) \qquad \theta = \tan^{-1}\left(\tfrac{h}{2r}\right)</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>vol-cylinder.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/tilting-coffee-cup/vol-cylinder.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[V = \tfrac{1}{2}(\pi r^2 h)\]</div></figure>
+  </div>
+  <pre>V = \tfrac{1}{2}(\pi r^2 h)</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>vol-tan.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/tilting-coffee-cup/vol-tan.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\begin{gathered} V = \tfrac{1}{2}\pi r^2 \cdot 2r\,\tan(\theta) \\ V = \pi r^3\tan(\theta) \end{gathered}\]</div></figure>
+  </div>
+  <pre>\begin{gathered} V = \tfrac{1}{2}\pi r^2 \cdot 2r\,\tan(\theta) \\ V = \pi r^3\tan(\theta) \end{gathered}</pre>
+</article></section><section><h2 id="p20">2011-08-03-toilet-seat-conundrum <small>(3)</small></h2><article class="conf-high">
+  <div class="meta"><code>costs-game1-2Bc2.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/toilet-seat-conundrum/costs-game1-2Bc2.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[B_1 = c_1\left(\frac{1 - p^2}{2}\right) + c_1p\left(\frac{1 - p}{2}\right) + \frac{c_2}{2}(1 - p)\]</div></figure>
+  </div>
+  <pre>B_1 = c_1\left(\frac{1 - p^2}{2}\right) + c_1p\left(\frac{1 - p}{2}\right) + \frac{c_2}{2}(1 - p)</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>costs-game1.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/toilet-seat-conundrum/costs-game1.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\begin{aligned} A_1 &amp;= c_1\left(\frac{1 - p}{2}\right) \\ B_1 &amp;= c_1\left(\frac{1 - p^2}{2}\right) + c_1p\left(\frac{1 - p}{2}\right) \end{aligned}\]</div></figure>
+  </div>
+  <pre>\begin{aligned} A_1 &amp;= c_1\left(\frac{1 - p}{2}\right) \\ B_1 &amp;= c_1\left(\frac{1 - p^2}{2}\right) + c_1p\left(\frac{1 - p}{2}\right) \end{aligned}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>game1-reward.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/toilet-seat-conundrum/game1-reward.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[R &gt; \frac{c_1}{2}(1 - p)(5 - 2p)\]</div></figure>
+  </div>
+  <pre>R &gt; \frac{c_1}{2}(1 - p)(5 - 2p)</pre>
+</article></section><section><h2 id="p21">2012-06-24-too-many-lotteries <small>(16)</small></h2><article class="conf-high">
+  <div class="meta"><code>102525_0.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/too-many-lotteries/102525_0.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[1 - (1 - p)^n\]</div></figure>
+  </div>
+  <pre>1 - (1 - p)^n</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>102527_0.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/too-many-lotteries/102527_0.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\begin{aligned} (x + y)^n &amp;= \sum_{k=0}^{n} \frac{n\ldots(n - k + 1)}{k!}x^k y^{n-k} \\ &amp;= x^n + nyx^{n-1} + \frac{n(n - 1)}{2!}y^2x^{n-2} + \ldots \end{aligned}\]</div></figure>
+  </div>
+  <pre>\begin{aligned} (x + y)^n &amp;= \sum_{k=0}^{n} \frac{n\ldots(n - k + 1)}{k!}x^k y^{n-k} \\ &amp;= x^n + nyx^{n-1} + \frac{n(n - 1)}{2!}y^2x^{n-2} + \ldots \end{aligned}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>102534_0.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/too-many-lotteries/102534_0.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\begin{aligned} \left(-\frac{n(n - 1)}{2!}p^2 + \frac{n(n - 1)(n - 2)}{3!}p^3\right) &amp;&lt; 0 \\ \left(-\frac{n\ldots(n - 3)}{4!}p^4 + \frac{n\ldots(n - 4)}{5!}p^5\right) &amp;&lt; 0 \\ \left(-\frac{n\ldots(n - k + 1)}{k!}p^k + \frac{n\ldots(n - k)}{(k + 1)!}p^{k+1}\right) &amp;&lt; 0 \end{aligned}\]</div></figure>
+  </div>
+  <pre>\begin{aligned} \left(-\frac{n(n - 1)}{2!}p^2 + \frac{n(n - 1)(n - 2)}{3!}p^3\right) &amp;&lt; 0 \\ \left(-\frac{n\ldots(n - 3)}{4!}p^4 + \frac{n\ldots(n - 4)}{5!}p^5\right) &amp;&lt; 0 \\ \left(-\frac{n\ldots(n - k + 1)}{k!}p^k + \frac{n\ldots(n - k)}{(k + 1)!}p^{k+1}\right) &amp;&lt; 0 \end{aligned}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>102537_0.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/too-many-lotteries/102537_0.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[1 - (1 - p)^n = np + \left(-\frac{n(n - 1)}{2!}p^2 + \frac{n(n - 1)(n - 2)}{3!}p^3 - \frac{n\ldots(n - 3)}{4!}p^4 + \ldots\right) &lt; np\]</div></figure>
+  </div>
+  <pre>1 - (1 - p)^n = np + \left(-\frac{n(n - 1)}{2!}p^2 + \frac{n(n - 1)(n - 2)}{3!}p^3 - \frac{n\ldots(n - 3)}{4!}p^4 + \ldots\right) &lt; np</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>102561_0.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/too-many-lotteries/102561_0.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\sum_{k=0}^{m} \frac{m\ldots(m - k + 1)}{k!}p^k(1 - p)^{m-k} = ((1 - p) + p)^m = (1)^m = 1\]</div></figure>
+  </div>
+  <pre>\sum_{k=0}^{m} \frac{m\ldots(m - k + 1)}{k!}p^k(1 - p)^{m-k} = ((1 - p) + p)^m = (1)^m = 1</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>binomial-expansion-alt.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/too-many-lotteries/binomial-expansion-alt.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[(1 - p)^n = 1 - np + \frac{n(n - 1)}{2!}p^2 - \frac{n(n - 1)(n - 2)}{3!}p^3 + \ldots\]</div></figure>
+  </div>
+  <pre>(1 - p)^n = 1 - np + \frac{n(n - 1)}{2!}p^2 - \frac{n(n - 1)(n - 2)}{3!}p^3 + \ldots</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>compare-1.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/too-many-lotteries/compare-1.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\frac{n\ldots(n - k + 1)}{k!}p^k \stackrel{?}{=} \frac{n\ldots(n - k - 1)(n - k)}{(k + 1)!}p^{k+1}\]</div></figure>
+  </div>
+  <pre>\frac{n\ldots(n - k + 1)}{k!}p^k \stackrel{?}{=} \frac{n\ldots(n - k - 1)(n - k)}{(k + 1)!}p^{k+1}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>compare-2.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/too-many-lotteries/compare-2.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[1 \stackrel{?}{=} \frac{n - k}{k + 1}p\]</div></figure>
+  </div>
+  <pre>1 \stackrel{?}{=} \frac{n - k}{k + 1}p</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>compare-3.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/too-many-lotteries/compare-3.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\frac{\frac{1}{p} - k}{k + 1}p = \frac{1 - pk}{k + 1} \;&lt;\; 1\]</div></figure>
+  </div>
+  <pre>\frac{\frac{1}{p} - k}{k + 1}p = \frac{1 - pk}{k + 1} \;&lt;\; 1</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>compare-4.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/too-many-lotteries/compare-4.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\frac{n\ldots(n - k + 1)}{k!}p^k &gt; \frac{n\ldots(n - k - 1)(n - k)}{(k + 1)!}p^{k+1}\]</div></figure>
+  </div>
+  <pre>\frac{n\ldots(n - k + 1)}{k!}p^k &gt; \frac{n\ldots(n - k - 1)(n - k)}{(k + 1)!}p^{k+1}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>p-multi-expanded.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/too-many-lotteries/p-multi-expanded.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[1 - (1 - p)^n = np - \frac{n(n - 1)}{2!}p^2 + \frac{n(n - 1)(n - 2)}{3!}p^3 - \ldots\]</div></figure>
+  </div>
+  <pre>1 - (1 - p)^n = np - \frac{n(n - 1)}{2!}p^2 + \frac{n(n - 1)(n - 2)}{3!}p^3 - \ldots</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>utility-1.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/too-many-lotteries/utility-1.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\begin{aligned} &amp;n(w)p(1 - p)^{n-1} + \frac{n(n - 1)}{2!}(2w)p^2(1 - p)^{n-2} + \ldots \\ &amp;= \sum_{k=1}^{n} \frac{n\ldots(n - k + 1)}{k!}(kw)p^k(1 - p)^{n-k} \end{aligned}\]</div></figure>
+  </div>
+  <pre>\begin{aligned} &amp;n(w)p(1 - p)^{n-1} + \frac{n(n - 1)}{2!}(2w)p^2(1 - p)^{n-2} + \ldots \\ &amp;= \sum_{k=1}^{n} \frac{n\ldots(n - k + 1)}{k!}(kw)p^k(1 - p)^{n-k} \end{aligned}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>utility-1a.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/too-many-lotteries/utility-1a.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\begin{aligned} &amp;= w\sum_{k=1}^{n} \frac{n\ldots(n - k + 1)}{(k - 1)!}p^k(1 - p)^{n-k} \\ &amp;= w\sum_{k=0}^{n-1} \frac{n\ldots(n - k)}{k!}p^{k+1}(1 - p)^{n-k-1} \end{aligned}\]</div></figure>
+  </div>
+  <pre>\begin{aligned} &amp;= w\sum_{k=1}^{n} \frac{n\ldots(n - k + 1)}{(k - 1)!}p^k(1 - p)^{n-k} \\ &amp;= w\sum_{k=0}^{n-1} \frac{n\ldots(n - k)}{k!}p^{k+1}(1 - p)^{n-k-1} \end{aligned}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>utility-2.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/too-many-lotteries/utility-2.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[= w\left(np(1 - p)^{n-1} + n(n - 1)p^2(1 - p)^{n-2} + \ldots\right)\]</div></figure>
+  </div>
+  <pre>= w\left(np(1 - p)^{n-1} + n(n - 1)p^2(1 - p)^{n-2} + \ldots\right)</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>utility-3.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/too-many-lotteries/utility-3.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[= wnp\left((1 - p)^{n-1} + (n - 1)p(1 - p)^{n-2} + \ldots\right)\]</div></figure>
+  </div>
+  <pre>= wnp\left((1 - p)^{n-1} + (n - 1)p(1 - p)^{n-2} + \ldots\right)</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>utility-4.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/too-many-lotteries/utility-4.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\begin{aligned} &amp;= wnp\left((1 - p)^m + mp(1 - p)^{m-1} + \ldots\right) \\ &amp;= wnp\sum_{k=0}^{m} \frac{m\ldots(m - k + 1)}{k!}p^k(1 - p)^{m-k} \end{aligned}\]</div></figure>
+  </div>
+  <pre>\begin{aligned} &amp;= wnp\left((1 - p)^m + mp(1 - p)^{m-1} + \ldots\right) \\ &amp;= wnp\sum_{k=0}^{m} \frac{m\ldots(m - k + 1)}{k!}p^k(1 - p)^{m-k} \end{aligned}</pre>
+</article></section><section><h2 id="p22">2010-08-26-train-problem <small>(4)</small></h2><article class="conf-high">
+  <div class="meta"><code>B-D-Summations.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/train-problem/B-D-Summations.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[B_i = \sum_{j=i+1}^{n} T(i, j) \qquad D_i = \sum_{j=0}^{i} T(j, i)\]</div></figure>
+  </div>
+  <pre>B_i = \sum_{j=i+1}^{n} T(i, j) \qquad D_i = \sum_{j=0}^{i} T(j, i)</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>Train-Eqn.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/train-problem/Train-Eqn.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[N_i = \sum_{k=0}^{i}\left(\sum_{j=k+1}^{n} T(k, j) - \sum_{j=0}^{k} T(j, k)\right)\]</div></figure>
+  </div>
+  <pre>N_i = \sum_{k=0}^{i}\left(\sum_{j=k+1}^{n} T(k, j) - \sum_{j=0}^{k} T(j, k)\right)</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>difference-eqn.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/train-problem/difference-eqn.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[N_i = N_{i-1} + B_i - D_i\]</div></figure>
+  </div>
+  <pre>N_i = N_{i-1} + B_i - D_i</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>prob.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/train-problem/prob.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[p(i) = \frac{S - N_i}{S}\]</div></figure>
+  </div>
+  <pre>p(i) = \frac{S - N_i}{S}</pre>
+</article></section><section><h2 id="p23">2011-07-24-tumbling-appendix-ii-getting-formal <small>(8)</small></h2><article class="conf-high">
+  <div class="meta"><code>S-state-definition.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/tumbling-appendix-ii-getting-formal/S-state-definition.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[S_i(n) = \begin{cases} 1 &amp; : \;\; \textit{if } i \textit{ is state } S \\ 0 &amp; : \;\; \textit{otherwise} \end{cases}\]</div></figure>
+  </div>
+  <pre>S_i(n) = \begin{cases} 1 &amp; : \;\; \textit{if } i \textit{ is state } S \\ 0 &amp; : \;\; \textit{otherwise} \end{cases}</pre>
+</article><article class="conf-medium">
+  <div class="meta"><code>Tumblr-model-equations.png</code> · <span class="conf">medium</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/tumbling-appendix-ii-getting-formal/Tumblr-model-equations.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\begin{aligned} S(n) &amp;= S(n - 1) - E(n) \\[1ex] E_i(n) &amp;= \begin{cases} 1 &amp; : \;\; \textit{if } \sum^{j} M_{ij}\, S_i(n - 1)\, I_j(n - 1) \ge 1 \\ 0 &amp; : \;\; \textit{otherwise} \end{cases} \\[1ex] I_i(n) &amp;= \sigma(t_i, A_i(p)) \cdot E_i(n) \qquad\qquad \forall\, i \in \{0, 1, \ldots, N\} \\[1ex] R(n) &amp;= R(n - 1) + I(n - 1) + [E(n) - I(n)] \end{aligned}\]</div></figure>
+  </div>
+  <pre>\begin{aligned} S(n) &amp;= S(n - 1) - E(n) \\[1ex] E_i(n) &amp;= \begin{cases} 1 &amp; : \;\; \textit{if } \sum^{j} M_{ij}\, S_i(n - 1)\, I_j(n - 1) \ge 1 \\ 0 &amp; : \;\; \textit{otherwise} \end{cases} \\[1ex] I_i(n) &amp;= \sigma(t_i, A_i(p)) \cdot E_i(n) \qquad\qquad \forall\, i \in \{0, 1, \ldots, N\} \\[1ex] R(n) &amp;= R(n - 1) + I(n - 1) + [E(n) - I(n)] \end{aligned}</pre><p class="note">The image&#x27;s set reads {0, 1, .., N}; written with \ldots. The sum shows only a &#x27;j&#x27; above the sigma.</p>
+</article><article class="conf-high">
+  <div class="meta"><code>follow-follower.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/tumbling-appendix-ii-getting-formal/follow-follower.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[f_i = \sum^{j} M_{ij} \qquad F_i = \sum^{j} M_{ji}\]</div></figure>
+  </div>
+  <pre>f_i = \sum^{j} M_{ij} \qquad F_i = \sum^{j} M_{ji}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>initial-conditions.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/tumbling-appendix-ii-getting-formal/initial-conditions.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[S(0) = \begin{pmatrix} 0 \\ 1 \\ \cdots \\ 1 \end{pmatrix} \qquad E(0) = \begin{pmatrix} 0 \\ 0 \\ \cdots \\ 0 \end{pmatrix} \qquad I(0) = \begin{pmatrix} 1 \\ 0 \\ \cdots \\ 0 \end{pmatrix} \qquad R(0) = \begin{pmatrix} 0 \\ 0 \\ \cdots \\ 0 \end{pmatrix}\]</div></figure>
+  </div>
+  <pre>S(0) = \begin{pmatrix} 0 \\ 1 \\ \cdots \\ 1 \end{pmatrix} \qquad E(0) = \begin{pmatrix} 0 \\ 0 \\ \cdots \\ 0 \end{pmatrix} \qquad I(0) = \begin{pmatrix} 1 \\ 0 \\ \cdots \\ 0 \end{pmatrix} \qquad R(0) = \begin{pmatrix} 0 \\ 0 \\ \cdots \\ 0 \end{pmatrix}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>matrix-def.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/tumbling-appendix-ii-getting-formal/matrix-def.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[M_{ij} = \begin{cases} 1 &amp; : \; i \textit{ follows } j \\ 0 &amp; : \; \textit{otherwise} \end{cases}\]</div></figure>
+  </div>
+  <pre>M_{ij} = \begin{cases} 1 &amp; : \; i \textit{ follows } j \\ 0 &amp; : \; \textit{otherwise} \end{cases}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>mod-S.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/tumbling-appendix-ii-getting-formal/mod-S.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[|S(n)| = \sum^{i} S_i(n)\]</div></figure>
+  </div>
+  <pre>|S(n)| = \sum^{i} S_i(n)</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>population-size.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/tumbling-appendix-ii-getting-formal/population-size.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[|S(n)| \;+\; |I(n)| \;+\; |R(n)| \;=\; N\]</div></figure>
+  </div>
+  <pre>|S(n)| \;+\; |I(n)| \;+\; |R(n)| \;=\; N</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>sigma.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/tumbling-appendix-ii-getting-formal/sigma.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\sigma(t_i, A_i(p)) = \begin{cases} 1 &amp; : \;\; \textit{if } A_i(p) \ge t_i \\ 0 &amp; : \;\; \textit{otherwise} \end{cases}\]</div></figure>
+  </div>
+  <pre>\sigma(t_i, A_i(p)) = \begin{cases} 1 &amp; : \;\; \textit{if } A_i(p) \ge t_i \\ 0 &amp; : \;\; \textit{otherwise} \end{cases}</pre>
+</article></section><section><h2 id="p24">2010-10-18-twitter-bffs <small>(3)</small></h2><article class="conf-high">
+  <div class="meta"><code>fab.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/twitter-bffs/fab.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[f_{ab} = \begin{cases} 1 &amp; \textit{if } a, b \textit{ follow} \\ 0 &amp; \qquad\;\; \textit{otherwise} \end{cases}\]</div></figure>
+  </div>
+  <pre>f_{ab} = \begin{cases} 1 &amp; \textit{if } a, b \textit{ follow} \\ 0 &amp; \qquad\;\; \textit{otherwise} \end{cases}</pre><p class="note">The image also has a stray right bar after the cases; dropped.</p>
+</article><article class="conf-high">
+  <div class="meta"><code>geo-mean.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/twitter-bffs/geo-mean.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\sqrt{R(a, b) \cdot R(b, a)}\]</div></figure>
+  </div>
+  <pre>\sqrt{R(a, b) \cdot R(b, a)}</pre>
+</article><article class="conf-high">
+  <div class="meta"><code>reply-fract.png</code> · <span class="conf">high</span></div>
+  <div class="pair">
+    <figure><figcaption>Image</figcaption><img src="../static/images/twitter-bffs/reply-fract.png" alt=""></figure>
+    <figure><figcaption>LaTeX</figcaption><div class="math">\[\frac{R(a, b)}{\sum^{i} R(a, i)}\]</div></figure>
+  </div>
+  <pre>\frac{R(a, b)}{\sum^{i} R(a, i)}</pre>
+</article></section>
+<section><h2 id="mixed">Mixed images, left as images (13)</h2><article><div class="meta"><code>2010-08-06-beauty-of-procrastination</code> · graph with a formula label</div><img src="../static/images/beauty-of-procrastination/formula-graph1.png" alt=""></article><article><div class="meta"><code>2010-08-06-beauty-of-procrastination</code> · graph with a formula label</div><img src="../static/images/beauty-of-procrastination/formula-graph2.png" alt=""></article><article><div class="meta"><code>2012-07-02-sharing-burger-between-three</code> · Wolfram Alpha screenshot (input and numeric solution)</div><img src="../static/images/sharing-burger-between-three/soln-1.png" alt=""></article><article><div class="meta"><code>2012-07-02-sharing-burger-between-three</code> · Wolfram Alpha screenshot (input and numeric result)</div><img src="../static/images/sharing-burger-between-three/soln-2.png" alt=""></article><article><div class="meta"><code>2011-07-30-social-posting-part-one-whos-online</code> · network diagram next to its adjacency matrix</div><img src="../static/images/social-posting-part-one-whos-online/M-example.png" alt=""></article><article><div class="meta"><code>2011-07-30-social-posting-part-one-whos-online</code> · network diagram next to its weight matrix</div><img src="../static/images/social-posting-part-one-whos-online/W-example.png" alt=""></article><article><div class="meta"><code>2011-07-30-social-posting-part-one-whos-online</code> · network diagram next to its weight matrix</div><img src="../static/images/social-posting-part-one-whos-online/antagonist-example.png" alt=""></article><article><div class="meta"><code>2011-07-31-social-posting-part-two-we-post</code> · state vectors next to network diagrams</div><img src="../static/images/social-posting-part-two-we-post/antagonist-stablepoint.png" alt=""></article><article><div class="meta"><code>2011-06-23-toilet-roll</code> · colour-coded numbers that match a diagram</div><img src="../static/images/toilet-roll/looroll-eqn-num.png" alt=""></article><article><div class="meta"><code>2011-06-23-toilet-roll</code> · colour-coded symbols that match a diagram</div><img src="../static/images/toilet-roll/looroll-eqn1.png" alt=""></article><article><div class="meta"><code>2011-08-03-toilet-seat-conundrum</code> · payoff table with text headings</div><img src="../static/images/toilet-seat-conundrum/Game1Matrix.png" alt=""></article><article><div class="meta"><code>2011-08-03-toilet-seat-conundrum</code> · payoff table with text headings</div><img src="../static/images/toilet-seat-conundrum/Game2Matrix.png" alt=""></article><article><div class="meta"><code>2011-07-24-tumbling-appendix-ii-getting-formal</code> · network diagram next to its adjacency matrix</div><img src="../static/images/tumbling-appendix-ii-getting-formal/network-example.png" alt=""></article></section>
+</body></html>

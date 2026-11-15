@@ -37,7 +37,7 @@ The number of people on a train when it leaves a station can be described as fol
 
 Or as a difference equation; at station i:
 
-[![](/images/train-problem/difference-eqn.png)](/images/train-problem/difference-eqn.png)
+$$ N_i = N_{i-1} + B_i - D_i $$
 
 where *N_i* is passengers on-board, *D_i* is passengers 'disembarking' and *B_i* is passengers boarding.
 
@@ -58,17 +58,17 @@ N_3 = 0  [since everyone gets off at *3*]
 
 And from all that, we get that *B_i* and *D_i* can be written mathematically as
 
-[![](/images/train-problem/B-D-Summations.png)](/images/train-problem/B-D-Summations.png)
+$$ B_i = \sum_{j=i+1}^{n} T(i, j) \qquad D_i = \sum_{j=0}^{i} T(j, i) $$
 
 And all of this can be combined into one 'train equation'
 
-[![](/images/train-problem/Train-Eqn.png)](/images/train-problem/Train-Eqn.png)
+$$ N_i = \sum_{k=0}^{i}\left(\sum_{j=k+1}^{n} T(k, j) - \sum_{j=0}^{k} T(j, k)\right) $$
 
 **Usage**
 
 So once you've solved that equation, your probability is simply
 
-[![](/images/train-problem/prob.png)](/images/train-problem/prob.png)
+$$ p(i) = \frac{S - N_i}{S} $$
 
 (Where S in total number of seats available.)
 

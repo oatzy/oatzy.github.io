@@ -58,7 +58,7 @@ To get the total costs to Alice and Bob for this game, we work out
 
 (probability seat is up x cost if seat is up)
 
-[![](/images/toilet-seat-conundrum/costs-game1.png)](/images/toilet-seat-conundrum/costs-game1.png)
+$$ \begin{aligned} A_1 &= c_1\left(\frac{1 - p}{2}\right) \\ B_1 &= c_1\left(\frac{1 - p^2}{2}\right) + c_1p\left(\frac{1 - p}{2}\right) \end{aligned} $$
 
 And we can work out the ratio of costs
 
@@ -108,7 +108,7 @@ So what we do is this - the odds of Bob leaving the toilet seat up, and Alice be
 
 Multiplied by the cost, *c2*, and added to the pre-existing total cost for game one
 
-[![](/images/toilet-seat-conundrum/costs-game1-2Bc2.png)](/images/toilet-seat-conundrum/costs-game1-2Bc2.png)
+$$ B_1 = c_1\left(\frac{1 - p^2}{2}\right) + c_1p\left(\frac{1 - p}{2}\right) + \frac{c_2}{2}(1 - p) $$
 
 Now, we - or rather, Alice - wants the cost to be such that Game Two is preferable, i.e. *B'1 \> B2*
 
@@ -120,7 +120,7 @@ However, if Alice were feeling kind, she could introduce a 'reward' for putting 
 
 For this, Alice would have to offer a reward, *R*, with
 
-[![](/images/toilet-seat-conundrum/game1-reward.png)](/images/toilet-seat-conundrum/game1-reward.png)
+$$ R > \frac{c_1}{2}(1 - p)(5 - 2p) $$
 
 Arguably, Bob could introduce a new cost - or enticement - himself, to 'persuade' Alice towards Game One. But TV leads me to believe that this is seldom thought of, or executed.
 

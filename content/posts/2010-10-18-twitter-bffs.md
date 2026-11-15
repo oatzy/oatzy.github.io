@@ -27,13 +27,13 @@ So maybe define *R(a,b)* for [two users](http://en.wikipedia.org/wiki/Alice_and_
 
 In this instance, I would probably go with the [geometric mean](http://en.wikipedia.org/wiki/Geometric_mean),
 
-[![](/images/twitter-bffs/geo-mean.png)](/images/twitter-bffs/geo-mean.png)
+$$ \sqrt{R(a, b) \cdot R(b, a)} $$
 
 since this would weed out any one-sided relationships by making the result zero.
 
 You'd probably also want to factor in whether they're following each other, so define
 
-[![](/images/twitter-bffs/fab.png)](/images/twitter-bffs/fab.png)
+$$ f_{ab} = \begin{cases} 1 & \textit{if } a, b \textit{ follow} \\ 0 & \qquad\;\; \textit{otherwise} \end{cases} $$
 
 and multiply the mean by it. Or, in other words, make it zero if they don't both follow each other.
 
@@ -71,7 +71,7 @@ Given that people tweet at [different rates](https://oatzy.github.io/2010/10/02/
 
 For this I would probably say take
 
-[![](/images/twitter-bffs/reply-fract.png)](/images/twitter-bffs/reply-fract.png)
+$$ \frac{R(a, b)}{\sum^{i} R(a, i)} $$
 
 i.e. the proportion of *Alice*'s total @replies that are directed at *Bob*. So for my numbers above the total is 525, and you'd divide everything through by that.
 

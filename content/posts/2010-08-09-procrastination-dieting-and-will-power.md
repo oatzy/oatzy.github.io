@@ -28,7 +28,7 @@ For the other three foods, put them in order of desirability - *curry*, *chocola
 
 So going back to the equation from last time:
 
-[![](/images/procrastination-dieting-and-will-power/f-T-max.png)](/images/procrastination-dieting-and-will-power/f-T-max.png)
+$$ T = \max(i) \;\; \text{st} \;\; D(f_0) < D(f_i) \le D(f_{i-1}) $$
 
 *D(f_0)* is then the desirability of the *pasta*, relative to the other three.
 
@@ -38,15 +38,15 @@ And that's basically it. And further to that we can say that *T* is inversely pr
 
 And this can be written mathematically as
 
-[![](/images/procrastination-dieting-and-will-power/inv-prop-f.png)](/images/procrastination-dieting-and-will-power/inv-prop-f.png)
+$$ \begin{gathered} T \propto 1/D(f_0) \\ T = k/D(f_0) \end{gathered} $$
 
 Where *k* is the constant of proportionality, which will usually depend on the total number of options, among other things.
 
 So as you may have noticed, the equations are the same as last time, with slightly different symbols. And this is how we get our general case:
 
-[![](/images/procrastination-dieting-and-will-power/T-max-t.png)](/images/procrastination-dieting-and-will-power/T-max-t.png)
+$$ T = \max(i) \;\; \text{st} \;\; D(t_0) < D(t_i) \le D(t_{i-1}) $$
 
-[![](/images/procrastination-dieting-and-will-power/inv-t.png)](/images/procrastination-dieting-and-will-power/inv-t.png)
+$$ T = k/D(t_0) $$
 
 Where *t_i* are temptations, *T* is total temptations, *t_0* is the required thing and *D(t_i)*, as before, is the desirability of *t_i*.
 
@@ -56,7 +56,7 @@ In the case of dieting, it'd be dependent of things like: calorie content, how f
 
 So for procrastination, we just replace food with activities, and the same basic formula holds. But what made it a special case was that we could define another feature of the required task - its importance. We could then define desirability of that task in terms of its importance and got a slightly different looking, but equivalent equation:
 
-[![](/images/procrastination-dieting-and-will-power/kI-t.png)](/images/procrastination-dieting-and-will-power/kI-t.png)
+$$ T = k \cdot I(t_0) $$
 
 Obviously, though, the D-functions are different for any given 'problem'. So for procrastination, the D-function was time-dependent - the importance of a required task increased with time, meaning desirability decreased with time.
 
@@ -66,7 +66,7 @@ The desirability of food, on the other hand, may vary over time. But when it doe
 
 So the other thing to consider, for general will power situations, is the '*Temptation Threshold*'. And again, this is just a generalisation of the one of the old statements
 
-[![](/images/procrastination-dieting-and-will-power/q-t-w.png)](/images/procrastination-dieting-and-will-power/q-t-w.png)
+$$ \min(n) \;\; \text{st} \;\; D(t_n) > D(t_0) \;\; \text{with} \;\; (q \text{ of } t_n) < w $$
 
 Where *q* is some quality of *t_n*, whether it be how time consuming it is, how bad for you it is (calorie content), etc. - which is dependent on the specific required activity. *w* is a quantification of the lower limit of your will power (w.r.t. quality *q*). And finally, *t_n* (with *n* satisfying the above) is the '*Temptation Threshold*' item.
 

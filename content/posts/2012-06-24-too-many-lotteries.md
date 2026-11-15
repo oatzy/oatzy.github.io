@@ -61,7 +61,7 @@ For the single game bet, the probability of winning is *n\*p*
 
 For the multi-game bet, the probability of winning is
 
-[![](/images/too-many-lotteries/102525_0.png)](/images/too-many-lotteries/102525_0.png)
+$$ 1 - (1 - p)^n $$
 
 **Which is bigger?**
 
@@ -73,47 +73,47 @@ For this, we look at the [binomial expansion](http://en.wikipedia.org/wiki/Binom
 
 A Binomial Expansion works like this
 
-[![](/images/too-many-lotteries/102527_0.png)](/images/too-many-lotteries/102527_0.png)
+$$ \begin{aligned} (x + y)^n &= \sum_{k=0}^{n} \frac{n\ldots(n - k + 1)}{k!}x^k y^{n-k} \\ &= x^n + nyx^{n-1} + \frac{n(n - 1)}{2!}y^2x^{n-2} + \ldots \end{aligned} $$
 
 where *k!* is the [factorial](http://en.wikipedia.org/wiki/Factorial) of k. For example: 2! = 2\*1; 3! = 3\*2\*1; 4! = 4\*3\*2\*1; etc.
 
 In this case, x = 1 and y = -p, so the expansion becomes
 
-[![](/images/too-many-lotteries/binomial-expansion-alt.png)](/images/too-many-lotteries/binomial-expansion-alt.png)
+$$ (1 - p)^n = 1 - np + \frac{n(n - 1)}{2!}p^2 - \frac{n(n - 1)(n - 2)}{3!}p^3 + \ldots $$
 
 Which makes the probability of winning the multi-game
 
-[![](/images/too-many-lotteries/p-multi-expanded.png)](/images/too-many-lotteries/p-multi-expanded.png)
+$$ 1 - (1 - p)^n = np - \frac{n(n - 1)}{2!}p^2 + \frac{n(n - 1)(n - 2)}{3!}p^3 - \ldots $$
 
 So whether or not the mutli-game has higher odds than the single game depends on the sum of the terms after np.
 
 First, we compare the k-th and (k+1)-th (adjacent) terms in the expansion
 
-[![](/images/too-many-lotteries/compare-1.png)](/images/too-many-lotteries/compare-1.png)
+$$ \frac{n\ldots(n - k + 1)}{k!}p^k \stackrel{?}{=} \frac{n\ldots(n - k - 1)(n - k)}{(k + 1)!}p^{k+1} $$
 
 Which simplifies to
 
-[![](/images/too-many-lotteries/compare-2.png)](/images/too-many-lotteries/compare-2.png)
+$$ 1 \stackrel{?}{=} \frac{n - k}{k + 1}p $$
 
 The righthand side has it's maximum value when n is maximum. We previously defined the maximum value of n as *1/p*, so
 
-[![](/images/too-many-lotteries/compare-3.png)](/images/too-many-lotteries/compare-3.png)
+$$ \frac{\frac{1}{p} - k}{k + 1}p = \frac{1 - pk}{k + 1} \;<\; 1 $$
 
 since p and k are always greater than 0.
 
 Which means
 
-[![](/images/too-many-lotteries/compare-4.png)](/images/too-many-lotteries/compare-4.png)
+$$ \frac{n\ldots(n - k + 1)}{k!}p^k > \frac{n\ldots(n - k - 1)(n - k)}{(k + 1)!}p^{k+1} $$
 
 In other words, each term in the expansion is smaller than the ones before it.
 
 This means that, if we pair up terms,
 
-[![](/images/too-many-lotteries/102534_0.png)](/images/too-many-lotteries/102534_0.png)
+$$ \begin{aligned} \left(-\frac{n(n - 1)}{2!}p^2 + \frac{n(n - 1)(n - 2)}{3!}p^3\right) &< 0 \\ \left(-\frac{n\ldots(n - 3)}{4!}p^4 + \frac{n\ldots(n - 4)}{5!}p^5\right) &< 0 \\ \left(-\frac{n\ldots(n - k + 1)}{k!}p^k + \frac{n\ldots(n - k)}{(k + 1)!}p^{k+1}\right) &< 0 \end{aligned} $$
 
 i.e. the sum of each pair will be negative. Therefore, the sum of all the pairs (all the terms in the expansion after np) is negative. So necessarily
 
-[![](/images/too-many-lotteries/102537_0.png)](/images/too-many-lotteries/102537_0.png)
+$$ 1 - (1 - p)^n = np + \left(-\frac{n(n - 1)}{2!}p^2 + \frac{n(n - 1)(n - 2)}{3!}p^3 - \frac{n\ldots(n - 3)}{4!}p^4 + \ldots\right) < np $$
 
 Which means the **<em>odds of winning the single game is ALWAYS better than the odds of winning the multi-game</em>**.
 
@@ -135,27 +135,27 @@ For the multi-game it's more complicate. We can't use the same trick as last tim
 
 The general form is the series sum
 
-[![](/images/too-many-lotteries/utility-1.png)](/images/too-many-lotteries/utility-1.png)
+$$ \begin{aligned} &n(w)p(1 - p)^{n-1} + \frac{n(n - 1)}{2!}(2w)p^2(1 - p)^{n-2} + \ldots \\ &= \sum_{k=1}^{n} \frac{n\ldots(n - k + 1)}{k!}(kw)p^k(1 - p)^{n-k} \end{aligned} $$
 
 Which can be manipulated and simplified to give
 
-[![](/images/too-many-lotteries/utility-1a.png)](/images/too-many-lotteries/utility-1a.png)
+$$ \begin{aligned} &= w\sum_{k=1}^{n} \frac{n\ldots(n - k + 1)}{(k - 1)!}p^k(1 - p)^{n-k} \\ &= w\sum_{k=0}^{n-1} \frac{n\ldots(n - k)}{k!}p^{k+1}(1 - p)^{n-k-1} \end{aligned} $$
 
 Now, if we expand it out again
 
-[![](/images/too-many-lotteries/utility-2.png)](/images/too-many-lotteries/utility-2.png)
+$$ = w\left(np(1 - p)^{n-1} + n(n - 1)p^2(1 - p)^{n-2} + \ldots\right) $$
 
 Then there's a factor of np in each term, so we can take that outside the bracket
 
-[![](/images/too-many-lotteries/utility-3.png)](/images/too-many-lotteries/utility-3.png)
+$$ = wnp\left((1 - p)^{n-1} + (n - 1)p(1 - p)^{n-2} + \ldots\right) $$
 
 And since n is some arbitrary interger, we can substitute m = n - 1 and put it back in summation form
 
-[![](/images/too-many-lotteries/utility-4.png)](/images/too-many-lotteries/utility-4.png)
+$$ \begin{aligned} &= wnp\left((1 - p)^m + mp(1 - p)^{m-1} + \ldots\right) \\ &= wnp\sum_{k=0}^{m} \frac{m\ldots(m - k + 1)}{k!}p^k(1 - p)^{m-k} \end{aligned} $$
 
 Now, you might notice the summation part is actually a binomial expansion; in this case we have x = (1 - p) and y = p, so
 
-[![](/images/too-many-lotteries/102561_0.png)](/images/too-many-lotteries/102561_0.png)
+$$ \sum_{k=0}^{m} \frac{m\ldots(m - k + 1)}{k!}p^k(1 - p)^{m-k} = ((1 - p) + p)^m = (1)^m = 1 $$
 
 For all values of p and m = n - 1.
 

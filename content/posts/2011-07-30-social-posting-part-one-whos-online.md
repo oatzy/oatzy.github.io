@@ -54,7 +54,7 @@ Don't get me wrong, I'm not saying this is definitely how the world works. This 
 
 Right, let's dive in: for some network of users, define a matrix M with entries
 
-[![](/images/social-posting-part-one-whos-online/M-def.png)](/images/social-posting-part-one-whos-online/M-def.png)
+$$ M_{ij} = \begin{cases} 1 & : \;\; i \textit{ follows } j \\ 0 & : \;\; \textit{otherwise} \end{cases} $$
 
 For example
 
@@ -64,7 +64,7 @@ NB/ connections between users needn't necessarily be two-way (except in the case
 
 Next, we define a column matrix, T(n), with entries
 
-[![](/images/social-posting-part-one-whos-online/T-def-1.png)](/images/social-posting-part-one-whos-online/T-def-1.png)
+$$ T_i(n) = \begin{cases} 1 & : \;\; i \textit{ posts at time } n \\ 0 & : \;\; \textit{otherwise} \end{cases} $$
 
 Now, we say that if at least one of a user's friends is posting, then the user will 'come online' and post in the next turn. Vice versa, if none of their friends are posting, then the user will 'go offline' and not post in the next turn.
 
@@ -86,7 +86,7 @@ The problem with the model so far is that there only needs to be one other perso
 
 So we might instead say, if at least half of a user' friends are online, then the user will join them in the next turn. First of all, we define a matrix, W, with entries,
 
-[![](/images/social-posting-part-one-whos-online/W-def.png)](/images/social-posting-part-one-whos-online/W-def.png)
+$$ W_{ij} = \frac{M_{ij}}{\sum^{j} M_{ij}} $$
 
 So for the example above, we get
 
@@ -94,7 +94,7 @@ So for the example above, we get
 
 That is, the matrix M normalised so that the sum along each row equals 1. Our definition of T then becomes
 
-[![](/images/social-posting-part-one-whos-online/Tni-defs.png)](/images/social-posting-part-one-whos-online/Tni-defs.png)
+$$ T_i(n) = \begin{cases} 1 & : \;\; W_i \cdot T(n - 1) \ge \frac{1}{2} \\[1ex] 0 & : \;\; \textit{otherwise} \end{cases} $$
 
 Which is just a fancy way of saying, if at least half of a user' friends are posting, then the user will post in the next term.
 
@@ -114,11 +114,11 @@ The trick is this - instead of assigning everyone a 1 in the matrix M, let user 
 
 Call this matrix W'. This matrix is, again, normalised to generate W, as before; making the sum along each row equal 1. The only difference is that with antagonists, some rows may add up to 0. So to avoid [division by zero](http://en.wikipedia.org/wiki/Division_by_zero) we have this
 
-[![](/images/social-posting-part-one-whos-online/W-def-alt.png)](/images/social-posting-part-one-whos-online/W-def-alt.png)
+$$ W_{ij} = \begin{cases} 2S & : \;\; \sum^{j} W'_{ij} = 0 \\ S & : \;\; \textit{otherwise} \end{cases} \qquad \textit{with} \;\; S = \frac{W'_{ij}}{\sum^{j} |W'_{ij}|} $$
 
 At this point, I'll introduce the [equation](http://en.wikipedia.org/wiki/Recurrence_equation) for the model so far
 
-[![](/images/social-posting-part-one-whos-online/coherence-eqn-simple.png)](/images/social-posting-part-one-whos-online/coherence-eqn-simple.png)
+$$ T(n) = W \cdot T(n - 1) $$
 
 **Avoid the Antagonist**
 

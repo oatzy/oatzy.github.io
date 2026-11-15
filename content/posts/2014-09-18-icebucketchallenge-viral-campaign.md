@@ -49,7 +49,7 @@ We can [draw](https://www.lucidchart.com/) the model as a flowchart, showing how
 
 Here, we've divided nominees into those who accept the challenge (S-\>I) and those who don't accept (S-\>R). So, now we can describe the model as a system of differential equations,
 
-[![](/images/icebucketchallenge-viral-campaign/sir-diff.png)](/images/icebucketchallenge-viral-campaign/sir-diff.png)
+$$ \begin{aligned} \frac{dS}{dt} &= -(\alpha + \beta)SI \\ \frac{dI}{dt} &= \alpha SI - \gamma I \\ \frac{dR}{dt} &= \gamma I + \beta SI \end{aligned} $$
 
 Where the factors (α, β, γ) describe what proportions of each group move to where.
 
@@ -81,7 +81,7 @@ Now, α and β are related to the proportions of nominees that accept and declin
 
 So to tie it all together, we have the system of (difference) equations,
 
-[![](/images/icebucketchallenge-viral-campaign/sir-dis.png)](/images/icebucketchallenge-viral-campaign/sir-dis.png)
+$$ \begin{aligned} S_{n+1} &= S_n - \frac{3}{S_0}\, S_n I_n \\ I_{n+1} &= \frac{a}{S_0}\, S_n I_n \\ R_{n+1} &= R_n + I_n + \frac{(3-a)}{S_0}\, S_n I_n \end{aligned} $$
 
 And it's pretty straightforward to write some code that'll run through those equations.
 

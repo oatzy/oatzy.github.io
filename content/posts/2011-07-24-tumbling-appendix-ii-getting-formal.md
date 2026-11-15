@@ -58,7 +58,7 @@ Now. For the simulated model, I created the network at random, as I went. This w
 
 At any rate, it works like this - define a matrix, M, with entries,
 
-[![](/images/tumbling-appendix-ii-getting-formal/matrix-def.png)](/images/tumbling-appendix-ii-getting-formal/matrix-def.png)
+$$ M_{ij} = \begin{cases} 1 & : \; i \textit{ follows } j \\ 0 & : \; \textit{otherwise} \end{cases} $$
 
 This is, essentially, a table of ones and zeros that represents some (arbitrary) network of connections - i.e. who follows who.
 
@@ -68,29 +68,29 @@ As an example, in the below, the matrix on the right represents the graph on the
 
 From this, we can calculate things like: the number of people a user, i, follows, and the number of people user i is followed by (respectively) as
 
-[![](/images/tumbling-appendix-ii-getting-formal/follow-follower.png)](/images/tumbling-appendix-ii-getting-formal/follow-follower.png)
+$$ f_i = \sum^{j} M_{ij} \qquad F_i = \sum^{j} M_{ji} $$
 
 That is, in the left case, sum along the i-th row, and in the right, sum down the i-th column.
 
 Next, we define [column matrices](http://en.wikipedia.org/wiki/Column_vector) for each of the possible states. So, for example, the susceptibility matrix, S, has entries
 
-[![](/images/tumbling-appendix-ii-getting-formal/S-state-definition.png)](/images/tumbling-appendix-ii-getting-formal/S-state-definition.png)
+$$ S_i(n) = \begin{cases} 1 & : \;\; \textit{if } i \textit{ is state } S \\ 0 & : \;\; \textit{otherwise} \end{cases} $$
 
 That is, if user *i* is susceptible at time n, then this will be indicated by a one in the i-th row of that state matrix. Otherwise its value is zero.
 
 We can then define an operator to calculate the number of people in that given state as
 
-[![](/images/tumbling-appendix-ii-getting-formal/mod-S.png)](/images/tumbling-appendix-ii-getting-formal/mod-S.png)
+$$ |S(n)| = \sum^{i} S_i(n) $$
 
 Essentially, this counts the number of ones in whichever state matrix. Which leads to the equation
 
-[![](/images/tumbling-appendix-ii-getting-formal/population-size.png)](/images/tumbling-appendix-ii-getting-formal/population-size.png)
+$$ |S(n)| \;+\; |I(n)| \;+\; |R(n)| \;=\; N $$
 
 Which basically says that the sum of the number of people in each state equals the total population size.  Or in other words, that everyone in the population has to be in one of the three states.
 
 Finally, we define a function, *sigma*, that looks like this,
 
-[![](/images/tumbling-appendix-ii-getting-formal/sigma.png)](/images/tumbling-appendix-ii-getting-formal/sigma.png)
+$$ \sigma(t_i, A_i(p)) = \begin{cases} 1 & : \;\; \textit{if } A_i(p) \ge t_i \\ 0 & : \;\; \textit{otherwise} \end{cases} $$
 
 This is the function for threshold testing, described previously. In essence, it takes a matrix of the users' thresholds, *t*, and their assessments of a given post, *A(p)*, and returns a matrix of ones and zeros representing whether or not each user will 'reblog' that post.
 
@@ -98,11 +98,11 @@ This is the function for threshold testing, described previously. In essence, it
 
 So now, we can define our set of equations. Brace yourself,
 
-[![](/images/tumbling-appendix-ii-getting-formal/Tumblr-model-equations.png)](/images/tumbling-appendix-ii-getting-formal/Tumblr-model-equations.png)
+$$ \begin{aligned} S(n) &= S(n - 1) - E(n) \\[1ex] E_i(n) &= \begin{cases} 1 & : \;\; \textit{if } \sum^{j} M_{ij}\, S_i(n - 1)\, I_j(n - 1) \ge 1 \\ 0 & : \;\; \textit{otherwise} \end{cases} \\[1ex] I_i(n) &= \sigma(t_i, A_i(p)) \cdot E_i(n) \qquad\qquad \forall\, i \in \{0, 1, \ldots, N\} \\[1ex] R(n) &= R(n - 1) + I(n - 1) + [E(n) - I(n)] \end{aligned} $$
 
 The typical initial conditions will be,
 
-[![](/images/tumbling-appendix-ii-getting-formal/initial-conditions.png)](/images/tumbling-appendix-ii-getting-formal/initial-conditions.png)
+$$ S(0) = \begin{pmatrix} 0 \\ 1 \\ \cdots \\ 1 \end{pmatrix} \qquad E(0) = \begin{pmatrix} 0 \\ 0 \\ \cdots \\ 0 \end{pmatrix} \qquad I(0) = \begin{pmatrix} 1 \\ 0 \\ \cdots \\ 0 \end{pmatrix} \qquad R(0) = \begin{pmatrix} 0 \\ 0 \\ \cdots \\ 0 \end{pmatrix} $$
 
 In theory, this model shouldn't be significantly different from the one previously outlined - though, admittedly, I haven't tested this assumption.
 

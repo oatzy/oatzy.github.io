@@ -82,23 +82,23 @@ We don't actually need numerical simulations to study the behaviour of this (or 
 
 First of all, we generalise the system. We start with a pair of coupled, first-order differential equations describing the behaviour of the two populations
 
-[![](/images/sexuality-and-population-dynamics/gen-coupled.png)](/images/sexuality-and-population-dynamics/gen-coupled.png)
+$$ \begin{aligned} \dot{x} &= a_{11}x + a_{12}y \\ \dot{y} &= a_{21}x + a_{22}y \end{aligned} $$
 
 Now, these two populations are mutually exclusive subgroups of the total population - that is, total population z = x + y. So with a little [mathematical trickery](http://mathbin.net/98300), we can combine these two into a single equation, describing the behaviour of the total population
 
-[![](/images/sexuality-and-population-dynamics/gen-pop-diff.png)](/images/sexuality-and-population-dynamics/gen-pop-diff.png)
+$$ \ddot{z} = (a_{11} + a_{22})\dot{z} - (a_{11}a_{22} - a_{12}a_{21})z $$
 
 This is a second-order, linear differential equation, so has the general solution of the form
 
-[![](/images/sexuality-and-population-dynamics/gen-pop.png)](/images/sexuality-and-population-dynamics/gen-pop.png)
+$$ z(t) = A_{z_1}e^{\lambda_1 t} + A_{z_2}e^{\lambda_2 t} $$
 
 Where lambda values are given by
 
-[![](/images/sexuality-and-population-dynamics/gen-lambda.png)](/images/sexuality-and-population-dynamics/gen-lambda.png)
+$$ \lambda_{1,2} = \frac{(a_{11} + a_{22}) \pm \sqrt{(a_{11} + a_{22})^2 - 4(a_{11}a_{22} - a_{12}a_{21})}}{2} $$
 
 And A-coefficients are constants, which are determined by the system's initial conditions. If the initial total population is z0, and the inital size of the x population is x0, then we get
 
-[![](/images/sexuality-and-population-dynamics/gen-avalues.png)](/images/sexuality-and-population-dynamics/gen-avalues.png)
+$$ \begin{aligned} A_{z_1} &= \frac{x_0(a_{11} - a_{12} + a_{21} - a_{22}) - z_0(\lambda_2 - a_{12} - a_{22})}{\lambda_1 - \lambda_2} \\ A_{z_2} &= \frac{x_0(a_{11} - a_{12} + a_{21} - a_{22}) - z_0(\lambda_1 - a_{12} - a_{22})}{\lambda_2 - \lambda_1} \end{aligned} $$
 
 In other words, we now have an (analytical) equation which completely describes how the population will behave for any given set of variable.
 
@@ -120,19 +120,19 @@ ii\) if one or both of the lambdas are *positive*, the system is unstable and th
 
 Now, if we take the limit of z(t) for t tends to infinity, we can simplify the population equation
 
-[![](/images/sexuality-and-population-dynamics/gen-lim-z.png)](/images/sexuality-and-population-dynamics/gen-lim-z.png)
+$$ \lim_{t \to \infty} z(t) = A_{z_1}e^{\lambda_1 t} $$
 
 What this tells us is, if lambda1 is less than one the population will die out. If lambda1 is greater than one, the population will grow.
 
 And we can use this to determine the conditions for instability - the conditions under which the population will grow. In this case the condition is *lambda1 \> 0*. But this can be simplified down to
 
-[![](/images/sexuality-and-population-dynamics/gen-condition.png)](/images/sexuality-and-population-dynamics/gen-condition.png)
+$$ a_{11}a_{22} - a_{12}a_{21} < 0 $$
 
 There's one last trick we can do - determine what proportion of the total population will be in the sub-population x (e.g. what what fraction of the population will be gay) as t tends to infinity.
 
 For this, we determine the equation for population x (in a similar fashion to z), and take advantage of the limits to get the equation
 
-[![](/images/sexuality-and-population-dynamics/gen-lim-xz.png)](/images/sexuality-and-population-dynamics/gen-lim-xz.png)
+$$ \lim_{t \to \infty} \frac{x(t)}{z(t)} = \frac{z_0a_{12} - x_0(\lambda_2 + a_{12} - a_{11})}{x_0(a_{11} - a_{12} + a_{21} - a_{22}) - z_0(\lambda_2 - a_{12} - a_{22})} $$
 
 Note that this equation is time-independant, i.e. the proportion will tend to some constant value.
 
@@ -140,23 +140,23 @@ Note that this equation is time-independant, i.e. the proportion will tend to so
 
 Just as a sort of check, we'll go back to the basic model. For this, we have
 
-[![](/images/sexuality-and-population-dynamics/simpled-coupled.png)](/images/sexuality-and-population-dynamics/simpled-coupled.png)
+$$ \begin{aligned} \dot{x} &= [-d]x + [bg]y \\ \dot{y} &= [b(1 - g) - d]y \end{aligned} $$
 
 Which gives lambda and A values
 
-[![](/images/sexuality-and-population-dynamics/simple-lambda-a.png)](/images/sexuality-and-population-dynamics/simple-lambda-a.png)
+$$ \begin{aligned} \lambda_1 &= b(1 - g) - d & \qquad \lambda_2 &= -d \\[1ex] A_{z_1} &= \frac{z_0 - x_0}{1 - g} & \qquad A_{z_2} &= \frac{x_0 - gz_0}{1 - g} \end{aligned} $$
 
 Which gives the population equation
 
-[![](/images/sexuality-and-population-dynamics/simple-pop.png)](/images/sexuality-and-population-dynamics/simple-pop.png)
+$$ z(t) = \frac{z_0 - x_0}{1 - g}e^{[b(1-g)-d]t} + \frac{x_0 - gz_0}{1 - g}e^{-dt} $$
 
 Which behaves like the graphs at the top. And this tends to
 
-[![](/images/sexuality-and-population-dynamics/simple-lim-z.png)](/images/sexuality-and-population-dynamics/simple-lim-z.png)
+$$ \lim_{t \to \infty} z(t) = \frac{z_0 - x_0}{1 - g}e^{[b(1-g)-d]t} $$
 
 And gives
 
-[![](/images/sexuality-and-population-dynamics/simple-lim-xz.png)](/images/sexuality-and-population-dynamics/simple-lim-xz.png)
+$$ \lim_{t \to \infty} \frac{x}{z} = g $$
 
 That is, the proportion of the population that will be gay stabilises at the pre-defined 'birth' ratio - which is what we saw from the numerical model. Note also that this value is independent of initial conditions and doesn't vary over time.
 
@@ -164,7 +164,7 @@ That is, the proportion of the population that will be gay stabilises at the pre
 
 Finally, for the simple model, the condition for instability (growth) is given by
 
-[![](/images/sexuality-and-population-dynamics/simple-condition.png)](/images/sexuality-and-population-dynamics/simple-condition.png)
+$$ g < 1 - \frac{d}{b} $$
 
 For the numerical values chosen above, this gives the condition *g \< 0.606* - that is, if less than 61% of the population is 'born' gay, then the population won't die out. And 61% is a pretty high upper limit - a majority, in fact.
 
@@ -190,7 +190,7 @@ Here's what the model looks like
 
 And here are the coupled equations
 
-[![](/images/sexuality-and-population-dynamics/complex-coupled.png)](/images/sexuality-and-population-dynamics/complex-coupled.png)
+$$ \begin{aligned} \dot{x} &= [b_1g_1 - d_1]x + [bg]y \\ \dot{y} &= [b_1(1 - g_1)]x + [b(1 - g) - d]y \end{aligned} $$
 
 Now, all the previously derived general equations and such from earlier still apply. But in this case, the variables can't really be simplified, and writing them out in full would just be a mess.
 
@@ -204,7 +204,7 @@ For this model, the phase portraits are basically the same as for the simple mod
 
 So, for this model, the condition for growth looks like this
 
-[![](/images/sexuality-and-population-dynamics/98729_0.png)](/images/sexuality-and-population-dynamics/98729_0.png)
+$$ 1 < \frac{b}{d}(1 - g) + \frac{b_1}{d_1}g_1 $$
 
 The important thing to note here is, if the condition for the simple model (*g\<1-d/b*) is satified, then the condition for the complex model is necessarilty satisfied.
 
@@ -222,7 +222,7 @@ So for these values, the upper limit of g can increase by no more than 3.4%. So,
 
 In fact, the additional variables only become significant when *(b1/d1)g1 \> 0.15* (for the values above); or in general, when
 
-[![](/images/sexuality-and-population-dynamics/98755_0.png)](/images/sexuality-and-population-dynamics/98755_0.png)
+$$ \frac{b_1}{d_1}g_1 > 0.05\left(\frac{b}{d}\right) $$
 
 So, if we keep b and d as before, *g=0.07*, and re-set b1=b, d1=d, and *g1=0.06*, then *(b1/d1)g1=0.152*, and the phase portrait looks like this
 

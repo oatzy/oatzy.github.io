@@ -41,11 +41,11 @@ Instead, we can figure out the answer with some good old-fashioned maths.
 
 Lets re-state the problem - what we want to know is the expected length of the prime number. Here we use the standard definition for the [expectation value](http://en.wikipedia.org/wiki/Expected_value)
 
-[![](/images/how-long-will-prime-number-be/exN.png)](/images/how-long-will-prime-number-be/exN.png)
+$$ <N> = \sum_{N=1}^{\infty} N \cdot p(N) $$
 
 So now the problem is find p(N), which in this case is the probability that a number of length N is prime. Now, as any romantic mathematician will tell you, prime numbers are mysterious things, which are scattered about the number line seemingly at random. However, what we do have is the '[Prime Number Theorem](http://en.wikipedia.org/wiki/Prime_number_theorem)', which estimates the number of prime numbers smaller than n, as
 
-[![](/images/how-long-will-prime-number-be/piN1.png)](/images/how-long-will-prime-number-be/piN1.png)
+$$ \pi(n) = \frac{n}{ln(n)} $$
 
 where ln(n) is the [natural logarithm](http://en.wikipedia.org/wiki/Natural_logarithm). Here's a [Numberphile video](https://www.youtube.com/watch?v=l8ezziaEeNE) explaining the theorem.
 
@@ -53,7 +53,7 @@ So, for one digit numbers (numbers less than 10) there are ~10/log(10) = 4.2 pri
 
 Now, for numbers of two or more digits, the number of primes that are N digits long is (approximately) the number of primes less than 10^N minus the number of primes less than 10^(N-1). So then, the probability of an N-digit number being prime is the number of N-digit primes divided by the total number of N-digit numbers. It can be shown (homework) that this probability is given by
 
-[![](/images/how-long-will-prime-number-be/pN-eqn.png)](/images/how-long-will-prime-number-be/pN-eqn.png)
+$$ p(N) = \frac{0.9N - 1}{0.9N(N-1)\,ln(10)} $$
 
 Plotting this function, we see that the probability goes to zero as N goes to infinity
 
@@ -63,7 +63,7 @@ In other words, the longer the number gets the less likely it is to be prime. In
 
 So we have
 
-[![](/images/how-long-will-prime-number-be/exN1.png)](/images/how-long-will-prime-number-be/exN1.png)
+$$ <N> = \sum_{N=1}^{\infty} N \cdot p(N) = \sum_{N=1}^{\infty} \frac{0.9N - 1}{0.9(N-1)\,ln(10)} $$
 
 And as N-\>infinity, N p(N) -\> 1/ln(10). What this means is the sum doesn't converge - it goes to infinity. So on average we expect our prime to be infinitely long.
 

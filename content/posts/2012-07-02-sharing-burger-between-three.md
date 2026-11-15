@@ -56,7 +56,7 @@ They're relatively easy - there are 2pi radians in a full circle, so 2pi radians
 
 Back to the circle; with angle x in radians, the area of the circular segment is
 
-[![](/images/sharing-burger-between-three/area-seg.png)](/images/sharing-burger-between-three/area-seg.png)
+$$ A_{seg} = \frac{x}{2}r^2 $$
 
 The area of a triangle is half base times height..
 
@@ -75,27 +75,27 @@ So the area of the triangle is (l\*b)/2 = r^2 sin(x/2)cos(x/2)
 Finally, use the [identity](http://en.wikipedia.org/wiki/Double_angle#Double-.2C_triple-.2C_and_half-angle_formulae) *sin(2x) = 2sin(x)cos(x)*\
 to get
 
-[![](/images/sharing-burger-between-three/area-tri.png)](/images/sharing-burger-between-three/area-tri.png)
+$$ A_{tri} = \frac{1}{2}r^2\sin(x) $$
 
 \*    \*    \*
 
 So the area of the cut-off is
 
-[![](/images/sharing-burger-between-three/area-cut.png)](/images/sharing-burger-between-three/area-cut.png)
+$$ A_{cut} = \frac{x}{2}r^2 - \frac{1}{2}r^2\sin(x) $$
 
 and it needs to equal a third the area of the circle = 1/3 pi r^2.
 
 So first, we need to find x satisfying
 
-[![](/images/sharing-burger-between-three/eqn-1.png)](/images/sharing-burger-between-three/eqn-1.png)
+$$ \frac{x}{2}r^2 - \frac{r^2}{2}\sin(x) = \frac{\pi}{3}r^2 $$
 
 or
 
-[![](/images/sharing-burger-between-three/eqn-2.png)](/images/sharing-burger-between-three/eqn-2.png)
+$$ \sin(x) = x - \frac{2\pi}{3} $$
 
 Once we have a value for x, we find where to make the cut from
 
-[![](/images/sharing-burger-between-three/eqn-3.png)](/images/sharing-burger-between-three/eqn-3.png)
+$$ \frac{l}{r} = \cos\left(\frac{x}{2}\right) $$
 
 **Intermission**
 
@@ -132,13 +132,13 @@ For the left hand side of the equation, we need to work out sin(5pi/6)
 
 At A-level, we were expected to memorise sin() and cos() of angles 0, 30, 45, 60, 90, and 180 (degrees). We were also expected to know the [formulas](http://en.wikipedia.org/wiki/List_of_trigonometric_identities#Angle_sum_and_difference_identities) for sin() and cos() of sums of angles. For sin(), it works like
 
-[![](/images/sharing-burger-between-three/sin-mult.png)](/images/sharing-burger-between-three/sin-mult.png)
+$$ \sin(a + b) = \sin(a)\cos(b) + \sin(b)\cos(a) $$
 
 Why is this important? Well 150 degrees = 180 - 30 (5pi/6 rads = pi - pi/6)
 
 So
 
-[![](/images/sharing-burger-between-three/103171_0.png)](/images/sharing-burger-between-three/103171_0.png)
+$$ \begin{aligned} \sin(150) = \sin(180 - 30) &= \sin(180)\cos(-30) + \sin(-30)\cos(180) \\ &= (0)\left(\frac{\sqrt{3}}{2}\right) \;+\; (-0.5)(-1) \;=\; 0.5 \end{aligned} $$
 
 And since 0.5 is pretty close to 0.52 - less than 5% error - we can accept the convenience of that answer and say it's close enough.
 
@@ -150,11 +150,11 @@ Now we just need to work out l/r = cos(x/2) = cos(5pi/12)
 
 For this one, 5pi/12 rads = 75 degrees = 45 + 30, so we can use
 
-[![](/images/sharing-burger-between-three/103172_0.png)](/images/sharing-burger-between-three/103172_0.png)
+$$ \cos(a + b) = \cos(a)\cos(b) - \sin(a)\sin(b) $$
 
 So
 
-[![](/images/sharing-burger-between-three/103174_0.png)](/images/sharing-burger-between-three/103174_0.png)
+$$ \begin{aligned} \cos(75) = \cos(45 + 30) &= \cos(45)\cos(30) - \sin(45)\sin(30) \\ &= \left(\frac{1}{\sqrt{2}}\right)\left(\frac{\sqrt{3}}{2}\right) \;-\; \left(\frac{1}{\sqrt{2}}\right)\left(\frac{1}{2}\right) \;=\; \frac{\sqrt{3} - 1}{2\sqrt{2}} \end{aligned} $$
 
 And we just have to evaluate that. But we don't have a square root button. Now, I just happen to know that sqrt(3) ~ 1.73 and sqrt(2) ~ 1.41.
 
@@ -183,7 +183,7 @@ The second method is the "[Babylonian Method](http://en.wikipedia.org/wiki/Babyl
 
 It uses the recurrence relation
 
-[![](/images/sharing-burger-between-three/103119_0.png)](/images/sharing-burger-between-three/103119_0.png)
+$$ x_{n+1} = \frac{1}{2}\left(x_n + \frac{S}{x_n}\right) $$
 
 Basically, you make a guess xn. Divide the number you want to square root (S) by xn. If xn is lower than the actual square root, then S/xn will be greater than it. That means the actual root will be between xn and S/xn, so we make the next guess xn+1 the average of these two values. Repeat until x is sufficiently accurate.
 
@@ -211,7 +211,7 @@ So, the question is, how do we calculate sin(x)?
 
 The [Taylor Expansion](http://en.wikipedia.org/wiki/Taylor_expansion) of a function is a way of fitting a polynomial (sums of powers) to a more complicated function. It works like this
 
-[![](/images/sharing-burger-between-three/103120_0.png)](/images/sharing-burger-between-three/103120_0.png)
+$$ \begin{aligned} f(x) &= \sum_{n=0} \frac{f^{(n)}(a)}{n!}(x - a)^n \\ &= f(a) + \frac{f'(a)}{1!}(x - a) + \frac{f''(a)}{2!}(x - a)^2 + \frac{f^{(3)}(a)}{3!}(x - a)^3 + \cdots \end{aligned} $$
 
 Basically, it gives a way of converting a function we can't calculate into an infinite sum of powers of x, which we *can* calculate.
 
@@ -227,7 +227,7 @@ In this case, I'm going to use the Taylor Expansion of sin(x) around x0=pi, sinc
 
 Here's what the expansion looks like
 
-[![](/images/sharing-burger-between-three/Taylor-sin-alt.png)](/images/sharing-burger-between-three/Taylor-sin-alt.png)
+$$ \begin{aligned} \sin(x) &= \sum_{n=0} \frac{f^{(n)}(\pi)}{n!}(x - \pi)^n \\ &= sin(\pi) + \frac{cos(\pi)}{1!}(x - \pi) + \frac{-sin(\pi)}{2!}(x - \pi)^2 + \frac{-cos(\pi)}{3!}(x - \pi)^3 + \cdots \\[1ex] &= (\pi - x) - \frac{(\pi - x)^3}{3!} + \frac{(\pi - x)^5}{5!} - \frac{(\pi - x)^7}{7!} + \cdots \end{aligned} $$
 
 So, how many terms do we need to include?
 
@@ -246,7 +246,7 @@ NB/ We shouldn't get too hung up on getting an extremely accurate value for x, s
 
 That means we want to solve
 
-[![](/images/sharing-burger-between-three/sin-taylor.png)](/images/sharing-burger-between-three/sin-taylor.png)
+$$ \begin{aligned} (\pi - x) - \frac{(\pi - x)^3}{3!} + \frac{(\pi - x)^5}{5!} &= x - \frac{2\pi}{3} \\ \frac{5\pi}{3} - 2x - \frac{(\pi - x)^3}{3!} + \frac{(\pi - x)^5}{5!} &= 0 \end{aligned} $$
 
 which can't be solved exactly.
 
@@ -268,7 +268,7 @@ Finally, we need to calculate cos(x/2)
 
 Again, we use the Taylor Expansion to calculate cos(). In this case, we're doing the expansion around x0=0; the expansion is
 
-[![](/images/sharing-burger-between-three/103118_0.png)](/images/sharing-burger-between-three/103118_0.png)
+$$ \cos x = \sum_{n=0} \frac{(-1)^n}{(2n)!}x^{2n} = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots $$
 
 In this case, you just keep adding terms until the result remains approximately constant to some desired degree of accuracy (3pd).
 
