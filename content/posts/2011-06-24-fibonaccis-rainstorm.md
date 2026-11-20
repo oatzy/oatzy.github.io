@@ -44,19 +44,7 @@ Well, all except the last sentence fragment. The actual idea is that, regardless
 
 The *Collatz Conjecture* is currently unproven, though recently someone published a [proposed proof](http://science.slashdot.org/story/11/06/05/1446209/Collatz-Proof-Proposed-Hailstone-Sequences-End-In-1) - currently [under scrutiny](http://www.reddit.com/r/math/comments/hqqph/collatz_3n_1_conjecture_solved/c1xp6iu). But that's a whole other story.
 
-So you pick some number, generate the sequence and see what it sounds like. Here's the sequence for 12
-
-<object height="81" width="100%">
-
-<param name="movie" value="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F17796950"></param><param name="allowscriptaccess" value="always"></param>
-
-<embed allowscriptaccess="always" height="81" src="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F17796950" type="application/x-shockwave-flash" width="100%">
-
-</embed>
-
-</object>
-
-[](http://soundcloud.com/oatzy/collatz-12)
+So you pick some number, generate the sequence and see what it sounds like. Here's the sequence for 12 - [Collatz-12](http://soundcloud.com/oatzy/collatz-12)
 
 That is - *12, 6, 3, 10, 5, 16, 8, 4, 2, 1*
 
@@ -70,19 +58,7 @@ This was actually inspired, slightly, by the *Tool* song *[Lateralis](http://you
 
 > *Black / then / white are / all I see / in my infancy / red and yellow then came to be / reaching out to me / lets me see.*
 
-So the idea was to perform the *Collatz algorithm* on the numbers of the *Fibonacci sequence* - which sounds something like this
-
-<object height="81" width="100%">
-
-<param name="movie" value="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F17797501"></param><param name="allowscriptaccess" value="always"></param>
-
-<embed allowscriptaccess="always" height="81" src="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F17797501" type="application/x-shockwave-flash" width="100%">
-
-</embed>
-
-</object>
-
- 
+So the idea was to perform the *Collatz algorithm* on the numbers of the *Fibonacci sequence* - which sounds something like this - [FibCollatz](https://soundcloud.com/oatzy/fib-collatz) 
 
 *1 / 1 / 2, 1 / 3, 10, 5, 16, 8, 4, 2, 1 / 5, 16, 8, 4, 2, 1 / 8, 4, 2, 1*
 
@@ -96,19 +72,8 @@ But, basically, what happened was that the resulting tune (see above) was far to
 
 And the final touch I added to make the tune sound richer was chords. Again, I didn't know anything about chords. But a quick look on [wikipedia](http://en.wikipedia.org/wiki/Chord_%28music%29#Triads) told me how to make major and minor chords, so I decided to add the minor chords of the first notes of each bar.
 
-Here's what the final tune sounds like
+Here's what the final tune sounds like this - [Fibonacci's RainStorm](https://soundcloud.com/oatzy/fibonaccis-rainstorm)
 
-<object height="81" width="100%">
-
-<param name="movie" value="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F17797746"></param><param name="allowscriptaccess" value="always"></param>
-
-<embed allowscriptaccess="always" height="81" src="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F17797746" type="application/x-shockwave-flash" width="100%">
-
-</embed>
-
-</object>
-
- \
 Yes, it's a bit short and basic. But all things considered, I'd say I did pretty well.
 
 **More Math Music**
